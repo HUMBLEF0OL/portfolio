@@ -3,12 +3,8 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <Box sx={{
-            bottom: 0,
-            left: 0
-        }}>
-            <Typography sx={{ textAlign: 'center' }}>
-
+        <Box >
+            <Typography variant='subtitle1' sx={{ textAlign: 'center', fontFamily: 'Cascadia Code', color: 'text.primary' }}>
                 © HUMBLEFOOL 2024 | All Rights Reserved | Designed and Developed with ❤️
             </Typography>
         </Box >
