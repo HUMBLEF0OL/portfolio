@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styles from "./page.module.css";
 import { Oxygen } from 'next/font/google'
 // { 
@@ -13,12 +13,17 @@ const oxygen = Oxygen({
 
 export default function Home() {
   return (
-    <main className={styles.container}>
-      <div className={styles.description}>
-        <Typography sx={{
-          fontFamily: 'Fira Code'
-        }}>dummy in cascadia code</Typography>
-      </div>
-    </main>
+    <Box sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flex: 1
+    }}>
+      <Typography>Amit</Typography>
+      <Typography>Rana</Typography>
+      <Typography>Software Engineer</Typography>
+
+    </Box>
   );
 }
