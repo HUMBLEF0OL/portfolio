@@ -1,6 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import HomeBg from "../assets/images/home-background.jpg";
 import { StaticImageData } from "next/image";
+import Profile from "@/components/Profile/Profile";
+import GitStats from "@/components/GitStats/GitStats";
+import Projects from "@/components/Projects/Projects";
+import GitLanguages from "@/components/GitLanguages/GitLanguages";
+import Rank from "@/components/Rank/Rank";
+import Contributions from "@/components/Contributions/Contributions";
 
 const BlurredBackground: React.FC<{ imageUrl: string }> = ({ imageUrl }) => {
   return (
@@ -33,6 +39,7 @@ export default function Home() {
         position: "relative",
         width: "100%",
         height: "100vh",
+        fontFamily: "Fira Code"
       }}
     >
       <BlurredBackground imageUrl={HomeBg.src} />
@@ -41,12 +48,16 @@ export default function Home() {
         zIndex: 1,
         display: 'flex',
         flexDirection: 'column',
+        rowGap: '500px',
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-        <Typography>Amit</Typography>
-        <Typography>Rana</Typography>
-        <Typography>Software Engineer</Typography>
+        <Profile />
+        <GitStats />
+        <Projects />
+        <GitLanguages />
+        <Rank />
+        <Contributions />
       </Box>
     </Box>
   );

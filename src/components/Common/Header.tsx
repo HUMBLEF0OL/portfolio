@@ -1,7 +1,7 @@
 "use client"
 import { TXT_COL_HIGH, TXT_COL_PRI } from '@/constants/colorConstants';
-import { AppBar, Box, Button, ButtonBase, Container, MenuItem, Toolbar, Typography } from '@mui/material'
-import Link from 'next/link';
+import { AppBar, Box, Button, ButtonBase, Container, Link, MenuItem, Toolbar, Typography } from '@mui/material'
+// import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const routes = ['Stats', 'Projects', 'Contribution'] as const;
@@ -50,9 +50,10 @@ const Header = () => {
                             {routes.map((page) => (
                                 <MenuItem
                                     key={page}
-                                    onClick={() => { handleMenuSelection(page) }}
+                                // onClick={() => { handleMenuSelection(page) }}
                                 >
-                                    <Typography textAlign="center">{page.toUpperCase()}</Typography>
+                                    {/* <Typography textAlign="center">{page.toUpperCase()}</Typography> */}
+                                    <Link href={`#${page.toLowerCase()}`}>{page.toUpperCase()}</Link>
                                 </MenuItem>
                             ))}
                         </Box>
