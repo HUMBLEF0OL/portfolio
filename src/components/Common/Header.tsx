@@ -1,18 +1,20 @@
 "use client"
-import { AppBar, Box, Container, MenuItem, Toolbar, Typography } from '@mui/material'
+import { TXT_COL_HIGH, TXT_COL_PRI } from '@/constants/colorConstants';
+import { AppBar, Box, Button, ButtonBase, Container, MenuItem, Toolbar, Typography } from '@mui/material'
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
-const routes = ['home', 'about', 'resume', 'portfolio'] as const;
+const routes = ['Stats', 'Projects', 'Contribution'] as const;
 type Routes = typeof routes[number];
 
 const Header = () => {
-    const [currentRoute, setCurrentRoute] = useState<Routes>('home')
+    const [currentRoute, setCurrentRoute] = useState<Routes | undefined>()
 
     useEffect(() => {
         console.log(currentRoute);
     }, [currentRoute])
     const handleMenuSelection = (newPage: Routes) => {
-        setCurrentRoute(newPage)
+        // setCurrentRoute(newPage)
     };
     return (
         <AppBar position="fixed" sx={{
@@ -21,7 +23,7 @@ const Header = () => {
             width: '100%',
             display: { md: 'block', xs: 'none', sm: 'none' },
             backdropFilter: 'blur(10px)',
-            backgroundColor: 'background.secondary',
+            backgroundColor: 'transparent',
             mx: 'auto',
             height: '60px'
         }}
@@ -29,14 +31,19 @@ const Header = () => {
             <Container sx={{ width: '100%' }}>
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, flexDirection: 'row', justifyContent: 'space-between', display: 'flex' }}>
-                        <Typography variant='h1' sx={{
-                            color: 'text.highlight',
-                            fontFamily: 'Pacifico',
-                            fontWeight: 900
+                        <ButtonBase component={Link} href={'#'} sx={{
+                            fontFamily: 'Fira Code',
+                            color: TXT_COL_PRI,
+                            fontSize: '20px',
+                            textDecoration: 'none',
+                            transition: ' color 300ms',
+                            '&:hover': {
+                                color: TXT_COL_HIGH
+                            }
                         }}>
-                            AMIT
-                            <Typography variant='h1' component={'span'} sx={{ color: 'text.primary', fontFamily: 'Pacifico' }}>RANA</Typography>
-                        </Typography>
+                            HUMBLEF0OL
+                        </ButtonBase>
+
                         <Box sx={{
                             flexGrow: 1, flexDirection: 'row', justifyContent: 'flex-end', display: 'flex'
                         }}>

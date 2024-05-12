@@ -42,14 +42,16 @@ export default function RootLayout({
             height: '100vh',
             width: '100%',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            backgroundColor: '#000000'
           }}>
             <Header />
             <Box component={'main'} sx={{
               mt: '60px',
               height: '100%',
+              width: '100%',
               display: 'flex',
-              justifyContent: 'space-between',
+              justifyContent: 'center',
               flexDirection: 'column',
               alignItems: 'center',
               overflowY: 'hidden',
@@ -58,7 +60,7 @@ export default function RootLayout({
                 overflowY: 'auto',
               },
               zIndex: 1,
-              backgroundColor: 'background.primary'
+              px: '40px'
             }}>
               {children}
 
