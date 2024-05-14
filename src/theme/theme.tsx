@@ -7,6 +7,7 @@ import {
     BACKGROUND_PRI,
     BACKGROUND_SEC
 } from '../constants/colorConstants';
+import { Fira_Code, Oxanium, Pacifico, Source_Code_Pro, Ubuntu_Mono } from "next/font/google";
 
 declare module '@mui/material/styles' {
     interface TypeBackground extends BackgroundColor { }
@@ -16,6 +17,37 @@ declare module '@mui/material/styles' {
     //     highlight: string
     // }
 };
+
+
+const firaCode = Fira_Code({
+    subsets: ['latin'],
+    display: 'swap',
+    weight: 'variable'
+})
+
+const sourceCodePro = Source_Code_Pro({
+    subsets: ['latin'],
+    display: 'swap',
+    weight: 'variable'
+})
+
+const pacifico = Pacifico({
+    subsets: ['latin'],
+    display: 'swap',
+    weight: '400'
+})
+
+const oxanium = Oxanium({
+    subsets: ['latin'],
+    display: 'swap',
+    weight: '400'
+})
+
+const ubuntuSans = Ubuntu_Mono({
+    subsets: ['latin'],
+    display: 'swap',
+    weight: '400'
+})
 
 export const theme = createTheme({
     palette: {
@@ -31,6 +63,9 @@ export const theme = createTheme({
     },
     typography: {
         fontSize: 1, // 1rem (16px)
+        fontFamily: ubuntuSans.style.fontFamily,
+        // fontFamily: firaCode.style.fontFamily,
+        // fontFamily: sourceCodePro.style.fontFamily,
 
         h1: {
             fontSize: '2rem', // 2rem (32px)
