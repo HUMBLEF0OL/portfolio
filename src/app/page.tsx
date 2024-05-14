@@ -48,16 +48,22 @@ export default function Home() {
         zIndex: 1,
         display: 'flex',
         flexDirection: 'column',
-        rowGap: '500px',
+        rowGap: '200px',
         justifyContent: 'center',
         alignItems: 'center',
+        mt: '600px',
+        width: '100%',
       }}>
         <Profile />
         <GitStats />
-        <Projects />
-        <GitLanguages />
-        <Rank />
-        <Contributions />
+        {/* <Projects /> */}
+        {/* <GitLanguages /> */}
+        {/* <Rank /> */}
+        {/* <Contributions /> */}
+        <Profile />
+
+        <Profile />
+
       </Box>
     </Box>
   );
