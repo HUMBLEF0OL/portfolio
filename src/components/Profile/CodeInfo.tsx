@@ -5,12 +5,13 @@ import React from 'react'
 
 const CodeInfo = ({ profileData }: { profileData: any }) => {
     const spanSx = {
-        fontSize: '14px',
-        fontFamily: 'inherit'
+        fontSize: '16px',
+        fontFamily: 'inherit',
+        letterSpacing: 1,
     }
     const typographySx = {
         fontFamily: 'Fira Code',
-        fontSize: '14px'
+        fontSize: '16px',
     }
     return (
         <Box sx={{
@@ -26,7 +27,7 @@ const CodeInfo = ({ profileData }: { profileData: any }) => {
                 alignItems: 'center',
                 px: '16px',
                 py: '4px',
-                height: '52px'
+                height: '52px',
 
             }}>
                 <Box sx={{
@@ -60,47 +61,47 @@ const CodeInfo = ({ profileData }: { profileData: any }) => {
                 backgroundColor: '#000000'
 
             }}>
-                <Typography sx={{ ...typographySx }}>
-                    const <Typography component="span" sx={{ color: '#ff1744', ...typographySx }}>coder</Typography>
-                    <Typography component="span" sx={{ color: '#00e676', ...spanSx }}>=</Typography>
-                    <Typography component="span" sx={{ color: '#2979ff', ...spanSx }}>{'{'}</Typography>
+                <Typography sx={{ ...typographySx, color: '#F472B6', fontWeight: 700 }}>
+                    const <Typography component="span" sx={{ color: '#A78BFA', ...typographySx }}>coder</Typography>
+                    <Typography component="span" sx={{ color: '#F472B6', ...spanSx }}>&nbsp;=&nbsp;</Typography>
+                    <Typography component="span" sx={{ color: '#9CA3AF', ...spanSx }}>{'{'}</Typography>
                 </Typography>
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>name:</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>'</Typography>
-                    <Typography component="span" sx={{ color: '#10b981', ...spanSx }}>{profileData.name}</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>',</Typography>
+                    <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.name}</Typography>
+                    <Typography component="span" sx={{ color: '#9CA3AF', ...spanSx }}>',</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>company:</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>'</Typography>
-                    <Typography component="span" sx={{ color: '#10b981', ...spanSx }}>{profileData.company}</Typography>
+                    <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.company}</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>',</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>location:</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>'</Typography>
-                    <Typography component="span" sx={{ color: '#10b981', ...spanSx }}>{profileData.location}</Typography>
+                    <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.location}</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>followers:</Typography>
-                    <Typography component="span" sx={{ color: '#fb923c', ...spanSx }}>{profileData.followers}</Typography>
+                    <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.followers}</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>following:</Typography>
-                    <Typography component="span" sx={{ color: '#fb923c', ...spanSx }}>{profileData.following}</Typography>
+                    <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.following}</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>repositories:</Typography>
-                    <Typography component="span" sx={{ color: '#fb923c', ...spanSx }}>{profileData.public_repos}</Typography>
+                    <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.public_repos}</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
                 </Typography>
 
@@ -109,7 +110,7 @@ const CodeInfo = ({ profileData }: { profileData: any }) => {
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`['`}</Typography>
                     {userData.skills.map((skill, i) => (
                         <>
-                            <Typography component="span" sx={{ color: '#22d3ee', ...spanSx }}>{skill}</Typography>
+                            <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{skill}</Typography>
                             {i !== userData.skills.length - 1 && <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>', '</Typography>}
                         </>
                     ))}
@@ -118,7 +119,7 @@ const CodeInfo = ({ profileData }: { profileData: any }) => {
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>hireable:</Typography>
-                    <Typography component="span" sx={{ color: '#fb923c', ...spanSx }}>{profileData?.hireable.toString()}</Typography>
+                    <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData?.hireable.toString()}</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
                 </Typography>
 

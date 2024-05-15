@@ -42,7 +42,7 @@ export default function Home() {
         fontFamily: "Fira Code"
       }}
     >
-      <BlurredBackground imageUrl={HomeBg.src} />
+      {/* <BlurredBackground imageUrl={HomeBg.src} /> */}
       <Box sx={{
         position: "relative",
         zIndex: 1,
