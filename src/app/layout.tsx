@@ -60,7 +60,8 @@ export default function RootLayout({
                 overflowY: 'auto',
               },
               zIndex: 1,
-              px: '40px'
+              px: '40px',
+              background: 'radial-gradient(circle, #1a0324 0%, #000000 100%)',
             }}>
               {children}
 

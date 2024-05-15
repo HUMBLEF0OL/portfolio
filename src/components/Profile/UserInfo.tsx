@@ -24,7 +24,8 @@ const UserInfo = ({ profileData }: { profileData: any }) => {
             alignItems: 'center',
             px: '40px',
             py: '16px',
-            rowGap: '16px'
+            rowGap: '16px',
+            borderRadius: '10px'
         }}>
             <Image
                 src={profileData.avatar_url}
