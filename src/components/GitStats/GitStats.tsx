@@ -6,10 +6,10 @@ import { userData } from '@/constants/userData'
 
 const GitStats = () => {
     return (
-        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', rowGap: '40px' }}>
+        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', rowGap: '40px', mt: '100px' }}>
             <SectionTitle title={'github statistics'} />
 
-            {/* <Box sx={{
+            <Box sx={{
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -17,49 +17,56 @@ const GitStats = () => {
                 alignItems: 'center'
             }}>
                 <Image
-                    src={`http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${userData.githubUser}&theme=algolia`}
-                    // src={'https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=HUMBLEF0OL&theme=material-palenight'}
-                    width={1080}
-                    height={520}
+                    src={`https://github-profile-trophy.vercel.app/?username=humblef0ol&theme=radical&no-frame=true&no-bg=false&margin-w=12`}
+                    width={900}
+                    height={250}
                     alt='github profile-details'
                     style={{
                         borderRadius: '10px',
-                        maxWidth: '100%'
+                        width: '100%',
+                        // paddingInline: '40px'
                     }}
+                // objectFit='contains'
                 />
 
                 <Box sx={{
                     display: 'flex',
-                    width: '520px',
+                    width: '100%',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                     columnGap: '20px'
                 }}>
                     <Box sx={{
-                        width: '50%',
-                        '-webkit-box-shadow': '0px 0px 285px 21px rgba(235,9,220,0.25)',
-                        '-moz-box-shadow': '0px 0px 285px 21px rgba(235,9,220,0.25)',
-                        boxShadow: '0px 0px 269px 176px  rgba(235,9,220,0.25)',
-                        backgroundColor: "#1a0324"
+                        // width: '50%',
+                        // '-webkit-box-shadow': '0px 0px 285px 21px rgba(235,9,220,0.25)',
+                        // '-moz-box-shadow': '0px 0px 285px 21px rgba(235,9,220,0.25)',
+                        // boxShadow: '0px 0px 269px 176px  rgba(235,9,220,0.25)',
+                        // backgroundColor: "#1a0324"
                     }}>
                         <Image
-                            src={'https://github-readme-stats.vercel.app/api?username=humblef0ol&show=prs_merged_percentage&show_icons=true&theme=material-palenight&hide=issues'}
-                            width={520}
-                            height={260}
-                            style={{ maxHeight: '520px' }}
+                            src={'https://github-readme-stats.vercel.app/api?username=humblef0ol&show=prs_merged_percentage&show_icons=true&theme=tokyonight&hide=issues'}
+                            width={400}
+                            height={180}
+                            // style={{ maxHeight: '520px' }}
                             alt="github stats"
                         />
                     </Box>
 
-                    <Box sx={{ width: '50%' }}>
+                    <Box>
                         <Image
-                            src={`https://github-readme-stats.vercel.app/api?username=${userData.githubUser}&show_icons=true&include_all_commits=true&theme=algolia&hide_border=true`}
-                            width={520}
+                            src={`http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=humblef0ol&theme=tokyonight`}
+                            width={600}
                             height={260}
-                            alt="github stats"
+                            alt='github profile-details'
+                            style={{
+                                // borderRadius: '10px',
+                                // maxWidth: '100%'
+                            }}
                         />
                     </Box>
 
                 </Box>
-            </Box> */}
+            </Box>
 
         </Box>
     )

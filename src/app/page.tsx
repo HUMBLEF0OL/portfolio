@@ -4,9 +4,10 @@ import { StaticImageData } from "next/image";
 import Profile from "@/components/Profile/Profile";
 import GitStats from "@/components/GitStats/GitStats";
 import Projects from "@/components/Projects/Projects";
-import GitLanguages from "@/components/GitLanguages/GitLanguages";
 import Rank from "@/components/Rank/Rank";
 import Contributions from "@/components/Contributions/Contributions";
+import LanguageStats from "@/components/LanguageStats/LanguageStats";
+import SectionTitle from "@/components/SectionTitle/SectionTitle";
 
 const BlurredBackground: React.FC<{ imageUrl: string }> = ({ imageUrl }) => {
   return (
@@ -54,13 +55,21 @@ export default function Home() {
         mt: '600px',
         width: '100%',
       }}>
-        <Profile />
-        <GitStats />
+        {/* <Profile />
+        <GitStats /> */}
         {/* <Projects /> */}
         {/* <GitLanguages /> */}
-        {/* <Rank /> */}
+        <Rank />
         {/* <Contributions /> */}
-        <Profile />
+        {/* <Profile /> */}
+        <Rank />
+        {/* <Rank /> */}
+        {/* <Rank /> */}
+        {/* <Rank /> */}
+        <SectionTitle title={'faltu test'} />
+
+        {/* <GitStats /> */}
+        <LanguageStats />
 
         <Profile />
 
