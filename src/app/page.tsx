@@ -67,6 +67,8 @@ export default function Home() {
 
         {/* <GitStats /> */}
         <LanguageStats />
+        <Contributions />
+
 
         <Profile />
 
