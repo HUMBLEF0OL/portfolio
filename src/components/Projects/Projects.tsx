@@ -38,7 +38,7 @@ const Projects = () => {
                 {
                     ProjectData.items.map((current, index) => {
                         return (
-                            <Box sx={{ width: '45%', height: '190px' }} key={index}>
+                            <Box sx={{ width: '49.25%', height: '175px' }} key={index}>
                                 <Link href={current.html_url} style={{ textDecoration: 'none' }}>
                                     <StatsCard isLink={true}>
                                         <Grid container sx={{ px: '12px', rowGap: '12px', alignItems: 'center' }}>
@@ -62,7 +62,8 @@ const Projects = () => {
                                                     display: '-webkit-box',
                                                     WebkitLineClamp: 3, // Set the maximum number of lines
                                                     WebkitBoxOrient: 'vertical',
-                                                    color: '#fff'
+                                                    color: '#fff',
+                                                    letterSpacing: '1.25px'
 
                                                     // overflow: 'hidden',
                                                 }}

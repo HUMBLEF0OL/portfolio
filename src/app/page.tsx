@@ -9,25 +9,25 @@ import Contributions from "@/components/Contributions/Contributions";
 import LanguageStats from "@/components/LanguageStats/LanguageStats";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 
-const BlurredBackground: React.FC<{ imageUrl: string }> = ({ imageUrl }) => {
-  return (
-    <Box
-      sx={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageUrl})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        filter: "blur(4px) brightness(50%)",
-        zIndex: -1,
-      }}
-    />
-  );
-}
+// const BlurredBackground: React.FC<{ imageUrl: string }> = ({ imageUrl }) => {
+//   return (
+//     <Box
+//       sx={{
+//         position: "absolute",
+//         top: 0,
+//         left: 0,
+//         width: "100%",
+//         height: "100%",
+//         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageUrl})`,
+//         backgroundSize: "cover",
+//         backgroundPosition: "center",
+//         backgroundRepeat: "no-repeat",
+//         filter: "blur(4px) brightness(50%)",
+//         zIndex: -1,
+//       }}
+//     />
+//   );
+// }
 
 export default function Home() {
   return (
@@ -37,41 +37,39 @@ export default function Home() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
         width: "100%",
-        height: "100vh",
-        fontFamily: "Fira Code"
+        height: "100%",
+        fontFamily: "Fira Code",
+        rowGap: '100px',
+        px: '40px'
       }}
     >
-      {/* <BlurredBackground imageUrl={HomeBg.src} /> */}
-      <Box sx={{
-        position: "relative",
-        zIndex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        rowGap: '200px',
-        justifyContent: 'center',
-        alignItems: 'center',
-        mt: '600px',
-        width: '100%',
-      }}>
-        {/* <Profile />
-        <GitStats /> */}
-        <Rank />
-        {/* <Contributions /> */}
-        {/* <Profile /> */}
-        <Rank />
-        <Projects />
-
-
-        <GitStats />
-        <LanguageStats />
-        <Contributions />
-
-
-        <Profile />
-
-      </Box>
+      <Profile />
+      <GitStats />
     </Box>
   );
 }
+
+
+//
+// {/* <Profile /> // adjustment in icon styles
+// <GitStats /> */}
+// <Rank />
+// {/* <Contributions /> */}
+// {/* <Profile /> */}
+// <Rank />
+// <Projects />
+
+
+// {/* check */}
+// <LanguageStats />
+// {/* check */}
+// <Contributions />
+// {/* check */}
+// <Projects />
+
+// <GitStats />
+// {/* check */}
+// <Profile />
+// {/* check */}
+// <Rank />

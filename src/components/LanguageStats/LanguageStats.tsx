@@ -25,8 +25,8 @@ const LanguageStats = () => {
                 <StatsCard isLink={false}>
                     <Image
                         src={'https://github-readme-stats.vercel.app/api/top-langs/?username=HUMBLEF0OL&layout=compact&langs_count=10&theme=tokyonight&hide_border=true&custom_title=Most%20Used%20Languages'}
-                        width={280}
-                        height={250}
+                        width={385}
+                        height={255}
                         alt='language-stats'
                     />
 

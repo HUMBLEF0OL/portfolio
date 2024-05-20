@@ -49,7 +49,6 @@ const Profile = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 columnGap: '40px',
-                px: '40px'
             }}>
             <UserInfo profileData={profileData} />
             <CodeInfo profileData={profileData} />

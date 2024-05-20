@@ -10,7 +10,11 @@ const SectionTitle: React.FC<{ title: string }> = ({ title }) => {
                 justifyContent: 'center',
                 alignItems: 'center',
             }}>
-                <Box sx={{ backgroundImage: 'linear-gradient(45deg, #000, #7d5ba2)', flex: 1, height: "2px" }} />
+                <Box sx={{
+                    backgroundImage: 'linear-gradient(45deg, #000, #7d5ba2)',
+                    flex: 1,
+                    height: "2px",
+                }} />
                 <Typography
                     variant='h3'
                     sx={{
@@ -21,7 +25,12 @@ const SectionTitle: React.FC<{ title: string }> = ({ title }) => {
                         borderRadius: '5px',
                         fontWeight: 600,
                         letterSpacing: 2.25,
-                        color: '#fff'
+                        color: '#fff',
+                        transition: 'color 500ms',
+                        '&:hover': {
+                            // backgroundColor: '#000',
+                            color: "#000"
+                        }
                     }}>
                     {title?.toUpperCase()}
                 </Typography>
