@@ -57,7 +57,6 @@ export default function Home() {
       }}>
         {/* <Profile />
         <GitStats /> */}
-        {/* <GitLanguages /> */}
         <Rank />
         {/* <Contributions /> */}
         {/* <Profile /> */}
@@ -65,7 +64,7 @@ export default function Home() {
         <Projects />
 
 
-        {/* <GitStats /> */}
+        <GitStats />
         <LanguageStats />
         <Contributions />
 
