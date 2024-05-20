@@ -22,7 +22,7 @@ const LanguageStats = () => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <StatsCard>
+                <StatsCard isLink={false}>
                     <Image
                         src={'https://github-readme-stats.vercel.app/api/top-langs/?username=HUMBLEF0OL&layout=compact&langs_count=10&theme=tokyonight&hide_border=true&custom_title=Most%20Used%20Languages'}
                         width={280}
@@ -32,7 +32,7 @@ const LanguageStats = () => {
 
                 </StatsCard>
 
-                <StatsCard>
+                <StatsCard isLink={false}>
                     <Image
                         src={'https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=humblef0ol&theme=tokyonight'}
                         width={520}

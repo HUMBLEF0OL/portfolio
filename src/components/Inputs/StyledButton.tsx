@@ -23,6 +23,7 @@ const StyledButton: React.FC<{ text: string, url: string, icon: ReactNode }> = (
                 padding: '10px 20px',
                 cursor: 'pointer',
                 overflow: 'hidden',
+                fontWeight: 600
 
             }}>
             {text.toUpperCase()}
