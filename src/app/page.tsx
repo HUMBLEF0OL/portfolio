@@ -57,16 +57,13 @@ export default function Home() {
       }}>
         {/* <Profile />
         <GitStats /> */}
-        {/* <Projects /> */}
         {/* <GitLanguages /> */}
         <Rank />
         {/* <Contributions /> */}
         {/* <Profile /> */}
         <Rank />
-        {/* <Rank /> */}
-        {/* <Rank /> */}
-        {/* <Rank /> */}
-        <SectionTitle title={'faltu test'} />
+        <Projects />
+
 
         {/* <GitStats /> */}
         <LanguageStats />

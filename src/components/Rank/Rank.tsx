@@ -10,14 +10,13 @@ const Rank = () => {
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
             rowGap: '40px',
             mt: '100px',
             px: '40px'
         }}>
-            <SectionTitle title={'Streak and Ranks'} />
+            <SectionTitle title={'Streaks And Ranks'} />
 
-            {/* <Box sx={{
+            <Box sx={{
                 width: '100%',
                 display: 'flex',
                 columnGap: '40px',
@@ -26,7 +25,7 @@ const Rank = () => {
                 height: '100%'
 
             }}>
-                <StatsCard>
+                <StatsCard isLink={false}>
                     <Image
                         src={'https://github-readme-streak-stats.herokuapp.com/?user=HUMBLEF0OL&theme=tokyonight&custom_title=streak-stats&hide_border=true'}
                         width={495}
@@ -34,7 +33,7 @@ const Rank = () => {
                         alt='streak-stats'
                     />
                 </StatsCard>
-                <StatsCard>
+                <StatsCard isLink={false}>
                     <Image
                         src={'https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=humblef0ol&theme=tokyonight'}
                         width={495}
@@ -43,8 +42,8 @@ const Rank = () => {
                     />
                 </StatsCard>
             </Box>
-            <Box sx={{ width: '90%', display: 'flex', justifyContent: 'center' }}>
-                <StatsCard>
+            <Box sx={{ width: '90%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <StatsCard isLink={false}>
                     <Image
                         src={'https://github-readme-activity-graph.vercel.app/graph?username=humblef0ol&theme=tokyo-night&custom_title=Contribution-History&hide_border=true'}
                         width={900}
@@ -52,7 +51,7 @@ const Rank = () => {
                         alt='language-stats'
                     />
                 </StatsCard>
-            </Box> */}
+            </Box>
 
 
         </Box>
