@@ -48,7 +48,7 @@ export default function RootLayout({
             <Header />
             <Box component={'main'} sx={{
               mt: '60px',
-              height: '100%',
+              height: 'calc(100vh - 60px)',
               width: '100%',
               display: 'flex',
               justifyContent: 'center',

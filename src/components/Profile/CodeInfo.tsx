@@ -119,7 +119,7 @@ const CodeInfo = ({ profileData }: { profileData: any }) => {
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>hireable:</Typography>
-                    <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData?.hireable.toString()}</Typography>
+                    <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>true</Typography>
                     <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
                 </Typography>
 

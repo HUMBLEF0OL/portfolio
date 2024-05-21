@@ -3,17 +3,17 @@ import SectionTitle from '../SectionTitle/SectionTitle'
 import { Box, Grid, Typography } from '@mui/material'
 import StatsCard from '../StatsCard/StatsCard'
 import Link from 'next/link'
-import { ProjectData } from './ProjectData'
 import LinkIcon from '@mui/icons-material/Link';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import { colors } from '@/constants/colorConstants'
 import StyledButton from '../Inputs/StyledButton'
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { userData } from '@/constants/userData'
+import { Repository } from '@/interfaces/userProjectInterface'
 // after response filter the repositories on the basis of fork flag
 // https://api.github.com/search/repositories?q=user:humblef0ol+fork:false&sort=created&direction=desc&per_page=10&type=Repositories
 // 
-const Projects = () => {
+const Projects = ({ projectData }: { projectData: Repository[] }) => {
     return (
         <Box sx={{
             width: '100%',
@@ -36,7 +36,7 @@ const Projects = () => {
                 // width: '100%'
             }}>
                 {
-                    ProjectData.items.map((current, index) => {
+                    projectData.map((current, index) => {
                         return (
                             <Box sx={{ width: '49.25%', height: '175px' }} key={index}>
                                 <Link href={current.html_url} style={{ textDecoration: 'none' }}>

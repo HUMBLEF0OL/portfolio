@@ -16,6 +16,74 @@ const Header = () => {
     const handleMenuSelection = (newPage: Routes) => {
         // setCurrentRoute(newPage)
     };
+
+    const logoSx = {
+        fontFamily: 'Fira Code',
+        color: '#7d5ba2',
+        fontSize: '20px',
+        textDecoration: 'none',
+        letterSpacing: '1.25px',
+        fontWeight: 500,
+        position: 'relative',
+        px: '12px',
+        '&:before': {
+            content: '""',
+            position: 'absolute',
+            height: 0,
+            width: '2px',
+            left: 0,
+            bottom: 0,
+            backgroundImage: 'linear-gradient(45deg, #000, #7d5ba2)',
+
+            transition: 'height 300ms',
+        },
+        '&:after': {
+            content: '""',
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            height: '2px',
+            width: 0,
+            backgroundImage: 'linear-gradient(45deg, #000, #7d5ba2)',
+            transition: 'width 300ms'
+        },
+        transition: ' color 300ms',
+        '&:hover': {
+            color: '#fff',
+            '&:before': {
+                height: '100%'
+            },
+            '&:after': {
+                width: '100%'
+            }
+        }
+    }
+
+    const menuItemSx = {
+        // backgroundColor: 'yellow',
+        color: '#fff',
+        fontSize: '16px',
+        letterSpacing: '1.25px',
+        textDecoration: 'none',
+        '&:after': {
+            content: "''",
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            height: '2px',
+            width: '0%', // Initial width set to 0%
+            backgroundColor: 'white',
+            transition: 'width 0.4s ease' // Transition effect for the width
+        },
+        transition: ' color 400ms',
+        '&:hover': {
+            color: '#7d5ba2',
+            '&:after': {
+                width: '100%',
+            }
+        }
+    }
+
     return (
         <AppBar position="fixed" sx={{
             left: 0,
@@ -31,16 +99,7 @@ const Header = () => {
             <Container sx={{ width: '100%' }}>
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, flexDirection: 'row', justifyContent: 'space-between', display: 'flex' }}>
-                        <ButtonBase component={Link} href={'#'} sx={{
-                            fontFamily: 'Fira Code',
-                            color: TXT_COL_PRI,
-                            fontSize: '20px',
-                            textDecoration: 'none',
-                            transition: ' color 300ms',
-                            '&:hover': {
-                                color: TXT_COL_HIGH
-                            }
-                        }}>
+                        <ButtonBase component={Link} href={'#'} sx={logoSx}>
                             HUMBLEF0OL
                         </ButtonBase>
 
@@ -53,7 +112,15 @@ const Header = () => {
                                 // onClick={() => { handleMenuSelection(page) }}
                                 >
                                     {/* <Typography textAlign="center">{page.toUpperCase()}</Typography> */}
-                                    <Link href={`#${page.toLowerCase()}`}>{page.toUpperCase()}</Link>
+                                    <Link href={`#${page.toLowerCase()}`} style={{
+                                        textDecoration: 'none',
+                                        position: 'relative'
+                                    }}>
+                                        <Box sx={menuItemSx}>
+                                            {page.toUpperCase()}
+                                        </Box>
+
+                                    </Link>
                                 </MenuItem>
                             ))}
                         </Box>
