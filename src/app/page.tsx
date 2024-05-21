@@ -68,12 +68,11 @@ export default async function Home() {
         height: "100%",
         fontFamily: "Fira Code",
         rowGap: '100px',
-        px: '40px'
       }}
     >
       <Profile profileData={profileData} />
       {/* <GitStats /> */}
-      {/* <Projects projectData={projectData} /> */}
+      <Projects projectData={projectData} />
     </Box>
   );
 }

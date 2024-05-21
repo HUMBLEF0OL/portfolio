@@ -7,7 +7,13 @@ import StatsCard from '../StatsCard/StatsCard'
 
 const GitStats = () => {
     return (
-        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', rowGap: '40px', mt: '100px' }}>
+        <Box sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            rowGap: '40px',
+
+        }}>
             <SectionTitle title={'github statistics'} />
 
             <Box sx={{
