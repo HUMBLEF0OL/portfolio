@@ -54,8 +54,6 @@ async function getGitProjects() {
 export default async function Home() {
   const profileData = await getGitProfile();
   const projectData = await getGitProjects();
-  console.log('profileData is ', profileData);
-  // console.log('projectData is ', projectData);
 
   return (
     <Box
@@ -71,7 +69,9 @@ export default async function Home() {
       }}
     >
       <Profile profileData={profileData} />
-      {/* <GitStats /> */}
+      <GitStats />
+      <Rank />
+      <Contributions />
       <Projects projectData={projectData} />
     </Box>
   );

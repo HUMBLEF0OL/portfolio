@@ -39,16 +39,13 @@ export default function RootLayout({
       <Box component={'body'} className={`${firaCode.className} ${sourceCodePro.className} ${pacifico.className} container`} >
         <ThemeRegistry options={{ key: 'mui-theme' }}>
           <Box sx={{
-            height: '100vh',
             width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
             backgroundColor: '#000000'
           }}>
             <Header />
             <Box component={'main'} sx={{
               mt: '60px',
-              height: 'calc(100vh - 60px)',
+              height: '100%',
               width: '100%',
               display: 'flex',
               justifyContent: 'center',
@@ -60,7 +57,7 @@ export default function RootLayout({
                 overflowY: 'auto',
               },
               zIndex: 1,
-              px: '80px',
+              p: '20px 80px 20px 80px',
               mb: 2,
               background: 'radial-gradient(circle, #1a0324 0%, #000000 100%)',
             }}>
