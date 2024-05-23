@@ -10,6 +10,7 @@ import LanguageStats from "@/components/LanguageStats/LanguageStats";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { userData } from "@/constants/userData";
 import { Repository } from "@/interfaces/userProjectInterface";
+import { Description } from "@mui/icons-material";
 
 // const BlurredBackground: React.FC<{ imageUrl: string }> = ({ imageUrl }) => {
 //   return (
@@ -51,6 +52,16 @@ async function getGitProjects() {
   return ownedRepositories.slice(0, 10);
 
 }
+
+export async function generateMetadata(
+  { params, searchParams }: { params: Record<string, string>; searchParams: URLSearchParams }, parent: any) {
+  const profile = await getGitProfile();
+  return {
+    title: `Portfolio of ${profile.name}`,
+    description: profile.description
+  }
+}
+
 export default async function Home() {
   const profileData = await getGitProfile();
   const projectData = await getGitProjects();

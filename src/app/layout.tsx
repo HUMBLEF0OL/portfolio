@@ -36,6 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link type="image/png" sizes="32x32" rel="icon" href="https://img.icons8.com/stencil/32/briefcase.png" />
+      </head>
       <Box component={'body'} className={`${firaCode.className} ${sourceCodePro.className} ${pacifico.className} container`} >
         <ThemeRegistry options={{ key: 'mui-theme' }}>
           <Box sx={{

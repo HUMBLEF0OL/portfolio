@@ -68,41 +68,41 @@ const CodeInfo = ({ profileData }: { profileData: any }) => {
                 </Typography>
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>name:</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>'</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`'`}</Typography>
                     <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.name}</Typography>
-                    <Typography component="span" sx={{ color: '#9CA3AF', ...spanSx }}>',</Typography>
+                    <Typography component="span" sx={{ color: '#9CA3AF', ...spanSx }}>{`',`}</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>company:</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>'</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`'`}</Typography>
                     <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.company}</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>',</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`'`},</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>location:</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>'</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`'`}</Typography>
                     <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.location}</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`,`}</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>followers:</Typography>
                     <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.followers}</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`,`}</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>following:</Typography>
                     <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.following}</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`,`}</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>repositories:</Typography>
                     <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>{profileData.public_repos}</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`,`}</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx, ml: 2 }}>
@@ -114,16 +114,16 @@ const CodeInfo = ({ profileData }: { profileData: any }) => {
                             {i !== userData.skills.length - 1 && <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>', '</Typography>}
                         </>
                     ))}
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>'],</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`'],`}</Typography>
                 </Typography>
 
                 <Typography sx={{ ...typographySx }}>
                     <Typography component="span" sx={{ color: '#fff', ...spanSx, ml: 2 }}>hireable:</Typography>
                     <Typography component="span" sx={{ color: '#96d0ff', ...spanSx }}>true</Typography>
-                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>,</Typography>
+                    <Typography component="span" sx={{ color: '#9ca3af', ...spanSx }}>{`,`}</Typography>
                 </Typography>
 
-                <Typography sx={{ fontFamily: 'Fira Code', color: '#9ca3af' }}>
+                <Typography sx={{ color: '#9ca3af', ...spanSx }}>
                     {'};'}
                 </Typography>
 
