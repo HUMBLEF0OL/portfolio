@@ -15,14 +15,16 @@ import { Repository } from '@/interfaces/userProjectInterface'
 // 
 const Projects = ({ projectData }: { projectData: Repository[] }) => {
     return (
-        <Box sx={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            rowGap: '40px',
-            mt: '100px',
-            px: '40px'
-        }}>
+        <Box
+            id="projects"
+            sx={{
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                rowGap: '40px',
+                px: '40px',
+                pt: '100px'
+            }}>
             <SectionTitle title={'Projects'} />
 
             <Box sx={{

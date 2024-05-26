@@ -14,6 +14,7 @@ const Profile: React.FC<{ profileData: UserProfileData }> = ({ profileData }) =>
                 display: 'flex',
                 justifyContent: 'center',
                 columnGap: '40px',
+                pt: '100px'
             }}>
             <UserInfo profileData={profileData} />
             <CodeInfo profileData={profileData} />

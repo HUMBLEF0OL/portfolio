@@ -1,10 +1,9 @@
 "use client"
-import { TXT_COL_HIGH, TXT_COL_PRI } from '@/constants/colorConstants';
-import { AppBar, Box, Button, ButtonBase, Container, Link, MenuItem, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, ButtonBase, Container, Link, MenuItem, Toolbar } from '@mui/material'
 // import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
-const routes = ['Stats', 'Projects', 'Contribution'] as const;
+const routes = ['stats', 'streak & rank', 'projects'] as const;
 type Routes = typeof routes[number];
 
 const Header = () => {
@@ -60,7 +59,6 @@ const Header = () => {
     }
 
     const menuItemSx = {
-        // backgroundColor: 'yellow',
         color: '#fff',
         fontSize: '16px',
         letterSpacing: '1.25px',
@@ -71,9 +69,9 @@ const Header = () => {
             left: 0,
             bottom: 0,
             height: '2px',
-            width: '0%', // Initial width set to 0%
+            width: '0%',
             backgroundColor: 'white',
-            transition: 'width 0.4s ease' // Transition effect for the width
+            transition: 'width 0.4s ease'
         },
         transition: ' color 400ms',
         '&:hover': {
@@ -111,7 +109,6 @@ const Header = () => {
                                     key={page}
                                 // onClick={() => { handleMenuSelection(page) }}
                                 >
-                                    {/* <Typography textAlign="center">{page.toUpperCase()}</Typography> */}
                                     <Link href={`#${page.toLowerCase()}`} style={{
                                         textDecoration: 'none',
                                         position: 'relative'
