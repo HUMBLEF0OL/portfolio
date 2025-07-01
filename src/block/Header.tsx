@@ -75,11 +75,11 @@ const Header = () => {
                 </ul>
 
                 {/* Social Icons */}
-                <div className="flex items-center gap-4">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <div className="flex items-center gap-8">
+                    <a href="https://github.com/HUMBLEF0OL" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <Github className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors duration-200" />
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/amit-rana-711169183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors duration-200" />
                     </a>
                     <a href="/resume.pdf" download aria-label="Download Resume">

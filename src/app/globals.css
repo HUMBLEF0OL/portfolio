@@ -46,128 +46,144 @@
 :root {
   --radius: 0.625rem;
 
-  --background: oklch(0.98 0.05 300);
-  /* Soft lilac neon glow */
-  --foreground: oklch(0.25 0.12 300);
-  /* Dark purple text */
+  /* RETRO LIGHT THEME - Miami Vice Meets Synthwave */
+  --background: oklch(0.96 0.04 85);
+  /* Warm cream with golden undertone */
+  --foreground: oklch(0.15 0.08 280);
+  /* Deep retro purple */
 
-  --card: oklch(0.96 0.06 320);
-  /* Faint magenta neon */
-  --card-foreground: oklch(0.2 0.1 270);
-  /* Dim blue-purple */
+  --card: oklch(0.92 0.06 320);
+  /* Soft pink blush */
+  --card-foreground: oklch(0.2 0.1 280);
+  /* Rich purple text */
 
-  --popover: oklch(0.95 0.06 250);
-  /* Cyanish backdrop */
-  --popover-foreground: oklch(0.25 0.12 270);
-  /* Navy text */
+  --popover: oklch(0.94 0.05 60);
+  /* Peachy backdrop */
+  --popover-foreground: oklch(0.18 0.1 280);
+  /* Deep purple text */
 
-  --primary: oklch(0.88 0.24 330);
-  /* Hot neon pink */
-  --primary-foreground: oklch(0.1 0.04 300);
-  /* Deep shadow */
+  --primary: oklch(0.72 0.28 320);
+  /* Hot retro magenta */
+  --primary-foreground: oklch(0.98 0.02 320);
+  /* Pure white with hint of pink */
 
-  --secondary: oklch(0.85 0.2 140);
-  /* Acid green */
-  --secondary-foreground: oklch(0.1 0.05 130);
-  /* Forest text */
+  --secondary: oklch(0.78 0.25 180);
+  /* Electric turquoise */
+  --secondary-foreground: oklch(0.15 0.05 200);
+  /* Deep teal text */
 
-  --muted: oklch(0.9 0.05 270);
-  /* Pale violet */
-  --muted-foreground: oklch(0.4 0.06 300);
-  /* Dull indigo */
+  --muted: oklch(0.88 0.06 45);
+  /* Soft peach */
+  --muted-foreground: oklch(0.45 0.08 280);
+  /* Muted purple */
 
-  --accent: oklch(0.88 0.25 210);
-  /* Neon blue */
-  --accent-foreground: oklch(0.1 0.04 220);
-  /* Dark blue text */
+  --accent: oklch(0.75 0.3 65);
+  /* Sunset orange */
+  --accent-foreground: oklch(0.12 0.06 65);
+  /* Dark orange text */
 
-  --destructive: oklch(0.75 0.22 30);
-  /* Orange-red alert */
-  --border: oklch(0.85 0.04 80);
-  /* Muted yellow */
-  --input: oklch(0.9 0.05 270);
-  /* Light interface */
-  --ring: oklch(0.7 0.2 330);
-  /* Purple ring highlight */
+  --destructive: oklch(0.68 0.25 15);
+  /* Retro red-orange */
+  --border: oklch(0.82 0.08 320);
+  /* Soft pink border */
+  --input: oklch(0.89 0.04 45);
+  /* Cream input */
+  --ring: oklch(0.72 0.28 320);
+  /* Magenta focus ring */
 
-  --chart-1: oklch(0.65 0.24 20);
-  /* Orange */
-  --chart-2: oklch(0.75 0.2 140);
-  /* Green neon */
-  --chart-3: oklch(0.65 0.2 270);
-  /* Indigo blue */
-  --chart-4: oklch(0.8 0.25 330);
-  /* Magenta */
-  --chart-5: oklch(0.7 0.22 190);
-  /* Cyan */
+  /* RETRO CHART COLORS - Classic 80s Palette */
+  --chart-1: oklch(0.72 0.28 320);
+  /* Hot magenta */
+  --chart-2: oklch(0.78 0.25 180);
+  /* Electric cyan */
+  --chart-3: oklch(0.75 0.3 65);
+  /* Sunset orange */
+  --chart-4: oklch(0.7 0.25 270);
+  /* Retro purple */
+  --chart-5: oklch(0.82 0.22 140);
+  /* Neon lime */
 
-  --sidebar: oklch(0.96 0.05 300);
-  /* Neon glow panel */
-  --sidebar-foreground: oklch(0.2 0.08 270);
-  --sidebar-primary: oklch(0.85 0.25 330);
-  --sidebar-primary-foreground: oklch(0.1 0.04 330);
-  --sidebar-accent: oklch(0.8 0.25 210);
-  --sidebar-accent-foreground: oklch(0.1 0.05 210);
-  --sidebar-border: oklch(0.7 0.1 330);
-  --sidebar-ring: oklch(0.7 0.15 270);
+  /* SIDEBAR RETRO STYLING */
+  --sidebar: oklch(0.94 0.05 60);
+  /* Peachy sidebar */
+  --sidebar-foreground: oklch(0.18 0.1 280);
+  --sidebar-primary: oklch(0.72 0.28 320);
+  --sidebar-primary-foreground: oklch(0.98 0.02 320);
+  --sidebar-accent: oklch(0.75 0.3 65);
+  --sidebar-accent-foreground: oklch(0.12 0.06 65);
+  --sidebar-border: oklch(0.75 0.12 320);
+  --sidebar-ring: oklch(0.72 0.28 320);
 }
 
 .dark {
-  --background: oklch(0.18 0.08 300);
-  /* Deep neon purple */
-  --foreground: oklch(0.95 0.03 330);
-  /* Hot magenta text */
+  /* RETRO DARK THEME - Cyberpunk Noir */
+  --background: oklch(0.12 0.05 280);
+  /* Deep space purple */
+  --foreground: oklch(0.92 0.08 45);
+  /* Warm neon peach */
 
-  --card: oklch(0.25 0.06 300);
-  /* Dim purple glow */
-  --card-foreground: oklch(0.95 0.03 330);
+  --card: oklch(0.18 0.08 300);
+  /* Dark violet card */
+  --card-foreground: oklch(0.92 0.08 45);
+  /* Neon peach text */
 
-  --popover: oklch(0.25 0.06 280);
-  --popover-foreground: oklch(0.95 0.03 330);
+  --popover: oklch(0.16 0.07 285);
+  /* Dark purple popover */
+  --popover-foreground: oklch(0.92 0.08 45);
+  /* Neon peach text */
 
-  --primary: oklch(0.85 0.25 330);
-  /* Bright pink neon */
-  --primary-foreground: oklch(0.1 0.04 300);
+  --primary: oklch(0.85 0.32 320);
+  /* Blazing hot pink */
+  --primary-foreground: oklch(0.08 0.03 280);
+  /* Deep dark purple */
 
-  --secondary: oklch(0.75 0.2 140);
-  /* Electric green */
-  --secondary-foreground: oklch(0.1 0.05 130);
+  --secondary: oklch(0.82 0.28 180);
+  /* Electric cyan glow */
+  --secondary-foreground: oklch(0.08 0.04 180);
+  /* Deep cyan shadow */
 
-  --muted: oklch(0.35 0.06 280);
-  /* Muted neon */
-  --muted-foreground: oklch(0.75 0.04 330);
+  --muted: oklch(0.25 0.08 290);
+  /* Muted dark purple */
+  --muted-foreground: oklch(0.68 0.12 45);
+  /* Dim orange glow */
 
-  --accent: oklch(0.8 0.25 210);
-  /* Electric blue */
-  --accent-foreground: oklch(0.1 0.05 220);
+  --accent: oklch(0.85 0.35 65);
+  /* Blazing sunset orange */
+  --accent-foreground: oklch(0.08 0.04 65);
+  /* Deep orange shadow */
 
-  --destructive: oklch(0.7 0.22 30);
-  /* Burnt neon red */
-  --border: oklch(0.3 0.03 300);
-  --input: oklch(0.25 0.04 300);
-  --ring: oklch(0.8 0.25 330);
+  --destructive: oklch(0.75 0.28 15);
+  /* Hot neon red */
+  --border: oklch(0.28 0.08 300);
+  /* Dark purple border */
+  --input: oklch(0.22 0.06 285);
+  /* Dark input field */
+  --ring: oklch(0.85 0.32 320);
+  /* Hot pink focus ring */
 
-  --chart-1: oklch(0.65 0.25 330);
-  /* Pink burst */
-  --chart-2: oklch(0.7 0.25 140);
-  /* Lime pop */
-  --chart-3: oklch(0.8 0.25 220);
-  /* Cyan flash */
-  --chart-4: oklch(0.75 0.25 20);
+  /* DARK RETRO CHART COLORS - Neon Nights */
+  --chart-1: oklch(0.85 0.32 320);
+  /* Blazing magenta */
+  --chart-2: oklch(0.82 0.28 180);
+  /* Electric cyan */
+  --chart-3: oklch(0.85 0.35 65);
   /* Neon orange */
-  --chart-5: oklch(0.7 0.2 270);
-  /* Indigo pulse */
+  --chart-4: oklch(0.78 0.28 270);
+  /* Electric purple */
+  --chart-5: oklch(0.88 0.25 140);
+  /* Acid lime */
 
-  --sidebar: oklch(0.18 0.08 300);
-  --sidebar-foreground: oklch(0.95 0.03 330);
-  --sidebar-primary: oklch(0.75 0.2 330);
-  --sidebar-primary-foreground: oklch(0.1 0.04 330);
-  --sidebar-accent: oklch(0.7 0.25 210);
-  --sidebar-accent-foreground: oklch(0.1 0.05 210);
-  --sidebar-border: oklch(0.3 0.03 300);
-  --sidebar-ring: oklch(0.8 0.2 330);
+  /* DARK SIDEBAR RETRO STYLING */
+  --sidebar: oklch(0.12 0.05 280);
+  /* Deep space purple */
+  --sidebar-foreground: oklch(0.92 0.08 45);
+  --sidebar-primary: oklch(0.82 0.28 320);
+  --sidebar-primary-foreground: oklch(0.08 0.03 280);
+  --sidebar-accent: oklch(0.82 0.32 65);
+  --sidebar-accent-foreground: oklch(0.08 0.04 65);
+  --sidebar-border: oklch(0.28 0.08 300);
+  --sidebar-ring: oklch(0.85 0.32 320);
 }
-
 
 @layer base {
   * {
