@@ -15,7 +15,7 @@ const ThemeSwitch = () => {
     if (!mounted) return null; // Prevents hydration mismatch
 
     return (
-        <div className="inline-flex gap-1 items-center justify-center rounded-xl bg-muted/20 p-1 shadow-inner backdrop-blur-sm">
+        <div className="fixed top-1/2 right-0 -translate-y-1/2 inline-flex flex-col gap-1 items-center justify-center rounded-xl bg-muted/20 p-1 shadow-inner backdrop-blur-xs">
             {/* Light Button */}
             <button
                 className={cn(

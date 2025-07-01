@@ -6,8 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-archivo);
-  --font-mono: var(--font-geist-mono);
+  --font-body: var(--font-orbitron);
+  --font-heading: var(--font-black-ops-one);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -43,77 +43,94 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+html {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
 :root {
   --radius: 0.625rem;
 
-  /* RETRO LIGHT THEME - Miami Vice Meets Synthwave */
-  --background: oklch(0.96 0.04 85);
-  /* Warm cream with golden undertone */
-  --foreground: oklch(0.15 0.08 280);
-  /* Deep retro purple */
+  /* BACKGROUND & TEXT */
+  --background: oklch(0.97 0.02 80);
+  /* Off-white with golden tint */
+  --foreground: oklch(0.22 0.11 290);
+  /* Deep violet/purple */
 
+  /* CONTAINERS */
   --card: oklch(0.92 0.06 320);
-  /* Soft pink blush */
-  --card-foreground: oklch(0.2 0.1 280);
-  /* Rich purple text */
+  /* Blush pink */
+  --card-foreground: oklch(0.25 0.12 280);
+  /* Purple text */
 
-  --popover: oklch(0.94 0.05 60);
-  /* Peachy backdrop */
-  --popover-foreground: oklch(0.18 0.1 280);
-  /* Deep purple text */
+  --popover: oklch(0.95 0.05 70);
+  /* Cream-peach */
+  --popover-foreground: oklch(0.25 0.1 280);
 
-  --primary: oklch(0.72 0.28 320);
-  /* Hot retro magenta */
-  --primary-foreground: oklch(0.98 0.02 320);
-  /* Pure white with hint of pink */
+  /* PRIMARY COLORS (PINKS + NEON PURPLE) */
+  --primary: oklch(0.7 0.25 330);
+  /* Neon magenta pink */
+  --primary-foreground: oklch(0.98 0.01 90);
+  /* Almost white with pink hint */
 
-  --secondary: oklch(0.78 0.25 180);
-  /* Electric turquoise */
-  --secondary-foreground: oklch(0.15 0.05 200);
-  /* Deep teal text */
+  /* SECONDARY (CYAN/BLUE) */
+  --secondary: oklch(0.75 0.2 195);
+  /* Electric cyan */
+  --secondary-foreground: oklch(0.15 0.08 220);
+  /* Deep teal */
 
-  --muted: oklch(0.88 0.06 45);
-  /* Soft peach */
+  /* MUTED + HIGHLIGHTS */
+  --muted: oklch(0.88 0.04 60);
+  /* Pastel peach */
   --muted-foreground: oklch(0.45 0.08 280);
   /* Muted purple */
 
-  --accent: oklch(0.75 0.3 65);
+  --accent: oklch(0.75 0.25 65);
   /* Sunset orange */
   --accent-foreground: oklch(0.12 0.06 65);
-  /* Dark orange text */
+  /* Deep orange */
 
-  --destructive: oklch(0.68 0.25 15);
-  /* Retro red-orange */
-  --border: oklch(0.82 0.08 320);
-  /* Soft pink border */
-  --input: oklch(0.89 0.04 45);
-  /* Cream input */
-  --ring: oklch(0.72 0.28 320);
-  /* Magenta focus ring */
+  --destructive: oklch(0.65 0.2 25);
+  /* Neon red-orange */
+  --border: oklch(0.85 0.05 320);
+  /* Pink pastel border */
+  --input: oklch(0.92 0.02 85);
+  /* Retro off-white */
+  --ring: oklch(0.7 0.22 310);
+  /* Electric violet */
 
-  /* RETRO CHART COLORS - Classic 80s Palette */
-  --chart-1: oklch(0.72 0.28 320);
-  /* Hot magenta */
-  --chart-2: oklch(0.78 0.25 180);
-  /* Electric cyan */
-  --chart-3: oklch(0.75 0.3 65);
-  /* Sunset orange */
-  --chart-4: oklch(0.7 0.25 270);
-  /* Retro purple */
-  --chart-5: oklch(0.82 0.22 140);
-  /* Neon lime */
+  /* CHARTS (FOR GRAPHS / ACCENTS) */
+  --chart-1: oklch(0.7 0.25 330);
+  /* Hot pink */
+  --chart-2: oklch(0.78 0.22 180);
+  /* Bright cyan */
+  --chart-3: oklch(0.8 0.26 60);
+  /* Neon orange */
+  --chart-4: oklch(0.72 0.24 270);
+  /* Ultra purple */
+  --chart-5: oklch(0.85 0.2 140);
+  /* Lime green */
 
-  /* SIDEBAR RETRO STYLING */
-  --sidebar: oklch(0.94 0.05 60);
-  /* Peachy sidebar */
-  --sidebar-foreground: oklch(0.18 0.1 280);
-  --sidebar-primary: oklch(0.72 0.28 320);
-  --sidebar-primary-foreground: oklch(0.98 0.02 320);
-  --sidebar-accent: oklch(0.75 0.3 65);
+  /* SIDEBAR + PANEL COLORS */
+  --sidebar: oklch(0.95 0.05 70);
+  /* Cream base */
+  --sidebar-foreground: oklch(0.22 0.11 290);
+  --sidebar-primary: oklch(0.7 0.25 330);
+  --sidebar-primary-foreground: oklch(0.98 0.01 90);
+  --sidebar-accent: oklch(0.75 0.25 65);
   --sidebar-accent-foreground: oklch(0.12 0.06 65);
-  --sidebar-border: oklch(0.75 0.12 320);
-  --sidebar-ring: oklch(0.72 0.28 320);
+  --sidebar-border: oklch(0.85 0.05 320);
+  --sidebar-ring: oklch(0.7 0.22 310);
 }
+
 
 .dark {
   /* RETRO DARK THEME - Cyberpunk Noir */

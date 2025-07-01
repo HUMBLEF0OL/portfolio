@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
-import { Archivo } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/block/Header";
 import Footer from "@/block/Footer";
+import ThemeSwitch from "@/block/ThemeSwitch";
+import { Black_Ops_One, Orbitron, Syne } from "next/font/google";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+  weight: ["400", "500", "600", "700", "900"],
+})
 
+const blackOpsOne = Black_Ops_One({
+  variable: "--font-black-ops-one",
+  subsets: ["latin"],
+  weight: ["400"],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,22 +29,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${orbitron.variable} ${blackOpsOne.variable}`}>
       <body
-        className={`${archivo.className} antialiased`}
+        className={`font-body antialiased`}
       >
         <ThemeProvider
           attribute={"class"}
           defaultTheme="system"
           enableSystem
         >
-          <div className="flex flex-col items-center justify-between min-h-screen w-full">
+          <div className="flex flex-col items-center gap-4 justify-between min-h-screen w-full">
             <Header />
-            <main className="flex-1 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <main className="flex-1 w-full max-w-[100%] px-4 sm:px-6 md:px-12 flex flex-col items-center justify-start">
               {children}
             </main>
             <Footer />
           </div>
+          <ThemeSwitch />
         </ThemeProvider>
       </body>
     </html>
