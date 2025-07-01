@@ -2,9 +2,17 @@
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils"; // Assuming you use cn() from shadcn setup
+import { useEffect, useState } from "react";
 
 const ThemeSwitch = () => {
     const { setTheme, theme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, [])
+
+    if (!mounted) return null; // Prevents hydration mismatch
 
     return (
         <div className="inline-flex gap-1 items-center justify-center rounded-xl bg-muted/20 p-1 shadow-inner backdrop-blur-sm">
