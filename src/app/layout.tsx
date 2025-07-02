@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${orbitron.variable} ${blackOpsOne.variable}`}>
       <body
-        className={`font-body antialiased`}
+        className={`font-body antialiased max-w-[1920px] mx-auto bg-background text-foreground overflow-x-hidden no-scrollbar overflow-y-auto`}
       >
         <ThemeProvider
           attribute={"class"}
@@ -40,7 +40,7 @@ export default function RootLayout({
         >
           <div className="flex flex-col items-center gap-4 justify-between min-h-screen w-full">
             <Header />
-            <main className="flex-1 w-full max-w-[100%] px-4 sm:px-6 md:px-12 flex flex-col items-center justify-start">
+            <main className="flex-1 w-full max-w-[100%] px-4 sm:px-6 md:px-0 flex flex-col items-center justify-start">
               {children}
             </main>
             <Footer />

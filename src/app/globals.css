@@ -60,76 +60,78 @@ h6 {
   --radius: 0.625rem;
 
   /* BACKGROUND & TEXT */
-  --background: oklch(0.97 0.02 80);
-  /* Off-white with golden tint */
-  --foreground: oklch(0.22 0.11 290);
-  /* Deep violet/purple */
+  --background: oklch(0.98 0.01 90);
+  /* Soft warm white */
+  --foreground: oklch(0.1 0.1 280);
+  /* Deep dark purple/black */
 
   /* CONTAINERS */
-  --card: oklch(0.92 0.06 320);
-  /* Blush pink */
-  --card-foreground: oklch(0.25 0.12 280);
-  /* Purple text */
+  --card: oklch(0.84 0.18 85);
+  /* Light yellow-orange */
+  --card-foreground: oklch(0.15 0.08 270);
+  /* Dark purple text */
 
-  --popover: oklch(0.95 0.05 70);
-  /* Cream-peach */
-  --popover-foreground: oklch(0.25 0.1 280);
+  --popover: oklch(0.92 0.08 85);
+  /* Slightly peachy background */
+  --popover-foreground: oklch(0.2 0.09 270);
+  /* Muted dark purple */
 
-  /* PRIMARY COLORS (PINKS + NEON PURPLE) */
-  --primary: oklch(0.7 0.25 330);
-  /* Neon magenta pink */
-  --primary-foreground: oklch(0.98 0.01 90);
-  /* Almost white with pink hint */
+  /* PRIMARY (BLACK & ORANGE COMBO) */
+  --primary: oklch(0.18 0.05 280);
+  /* Dark charcoal */
+  --primary-foreground: oklch(0.98 0.01 85);
+  /* Almost white */
 
-  /* SECONDARY (CYAN/BLUE) */
-  --secondary: oklch(0.75 0.2 195);
-  /* Electric cyan */
-  --secondary-foreground: oklch(0.15 0.08 220);
-  /* Deep teal */
+  /* SECONDARY (BRIGHT ORANGE) */
+  --secondary: oklch(0.78 0.25 65);
+  /* Retro orange button */
+  --secondary-foreground: oklch(0.12 0.06 65);
+  /* Deep burnt orange */
 
   /* MUTED + HIGHLIGHTS */
-  --muted: oklch(0.88 0.04 60);
-  /* Pastel peach */
-  --muted-foreground: oklch(0.45 0.08 280);
-  /* Muted purple */
+  --muted: oklch(0.88 0.05 90);
+  /* Cream yellow */
+  --muted-foreground: oklch(0.3 0.1 280);
+  /* Desaturated violet */
 
-  --accent: oklch(0.75 0.25 65);
-  /* Sunset orange */
-  --accent-foreground: oklch(0.12 0.06 65);
-  /* Deep orange */
+  --accent: oklch(0.85 0.2 320);
+  /* Light magenta (for hover accents) */
+  --accent-foreground: oklch(0.12 0.06 320);
+  /* Dark magenta */
 
-  --destructive: oklch(0.65 0.2 25);
+  --destructive: oklch(0.55 0.25 30);
   /* Neon red-orange */
-  --border: oklch(0.85 0.05 320);
-  /* Pink pastel border */
-  --input: oklch(0.92 0.02 85);
-  /* Retro off-white */
-  --ring: oklch(0.7 0.22 310);
-  /* Electric violet */
+  --border: oklch(0.12 0.03 280);
+  /* Near black border */
+  --input: oklch(0.95 0.01 85);
+  /* Pale input background */
+  --ring: oklch(0.78 0.25 65);
+  /* Strong orange focus ring */
 
-  /* CHARTS (FOR GRAPHS / ACCENTS) */
-  --chart-1: oklch(0.7 0.25 330);
-  /* Hot pink */
-  --chart-2: oklch(0.78 0.22 180);
-  /* Bright cyan */
-  --chart-3: oklch(0.8 0.26 60);
-  /* Neon orange */
-  --chart-4: oklch(0.72 0.24 270);
-  /* Ultra purple */
-  --chart-5: oklch(0.85 0.2 140);
-  /* Lime green */
+  /* CHARTS / ACCENTS */
+  --chart-1: oklch(0.78 0.25 65);
+  /* Bright orange */
+  --chart-2: oklch(0.85 0.2 320);
+  /* Light magenta */
+  --chart-3: oklch(0.75 0.18 270);
+  /* Purple */
+  --chart-4: oklch(0.92 0.1 80);
+  /* Yellow-beige */
+  --chart-5: oklch(0.9 0.15 180);
+  /* Light teal */
 
-  /* SIDEBAR + PANEL COLORS */
-  --sidebar: oklch(0.95 0.05 70);
-  /* Cream base */
-  --sidebar-foreground: oklch(0.22 0.11 290);
-  --sidebar-primary: oklch(0.7 0.25 330);
-  --sidebar-primary-foreground: oklch(0.98 0.01 90);
-  --sidebar-accent: oklch(0.75 0.25 65);
-  --sidebar-accent-foreground: oklch(0.12 0.06 65);
-  --sidebar-border: oklch(0.85 0.05 320);
-  --sidebar-ring: oklch(0.7 0.22 310);
+  /* SIDEBAR + PANELS (if used) */
+  --sidebar: oklch(0.92 0.08 85);
+  /* Match popover background */
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--secondary-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
+
 
 
 .dark {
@@ -210,4 +212,19 @@ h6 {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Add this to your globals.css */
+
+/* Hide scrollbar but allow scrolling */
+html {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
 }
