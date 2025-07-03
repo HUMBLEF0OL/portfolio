@@ -202,7 +202,6 @@ const Header = () => {
                     </DrawerContent>
                 </Drawer>
 
-
                 <div className='inline-flex lg:hidden'>
 
                     <Select onValueChange={(value) => {
@@ -231,10 +230,6 @@ const Header = () => {
                         </SelectContent>
                     </Select>
                 </div>
-
-
-
-
             </nav>
 
         </header>

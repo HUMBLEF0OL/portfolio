@@ -1,17 +1,57 @@
 import React from 'react';
+import Avatar from '@/assets/avatar.png'
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Divider } from './Divider';
+
 const HomeComponent = () => {
     return (
-        <div className="w-[75%] h-full flex flex items-center border-[8px] bg-card border-border justify-center p-[36px] shadow-[12px_12px_0px_0px_theme(colors.muted-foreground)] rounded-xl">
-            <div className="flex flex-col items-center justify-center p-[36px] w-[100%] text-secondary">
-                <p className="text-[72px] font-bold">Hello</p>
-                <p className="text-[24px] font-medium">My Name Is</p>
+        <div className='flex justify-between w-[75%] items-center h-screen gap-[40px]'>
+            <Image src={Avatar} alt="Avatar" height="500" width="350" />
+
+            <div className='flex flex-col gap-[60px]'>
+                <div className='flex flex-col gap-[20px] max-w-xl'>
+                    <p
+                        className='text-[42px] font-black glitch-hover text-highlight'
+                        data-text="Welcome to the Grid"
+                    >
+                        Welcome to the Grid
+                    </p>
+                    <p >
+                        The Grid. A digital frontier. Neon circuits power systems built from logic, but shaped by creativity. It’s a space where identity is written in code and ideas evolve with every keystroke. Glitches don’t break things — they reveal them. This isn’t just a network; it’s a reflection of human imagination.
+                    </p>
+                </div>
+
+                <div className='flex gap-[20px]'>
+                    <Button className='relative angular-b-bg' variant={'outline'} size={'xl'}>
+                        <span
+                            className="absolute bottom-0 right-0 w-[12px] h-[12px] z-10 bg-primary"
+                            style={{
+                                clipPath: 'polygon(100% 100%, 0% 100%, 100% 0%)',
+                            }}
+                        />
+                        Skill Matrix
+
+                    </Button>
+                    <Button className='angular-b-bg' size={'xl'}> Project Archives</Button>
+                </div>
             </div>
-            <div className="flex flex-col items-center justify-center p-[72px] w-[100%] rounded-lg border-4 border-border bg-background text-foreground">
-                <h1 className={`text-[128px] font-extrabold tracking-widest`}>AMIT</h1>
-                <h1 className={`font-body text-[128px] font-extrabold tracking-widest`}>RANA</h1>
-            </div>
-        </div>
+        </div >
     );
 };
 
 export default HomeComponent;
+
+
+
+/*
+
+Welcome to the Grid of Me
+Exploring identity, code, and creativity through neon circuits and glowing logic.
+
+
+I Am the User.
+Code. Circuit. Consciousness.
+Digital by Design, Human at Core.
+"Interfaces wired with intent, glowing with imagination."
+*/

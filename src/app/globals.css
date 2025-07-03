@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import '../styles/glitch.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -259,11 +260,12 @@ html::-webkit-scrollbar {
 
 @layer utilities {
   .angular-b-lg {
-    clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 12px);
     /* top-left angle */
+    clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 12px);
   }
 
   .angular-tl-br-lg {
+    /* top-left and bottom-right */
     clip-path: polygon(12px 0%,
         100% 0%,
         100% calc(100% - 12px),
@@ -271,4 +273,12 @@ html::-webkit-scrollbar {
         0% 100%,
         0% 12px);
   }
+
+  .angular-b-bg {
+    /* bottom-right angle */
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%);
+
+  }
+
+
 }
