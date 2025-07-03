@@ -6,8 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-body: var(--font-orbitron);
-  --font-heading: var(--font-black-ops-one);
+  --font-body: var(--font-chakra);
+  --font-heading: var(--font-oxanium);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -31,6 +31,7 @@
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
+  --color-highlight: var(--highlight);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
@@ -60,148 +61,175 @@ h6 {
   --radius: 0.625rem;
 
   /* BACKGROUND & TEXT */
-  --background: oklch(0.98 0.01 90);
-  /* Soft warm white */
-  --foreground: oklch(0.1 0.1 280);
-  /* Deep dark purple/black */
+  --background: oklch(0.08 0.02 270);
+  /* Deep dark background like the site */
+  --foreground: oklch(0.94 0.18 102);
+  /* Bright neon yellow text #FFEE08 */
 
   /* CONTAINERS */
-  --card: oklch(0.84 0.18 85);
-  /* Light yellow-orange */
-  --card-foreground: oklch(0.15 0.08 270);
-  /* Dark purple text */
+  --card: oklch(0.12 0.03 270);
+  /* Dark card background */
+  --card-foreground: oklch(0.94 0.18 102);
+  /* Neon yellow text on cards #FFEE08 */
 
-  --popover: oklch(0.92 0.08 85);
-  /* Slightly peachy background */
-  --popover-foreground: oklch(0.2 0.09 270);
-  /* Muted dark purple */
+  --popover: oklch(0.10 0.02 270);
+  /* Slightly lighter dark background */
+  --popover-foreground: oklch(0.94 0.18 102);
+  /* Neon yellow text #FFEE08 */
 
-  /* PRIMARY (BLACK & ORANGE COMBO) */
-  --primary: oklch(0.18 0.05 280);
-  /* Dark charcoal */
-  --primary-foreground: oklch(0.98 0.01 85);
-  /* Almost white */
+  /* PRIMARY (NEON YELLOW - FFEE08) */
+  --primary: oklch(0.94 0.18 102);
+  /* Exact cyberpunk yellow #FFEE08 */
+  --primary-foreground: oklch(0.08 0.02 270);
+  /* Dark text on yellow */
 
-  /* SECONDARY (BRIGHT ORANGE) */
-  --secondary: oklch(0.78 0.25 65);
-  /* Retro orange button */
-  --secondary-foreground: oklch(0.12 0.06 65);
-  /* Deep burnt orange */
+  /* SECONDARY (CYBERPUNK RED - FD0130) */
+  --secondary: oklch(0.55 0.24 12);
+  /* Exact cyberpunk red #FD0130 */
+  --secondary-foreground: oklch(0.94 0.18 102);
+  /* Yellow text on red */
+
+  /* hightlight */
+  --highlight: oklch(100% 0.00011 271.152);
 
   /* MUTED + HIGHLIGHTS */
-  --muted: oklch(0.88 0.05 90);
-  /* Cream yellow */
-  --muted-foreground: oklch(0.3 0.1 280);
-  /* Desaturated violet */
+  --muted: oklch(0.15 0.03 270);
+  /* Muted dark background */
+  --muted-foreground: oklch(0.75 0.12 102);
+  /* Dimmed yellow */
 
-  --accent: oklch(0.85 0.2 320);
-  /* Light magenta (for hover accents) */
-  --accent-foreground: oklch(0.12 0.06 320);
-  /* Dark magenta */
+  --accent: oklch(0.78 0.15 195);
+  /* Cyberpunk cyan #02D7F2 */
+  --accent-foreground: oklch(0.08 0.02 270);
+  /* Dark text on cyan */
 
-  --destructive: oklch(0.55 0.25 30);
-  /* Neon red-orange */
-  --border: oklch(0.12 0.03 280);
-  /* Near black border */
-  --input: oklch(0.95 0.01 85);
-  /* Pale input background */
-  --ring: oklch(0.78 0.25 65);
-  /* Strong orange focus ring */
+  --destructive: oklch(0.55 0.24 12);
+  /* Cyberpunk red #FD0130 */
+  --border: oklch(0.94 0.18 102);
+  /* Neon yellow borders #FFEE08 */
+  --input: oklch(0.08 0.02 270);
+  /* Dark input background */
+  --ring: oklch(0.94 0.18 102);
+  /* Neon yellow focus ring #FFEE08 */
 
   /* CHARTS / ACCENTS */
-  --chart-1: oklch(0.78 0.25 65);
-  /* Bright orange */
-  --chart-2: oklch(0.85 0.2 320);
-  /* Light magenta */
-  --chart-3: oklch(0.75 0.18 270);
-  /* Purple */
-  --chart-4: oklch(0.92 0.1 80);
-  /* Yellow-beige */
-  --chart-5: oklch(0.9 0.15 180);
-  /* Light teal */
+  --chart-1: oklch(0.94 0.18 102);
+  /* Neon yellow #FFEE08 */
+  --chart-2: oklch(0.78 0.15 195);
+  /* Cyberpunk cyan #02D7F2 */
+  --chart-3: oklch(0.55 0.24 12);
+  /* Cyberpunk red #FD0130 */
+  --chart-4: oklch(0.75 0.20 300);
+  /* Neon purple */
+  --chart-5: oklch(0.85 0.15 120);
+  /* Neon green */
 
-  /* SIDEBAR + PANELS (if used) */
-  --sidebar: oklch(0.92 0.08 85);
-  /* Match popover background */
-  --sidebar-foreground: var(--foreground);
-  --sidebar-primary: var(--primary);
-  --sidebar-primary-foreground: var(--primary-foreground);
-  --sidebar-accent: var(--secondary);
-  --sidebar-accent-foreground: var(--secondary-foreground);
-  --sidebar-border: var(--border);
-  --sidebar-ring: var(--ring);
+  /* SIDEBAR + PANELS */
+  --sidebar: oklch(0.10 0.02 270);
+  /* Dark sidebar background */
+  --sidebar-foreground: oklch(0.94 0.18 102);
+  /* Neon yellow text #FFEE08 */
+  --sidebar-primary: oklch(0.94 0.18 102);
+  /* Neon yellow primary #FFEE08 */
+  --sidebar-primary-foreground: oklch(0.08 0.02 270);
+  /* Dark text on primary */
+  --sidebar-accent: oklch(0.78 0.15 195);
+  /* Cyan accent #02D7F2 */
+  --sidebar-accent-foreground: oklch(0.08 0.02 270);
+  /* Dark text on cyan */
+  --sidebar-border: oklch(0.94 0.18 102);
+  /* Neon yellow borders #FFEE08 */
+  --sidebar-ring: oklch(0.94 0.18 102);
+  /* Neon yellow focus ring #FFEE08 */
 }
 
 
-
 .dark {
-  /* RETRO DARK THEME - Cyberpunk Noir */
-  --background: oklch(0.12 0.05 280);
-  /* Deep space purple */
-  --foreground: oklch(0.92 0.08 45);
-  /* Warm neon peach */
+  --radius: 0.125rem;
+  /* Sharp, geometric edges like Tron */
 
-  --card: oklch(0.18 0.08 300);
-  /* Dark violet card */
-  --card-foreground: oklch(0.92 0.08 45);
-  /* Neon peach text */
+  /* BACKGROUND & TEXT - The Grid */
+  --background: oklch(0.05 0.01 240);
+  /* Deep black like the digital void */
+  --foreground: oklch(0.85 0.15 200);
+  /* Bright ice blue for text */
 
-  --popover: oklch(0.16 0.07 285);
-  /* Dark purple popover */
-  --popover-foreground: oklch(0.92 0.08 45);
-  /* Neon peach text */
+  /* CONTAINERS - Digital panels */
+  --card: oklch(0.08 0.02 240);
+  /* Slightly lighter dark panels */
+  --card-foreground: oklch(0.85 0.15 200);
+  /* Ice blue text on panels */
 
-  --primary: oklch(0.85 0.32 320);
-  /* Blazing hot pink */
-  --primary-foreground: oklch(0.08 0.03 280);
-  /* Deep dark purple */
+  --popover: oklch(0.06 0.01 240);
+  /* Darker popup background */
+  --popover-foreground: oklch(0.85 0.15 200);
+  /* Ice blue text */
 
-  --secondary: oklch(0.82 0.28 180);
-  /* Electric cyan glow */
-  --secondary-foreground: oklch(0.08 0.04 180);
-  /* Deep cyan shadow */
+  /* PRIMARY (TRON BLUE) */
+  --primary: oklch(0.70 0.20 200);
+  /* Bright Tron blue - the iconic glow */
+  --primary-foreground: oklch(0.05 0.01 240);
+  /* Dark text on blue */
 
-  --muted: oklch(0.25 0.08 290);
-  /* Muted dark purple */
-  --muted-foreground: oklch(0.68 0.12 45);
-  /* Dim orange glow */
+  /* SECONDARY (TRON ORANGE) */
+  --secondary: oklch(0.75 0.18 45);
+  /* Bright orange for enemy/alert elements */
+  --secondary-foreground: oklch(0.05 0.01 240);
 
-  --accent: oklch(0.85 0.35 65);
-  /* Blazing sunset orange */
-  --accent-foreground: oklch(0.08 0.04 65);
-  /* Deep orange shadow */
 
-  --destructive: oklch(0.75 0.28 15);
-  /* Hot neon red */
-  --border: oklch(0.28 0.08 300);
-  /* Dark purple border */
-  --input: oklch(0.22 0.06 285);
-  /* Dark input field */
-  --ring: oklch(0.85 0.32 320);
-  /* Hot pink focus ring */
+  /* hightlight */
+  --highlight: oklch(100% 0.00011 271.152);
+  /* Dark text on orange */
 
-  /* DARK RETRO CHART COLORS - Neon Nights */
-  --chart-1: oklch(0.85 0.32 320);
-  /* Blazing magenta */
-  --chart-2: oklch(0.82 0.28 180);
-  /* Electric cyan */
-  --chart-3: oklch(0.85 0.35 65);
-  /* Neon orange */
-  --chart-4: oklch(0.78 0.28 270);
-  /* Electric purple */
-  --chart-5: oklch(0.88 0.25 140);
-  /* Acid lime */
+  /* MUTED + HIGHLIGHTS */
+  --muted: oklch(0.10 0.02 240);
+  /* Muted dark background */
+  --muted-foreground: oklch(0.60 0.10 200);
+  /* Dimmed blue */
 
-  /* DARK SIDEBAR RETRO STYLING */
-  --sidebar: oklch(0.12 0.05 280);
-  /* Deep space purple */
-  --sidebar-foreground: oklch(0.92 0.08 45);
-  --sidebar-primary: oklch(0.82 0.28 320);
-  --sidebar-primary-foreground: oklch(0.08 0.03 280);
-  --sidebar-accent: oklch(0.82 0.32 65);
-  --sidebar-accent-foreground: oklch(0.08 0.04 65);
-  --sidebar-border: oklch(0.28 0.08 300);
-  --sidebar-ring: oklch(0.85 0.32 320);
+  --accent: oklch(0.70 0.20 200);
+  /* Tron blue accent */
+  --accent-foreground: oklch(0.05 0.01 240);
+  /* Dark text on accent */
+
+  --destructive: oklch(0.75 0.18 45);
+  /* Orange for destructive actions */
+  --border: oklch(0.70 0.20 200);
+  /* Glowing blue borders */
+  --input: oklch(0.08 0.02 240);
+  /* Dark input background */
+  --ring: oklch(0.70 0.20 200);
+  /* Blue glow focus ring */
+
+  /* CHARTS / ACCENTS - Digital world colors */
+  --chart-1: oklch(0.70 0.20 200);
+  /* Primary Tron blue */
+  --chart-2: oklch(0.75 0.18 45);
+  /* Tron orange */
+  --chart-3: oklch(0.65 0.15 180);
+  /* Cyan variant */
+  --chart-4: oklch(0.80 0.12 220);
+  /* Light blue variant */
+  --chart-5: oklch(0.85 0.15 200);
+  /* Bright ice blue */
+
+  /* SIDEBAR + PANELS - The Grid interface */
+  --sidebar: oklch(0.06 0.01 240);
+  /* Dark sidebar like the Grid */
+  --sidebar-foreground: oklch(0.85 0.15 200);
+  /* Ice blue text */
+  --sidebar-primary: oklch(0.70 0.20 200);
+  /* Tron blue primary */
+  --sidebar-primary-foreground: oklch(0.05 0.01 240);
+  /* Dark text on primary */
+  --sidebar-accent: oklch(0.75 0.18 45);
+  /* Orange accent */
+  --sidebar-accent-foreground: oklch(0.05 0.01 240);
+  /* Dark text on orange */
+  --sidebar-border: oklch(0.70 0.20 200);
+  /* Glowing blue borders */
+  --sidebar-ring: oklch(0.70 0.20 200);
+  /* Blue glow focus ring */
 }
 
 @layer base {
@@ -227,4 +255,20 @@ html {
 html::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari, Opera */
+}
+
+@layer utilities {
+  .angular-b-lg {
+    clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 12px);
+    /* top-left angle */
+  }
+
+  .angular-tl-br-lg {
+    clip-path: polygon(12px 0%,
+        100% 0%,
+        100% calc(100% - 12px),
+        calc(100% - 12px) 100%,
+        0% 100%,
+        0% 12px);
+  }
 }

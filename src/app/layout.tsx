@@ -4,18 +4,18 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/block/Header";
 import Footer from "@/block/Footer";
 import ThemeSwitch from "@/block/ThemeSwitch";
-import { Black_Ops_One, Orbitron, Syne } from "next/font/google";
+import { Black_Ops_One, Chakra_Petch, Orbitron, Oxanium, Syne } from "next/font/google";
 
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "900"],
-})
-
-const blackOpsOne = Black_Ops_One({
-  variable: "--font-black-ops-one",
+const chakra = Chakra_Petch({
+  variable: "--font-chakra",
   subsets: ["latin"],
   weight: ["400"],
+})
+
+const oxanium = Oxanium({
+  variable: "--font-oxanium",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${orbitron.variable} ${blackOpsOne.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${chakra.variable} ${oxanium.variable}`}>
       <body
         className={`font-body antialiased max-w-[1920px] mx-auto bg-background text-foreground overflow-x-hidden no-scrollbar overflow-y-auto`}
       >

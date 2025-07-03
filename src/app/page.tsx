@@ -7,7 +7,11 @@ export default function Home() {
   return (
     <div className="w-full h-[fit-content] flex flex-col items-center justify-center gap-[80px]">
       <HomeComponent />
-      <About />
+      <HomeComponent />
+
+      <HomeComponent />
+
+      {/* <About /> */}
     </div>
   );
 }
