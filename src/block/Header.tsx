@@ -81,16 +81,16 @@ const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
     return (
         <div className={classStyle}>
             <a href="https://github.com/HUMBLEF0OL" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="w-7 h-7 text-muted-foreground hover:text-primary transition-colors duration-200" />
+                <Github className="w-7 h-7 text-secondary hover:text-primary transition-colors duration-200" />
             </a>
             <a href="https://www.linkedin.com/in/amit-rana-711169183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="w-7 h-7 text-muted-foreground hover:text-primary transition-colors duration-200" />
+                <Linkedin className="w-7 h-7 text-secondary hover:text-primary transition-colors duration-200" />
             </a>
             <a href="/resume.pdf" download aria-label="Download Resume">
-                <ArrowBigDownDash className="w-7 h-7 text-muted-foreground hover:text-primary transition-colors duration-200" />
+                <ArrowBigDownDash className="w-7 h-7 text-secondary hover:text-primary transition-colors duration-200" />
             </a>
             <a download aria-label="Download Resume">
-                <Volume2 className="w-7 h-7 text-muted-foreground hover:text-primary transition-colors duration-200" />
+                <Volume2 className="w-7 h-7 text-secondary hover:text-primary transition-colors duration-200" />
             </a>
         </div>
     )

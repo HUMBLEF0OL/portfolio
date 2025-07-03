@@ -1,49 +1,55 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import Avatar from '@/assets/profile.jpg'
 import { SquareUser } from 'lucide-react'
+import Barcode from 'react-barcode'
+import { useTheme } from 'next-themes'
 
 const About = () => {
-    return (
-        <div className='w-[100%] relative h-fit flex items-center justify-between border-y-[8px] bg-card text-foreground p-[56px] rounded-xs'>
-            <div className='absolute -top-[72px] px-4 py-2 left-10 w-fit border-[8px] border-b-card rounded-tl-lg rounded-tr-lg bg-card  flex items-center justify-center gap-4'>
-                <SquareUser strokeWidth={3} size={30} />
-                <h1 className='text-4xl font-bold'>About Me</h1>
-            </div>
-            <div className='flex items-center justify-center p-4 rounded-xl'>
-                <div className='w-[550px] flex flex-col items-center justify-center p-4 border-[4px] shadow-[10px_10px_0px_0px_theme(colors.muted-foreground)] rounded-lg'>
-                    <p className='text-sm font-bold leading-relaxed text-justify p-4'>
-                        Hey there, I'm a Frontend Engineer wired for the web and tuned into the future. I code with flair, blending crisp logic and pixel-perfect style like it's the golden age of tech. React, Next.js, and sleek JavaScript are my synths of choice, and I jam out clean, responsive, and blazing-fast interfaces.                    </p>
-                    <p className='text-sm font-bold leading-relaxed text-justify p-4'>
-                        Fueled by neon gradients, gridlines, and a love for seamless UX, I bring a bold visual rhythm to everything I build. I believe good code is like a vintage arcade—simple, sharp, and unforgettable.                    </p>
+    const totalCols = 20;
+    const totalRows = 6;
+    const centerCol = Math.floor(totalCols / 2);
 
-                    <p className='text-sm font-bold leading-relaxed text-justify p-4'>Always curious, always creating—riding the wave where design meets tech. Whether I’m crafting a sleek interface or fine-tuning a UI animation, I treat every detail like it’s part of a bigger visual symphony. Accessibility, performance, and aesthetics go hand-in-hand in my workflow, and I constantly explore new tools and patterns that push the edge of frontend innovation.</p>
-                    <p className='text-sm font-black leading-relaxed text-primary text-justify p-4'>
-                        Always curious, always creating—riding the wave where design meets tech.
-                    </p>
-                </div>
-                <div className='flex flex-col items-center justify-center gap-8 p-4 -ml-[10px]'>
-                    <p className='text-lg font-semibold p-4 w-[285px] border-2 border-border bg-secondary text-primary-foreground rounded-md text-center shadow-[6px_6px_0px_0px_theme(colors.muted-foreground)] hover:shadow-[8px_8px_0px_0px_theme(colors.muted-foreground)] transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px]'>
-                        Philosophy Seeker
-                    </p>
-                    <p className='text-lg font-semibold p-4 w-[285px] border-2 border-border bg-secondary text-primary-foreground rounded-md text-center shadow-[6px_6px_0px_0px_theme(colors.muted-foreground)] hover:shadow-[8px_8px_0px_0px_theme(colors.muted-foreground)] transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px]'>
-                        Interface Artist
-                    </p>
-                    <p className='text-lg font-semibold p-4 w-[285px] border-2 border-border bg-secondary text-primary-foreground rounded-md text-center shadow-[6px_6px_0px_0px_theme(colors.muted-foreground)] hover:shadow-[8px_8px_0px_0px_theme(colors.muted-foreground)] transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px]'>
-                        Hardcore Gamer
-                    </p>
-                    <p className='text-lg font-semibold p-4 w-[285px] border-2 border-border bg-secondary text-primary-foreground rounded-md text-center shadow-[6px_6px_0px_0px_theme(colors.muted-foreground)] hover:shadow-[8px_8px_0px_0px_theme(colors.muted-foreground)] transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px]'>
-                        Music Addict
-                    </p>
-                    <p className='text-lg font-semibold p-4 w-[285px] border-2 border-border bg-secondary text-primary-foreground rounded-md text-center shadow-[6px_6px_0px_0px_theme(colors.muted-foreground)] hover:shadow-[8px_8px_0px_0px_theme(colors.muted-foreground)] transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px]'>
-                        Deep Thinker
-                    </p>
-                </div>
+    const { theme } = useTheme();
+
+    return (
+        <div className='bg-primary w-full flex item-center justify-center'>
+            {/* <div className="relative before:content-[''] before:absolute before:top-0 before:left-[10px] before:w-[100%] before:h-px before:bg-background">
+                Your content
+            </div> */}
+
+
+
+            <div className="relative w-2xl flex flex-col gap-[20px] p-[40px] items-center my-[40px]">
+
+                <span className="absolute top-0 left-0 w-[40px] h-[2px] bg-background z-10" />
+                <span className="absolute top-0 left-0 h-[40px] w-[2px] bg-background z-10" />
+
+                {/* Top-right corner - FIXED */}
+                <span className="absolute top-0 right-0 w-[40px] h-[2px] bg-background z-10 -ml-[40px]" />
+                <span className="absolute top-0 right-0 h-[40px] w-[2px] bg-background z-10" />
+
+                {/* Bottom-left corner - FIXED */}
+                <span className="absolute bottom-0 left-0 w-[40px] h-[2px] bg-background z-10" />
+                <span className="absolute bottom-0 left-0 h-[40px] w-[2px] bg-background z-10 -mt-[40px]" />
+
+                {/* Bottom-right corner - FIXED */}
+                <span className="absolute bottom-0 right-0 w-[40px] h-[2px] bg-background z-10 -ml-[40px]" />
+                <span className="absolute bottom-0 right-0 h-[40px] w-[2px] bg-background z-10 -mt-[40px]" />
+
+                <h1 className="text-secondary font-black text-[42px] tracking-wider">ABOUT ME</h1>
+                <p className="text-background font-semibold text-justify">
+                    I navigate the intersection of identity, code, and digital imagination—where every interface is a conversation between human and machine. My world is built in layers: React components, glowing UI patterns, and async flows that pulse like neon circuits. I design with intent, making systems that are both expressive and efficient, drawing inspiration from cyberpunk worlds where design is immersive and alive.
+                </p>
+                <p className="text-background font-semibold text-justify">
+                    Fueled by curiosity and coffee, I thrive where innovation meets aesthetic. Whether I’m engineering dynamic systems or refining pixel-perfect layouts, I focus on the harmony between logic and design. My tools are code, my canvas the browser, and my mission is simple—build experiences that feel electric.                </p>
+                <p className="text-background font-semibold text-justify mb-[20px]">
+                    This isn’t just a portfolio—it’s my grid. A space where creativity, technology, and identity converge. It’s a digital frontier I’ve crafted to explore, experiment, and express. Welcome to my circuit. This is where ideas glow, and interfaces come to life.
+                </p>
+                <Barcode value="HUMBLEFOOL" background={"transparent"} fontOptions='-10' />
             </div>
-            <Image style={{
-                alignSelf: 'center', marginRight: '20px'
-            }} src={Avatar} alt="About Me" width={350} height={350} className="rounded-lg border-border border-6" />
-        </div>
+        </div >
     )
 }
 
