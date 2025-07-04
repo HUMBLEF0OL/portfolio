@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Divider } from './Divider';
 import { useTheme } from 'next-themes';
+import { BottomRight } from './AngularFrame';
 
 const HomeComponent = () => {
     const { theme } = useTheme();
@@ -49,17 +50,12 @@ const HomeComponent = () => {
                 </div>
 
                 <div className='flex gap-[20px]'>
-                    <Button className='relative angular-b-bg' variant={'outline'} size={'xl'}>
-                        <span
-                            className="absolute bottom-0 right-0 w-[12px] h-[12px] z-10 bg-primary"
-                            style={{
-                                clipPath: 'polygon(100% 100%, 0% 100%, 100% 0%)',
-                            }}
-                        />
+                    <Button className='relative angular-br-lg' variant={'outline'} size={'xl'}>
+                        <BottomRight />
                         Skill Matrix
 
                     </Button>
-                    <Button className='angular-b-bg' size={'xl'}> Project Archives</Button>
+                    <Button className='angular-br-lg' size={'xl'}> Project Archives</Button>
                 </div>
             </div>
         </div >

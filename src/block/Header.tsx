@@ -4,6 +4,7 @@ import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, Dr
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { ArrowBigDown, ArrowBigDownDash, Download, Github, Linkedin, Menu, Volume2 } from 'lucide-react'
 import React, { useState } from 'react'
+import { TopLeft } from './AngularFrame'
 
 
 const navLinks = [
@@ -108,12 +109,7 @@ const Header = () => {
 
                 <ul className="hidden lg:flex items-center bg-black/40 backdrop-blur-sm h-[40px] border-[1px] border-[1px] border-primary angular-tl-br-lg">
                     <>
-                        <span
-                            className="absolute top-0 left-0 w-[12px] h-[12px] z-10 bg-primary"
-                            style={{
-                                clipPath: 'polygon(0% 0%, 100% 0%, 0% 100%)',
-                            }}
-                        />
+                        <TopLeft />
                         <div className='w-[16px] h-full' />
 
 
@@ -154,7 +150,7 @@ const Header = () => {
                                 </div>
                             </SelectContent>
                         </Select>
-                        <Button className="relative h-full px-[30px] py-2 angular-bottom-lg">
+                        <Button className="relative h-full px-[30px] py-2 angular-br-md">
                             Contact
                         </Button>
 
@@ -187,12 +183,7 @@ const Header = () => {
                         <DrawerFooter className='px-[40px]'>
                             <NavIcons classStyle='flex items-center justify-between px-4 mb-6' />
                             <div className='relative flex flex-row gap-4 angular-tl-br-lg'>
-                                <span
-                                    className="absolute top-0 left-0 w-[12px] h-[12px] z-10 bg-primary"
-                                    style={{
-                                        clipPath: 'polygon(0% 0%, 100% 0%, 0% 100%)',
-                                    }}
-                                />
+                                <TopLeft />
                                 <Button className='flex-1'>Contact Me</Button>
                                 <DrawerClose >
                                     <Button className='flex-1' variant={'secondary'}>Close</Button>

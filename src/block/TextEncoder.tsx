@@ -6,16 +6,17 @@ const scrambleChars = '!@#$%^&*()_+[]{}|;:,./<>?~`1234567890ABCDEFGHIJKLMNOPQRST
 interface TextEncoderProps {
     text: string;
     className?: string;
+    type?: "original" | "scambled"
 }
 
-const TextEncoder: React.FC<TextEncoderProps> = ({ text, className = '' }) => {
+const TextEncoder: React.FC<TextEncoderProps> = ({ text, className = '', type = "original" }) => {
     const [displayText, setDisplayText] = useState('');
     const [isRevealed, setIsRevealed] = useState(false);
 
     useEffect(() => {
         let timeouts: NodeJS.Timeout[] = [];
 
-        if (!isRevealed) {
+        if (type === "original" ? !isRevealed : isRevealed) {
             // Reveal animation - character by character
             const revealChars = () => {
                 for (let i = 0; i < text.length; i++) {

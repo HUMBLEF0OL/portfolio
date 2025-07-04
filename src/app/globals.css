@@ -259,25 +259,85 @@ html::-webkit-scrollbar {
 }
 
 @layer utilities {
-  .angular-b-lg {
-    /* top-left angle */
+
+  /* Single Corner Angles */
+  .angular-tl-lg {
     clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 12px);
   }
 
-  .angular-tl-br-lg {
-    /* top-left and bottom-right */
-    clip-path: polygon(12px 0%,
-        100% 0%,
-        100% calc(100% - 12px),
-        calc(100% - 12px) 100%,
-        0% 100%,
-        0% 12px);
+  .angular-tr-lg {
+    clip-path: polygon(0% 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, 0% 100%);
   }
 
-  .angular-b-bg {
-    /* bottom-right angle */
+  .angular-bl-lg {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 12px 100%, 0% calc(100% - 12px));
+  }
+
+  .angular-br-lg {
     clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%);
-
   }
 
+  /* Two Corner Combinations */
+  .angular-tl-tr-lg {
+    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, 0% 100%, 0% 12px);
+  }
+
+  .angular-tl-bl-lg {
+    clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+  }
+
+  .angular-tl-br-lg {
+    clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
+  }
+
+  .angular-tr-bl-lg {
+    clip-path: polygon(0% 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, 12px 100%, 0% calc(100% - 12px));
+  }
+
+  .angular-tr-br-lg {
+    clip-path: polygon(0% 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%);
+  }
+
+  .angular-bl-br-lg {
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
+  }
+
+  /* Three Corner Combinations */
+  .angular-tl-tr-bl-lg {
+    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+  }
+
+  .angular-tl-tr-br-lg {
+    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
+  }
+
+  .angular-tl-bl-br-lg {
+    clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+  }
+
+  .angular-tr-bl-br-lg {
+    clip-path: polygon(0% 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
+  }
+
+  /* All Four Corners */
+  .angular-all-lg {
+    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+  }
+
+  /* Bonus: Different Size Variants */
+  .angular-tl-tr-sm {
+    clip-path: polygon(6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% 100%, 0% 100%, 0% 6px);
+  }
+
+  .angular-tl-tr-xl {
+    clip-path: polygon(20px 0%, calc(100% - 20px) 0%, 100% 20px, 100% 100%, 0% 100%, 0% 20px);
+  }
+
+  .angular-tl-br-xl {
+    clip-path: polygon(36px 0%, 100% 0%, 100% calc(100% - 36px), calc(100% - 36px) 100%, 0% 100%, 0% 36px);
+  }
+
+  .angular-br-md {
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%);
+  }
 }

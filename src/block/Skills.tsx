@@ -3,14 +3,15 @@ import React from 'react'
 import TextEncoder from './TextEncoder';
 import Background from '@/assets/grid-bg.jpg'
 import Image from 'next/image';
+import { BottomRight, TopLeft } from './AngularFrame';
 const skillSet = {
-    Languages: [
+    __lang_stack__: [
         "JavaScript",
         "TypeScript",
         "Java",
         "SQL"
     ],
-    Frameworks_Libraries: [
+    __frameworks_libraries__: [
         "React.js",
         "Next.js",
         "Node.js",
@@ -20,7 +21,7 @@ const skillSet = {
         "Tailwind CSS",
         "Jest"
     ],
-    Web_Technologies: [
+    __web_protocols__: [
         "HTML5",
         "CSS3 / SCSS",
         "REST APIs",
@@ -29,14 +30,14 @@ const skillSet = {
         "i18n",
         "WebSockets"
     ],
-    Tools: [
+    __dev_tools__: [
         "Git",
         "Postman",
         "Lighthouse",
         "Jira",
         "Google Analytics"
     ],
-    Practices: [
+    __best_practices__: [
         "Web Performance Optimization",
         "Accessibility (WCAG)",
         "SEO",
@@ -44,8 +45,6 @@ const skillSet = {
         "Agile / Scrum"
     ]
 };
-
-
 
 
 const Skills = () => {
@@ -70,24 +69,14 @@ const Skills = () => {
                     Object.entries(skillSet).map(([category, skills]) => (
                         <div key={category} className="w-full max-w-5xl">
                             <div className="flex gap-1 text-highlight text-xl uppercase tracking-widest mb-2">
-                                <p className='animate-pulse [animation-duration:1s]'>▌</p> <h2>{category}</h2>
+                                <p className='animate-pulse [animation-duration:1s]'>▌</p> <h2><TextEncoder className='lowercase' text={category} /></h2>
                             </div>
                             <div className="flex flex-wrap gap-[24px] pl-[40px]">
                                 {skills.map(skill => (
                                     <div className="relative angular-tl-br-lg w-fit px-[36px] py-[10px] border-1" key={skill}>
-                                        <span
-                                            className="absolute top-0 left-0 w-[12px] h-[12px] z-10 bg-primary"
-                                            style={{
-                                                clipPath: 'polygon(0% 0%, 100% 0%, 0% 100%)',
-                                            }}
-                                        />
-                                        <p className="text-[20px]"><TextEncoder text={skill} /></p>
-                                        <span
-                                            className="absolute bottom-0 right-0 w-[12px] h-[12px] z-10 bg-primary"
-                                            style={{
-                                                clipPath: 'polygon(100% 100%, 0% 100%, 100% 0%)',
-                                            }}
-                                        />
+                                        <TopLeft />
+                                        <p className="text-[20px]">{skill}</p>
+                                        <BottomRight />
                                     </div>
                                 ))}
                             </div>
@@ -95,7 +84,9 @@ const Skills = () => {
                     ))
                 }
             </div>
-            <p className='self-center mt-[20px] uppercase text-highlight text-[20px]'>Circuit calibration complete. All capabilities fully operational</p>
+            <p className='self-center mt-[20px] uppercase text-highlight text-[20px]'>
+                <TextEncoder text='Circuit calibration complete. All capabilities fully operational' type='scambled' />
+            </p>
 
         </div >
     )

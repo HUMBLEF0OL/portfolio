@@ -26,15 +26,12 @@ const About = () => {
                 <span className="absolute top-0 left-0 w-[40px] h-[2px] bg-background z-10" />
                 <span className="absolute top-0 left-0 h-[40px] w-[2px] bg-background z-10" />
 
-                {/* Top-right corner - FIXED */}
                 <span className="absolute top-0 right-0 w-[40px] h-[2px] bg-background z-10 -ml-[40px]" />
                 <span className="absolute top-0 right-0 h-[40px] w-[2px] bg-background z-10" />
 
-                {/* Bottom-left corner - FIXED */}
                 <span className="absolute bottom-0 left-0 w-[40px] h-[2px] bg-background z-10" />
                 <span className="absolute bottom-0 left-0 h-[40px] w-[2px] bg-background z-10 -mt-[40px]" />
 
-                {/* Bottom-right corner - FIXED */}
                 <span className="absolute bottom-0 right-0 w-[40px] h-[2px] bg-background z-10 -ml-[40px]" />
                 <span className="absolute bottom-0 right-0 h-[40px] w-[2px] bg-background z-10 -mt-[40px]" />
 
