@@ -3,86 +3,9 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel'
 import Image from 'next/image';
 import React from 'react'
-import { BottomRight, TopLeft } from './AngularFrame';
-
-const projects = [
-    {
-        heading: "Felis - AI Research Chatbot",
-        subtitle: "Personalized AI assistant built for academic and emotional companionship",
-        body: `Felis is an AI-powered research assistant designed specifically for a research scholar. It blends personal and professional utility, offering advanced RAG-based capabilities through LangChain. It supports contextual document retrieval, interactive conversations, and memory-based responses—all wrapped in a highly personalized UI experience.`,
-        image: "https://cdnb.artstation.com/p/assets/images/images/026/533/843/large/artemis-linz-vrproject-08-05-2020-13-01-06.jpg?1589029662", // placeholder path
-        skills: [
-            "Next.js App Router",
-            "ShadCN UI",
-            "Tailwind CSS",
-            "LangChain",
-            "Supabase",
-            "React Spring"
-        ],
-        link: {
-            live: null, // private project
-            github: null // private repo
-        },
-        private: true,
-        theme: "love/dark/academic"
-    },
-    {
-        heading: "Disposable Email Inbox",
-        subtitle: "A privacy-first, no-signup email tool like MinuteInbox",
-        body: `Built to help users receive disposable emails without login. This project involves a full-stack architecture with custom SMTP handling, dynamic inbox generation, and message retrieval in real-time. Ideal for testing or anonymous registrations.`,
-        image: "https://cdnb.artstation.com/p/assets/images/images/026/533/843/large/artemis-linz-vrproject-08-05-2020-13-01-06.jpg?1589029662",
-        skills: [
-            "Next.js",
-            "Tailwind CSS",
-            "Node.js",
-            "Express",
-            "SMTP",
-            "Socket.io"
-        ],
-        link: {
-            live: null,
-            github: "https://github.com/your-username/disposable-inbox" // adjust as needed
-        },
-        private: false
-    },
-    {
-        heading: "Smart Email Generator",
-        subtitle: "Context-aware AI tool for email drafting",
-        body: `A lightweight AI-powered tool that helps users auto-generate professional and context-specific emails using JavaScript and generative AI models. Designed for productivity and minimal user input.`,
-        image: "https://cdnb.artstation.com/p/assets/images/images/026/533/843/large/artemis-linz-vrproject-08-05-2020-13-01-06.jpg?1589029662",
-        skills: [
-            "JavaScript",
-            "OpenAI API",
-            "Prompt Engineering",
-            "HTML/CSS"
-        ],
-        link: {
-            live: "https://youremailgen.live", // if available
-            github: "https://github.com/your-username/smart-email-generator"
-        },
-        private: false
-    },
-    {
-        heading: "Modular ERP System",
-        subtitle: "An end-to-end ERP solution for growing businesses",
-        body: `A freelancing project built to streamline operations for small businesses. The system includes modules for inventory, billing, user roles, reporting, and more. Designed with performance, modularity, and customization in mind.`,
-        image: "https://cdnb.artstation.com/p/assets/images/images/026/533/843/large/artemis-linz-vrproject-08-05-2020-13-01-06.jpg?1589029662",
-        skills: [
-            "Next.js",
-            "Redux Toolkit",
-            "Tailwind CSS",
-            "Node.js",
-            "AWS",
-            "REST API",
-            "Responsive Design"
-        ],
-        link: {
-            live: null,
-            github: null
-        },
-        private: true
-    }
-];
+import { BottomLeft, BottomRight, TopLeft, TopRight } from './AngularFrame';
+import { Button } from '@/components/ui/button';
+import ProjectData from '@/data/project.json'
 
 
 
@@ -103,7 +26,7 @@ const Projects = () => {
             >
                 <CarouselContent className="-mt-1 h-[500px]">
                     {
-                        projects.map((project, index) => {
+                        ProjectData.map((project, index) => {
                             return (
                                 <CarouselItem key={index} className='pt-1 h-full rounded-none'>
                                     <div className='relative angular-tl-br-xl w-full h-full'>
@@ -112,19 +35,64 @@ const Projects = () => {
                                         <Image
                                             src={project.image}
                                             fill
+
                                             alt='project-image'
-                                            className='brightness-50'
+                                            className='brightness-20'
                                         />
                                         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
                                         <Card className='w-full h-full flex flex-col justify-between'>
-                                            <CardHeader className='z-10'>{project.heading}</CardHeader>
+                                            <CardHeader className='z-10'>
+                                                <div className='flex flex-col gap-0'>
+                                                    <h2 className='text-end text-[24px] font-medium tracking-wide'>{project.title}</h2>
+                                                    <h4 className='text-end'>{project.subtitle}</h4>
+
+                                                </div>
+                                            </CardHeader>
                                             <div className='flex flex-col gap-0'>
-                                                <CardContent className="flex self-end items-center justify-center px-6 z-10">
-                                                    <span className="text-sm  z-10">{project.body}</span>
+                                                <CardContent className="flex flex-col gap-4 justify-center px-6 z-10 mb-4">
+                                                    <span className="text-sm  z-10">{project.description}</span>
+                                                    <div className='flex gap-2 justify-start'>
+                                                        {
+                                                            project.techStack.map(skill => (
+                                                                <div className='relative px-4 py-1 border border-highlight angular-all-sm'>
+                                                                    <TopLeft width={6} height={6} className='bg-highlight' />
+                                                                    <TopRight width={6} height={6} className='bg-highlight' />
+                                                                    <BottomLeft width={6} height={6} className='bg-highlight' />
+                                                                    <BottomRight width={6} height={6} className='bg-highlight' />
+                                                                    <p className='text-highlight'> {skill}</p>
+                                                                </div>
+                                                            ))
+                                                        }
+                                                    </div>
 
                                                 </CardContent>
-                                                <CardFooter className='z-10'>Test</CardFooter>
+                                                <CardFooter className='z-10'>{
+                                                    project.isPrivate ? <div>
+                                                        <div className='px-4 py-2 bg-destructive brightness-50 relative angular-br-lg'>
+                                                            <BottomRight />
+                                                            <p className=''>PRIVATE</p>
+                                                        </div>
+                                                    </div> : <div className='flex gap-2'>
+                                                        {project?.link && <Button
+                                                            variant={'link'}
+                                                            className='hover:cursor-pointer'
+                                                            onClick={() => {
+                                                                window.open(project.link, "_blank")
+                                                            }}
+                                                        >Live</Button>}
+                                                        {project?.github && <Button
+                                                            variant={'outline'}
+                                                            className='relative hover:cursor-pointer angular-br-lg'
+                                                            onClick={() => {
+                                                                window.open(project.github, "_blank")
+                                                            }}
+                                                        >
+                                                            <BottomRight />
+                                                            <p>Github</p>
+                                                        </Button>}
+                                                    </div>
+                                                }</CardFooter>
                                             </div>
                                         </Card>
                                     </div>
