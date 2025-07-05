@@ -1,5 +1,6 @@
 import About from "@/block/About";
 import { Divider } from "@/block/Divider";
+import Experience from "@/block/Experience";
 import HomeComponent from "@/block/Home";
 import Projects from "@/block/Projects";
 import Skills from "@/block/Skills";
@@ -13,17 +14,27 @@ export default function Home() {
 
       <Divider variant='type2' />
       <About />
-      <div className="flex relative self-start">
+      {/* <div className="flex relative self-start">
         <p className="absolute -top-[0px] left-0 w-fit bg-background">/// SKILLS.MODULE</p>
         <br />
         <p className=" top-[20px] left-0 absolute">loading...</p>
         <div className="mt-[5px]">
           <Divider variant="type1" />
         </div>
-      </div>
+      </div> */}
       <Skills />
       <Divider variant="type2" />
       <Projects />
+      {/* <div className="flex relative self-start">
+        <p className="absolute -top-[0px] left-0 w-fit bg-background">/// XP.MODULE</p>
+        <br />
+        <p className=" top-[20px] left-0 absolute">loading...</p>
+        <div className="mt-[5px]">
+          <Divider variant="type1" />
+        </div>
+      </div>       */}
+      <Experience />
+
 
     </div>
   );

@@ -1,8 +1,5 @@
 "use client"
-import Image from 'next/image'
 import React from 'react'
-import Avatar from '@/assets/profile.jpg'
-import { SquareUser } from 'lucide-react'
 import Barcode from 'react-barcode'
 import { useTheme } from 'next-themes'
 

@@ -341,7 +341,15 @@ html::-webkit-scrollbar {
     clip-path: polygon(36px 0%, 100% 0%, 100% calc(100% - 36px), calc(100% - 36px) 100%, 0% 100%, 0% 36px);
   }
 
+  .angular-tr-bl-xl {
+    clip-path: polygon(0% 0%, calc(100% - 36px) 0%, 100% 36px, 100% 100%, 36px 100%, 0% calc(100% - 36px));
+  }
+
   .angular-br-md {
     clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%);
+  }
+
+  .angular-bl-2xl {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 56px 100%, 0% calc(100% - 56px));
   }
 }
