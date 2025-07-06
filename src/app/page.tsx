@@ -1,6 +1,8 @@
 import About from "@/block/About";
+import Contact from "@/block/Contact";
 import { Divider } from "@/block/Divider";
 import Experience from "@/block/Experience";
+import CyberpunkFooter from "@/block/Footer";
 import HomeComponent from "@/block/Home";
 import Projects from "@/block/Projects";
 import Skills from "@/block/Skills";
@@ -34,7 +36,8 @@ export default function Home() {
         </div>
       </div>       */}
       <Experience />
-
+      <Divider variant="type2" />
+      <Contact />
 
     </div>
   );
