@@ -12,8 +12,8 @@ import { BottomRight } from './AngularFrame';
 const HomeComponent = () => {
     const { theme } = useTheme();
     return (
-        <div className='flex justify-between w-[75%] items-center h-screen gap-[40px]'>
-            <div className="relative w-[400px] h-[400px]">
+        <div className='flex flex-col lg:flex-row justify-center lg:justify-between w-full lg:w-[75%] items-center h-screen gap-[40px]'>
+            <div className="relative w-[350px] h-[350px] md:w-[400px] md:h-[400px]">
                 {/* The avatar image */}
                 <Image
                     src={theme === "dark" ? AvatarTron : AvatarPunk}
@@ -36,20 +36,20 @@ const HomeComponent = () => {
             </div>
 
 
-            <div className='flex flex-col gap-[60px]'>
+            <div className='flex flex-col gap-[60px] px-[20px]'>
                 <div className='flex flex-col gap-[20px] max-w-xl'>
                     <p
-                        className='text-[42px] font-black glitch-hover text-highlight'
+                        className='text-[30px] md:text-[42px] font-black glitch text-highlight'
                         data-text="Welcome to the Grid"
                     >
                         Welcome to the Grid
                     </p>
-                    <p >
+                    <p className='text-justify'>
                         The Grid. A digital frontier. Neon circuits power systems built from logic, but shaped by creativity. It’s a space where identity is written in code and ideas evolve with every keystroke. Glitches don’t break things — they reveal them. This isn’t just a network; it’s a reflection of human imagination.
                     </p>
                 </div>
 
-                <div className='flex gap-[20px]'>
+                <div className='flex flex-col lg:flex-row gap-[20px]'>
                     <Button className='relative angular-br-lg' variant={'outline'} size={'xl'}>
                         <BottomRight />
                         Skill Matrix

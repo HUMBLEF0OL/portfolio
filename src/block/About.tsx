@@ -2,48 +2,50 @@
 import React from 'react'
 import Barcode from 'react-barcode'
 import { useTheme } from 'next-themes'
+import CyberIDCard from './CyberId'
 
 const About = () => {
-    const totalCols = 20;
-    const totalRows = 6;
-    const centerCol = Math.floor(totalCols / 2);
 
     const { theme } = useTheme();
 
     return (
-        <div className='bg-primary w-full flex item-center justify-center'>
-            {/* <div className="relative before:content-[''] before:absolute before:top-0 before:left-[10px] before:w-[100%] before:h-px before:bg-background">
-                Your content
-            </div> */}
+        <section className='bg-primary w-full flex flex-col gap-8 lg:flex-row item-center justify-center px-4 py-8 -mt-[1px]'>
+            <CyberIDCard />
+            <div className='flex items-center max-w-2lg'>
+                <div className="relative w-fit flex flex-col gap-[20px] p-[20px] md:p-[40px] items-center">
+
+                    <span className="absolute top-0 left-0 w-[40px] h-[2px] bg-background z-10" />
+                    <span className="absolute top-0 left-0 h-[40px] w-[2px] bg-background z-10" />
+
+                    <span className="absolute top-0 right-0 w-[40px] h-[2px] bg-background z-10 -ml-[40px]" />
+                    <span className="absolute top-0 right-0 h-[40px] w-[2px] bg-background z-10" />
+
+                    <span className="absolute bottom-0 left-0 w-[40px] h-[2px] bg-background z-10" />
+                    <span className="absolute bottom-0 left-0 h-[40px] w-[2px] bg-background z-10 -mt-[40px]" />
+
+                    <span className="absolute bottom-0 right-0 w-[40px] h-[2px] bg-background z-10 -ml-[40px]" />
+                    <span className="absolute bottom-0 right-0 h-[40px] w-[2px] bg-background z-10 -mt-[40px]" />
 
 
+                    <h1 className="text-secondary font-black text-[30px] lg:text-[42px] tracking-wider uppercase">Identity Log</h1>
+                    <p className="text-background font-semibold text-justify">
+                        I build at the intersection of identity, code, and imagination, where every component is a signal in the constant exchange between human and machine. My work is modular, reactive, and wired with intent like circuits pulsing through a living interface.                    </p>
+                    <p className="text-background font-semibold text-justify">
+                        I design systems that feel alive. Every pixel has a reason to exist. Every animation is a conversation. Whether it’s React, Tailwind, shaders, or state machines, my tools shape responsive, immersive experiences that feel as much as they function.                    </p>
+                    <p className="text-background font-semibold text-justify mb-[20px]">
+                        This isn’t just a portfolio. It’s a grid. A reflection of how I think, create, and connect. A space where creativity flows like data and interfaces hum with energy.
+                    </p>
+                    <p className='text-background font-bold text-[20px] text-right self-start'>I’m HUMBLEF0OL—welcome to my circuit.</p>
 
-            <div className="relative w-2xl flex flex-col gap-[20px] p-[40px] items-center my-[40px]">
+                    <div className="w-full flex flex-col items-end mt-6 text-xs text-muted-foreground font-mono tracking-wide gap-1">
+                        <span className="text-background/70">LAT: 28.5143629° N | LONG: 77.0730087° E</span>
+                        <span className="text-background/70">GRID: SECTOR-21E / SYS-ID: HUMBLEF0OL</span>
+                    </div>
 
-                <span className="absolute top-0 left-0 w-[40px] h-[2px] bg-background z-10" />
-                <span className="absolute top-0 left-0 h-[40px] w-[2px] bg-background z-10" />
+                </div>
 
-                <span className="absolute top-0 right-0 w-[40px] h-[2px] bg-background z-10 -ml-[40px]" />
-                <span className="absolute top-0 right-0 h-[40px] w-[2px] bg-background z-10" />
-
-                <span className="absolute bottom-0 left-0 w-[40px] h-[2px] bg-background z-10" />
-                <span className="absolute bottom-0 left-0 h-[40px] w-[2px] bg-background z-10 -mt-[40px]" />
-
-                <span className="absolute bottom-0 right-0 w-[40px] h-[2px] bg-background z-10 -ml-[40px]" />
-                <span className="absolute bottom-0 right-0 h-[40px] w-[2px] bg-background z-10 -mt-[40px]" />
-
-                <h1 className="text-secondary font-black text-[42px] tracking-wider">ABOUT ME</h1>
-                <p className="text-background font-semibold text-justify">
-                    I navigate the intersection of identity, code, and digital imagination—where every interface is a conversation between human and machine. My world is built in layers: React components, glowing UI patterns, and async flows that pulse like neon circuits. I design with intent, making systems that are both expressive and efficient, drawing inspiration from cyberpunk worlds where design is immersive and alive.
-                </p>
-                <p className="text-background font-semibold text-justify">
-                    Fueled by curiosity and coffee, I thrive where innovation meets aesthetic. Whether I’m engineering dynamic systems or refining pixel-perfect layouts, I focus on the harmony between logic and design. My tools are code, my canvas the browser, and my mission is simple—build experiences that feel electric.                </p>
-                <p className="text-background font-semibold text-justify mb-[20px]">
-                    This isn’t just a portfolio—it’s my grid. A space where creativity, technology, and identity converge. It’s a digital frontier I’ve crafted to explore, experiment, and express. Welcome to my circuit. This is where ideas glow, and interfaces come to life.
-                </p>
-                <Barcode value="HUMBLEFOOL" background={"transparent"} fontOptions='-10' />
             </div>
-        </div >
+        </section >
     )
 }
 

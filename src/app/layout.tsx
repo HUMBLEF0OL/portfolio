@@ -40,7 +40,7 @@ export default function RootLayout({
         >
           <div className="flex flex-col items-center gap-4 justify-between min-h-screen w-full">
             <Header />
-            <main className="flex-1 w-full max-w-[100%] px-4 sm:px-6 md:px-0 flex flex-col items-center justify-start">
+            <main className="flex-1 w-full max-w-[100%] flex flex-col items-center justify-start">
               {children}
             </main>
             <Footer />

@@ -11,7 +11,7 @@ export const Divider: React.FC<DividerProps> = ({ variant }) => {
     if (variant === "type1") {
         return (
             <svg
-                width={1920}
+                width={'100%'}
                 height={48}
                 viewBox="0 0 1920 48"
                 fill="none"
@@ -41,8 +41,8 @@ export const Divider: React.FC<DividerProps> = ({ variant }) => {
 
     return (
         <svg
-            width={1920}
-            height={23}
+            width={'100%'}
+            height={'100%'}
             viewBox="0 0 1920 23"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

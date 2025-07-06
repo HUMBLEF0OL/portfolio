@@ -82,16 +82,16 @@ const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
     return (
         <div className={classStyle}>
             <a href="https://github.com/HUMBLEF0OL" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="w-7 h-7 text-secondary hover:text-primary transition-colors duration-200" />
+                <Github className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
             </a>
             <a href="https://www.linkedin.com/in/amit-rana-711169183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="w-7 h-7 text-secondary hover:text-primary transition-colors duration-200" />
+                <Linkedin className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
             </a>
             <a href="/resume.pdf" download aria-label="Download Resume">
-                <ArrowBigDownDash className="w-7 h-7 text-secondary hover:text-primary transition-colors duration-200" />
+                <ArrowBigDownDash className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
             </a>
             <a download aria-label="Download Resume">
-                <Volume2 className="w-7 h-7 text-secondary hover:text-primary transition-colors duration-200" />
+                <Volume2 className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
             </a>
         </div>
     )
@@ -102,61 +102,60 @@ const Header = () => {
     const [selectedLanguage, setSelectedLanguage] = useState('en');
     return (
         <header
-            className='fixed top-0 left-0 h-[60px] w-full z-50 bg-transparent px-[40px]'
+            className=' top-0 left-0 h-[60px] w-full z-50 bg-transparent px-[40px]'
         >
-            <nav className="flex items-end h-full w-full justify-between">
-                <NavIcons classStyle='hidden lg:inline-flex items-center gap-8' />
-
-                <ul className="hidden lg:flex items-center bg-black/40 backdrop-blur-sm h-[40px] border-[1px] border-[1px] border-primary angular-tl-br-lg">
-                    <>
-                        <TopLeft />
-                        <div className='w-[16px] h-full' />
+            <ul className="hidden fixed top-[20px] right-[40px] lg:flex items-center bg-black/40 backdrop-blur-sm h-[40px] border-[1px] border-[1px] border-primary angular-tl-br-lg">
+                <>
+                    <TopLeft />
+                    <div className='w-[16px] h-full' />
 
 
-                        {navLinks.map((link, index) => (
-                            <li key={link.name} className="relative">
-                                <a
-                                    href={link.href}
-                                    className={`
+                    {navLinks.map((link, index) => (
+                        <li key={link.name} className="relative">
+                            <a
+                                href={link.href}
+                                className={`
                     block text-highlight font-semibold uppercase tracking-wide text-sm
                     py-[10px] px-[20px] 
                     hover:bg-foreground hover:text-background
                 `}
-                                >
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
-                        <Select onValueChange={(value) => {
-                            setSelectedLanguage(value);
-                        }} value={selectedLanguage}>
-                            <SelectTrigger className="w-fit text-highlight! h-[40px]! font-semibold! uppercase! tracking-wide! text-sm!">
-                                <SelectValue >{selectedLanguage}</SelectValue>
-                            </SelectTrigger>
-                            <SelectContent
-                                className='h-[200px] w-[300px] flex flex-col wrap bg-black/40 backdrop-blur-sm flex py-4 border-t-[4px] -mt-[5px] px-0'
                             >
-                                <div className="grid grid-cols-2 gap-2">
-                                    {languages.map((item) => (
-                                        <SelectItem
-                                            key={item.code}
-                                            value={item.code}
-                                            className="relative w-full text-highlight focus:bg-transparent p-0!"
-                                        >
-                                            <span className="absolute top-1/2 -left-1 w-[12px] h-[2px] bg-primary group-hover:bg-primary rounded-full transition-all duration-200 -translate-y-1/2" />
-                                            <span className="text-sm text-highlight uppercase ml-[16px] hover:text-primary">{item.name}</span>
-                                        </SelectItem>
-                                    ))}
-                                </div>
-                            </SelectContent>
-                        </Select>
-                        <Button className="relative h-full px-[30px] py-2 angular-br-md">
-                            Contact
-                        </Button>
+                                {link.name}
+                            </a>
+                        </li>
+                    ))}
+                    <Select onValueChange={(value) => {
+                        setSelectedLanguage(value);
+                    }} value={selectedLanguage}>
+                        <SelectTrigger className="w-fit text-highlight! h-[40px]! font-semibold! uppercase! tracking-wide! text-sm!">
+                            <SelectValue >{selectedLanguage}</SelectValue>
+                        </SelectTrigger>
+                        <SelectContent
+                            className='h-[200px] w-[300px] flex flex-col wrap bg-black/40 backdrop-blur-sm flex py-4 border-t-[4px] -mt-[5px] px-0'
+                        >
+                            <div className="grid grid-cols-2 gap-2">
+                                {languages.map((item) => (
+                                    <SelectItem
+                                        key={item.code}
+                                        value={item.code}
+                                        className="relative w-full text-highlight focus:bg-transparent p-0!"
+                                    >
+                                        <span className="absolute top-1/2 -left-1 w-[12px] h-[2px] bg-primary group-hover:bg-primary rounded-full transition-all duration-200 -translate-y-1/2" />
+                                        <span className="text-sm text-highlight uppercase ml-[16px] hover:text-primary">{item.name}</span>
+                                    </SelectItem>
+                                ))}
+                            </div>
+                        </SelectContent>
+                    </Select>
+                    <Button className="relative h-full px-[30px] py-2 angular-br-md">
+                        Contact
+                    </Button>
 
 
-                    </>
-                </ul>
+                </>
+            </ul>
+            <nav className="flex items-end h-full w-full justify-between">
+                <NavIcons classStyle='hidden lg:inline-flex items-center gap-8' />
 
                 <Drawer direction='left'>
                     <DrawerTrigger className='lg:hidden'>

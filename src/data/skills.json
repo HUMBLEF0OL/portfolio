@@ -1,0 +1,41 @@
+{
+    "__lang_stack__": [
+        "JavaScript",
+        "TypeScript",
+        "Java",
+        "SQL"
+    ],
+    "__frameworks_libraries__": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Redux Toolkit",
+        "Zustand",
+        "Material UI",
+        "Tailwind CSS",
+        "Jest"
+    ],
+    "__web_protocols__": [
+        "HTML5",
+        "CSS3 / SCSS",
+        "REST APIs",
+        "Webpack",
+        "PWA",
+        "i18n",
+        "WebSockets"
+    ],
+    "__dev_tools__": [
+        "Git",
+        "Postman",
+        "Lighthouse",
+        "Jira",
+        "Google Analytics"
+    ],
+    "__best_practices__": [
+        "Web Performance Optimization",
+        "Accessibility (WCAG)",
+        "SEO",
+        "Responsive Design",
+        "Agile / Scrum"
+    ]
+}
