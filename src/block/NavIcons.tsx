@@ -69,7 +69,7 @@ export const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
             <a href="https://www.linkedin.com/in/amit-rana-711169183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
             </a>
-            <a href="/resume.pdf" download aria-label="Download Resume">
+            <a href="https://drive.google.com/file/d/1pSx7lojlNdUS6o4eggL7vDlLBVLoCuBd/view" target='_blank' download aria-label="Download Resume">
                 <ArrowBigDownDash className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
             </a>
         </div>

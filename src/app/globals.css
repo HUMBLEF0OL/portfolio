@@ -61,177 +61,161 @@ h6 {
 :root {
   --radius: 0.625rem;
 
-  /* BACKGROUND & TEXT */
-  --background: oklch(0.08 0.02 270);
-  /* Deep dark background like the site */
-  --foreground: oklch(0.94 0.18 102);
-  /* Bright neon yellow text #FFEE08 */
+  /* === CORE BACKGROUND & TEXT === */
+  --background: oklch(0.07 0.04 270);
+  /* Night alley blue */
+  --foreground: oklch(0.98 0.2 102);
+  /* Blazing neon yellow */
 
-  /* CONTAINERS */
-  --card: oklch(0.12 0.03 270);
-  /* Dark card background */
-  --card-foreground: oklch(0.94 0.18 102);
-  /* Neon yellow text on cards #FFEE08 */
+  /* === CONTAINERS === */
+  --card: oklch(0.09 0.04 270);
+  /* Deep violet-gray glass */
+  --card-foreground: var(--foreground);
 
-  --popover: oklch(0.10 0.02 270);
-  /* Slightly lighter dark background */
-  --popover-foreground: oklch(0.94 0.18 102);
-  /* Neon yellow text #FFEE08 */
+  --popover: oklch(0.11 0.05 270);
+  --popover-foreground: var(--foreground);
 
-  /* PRIMARY (NEON YELLOW - FFEE08) */
-  --primary: oklch(0.94 0.18 102);
-  /* Exact cyberpunk yellow #FFEE08 */
-  --primary-foreground: oklch(0.08 0.02 270);
-  /* Dark text on yellow */
+  /* === NEON COLORS === */
 
-  /* SECONDARY (CYBERPUNK RED - FD0130) */
-  --secondary: oklch(0.55 0.24 12);
-  /* Exact cyberpunk red #FD0130 */
-  --secondary-foreground: oklch(0.94 0.18 102);
-  /* Yellow text on red */
+  --primary: oklch(0.98 0.22 102);
+  /* Neon yellow #FFF700 */
+  --primary-foreground: var(--background);
+  --primary-glow: 0 0 8px #FFF700, 0 0 16px #FFF70099;
 
-  /* hightlight */
-  --highlight: oklch(100% 0.00011 271.152);
+  --secondary: oklch(0.62 0.3 15);
+  /* Cyberpunk red-pink #FF0040 */
+  --secondary-foreground: var(--foreground);
+  --secondary-glow: 0 0 8px #FF0040, 0 0 16px #FF004099;
 
-  /* MUTED + HIGHLIGHTS */
+  --accent: oklch(0.84 0.18 195);
+  /* Cyberpunk cyan #00E4FF */
+  --accent-foreground: var(--background);
+  --accent-glow: 0 0 10px #00E4FF, 0 0 18px #00E4FF80;
+
+  --highlight: oklch(1 0.0002 270);
+  /* Sharp white-blue for holographic effect */
+
   --muted: oklch(0.15 0.03 270);
-  /* Muted dark background */
-  --muted-foreground: oklch(0.75 0.12 102);
-  /* Dimmed yellow */
+  --muted-foreground: oklch(0.72 0.10 102);
 
-  --accent: oklch(0.78 0.15 195);
-  /* Cyberpunk cyan #02D7F2 */
-  --accent-foreground: oklch(0.08 0.02 270);
-  /* Dark text on cyan */
+  --destructive: oklch(0.60 0.28 12);
+  /* Violent neon red */
+  --destructive-foreground: var(--foreground);
 
-  --destructive: oklch(0.55 0.24 12);
-  /* Cyberpunk red #FD0130 */
-  --border: oklch(0.94 0.18 102);
-  /* Neon yellow borders #FFEE08 */
-  --input: oklch(0.08 0.02 270);
-  /* Dark input background */
-  --ring: oklch(0.94 0.18 102);
-  /* Neon yellow focus ring #FFEE08 */
+  --border: oklch(0.97 0.2 102);
+  --input: oklch(0.08 0.03 270);
+  --ring: var(--primary);
 
-  /* CHARTS / ACCENTS */
-  --chart-1: oklch(0.94 0.18 102);
-  /* Neon yellow #FFEE08 */
-  --chart-2: oklch(0.78 0.15 195);
-  /* Cyberpunk cyan #02D7F2 */
-  --chart-3: oklch(0.55 0.24 12);
-  /* Cyberpunk red #FD0130 */
-  --chart-4: oklch(0.75 0.20 300);
-  /* Neon purple */
-  --chart-5: oklch(0.85 0.15 120);
-  /* Neon green */
+  /* === NEON SHADOWS / EFFECTS === */
+  --glow-primary: 0 0 12px var(--primary);
+  --glow-secondary: 0 0 12px var(--secondary);
+  --glow-accent: 0 0 12px var(--accent);
+  --glass-bg: oklch(0.07 0.04 270 / 0.3);
+  /* Blur glass */
+  --glass-blur: blur(12px);
 
-  /* SIDEBAR + PANELS */
-  --sidebar: oklch(0.10 0.02 270);
-  /* Dark sidebar background */
-  --sidebar-foreground: oklch(0.94 0.18 102);
-  /* Neon yellow text #FFEE08 */
-  --sidebar-primary: oklch(0.94 0.18 102);
-  /* Neon yellow primary #FFEE08 */
-  --sidebar-primary-foreground: oklch(0.08 0.02 270);
-  /* Dark text on primary */
-  --sidebar-accent: oklch(0.78 0.15 195);
-  /* Cyan accent #02D7F2 */
-  --sidebar-accent-foreground: oklch(0.08 0.02 270);
-  /* Dark text on cyan */
-  --sidebar-border: oklch(0.94 0.18 102);
-  /* Neon yellow borders #FFEE08 */
-  --sidebar-ring: oklch(0.94 0.18 102);
-  /* Neon yellow focus ring #FFEE08 */
+  /* === SIDEBAR === */
+  --sidebar: oklch(0.10 0.03 270);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--background);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--background);
+  --sidebar-border: var(--primary);
+  --sidebar-ring: var(--primary);
+
+  /* === CHARTS === */
+  --chart-1: var(--primary);
+  --chart-2: var(--accent);
+  --chart-3: var(--secondary);
+  --chart-4: oklch(0.78 0.25 305);
+  /* Electric purple */
+  --chart-5: oklch(0.88 0.2 135);
+  /* Toxic neon green */
 }
+
 
 
 .dark {
   --radius: 0.125rem;
-  /* Sharp, geometric edges like Tron */
+  /* Sharp UI like the Grid */
 
-  /* BACKGROUND & TEXT - The Grid */
-  --background: oklch(0.05 0.01 240);
-  /* Deep black like the digital void */
-  --foreground: oklch(0.85 0.15 200);
-  /* Bright ice blue for text */
+  /* === BACKGROUND & TEXT === */
+  --background: oklch(0.04 0.008 240);
+  /* Deep grid void */
+  --foreground: oklch(0.90 0.15 200);
+  /* Ice blue glow text */
 
-  /* CONTAINERS - Digital panels */
-  --card: oklch(0.08 0.02 240);
-  /* Slightly lighter dark panels */
-  --card-foreground: oklch(0.85 0.15 200);
-  /* Ice blue text on panels */
+  /* === PANELS / SURFACES === */
+  --card: oklch(0.07 0.02 240);
+  /* Dark panel */
+  --card-foreground: var(--foreground);
 
-  --popover: oklch(0.06 0.01 240);
-  /* Darker popup background */
-  --popover-foreground: oklch(0.85 0.15 200);
-  /* Ice blue text */
+  --popover: oklch(0.06 0.015 240);
+  --popover-foreground: var(--foreground);
 
-  /* PRIMARY (TRON BLUE) */
-  --primary: oklch(0.70 0.20 200);
-  /* Bright Tron blue - the iconic glow */
-  --primary-foreground: oklch(0.05 0.01 240);
-  /* Dark text on blue */
+  /* === TRON BLUE === */
+  --primary: oklch(0.78 0.21 200);
+  /* Pure legacy glow */
+  --primary-foreground: var(--background);
+  --primary-glow: 0 0 10px oklch(0.78 0.21 200), 0 0 20px oklch(0.78 0.21 200 / 0.6);
 
-  /* SECONDARY (TRON ORANGE) */
-  --secondary: oklch(0.75 0.18 45);
-  /* Bright orange for enemy/alert elements */
-  --secondary-foreground: oklch(0.05 0.01 240);
+  /* === TRON ORANGE (Clu’s UI / alert states) === */
+  --secondary: oklch(0.72 0.20 45);
+  /* Bright warning orange */
+  --secondary-foreground: var(--background);
+  --secondary-glow: 0 0 10px oklch(0.72 0.20 45), 0 0 20px oklch(0.72 0.20 45 / 0.5);
 
+  /* === HIGHLIGHT === */
+  --highlight: oklch(1 0.00015 240);
+  /* White-blue overlay lines */
 
-  /* hightlight */
-  --highlight: oklch(100% 0.00011 271.152);
-  /* Dark text on orange */
-
-  /* MUTED + HIGHLIGHTS */
-  --muted: oklch(0.10 0.02 240);
-  /* Muted dark background */
+  /* === MUTED TEXT / BG === */
+  --muted: oklch(0.09 0.015 240);
   --muted-foreground: oklch(0.60 0.10 200);
-  /* Dimmed blue */
+  /* Dimmed Tron blue */
 
-  --accent: oklch(0.70 0.20 200);
-  /* Tron blue accent */
-  --accent-foreground: oklch(0.05 0.01 240);
-  /* Dark text on accent */
+  /* === ACCENT (Alt Glow) === */
+  --accent: oklch(0.76 0.20 195);
+  /* Cyan mix for variety */
+  --accent-foreground: var(--background);
+  --accent-glow: 0 0 10px oklch(0.76 0.20 195), 0 0 16px oklch(0.76 0.20 195 / 0.4);
 
-  --destructive: oklch(0.75 0.18 45);
-  /* Orange for destructive actions */
-  --border: oklch(0.70 0.20 200);
-  /* Glowing blue borders */
-  --input: oklch(0.08 0.02 240);
-  /* Dark input background */
-  --ring: oklch(0.70 0.20 200);
-  /* Blue glow focus ring */
+  /* === DESTRUCTIVE === */
+  --destructive: var(--secondary);
+  --destructive-foreground: var(--foreground);
 
-  /* CHARTS / ACCENTS - Digital world colors */
-  --chart-1: oklch(0.70 0.20 200);
-  /* Primary Tron blue */
-  --chart-2: oklch(0.75 0.18 45);
-  /* Tron orange */
-  --chart-3: oklch(0.65 0.15 180);
-  /* Cyan variant */
-  --chart-4: oklch(0.80 0.12 220);
-  /* Light blue variant */
-  --chart-5: oklch(0.85 0.15 200);
+  /* === INPUTS & BORDERS === */
+  --input: oklch(0.07 0.02 240);
+  --border: var(--primary);
+  --ring: var(--primary);
+  --ring-glow: 0 0 0 1px var(--ring), 0 0 6px var(--ring), 0 0 12px var(--ring);
+
+  /* === CHART / VISUAL ELEMENTS === */
+  --chart-1: var(--primary);
+  /* Tron blue */
+  --chart-2: var(--secondary);
+  /* Orange alert */
+  --chart-3: oklch(0.70 0.17 185);
+  /* Mid-cyan */
+  --chart-4: oklch(0.82 0.12 215);
+  /* Pale electric blue */
+  --chart-5: oklch(0.90 0.15 200);
   /* Bright ice blue */
 
-  /* SIDEBAR + PANELS - The Grid interface */
+  /* === SIDEBAR / GRID PANELS === */
   --sidebar: oklch(0.06 0.01 240);
-  /* Dark sidebar like the Grid */
-  --sidebar-foreground: oklch(0.85 0.15 200);
-  /* Ice blue text */
-  --sidebar-primary: oklch(0.70 0.20 200);
-  /* Tron blue primary */
-  --sidebar-primary-foreground: oklch(0.05 0.01 240);
-  /* Dark text on primary */
-  --sidebar-accent: oklch(0.75 0.18 45);
-  /* Orange accent */
-  --sidebar-accent-foreground: oklch(0.05 0.01 240);
-  /* Dark text on orange */
-  --sidebar-border: oklch(0.70 0.20 200);
-  /* Glowing blue borders */
-  --sidebar-ring: oklch(0.70 0.20 200);
-  /* Blue glow focus ring */
+  /* Grid HUD */
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--background);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--background);
+  --sidebar-border: var(--primary);
+  --sidebar-ring: var(--primary);
+
 }
+
 
 @layer base {
   * {

@@ -129,7 +129,7 @@ const Header = () => {
                             </div>
                         </SelectContent>
                     </Select>
-                    <Button className="relative h-full px-[30px] py-2 angular-br-md">
+                    <Button className="relative bg-border h-full px-[30px] py-2 angular-br-md">
                         Contact
                     </Button>
 

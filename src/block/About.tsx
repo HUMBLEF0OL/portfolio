@@ -9,7 +9,7 @@ const About = () => {
     const { theme } = useTheme();
 
     return (
-        <section className='bg-primary w-full flex flex-col gap-8 lg:flex-row item-center justify-center px-4 py-8 -mt-[1px]'>
+        <section className='bg-border w-full flex flex-col gap-8 lg:flex-row item-center justify-center px-4 py-8 -mt-[1px]'>
             <CyberIDCard />
             <div className='flex items-center max-w-2lg'>
                 <div className="relative w-fit flex flex-col gap-[20px] p-[20px] md:p-[40px] items-center">
