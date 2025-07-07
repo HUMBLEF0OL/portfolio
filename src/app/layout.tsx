@@ -24,7 +24,7 @@ const oxanium = Oxanium({
 export const metadata: Metadata = {
   title: "HUMBLEF0OL // Digital Interface Architect",
   description:
-    "Step into the Grid — the digital frontier of Amit Rana aka HUMBLEF0OL. Explore cybernetic UIs, modular code, and imaginative systems crafted at the edge of identity and interaction. React, Tailwind, Next.js, shaders, state machines, and glitch-crafted experiences await.",
+    "Step into the Grid — the digital frontier of HUMBLEF0OL. Explore cybernetic UIs, modular code, and imaginative systems crafted at the edge of identity and interaction. React, Tailwind, Next.js, shaders, state machines, and glitch-crafted experiences await.",
   keywords: [
     "Amit Rana",
     "HUMBLEF0OL",

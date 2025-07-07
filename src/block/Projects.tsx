@@ -14,7 +14,7 @@ const Projects = () => {
     const t = useTranslations("Projects");
     const projectCards = useTranslations("Projects.cards");
     return (
-        <div className='w-full relative px-4 py-8 mb-4 flex flex-col gap-[40px]'>
+        <div id='projects' className='w-full relative px-4 py-8 mb-4 flex flex-col gap-[40px]'>
             <h1 className="text-[30px] lg:text-[42px] uppercase">{t("sectionTitle")}</h1>
             <Carousel
                 opts={{

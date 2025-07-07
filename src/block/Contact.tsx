@@ -88,7 +88,7 @@ const Contact = () => {
     }, []);
 
     return (
-        <section className="w-full relative px-4 py-8 flex flex-col gap-[40px]">
+        <section id="contact" className="w-full relative px-4 py-8 flex flex-col gap-[40px]">
             {/* Background Image */}
             <Image
                 className="-z-1 brightness-30 object-cover"

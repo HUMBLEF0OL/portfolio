@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl'
 const About = () => {
     const t = useTranslations("About");
     return (
-        <section className='bg-border w-full flex flex-col gap-8 lg:flex-row item-center justify-center px-4 py-8 -mt-[1px]'>
+        <section id='about' className='bg-border w-full flex flex-col gap-8 lg:flex-row item-center justify-center px-4 py-8 -mt-[1px]'>
             <CyberIDCard />
             <div className='flex items-center max-w-2lg'>
                 <div className="relative w-fit flex flex-col gap-[20px] p-[20px] md:p-[40px] items-center">

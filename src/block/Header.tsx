@@ -88,7 +88,15 @@ const Header = () => {
                         </div>
                     </SelectContent>
                 </Select>
-                <Button className="relative bg-border h-full px-[30px] py-2 angular-br-md">
+                <Button
+
+                    onClick={() => {
+                        const section = document.getElementById("contact");
+                        if (section) {
+                            section.scrollIntoView({ behavior: "smooth" });
+                        }
+                    }}
+                    className="relative bg-border h-full px-[30px] py-2 angular-br-md">
                     {t("buttons.contact")}
                 </Button>
             </ul>
@@ -113,7 +121,12 @@ const Header = () => {
                             <NavIcons classStyle="flex items-center justify-between px-4 mb-6" />
                             <div className="relative flex flex-row gap-4 angular-tl-br-lg">
                                 <TopLeft />
-                                <Button className="flex-1 text-xs">{t("buttons.contactMe")}</Button>
+                                <Button onClick={() => {
+                                    const contact = document.getElementById("contact");
+                                    if (contact) {
+                                        contact.scrollIntoView({ behavior: "smooth" });
+                                    }
+                                }} className="flex-1 text-xs">{t("buttons.contact")}</Button>
                                 <DrawerClose>
                                     <Button className="flex-1 text-xs" variant="secondary">
                                         {t("buttons.close")}

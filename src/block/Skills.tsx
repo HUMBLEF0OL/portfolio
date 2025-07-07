@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 const Skills = () => {
     const t = useTranslations("Skills")
     return (
-        <section className='w-full relative px-4 py-8 flex flex-col gap-[40px]'>
+        <section id='skills' className='w-full relative px-4 py-8 flex flex-col gap-[40px]'>
             <Image
                 src={Background}
                 fill

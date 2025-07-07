@@ -16,7 +16,7 @@ const HomeComponent = () => {
     const t = useTranslations("Home");
 
     return (
-        <div className="flex flex-col mt-0 lg:-mt-[60px] lg:flex-row justify-center lg:justify-between w-full lg:w-[75%] items-center h-screen gap-[40px]">
+        <div id="home" className="flex flex-col mt-0 lg:-mt-[60px] lg:flex-row justify-center lg:justify-between w-full lg:w-[75%] items-center h-screen gap-[40px]">
             <div className="relative w-[350px] h-[350px] md:w-[400px] md:h-[400px]">
                 <Image
                     src={theme === "dark" ? AvatarTron : AvatarPunk}
@@ -43,11 +43,21 @@ const HomeComponent = () => {
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-[20px]">
-                    <Button className="relative angular-br-lg" variant={"outline"} size={"xl"}>
+                    <Button onClick={() => {
+                        const skills = document.getElementById("skills");
+                        if (skills) {
+                            skills.scrollIntoView({ behavior: "smooth" });
+                        }
+                    }} className="relative angular-br-lg" variant={"outline"} size={"xl"}>
                         <BottomRight />
                         {t("buttons.skills")}
                     </Button>
-                    <Button className="angular-br-lg" size={"xl"}>
+                    <Button onClick={() => {
+                        const projects = document.getElementById("projects");
+                        if (projects) {
+                            projects.scrollIntoView({ behavior: "smooth" });
+                        }
+                    }} className="angular-br-lg" size={"xl"}>
                         {t("buttons.projects")}
                     </Button>
                 </div>

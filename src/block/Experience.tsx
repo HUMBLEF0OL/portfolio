@@ -12,7 +12,7 @@ const Experience = () => {
     const [isRevealed, setIsRevealed] = useState(false);
 
     return (
-        <div className="w-full relative px-4 py-8 flex flex-col gap-[40px]">
+        <div id='xp' className="w-full relative px-4 py-8 flex flex-col gap-[40px]">
             <h1 className="text-[30px] lg:text-[42px] uppercase">{t('sectionTitle')}</h1>
 
             <div className="flex flex-col gap-0 text-xs">
