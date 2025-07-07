@@ -5,6 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ArrowBigDown, ArrowBigDownDash, Download, Github, Linkedin, Menu, Volume2 } from 'lucide-react'
 import React, { useState } from 'react'
 import { TopLeft } from './AngularFrame'
+import { NavIcons } from './NavIcons'
 
 
 const navLinks = [
@@ -77,25 +78,6 @@ const languages = [
         locale: "hi"
     }
 ];
-
-const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
-    return (
-        <div className={classStyle}>
-            <a href="https://github.com/HUMBLEF0OL" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
-            </a>
-            <a href="https://www.linkedin.com/in/amit-rana-711169183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
-            </a>
-            <a href="/resume.pdf" download aria-label="Download Resume">
-                <ArrowBigDownDash className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
-            </a>
-            <a download aria-label="audio play/pause">
-                <Volume2 className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
-            </a>
-        </div>
-    )
-}
 
 
 const Header = () => {
