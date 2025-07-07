@@ -127,7 +127,7 @@ const Header = () => {
                 {/* Mobile Language Switcher */}
                 <div className="inline-flex lg:hidden">
                     <Select
-                        onValueChange={(value) => setSelectedLanguage(value)}
+                        onValueChange={handleLanguageChange}
                         value={selectedLanguage}
                     >
                         <SelectTrigger className="w-fit border-0 text-highlight! h-[40px]! font-semibold! uppercase! tracking-wide! text-sm!">
