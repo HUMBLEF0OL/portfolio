@@ -34,7 +34,7 @@ const HomeComponent = () => {
             <div className="flex flex-col gap-[60px] px-[20px]">
                 <div className="flex flex-col gap-[20px] max-w-xl">
                     <p
-                        className="text-[30px] md:text-[42px] font-black glitch text-highlight"
+                        className="text-center lg:text-left text-[30px] md:text-[42px] font-black glitch text-highlight"
                         data-text={t("headline")}
                     >
                         {t("headline")}

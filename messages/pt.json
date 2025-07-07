@@ -1,0 +1,195 @@
+{
+    "Page": {
+        "sections": {
+            "skillsModule": "/// MÓDULO.HABILIDADES",
+            "experienceModule": "/// MÓDULO.EXPERIÊNCIA",
+            "loading": "carregando..."
+        }
+    },
+    "About": {
+        "title": "Registro de Identidade",
+        "paragraph1": "Eu crio na interseção entre identidade, código e imaginação — onde cada componente é um sinal na troca constante entre humano e máquina. Meu trabalho é modular, reativo e intencional, como circuitos pulsando por uma interface viva.",
+        "paragraph2": "Eu projeto sistemas que parecem vivos. Cada pixel tem um propósito. Cada animação é uma conversa. Seja com React, Tailwind, shaders ou máquinas de estado, minhas ferramentas moldam experiências imersivas e responsivas que sentem tanto quanto funcionam.",
+        "paragraph3": "Isso não é apenas um portfólio. É uma grade. Um reflexo de como penso, crio e me conecto. Um espaço onde a criatividade flui como dados e interfaces vibram com energia.",
+        "closing": "Sou HUMBLEF0OL — bem-vindo ao meu circuito.",
+        "location_latlong": "LAT: 28.5143629° N | LONG: 77.0730087° E",
+        "location_sysid": "GRADE: SETOR-21E / SYS-ID: HUMBLEF0OL"
+    },
+    "Contact": {
+        "sectionTitle": "Contato",
+        "introTitle": "Você chegou ao terminal de transmissão de HUMBLEFOOL — o portal neural onde o código encontra a conversa.",
+        "uplinkMessage": "Seja você um dev, um criador de ideias ou um recrutador do futuro — este é seu uplink. Envie uma mensagem e eu a rotearei pela minha rede neural.",
+        "terminalLabel": "NEURAL_TERMINAL_v2.1",
+        "terminalMessages": {
+            "linkEstablished": "LINK_NEURAL_ESTABELECIDO...",
+            "scanningThreats": "ESCANEANDO_AMEAÇAS...",
+            "firewallActive": "FIREWALL_ATIVO...",
+            "readyTransmission": "PRONTO_PARA_TRANSMISSÃO...",
+            "awaitingInput": "AGUARDANDO_ENTRADA..."
+        },
+        "statusOnline": "ONLINE",
+        "statusSecure": "SEGURO",
+        "statusMonitored": "MONITORADO",
+        "form": {
+            "title": "TRANSMISSÃO_SEGURA",
+            "nameLabel": "ENTRADA_NOME",
+            "namePlaceholder": "Digite sua assinatura...",
+            "emailLabel": "PROTOCOLO_EMAIL",
+            "emailPlaceholder": "seu@email.com",
+            "messageLabel": "PACOTE_MENSAGEM",
+            "messagePlaceholder": "Transmita seu pacote de dados...",
+            "sendButton": "Enviar Mensagem",
+            "sendingButton": "Enviando..."
+        },
+        "footerStatus": "STATUS_DO_SISTEMA: OPERACIONAL",
+        "footerTime": "HORA_LOCAL"
+    },
+    "CyberIDCard": {
+        "header": {
+            "title": "Transmissão de Identidade",
+            "subtitle": "Sessão Segura",
+            "id": "ID: HUMBLEFOOL-G7KX",
+            "ping": "Código Ping: 9XK-JU42-FELIS"
+        },
+        "identity": {
+            "nameLabel": "Nome",
+            "nameValue": "Amit Rana",
+            "roleLabel": "Função",
+            "roleValue": "Engenheiro de Desenvolvimento Sênior",
+            "statusLabel": "Status",
+            "statusValue": "Online",
+            "versionLabel": "Versão",
+            "versionValue": "v3.2.7"
+        },
+        "log": {
+            "auth": "[ OK ] Autenticação: Sucesso",
+            "github": "[ SYS ] GitHub Conectado",
+            "memory": "[ CORE ] Memória Inicializada: 92%",
+            "renderer": "[ NODE ] Renderizador Visual: Estável",
+            "creativity": "[ INFO ] Mecanismo Criativo: Ativo"
+        },
+        "barcode": {
+            "label": "// CÓDIGO DE IDENTIFICAÇÃO SERIALIZADO //"
+        }
+    },
+    "Experience": {
+        "sectionTitle": "Registro de Experiência",
+        "terminalLogStart": {
+            "userId": "[ USUÁRIO.ID ] _HUMBLEF00L_",
+            "accessLevel": "[ NÍVEL DE ACESSO ] AUTORIZADO // CLASSE: NÍVEL-03",
+            "timeframe": "[ PERÍODO ] LOG DE ATIVIDADES -- 2022 ▶ 2025"
+        },
+        "tabs": {
+            "sde2": {
+                "labelFull": "ENGENHEIRO DE SOFTWARE 2",
+                "labelShort": "SDE 2"
+            },
+            "sde1": {
+                "labelFull": "ENGENHEIRO DE SOFTWARE 1",
+                "labelShort": "SDE 1"
+            },
+            "intern": {
+                "labelFull": "ESTAGIÁRIO EM DESENVOLVIMENTO",
+                "labelShort": "ESTÁGIO"
+            }
+        },
+        "content": {
+            "operationsLabel": "Operações",
+            "sde2": {
+                "title": "Engenheiro de Software 2",
+                "period": "Julho 2023 – Presente",
+                "op1": "Arquitetou e lançou um frontend escalável para 300K+ usuários com Next.js e Tailwind CSS, atingindo 95+ em Core Web Vitals (desempenho, SEO, acessibilidade).",
+                "op2": "Desenhou a arquitetura do frontend colaborando com times de produto, backend e design.",
+                "op3": "Integrado recursos de PWA que aumentaram o engajamento mobile e a retenção em 30%.",
+                "op4": "Implementado Zustand para gerenciamento de estado global e i18n para suporte multilíngue.",
+                "op5": "Desenvolveu integrações com API REST em backend .NET, melhorando performance e manutenção."
+            },
+            "sde1": {
+                "title": "Engenheiro de Software 1",
+                "period": "Junho 2021 – Junho 2023",
+                "op1": "Desenvolveu e manteve um motor de reservas robusto para 10.000+ usuários com alta disponibilidade.",
+                "op2": "Aumentou pontuações Lighthouse de 55 para 90+, reduzindo tempo de carregamento em ~45%.",
+                "op3": "Melhorou SEO com HTML semântico, metatags, dados estruturados e sitemaps.",
+                "op4": "Assegurou conformidade com WCAG usando ARIA e suporte por teclado.",
+                "op5": "Desenvolveu funcionalidades com React.js, Redux, SCSS e Material UI em arquitetura modular e escalável."
+            },
+            "intern": {
+                "title": "Estagiário em Desenvolvimento de Software",
+                "period": "Jan 2021 – Mai 2021",
+                "op1": "Integrado Google Analytics 4 para análises ricas e decisões orientadas por dados.",
+                "op2": "Implementado i18n para interface multilíngue, ampliando acessibilidade global.",
+                "op3": "Criou componentes reutilizáveis em React.js conforme diretrizes do design system.",
+                "op4": "Contribuiu com testes unitários e revisões de código, mantendo a qualidade do código e a confiança no CI/CD."
+            }
+        },
+        "terminalLogEnd": {
+            "end": "FIM DO LOG",
+            "status": "[ STATUS ] ÁRVORE DE EXPERIÊNCIA ESTÁVEL",
+            "nextSync": "[ PRÓXIMA SINCRONIZAÇÃO ] T+30d"
+        }
+    },
+    "Footer": {
+        "tagline": "Arquitetando interfaces na borda da imaginação. Movido por código, curiosidade e um toque de caos."
+    },
+    "Header": {
+        "navLinks": {
+            "home": "Início",
+            "about": "Sobre",
+            "skills": "Habilidades",
+            "projects": "Projetos",
+            "xp": "Experiência"
+        },
+        "buttons": {
+            "contact": "Contato",
+            "close": "Fechar"
+        },
+        "languageSelector": {
+            "label": "Idioma"
+        }
+    },
+    "Home": {
+        "headline": "Bem-vindo à Grade",
+        "description": "A Grade. Uma fronteira digital. Circuitos neon alimentam sistemas construídos com lógica, moldados por criatividade. Um espaço onde identidade é escrita em código e ideias evoluem a cada tecla pressionada. Glitches não quebram — revelam. Isso não é apenas uma rede; é um reflexo da imaginação humana.",
+        "buttons": {
+            "skills": "Matriz de Habilidades",
+            "projects": "Arquivos de Projetos"
+        }
+    },
+    "Projects": {
+        "sectionTitle": "Arquivo de Projetos",
+        "private": "PRIVADO",
+        "live": "Ao vivo",
+        "github": "Github",
+        "cards": {
+            "skinbattle": {
+                "title": "SkinBattle.gg",
+                "subtitle": "Plataforma de Batalhas CS:GO Skins",
+                "description": "SkinBattle.gg é uma plataforma dinâmica onde usuários competem em tempo real com skins CS:GO. Construído com Next.js, Material UI e Redux Toolkit, oferece uma interface responsiva com interações ao vivo. Suporte para login seguro, atualizações via WebSockets e lógica de jogo complexa com estado UI consistente."
+            },
+            "hookpilot": {
+                "title": "Hookpilot",
+                "subtitle": "Gerenciador de Git Hooks Flexível",
+                "description": "Hookpilot é um gerenciador de Git hooks configurável para fluxos de trabalho modernos. Suporta hooks pré-definidos e personalizados para lint, testes, segurança, commits e mais. CLI interativa e suporte a `--no-verify`. Ideal para equipes que buscam automação e qualidade."
+            },
+            "felis": {
+                "title": "Felis AI",
+                "subtitle": "Chatbot Privado de Pesquisa & Memória",
+                "description": "Felis AI é um assistente de pesquisa pessoal utilizando RAG (Geração com Recuperação). Une IA contextual com busca dinâmica para conversas persistentes e precisas. Desenvolvido com LangChain, Supabase, ShadCN UI e Tailwind CSS com UX emocional e técnico."
+            },
+            "javascriptverse": {
+                "title": "JavaScript-Verse",
+                "subtitle": "Playground JS/React com Execução ao Vivo",
+                "description": "JavaScript-Verse é um ambiente de codificação online com suporte a execução em tempo real, Babel, sandbox seguro, importação de módulos NPM e chamadas API. Ótimo para aprendizado, experimentação e colaboração."
+            },
+            "filesqueeze": {
+                "title": "FileSqueeze",
+                "subtitle": "Otimizador de Arquivos para Devs",
+                "description": "FileSqueeze é uma ferramenta CLI leve para comprimir ativos como JS, JSON, HTML e CSS durante build ou deploy. Construído em Node.js, integra com CI/CD e melhora performance sem perder qualidade."
+            }
+        }
+    },
+    "Skills": {
+        "title": "Matriz de Habilidades",
+        "footer": "Calibração de circuito concluída. Todas as capacidades estão operacionais."
+    }
+}

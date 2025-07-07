@@ -1,0 +1,195 @@
+{
+    "Page": {
+        "sections": {
+            "skillsModule": "/// MODULE.COMPÉTENCES",
+            "experienceModule": "/// MODULE.EXPÉRIENCE",
+            "loading": "chargement..."
+        }
+    },
+    "About": {
+        "title": "Journal d'Identité",
+        "paragraph1": "Je crée à l’intersection de l’identité, du code et de l’imaginaire — chaque composant est un signal dans l’échange constant entre l’humain et la machine. Mon travail est modulaire, réactif et câblé avec intention, comme des circuits qui pulsents dans une interface vivante.",
+        "paragraph2": "Je conçois des systèmes qui semblent vivants. Chaque pixel a une raison d’exister. Chaque animation est une conversation. Que ce soit React, Tailwind, des shaders ou des machines d’état, mes outils façonnent des expériences immersives et réactives — ressenties autant qu’utilisées.",
+        "paragraph3": "Ce n’est pas juste un portfolio. C’est une grille. Un reflet de ma manière de penser, créer et connecter. Un espace où la créativité circule comme des données et où les interfaces vibrent d’énergie.",
+        "closing": "Je suis HUMBLEF0OL — bienvenue dans mon circuit.",
+        "location_latlong": "LAT : 28.5143629° N | LONG : 77.0730087° E",
+        "location_sysid": "GRILLE : SECTEUR-21E / SYS-ID : HUMBLEF0OL"
+    },
+    "Contact": {
+        "sectionTitle": "Contact",
+        "introTitle": "Tu as atteint le terminal de transmission de HUMBLEFOOL — la passerelle neuronale où le code rencontre la conversation.",
+        "uplinkMessage": "Que tu sois un développeur, un créateur d'idées ou un recruteur du futur — c’est ton lien. Envoie un message et je le transmettrai à travers ma grille neuronale.",
+        "terminalLabel": "NEURAL_TERMINAL_v2.1",
+        "terminalMessages": {
+            "linkEstablished": "LIEN_NEURONAL_ÉTABLI...",
+            "scanningThreats": "ANALYSE_DES_MENACES...",
+            "firewallActive": "PARE-FEU_ACTIF...",
+            "readyTransmission": "PRÊT_POUR_TRANSMISSION...",
+            "awaitingInput": "EN_ATTENTE_D’ENTRÉE..."
+        },
+        "statusOnline": "EN LIGNE",
+        "statusSecure": "SÉCURISÉ",
+        "statusMonitored": "SURVEILLÉ",
+        "form": {
+            "title": "TRANSMISSION_SÉCURISÉE",
+            "nameLabel": "NOM_UTILISATEUR",
+            "namePlaceholder": "Entrez votre signature...",
+            "emailLabel": "PROTOCOLE_EMAIL",
+            "emailPlaceholder": "votre@email.com",
+            "messageLabel": "CHARGEMENT_MESSAGE",
+            "messagePlaceholder": "Transmettez votre paquet de données...",
+            "sendButton": "Envoyer le message",
+            "sendingButton": "Envoi..."
+        },
+        "footerStatus": "ÉTAT_DU_SYSTÈME : OPÉRATIONNEL",
+        "footerTime": "HEURE_LOCALE"
+    },
+    "CyberIDCard": {
+        "header": {
+            "title": "Transmission d'Identité",
+            "subtitle": "Session Sécurisée",
+            "id": "ID : HUMBLEFOOL-G7KX",
+            "ping": "Code Ping : 9XK-JU42-FELIS"
+        },
+        "identity": {
+            "nameLabel": "Nom",
+            "nameValue": "Amit Rana",
+            "roleLabel": "Rôle",
+            "roleValue": "Ingénieur Développement Senior",
+            "statusLabel": "Statut",
+            "statusValue": "En ligne",
+            "versionLabel": "Version",
+            "versionValue": "v3.2.7"
+        },
+        "log": {
+            "auth": "[ OK ] Auth : Succès",
+            "github": "[ SYS ] GitHub lié",
+            "memory": "[ CORE ] Mémoire initialisée : 92%",
+            "renderer": "[ NODE ] Rendu visuel : Stable",
+            "creativity": "[ INFO ] Moteur créatif : Actif"
+        },
+        "barcode": {
+            "label": "// CODE D’ID SÉRIALISÉ //"
+        }
+    },
+    "Experience": {
+        "sectionTitle": "Journal d’Expérience",
+        "terminalLogStart": {
+            "userId": "[ ID_UTILISATEUR ] _HUMBLEF00L_",
+            "accessLevel": "[ NIVEAU_D’ACCÈS ] AUTORISÉ // CLASSEMENT : NIVEAU-03",
+            "timeframe": "[ PÉRIODE ] JOURNAL D’ACTIVITÉ -- 2022 ▶ 2025"
+        },
+        "tabs": {
+            "sde2": {
+                "labelFull": "INGÉNIEUR LOGICIEL 2",
+                "labelShort": "SDE 2"
+            },
+            "sde1": {
+                "labelFull": "INGÉNIEUR LOGICIEL 1",
+                "labelShort": "SDE 1"
+            },
+            "intern": {
+                "labelFull": "STAGIAIRE EN DÉVELOPPEMENT LOGICIEL",
+                "labelShort": "STAGIAIRE SDE"
+            }
+        },
+        "content": {
+            "operationsLabel": "Opérations",
+            "sde2": {
+                "title": "Ingénieur Logiciel 2",
+                "period": "Juillet 2023 – Aujourd’hui",
+                "op1": "Conçu et livré un frontend évolutif utilisé par 300K+ utilisateurs avec Next.js et Tailwind CSS, obtenant plus de 95 aux Core Web Vitals.",
+                "op2": "Architecte du frontend en collaboration interfonctionnelle avec les équipes produit, backend et design.",
+                "op3": "Intégré des fonctionnalités PWA augmentant l’engagement mobile et la rétention de 30%.",
+                "op4": "Implémenté Zustand pour la gestion d’état globale et i18n pour le support multilingue.",
+                "op5": "Développé des flux d'intégration API REST avec un backend .NET, améliorant performance et maintenance."
+            },
+            "sde1": {
+                "title": "Ingénieur Logiciel 1",
+                "period": "Juin 2021 – Juin 2023",
+                "op1": "Développé un moteur de réservation robuste pour 10 000+ utilisateurs avec haute disponibilité et UX réactive.",
+                "op2": "Amélioré les scores Lighthouse de 55 à 90+ en réduisant le temps de chargement de ~45%.",
+                "op3": "Optimisé le SEO avec HTML sémantique, métadonnées, données structurées et sitemaps.",
+                "op4": "Assuré la conformité WCAG via ARIA et navigation clavier.",
+                "op5": "Créé des fonctionnalités avec React.js, Redux, SCSS et Material UI pour un frontend modulaire et évolutif."
+            },
+            "intern": {
+                "title": "Stagiaire en Développement Logiciel",
+                "period": "Janv. 2021 – Mai 2021",
+                "op1": "Intégré Google Analytics 4 pour des insights riches sur les comportements utilisateurs.",
+                "op2": "Implémenté l’i18n pour l’interface multilingue, augmentant l’accessibilité mondiale.",
+                "op3": "Construit des composants UI réutilisables avec React.js selon les directives du design system.",
+                "op4": "Contribué aux tests unitaires et revues de code pour garantir qualité et fiabilité CI/CD."
+            }
+        },
+        "terminalLogEnd": {
+            "end": "FIN DU JOURNAL",
+            "status": "[ STATUT ] ARBRE D’EXPÉRIENCE STABLE",
+            "nextSync": "[ PROCHAINE SYNC ] T+30j"
+        }
+    },
+    "Footer": {
+        "tagline": "J’architecture des interfaces à la frontière de l’imaginaire. Propulsé par le code, la curiosité et un peu de chaos."
+    },
+    "Header": {
+        "navLinks": {
+            "home": "Accueil",
+            "about": "À propos",
+            "skills": "Compétences",
+            "projects": "Projets",
+            "xp": "Expérience"
+        },
+        "buttons": {
+            "contact": "Contact",
+            "close": "Fermer"
+        },
+        "languageSelector": {
+            "label": "Langue"
+        }
+    },
+    "Home": {
+        "headline": "Bienvenue dans la Grille",
+        "description": "La Grille. Une frontière numérique. Des circuits néon alimentent des systèmes logiques façonnés par la créativité. Un espace où l’identité est écrite en code et les idées évoluent à chaque frappe. Les glitches ne cassent pas — ils révèlent. Ce n’est pas juste un réseau ; c’est un reflet de l’imagination humaine.",
+        "buttons": {
+            "skills": "Matrice de Compétences",
+            "projects": "Archives Projets"
+        }
+    },
+    "Projects": {
+        "sectionTitle": "Archives des Projets",
+        "private": "PRIVÉ",
+        "live": "En ligne",
+        "github": "Github",
+        "cards": {
+            "skinbattle": {
+                "title": "SkinBattle.gg",
+                "subtitle": "Plateforme CS:GO Skin Battle",
+                "description": "SkinBattle.gg est une plateforme dynamique où les utilisateurs s’affrontent en temps réel avec des skins CS:GO. Construit avec Next.js, Material UI et Redux Toolkit, il propose une interface fluide et réactive avec interactions live. Intégration sécurisée, WebSockets en temps réel, logique de jeu complexe et état UI constant. Ce projet freelance reflète un mélange soigné d'ingénierie front-end et de design centré sur l'utilisateur."
+            },
+            "hookpilot": {
+                "title": "Hookpilot",
+                "subtitle": "Gestionnaire de Git Hooks Flexible pour Dev Modernes",
+                "description": "Hookpilot est un gestionnaire de hooks Git configurable pour automatiser les workflows de développement. Il prend en charge des hooks prédéfinis et personnalisés pour linting, tests, formatage, audits, validation de commit, etc. Avec une CLI interactive et un support --no-verify, c’est un outil idéal pour les équipes exigeantes."
+            },
+            "felis": {
+                "title": "Felis AI",
+                "subtitle": "Assistant Privé de Recherche & Mémoire",
+                "description": "Felis AI est un assistant de recherche personnel exploitant la RAG (génération augmentée par récupération). Il fusionne génération IA contextuelle et recherche dynamique pour des dialogues précis et mémoriels. Utilise LangChain, Supabase, ShadCN UI et Tailwind CSS pour une interface technique et émotionnelle."
+            },
+            "javascriptverse": {
+                "title": "JavaScript-Verse",
+                "subtitle": "Playground JS/React en Navigateur avec Exécution Live",
+                "description": "JavaScript-Verse est un environnement de codage en ligne pour JS et React avec exécution en temps réel, transpilation JSX avec Babel, sandbox sécurisé, importation de modules NPM, appels API, export, cheatsheets et plus. Axé sur l’apprentissage, l’exploration et la collaboration."
+            },
+            "filesqueeze": {
+                "title": "FileSqueeze",
+                "subtitle": "Optimiseur de Fichiers pour Dev",
+                "description": "FileSqueeze est un outil CLI léger pour compresser et optimiser les fichiers JS, JSON, HTML et CSS pendant le build ou déploiement. Construit en Node.js, il s’intègre dans CI/CD et accélère les temps de chargement sans perte de qualité."
+            }
+        }
+    },
+    "Skills": {
+        "title": "Matrice de Compétences",
+        "footer": "Calibration du circuit terminée. Toutes les capacités sont opérationnelles."
+    }
+}

@@ -20,11 +20,15 @@ import { Button } from "@/components/ui/button";
 import { TopLeft } from "./AngularFrame";
 import { NavIcons } from "./NavIcons";
 import languages from "@/data/languages.json";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
-    const [selectedLanguage, setSelectedLanguage] = useState("en");
+    const locale = useLocale();
+    const [selectedLanguage, setSelectedLanguage] = useState(locale);
     const t = useTranslations("Header");
+    const pathname = usePathname();
+    const router = useRouter();
 
     const navLinks = [
         { name: t("navLinks.home"), href: "#home" },
@@ -33,6 +37,17 @@ const Header = () => {
         { name: t("navLinks.projects"), href: "#projects" },
         { name: t("navLinks.xp"), href: "#xp" },
     ];
+
+    const handleLanguageChange = (newLocale: string) => {
+        // Remove current locale from pathname
+        const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '');
+
+        // Navigate to new locale
+        // router.replace(`/${newLocale}${pathWithoutLocale}`);
+
+        setSelectedLanguage(newLocale)
+        window.location.replace(`/${newLocale}${pathWithoutLocale}`)
+    };
 
     return (
         <header className="top-0 left-0 h-[60px] w-full z-50 bg-transparent px-[40px]">
@@ -50,7 +65,7 @@ const Header = () => {
                     </li>
                 ))}
                 <Select
-                    onValueChange={(value) => setSelectedLanguage(value)}
+                    onValueChange={handleLanguageChange}
                     value={selectedLanguage}
                 >
                     <SelectTrigger className="w-fit text-highlight! h-[40px]! font-semibold! uppercase! tracking-wide! text-sm!">

@@ -1,0 +1,195 @@
+{
+    "Page": {
+        "sections": {
+            "skillsModule": "/// MÓDULO.HABILIDADES",
+            "experienceModule": "/// MÓDULO.XP",
+            "loading": "cargando..."
+        }
+    },
+    "About": {
+        "title": "Registro de Identidad",
+        "paragraph1": "Construyo en la intersección de identidad, código e imaginación, donde cada componente es una señal en el intercambio constante entre humano y máquina. Mi trabajo es modular, reactivo y conectado con intención como circuitos pulsando a través de una interfaz viviente.",
+        "paragraph2": "Diseño sistemas que se sienten vivos. Cada píxel tiene una razón para existir. Cada animación es una conversación. Ya sea React, Tailwind, shaders o máquinas de estado, mis herramientas moldean experiencias responsivas e inmersivas que sienten tanto como funcionan.",
+        "paragraph3": "Esto no es solo un portafolio. Es una red. Un reflejo de cómo pienso, creo y me conecto. Un espacio donde la creatividad fluye como datos y las interfaces vibran con energía.",
+        "closing": "Soy HUMBLEF0OL—bienvenido a mi circuito.",
+        "location_latlong": "LAT: 28.5143629° N | LONG: 77.0730087° E",
+        "location_sysid": "RED: SECTOR-21E / SYS-ID: HUMBLEF0OL"
+    },
+    "Contact": {
+        "sectionTitle": "Contacto",
+        "introTitle": "Has llegado al terminal de transmisión de HUMBLEFOOL, la puerta neural donde el código se encuentra con la conversación.",
+        "uplinkMessage": "Ya seas un dev compañero, un creador de ideas, o un reclutador del futuro — este es tu enlace. Envía un mensaje, y lo enrutaré través de mi red neuronal.",
+        "terminalLabel": "TERMINAL_NEURAL_v2.1",
+        "terminalMessages": {
+            "linkEstablished": "ENLACE_NEURAL_ESTABLECIDO...",
+            "scanningThreats": "ESCANEANDO_AMENAZAS...",
+            "firewallActive": "FIREWALL_ACTIVO...",
+            "readyTransmission": "LISTO_PARA_TRANSMISIÓN...",
+            "awaitingInput": "ESPERANDO_ENTRADA..."
+        },
+        "statusOnline": "ONLINE",
+        "statusSecure": "SEGURO",
+        "statusMonitored": "MONITOREADO",
+        "form": {
+            "title": "TRANSMISIÓN_SEGURA",
+            "nameLabel": "ENTRADA_NOMBRE",
+            "namePlaceholder": "Ingresa tu firma...",
+            "emailLabel": "PROTOCOLO_EMAIL",
+            "emailPlaceholder": "tu@email.com",
+            "messageLabel": "CARGA_MENSAJE",
+            "messagePlaceholder": "Transmite tu paquete de datos...",
+            "sendButton": "Enviar Mensaje",
+            "sendingButton": "Enviando..."
+        },
+        "footerStatus": "ESTADO_SISTEMA: OPERACIONAL",
+        "footerTime": "HORA_LOCAL"
+    },
+    "CyberIDCard": {
+        "header": {
+            "title": "Transmisión de Identidad",
+            "subtitle": "Sesión Segura",
+            "id": "ID: HUMBLEFOOL-G7KX",
+            "ping": "Código Ping: 9XK-JU42-FELIS"
+        },
+        "identity": {
+            "nameLabel": "Nombre",
+            "nameValue": "Amit Rana",
+            "roleLabel": "Rol",
+            "roleValue": "Ingeniero Senior de Desarrollo",
+            "statusLabel": "Estado",
+            "statusValue": "Online",
+            "versionLabel": "Versión",
+            "versionValue": "v3.2.7"
+        },
+        "log": {
+            "auth": "[ OK ] Auth: Éxito",
+            "github": "[ SYS ] GitHub Vinculado",
+            "memory": "[ CORE ] Memoria Iniciada: 92%",
+            "renderer": "[ NODE ] Renderizador Visual: Estable",
+            "creativity": "[ INFO ] Motor de Creatividad: Activo"
+        },
+        "barcode": {
+            "label": "// CÓDIGO ID SERIALIZADO //"
+        }
+    },
+    "Experience": {
+        "sectionTitle": "Registro de Experiencia",
+        "terminalLogStart": {
+            "userId": " [  USER.ID  ] _HUMBLEF00L_",
+            "accessLevel": " [  NIVEL ACCESO  ] AUTORIZADO // AUTORIZACIÓN: NIVEL-03",
+            "timeframe": " [  MARCO TEMPORAL  ] REGISTRO ACTIVIDAD -- 2022 ▶ 2025"
+        },
+        "tabs": {
+            "sde2": {
+                "labelFull": "INGENIERO DE DESARROLLO DE SOFTWARE 2",
+                "labelShort": "SDE 2"
+            },
+            "sde1": {
+                "labelFull": "INGENIERO DE DESARROLLO DE SOFTWARE 1",
+                "labelShort": "SDE 1"
+            },
+            "intern": {
+                "labelFull": "INTERNO DE DESARROLLO DE SOFTWARE",
+                "labelShort": "SDE INTERNO"
+            }
+        },
+        "content": {
+            "operationsLabel": "Operaciones",
+            "sde2": {
+                "title": "Ingeniero de Desarrollo de Software 2",
+                "period": "Julio 2023 – Presente",
+                "op1": "Arquitecté y desplegué un frontend escalable usado por 300K+ usuarios usando Next.js y Tailwind CSS, logrando 95+ en Core Web Vitals en rendimiento, SEO y accesibilidad.",
+                "op2": "Diseñé arquitectura frontend mientras lideraba colaboración multifuncional con equipos de producto, backend y diseño.",
+                "op3": "Integré características PWA para impulsar el engagement móvil y retención de usuarios en 30%.",
+                "op4": "Implementé Zustand para gestión de estado global e i18n para soporte multilingüe en toda la app.",
+                "op5": "Desarrollé flujos de integración de API REST con backend basado en .NET, mejorando rendimiento y mantenibilidad."
+            },
+            "sde1": {
+                "title": "Ingeniero de Desarrollo de Software 1",
+                "period": "Junio 2021 – Junio 2023",
+                "op1": "Diseñé y mantuve un motor de reservas robusto sirviendo 10,000+ usuarios, con alta disponibilidad y UX responsiva.",
+                "op2": "Mejoré puntajes Lighthouse de 55 a 90+, reduciendo tiempo de carga ~45% mediante optimización de rendimiento.",
+                "op3": "Mejoré SEO via HTML semántico, meta tags, datos estructurados y sitemaps, mejorando descubribilidad.",
+                "op4": "Aseguré cumplimiento de accesibilidad WCAG en todos los componentes UI usando ARIA y soporte de teclado.",
+                "op5": "Construí características usando React.js, Redux, SCSS y Material UI, asegurando un código frontend modular y escalable."
+            },
+            "intern": {
+                "title": "Interno de Desarrollo de Software",
+                "period": "Ene 2021 – May 2021",
+                "op1": "Integré Google Analytics 4 para habilitar insights ricos de comportamiento de usuario y decisiones UI basadas en datos.",
+                "op2": "Implementé internacionalización (i18n) para UI multilingüe, expandiendo accesibilidad del producto para usuarios globales.",
+                "op3": "Construí componentes UI reutilizables con React.js, alineándose con guías del sistema de diseño.",
+                "op4": "Contribuí a pruebas unitarias y revisiones de código, manteniendo calidad del código y mejorando confianza CI/CD."
+            }
+        },
+        "terminalLogEnd": {
+            "end": "FIN DE REGISTRO",
+            "status": " [  ESTADO  ] ÁRBOL EXPERIENCIA ESTABLE",
+            "nextSync": " [  PRÓX SYNC  ] T+30d"
+        }
+    },
+    "Footer": {
+        "tagline": "Arquitectando interfaces en el límite de la imaginación. Impulsado por código, curiosidad y un poco de caos."
+    },
+    "Header": {
+        "navLinks": {
+            "home": "Inicio",
+            "about": "Acerca",
+            "skills": "Habilidades",
+            "projects": "Proyectos",
+            "xp": "Experiencia"
+        },
+        "buttons": {
+            "contact": "Contacto",
+            "close": "Cerrar"
+        },
+        "languageSelector": {
+            "label": "Idioma"
+        }
+    },
+    "Home": {
+        "headline": "Bienvenido a la Red",
+        "description": "La Red. Una frontera digital. Circuitos de neón alimentan sistemas construidos desde lógica, pero moldeados por creatividad. Es un espacio donde la identidad se escribe en código y las ideas evolucionan con cada tecla presionada. Los glitches no rompen las cosas — las revelan. Esto no es solo una red; es un reflejo de la imaginación humana.",
+        "buttons": {
+            "skills": "Matriz de Habilidades",
+            "projects": "Archivo de Proyectos"
+        }
+    },
+    "Projects": {
+        "sectionTitle": "Archivo de Proyectos",
+        "private": "PRIVADO",
+        "live": "En Vivo",
+        "github": "Github",
+        "cards": {
+            "skinbattle": {
+                "title": "SkinBattle.gg",
+                "subtitle": "Plataforma de Batalla de Skins CS:GO",
+                "description": "SkinBattle.gg es una plataforma dinámica donde los usuarios compiten en batallas de skins CS:GO en tiempo real. Construido con Next.js, Material UI y Redux Toolkit, ofrece una interfaz fluida y responsiva con interacciones de juego en vivo. La plataforma soporta login seguro, actualizaciones en tiempo real usando WebSockets, e integra lógica de juego compleja mientras mantiene estado consistente en toda la UI. Diseñado con alto rendimiento y engagement de usuario en mente, este proyecto freelance refleja una mezcla pulida de ingeniería frontend y diseño centrado en el usuario."
+            },
+            "hookpilot": {
+                "title": "Hookpilot",
+                "subtitle": "Gestor de Git Hooks Flexible para Flujos de Trabajo Modernos",
+                "description": "Hookpilot es un gestor de Git hooks configurable diseñado para agilizar flujos de trabajo de desarrollo y aplicar mejores prácticas. Soporta hooks predefinidos y personalizados para tareas como linting, testing, formateo, auditorías de seguridad, verificaciones de dependencias, validación de mensajes de commit, y más. Con una CLI interactiva, configuraciones específicas por entorno, y soporte para anulaciones via --no-verify, Hookpilot es ideal para equipos que buscan automatizar compuertas de calidad y enviar con confianza."
+            },
+            "felis": {
+                "title": "Felis AI",
+                "subtitle": "Chatbot Privado de Investigación y Memoria",
+                "description": "Felis AI es un asistente de investigación profundamente personalizado impulsado por técnicas avanzadas de RAG (Generación Aumentada por Recuperación). Fusiona inteligentemente generación de AI consciente del contexto con recuperación dinámica de documentos para entregar conversaciones precisas y persistentes en memoria. Diseñado con LangChain para flujos de trabajo modulares de AI y respaldado por Supabase para almacenamiento vectorial seguro, Felis excele en asistir en investigación, ideación y trabajo de conocimiento de forma larga. Su interfaz—construida con ShadCN UI y Tailwind CSS—presenta transiciones de tema, flujos animados y una UX emocionalmente expresiva, mezclando profundidad técnica con diseño emotivo."
+            },
+            "javascriptverse": {
+                "title": "JavaScript-Verse",
+                "subtitle": "Playground JavaScript & React en Navegador con Ejecución en Vivo",
+                "description": "JavaScript-Verse es un entorno de codificación poderoso en navegador diseñado para desarrollo JavaScript y React. Soporta ejecución de código en tiempo real, transpilación JSX usando Babel, y vista previa en vivo via sandboxes iframe seguros. La plataforma habilita importaciones de módulos NPM en tiempo de ejecución, llamadas API, y características como código exportable, cheatsheets de codificación, y documentación integrada con markdown. Los desarrolladores pueden escribir código modular multi-celda e incluso manejar declaraciones import gracias a opciones de bundling integradas usando Webpack o ESBuild. Diseñado para propósitos educativos, exploratorios y colaborativos, JavaScript-Verse enfatiza seguridad, interactividad y ergonomía del desarrollador."
+            },
+            "filesqueeze": {
+                "title": "FileSqueeze",
+                "subtitle": "Optimizador de Tamaño de Archivo para Desarrolladores",
+                "description": "FileSqueeze es una herramienta CLI ligera diseñada para desarrolladores para comprimir y optimizar assets de proyecto durante la fase de build o deployment. Soportando formatos como JS, JSON, HTML y CSS, habilita tiempos de carga más rápidos y tamaños de bundle más pequeños sin sacrificar calidad. Construido con Node.js y disponible via npm, FileSqueeze se integra fácilmente en pipelines CI/CD y flujos de trabajo de desarrollo local. El proyecto enfatiza control del desarrollador, configurabilidad y rendimiento ultrarrápido."
+            }
+        }
+    },
+    "Skills": {
+        "title": "Matriz de Habilidades",
+        "footer": "Calibración de circuito completa. Todas las capacidades totalmente operacionales"
+    }
+}

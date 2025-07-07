@@ -1,40 +1,43 @@
 {
-    "Home": {
-        "title": "My world!",
-        "about": "Go to the about page"
+    "Page": {
+        "sections": {
+            "skillsModule": "/// FÄHIGKEITEN.MODUL",
+            "experienceModule": "/// ERFAHRUNG.MODUL",
+            "loading": "Lade..."
+        }
     },
     "About": {
         "title": "Identitätsprotokoll",
-        "paragraph1": "Ich entwickle an der Schnittstelle von Identität, Code und Vorstellungskraft – dort, wo jede Komponente ein Signal im ständigen Austausch zwischen Mensch und Maschine ist. Meine Arbeit ist modular, reaktiv und bewusst verdrahtet, wie Schaltkreise, die durch eine lebendige Oberfläche pulsieren.",
-        "paragraph2": "Ich entwerfe Systeme, die sich lebendig anfühlen. Jeder Pixel hat seinen Zweck. Jede Animation ist ein Dialog. Ob React, Tailwind, Shader oder Zustandsmaschinen – meine Werkzeuge formen reaktive, immersive Erlebnisse, die genauso fühlen wie funktionieren.",
-        "paragraph3": "Das hier ist nicht einfach ein Portfolio. Es ist ein Gitter. Eine Reflexion davon, wie ich denke, kreiere und verbinde. Ein Raum, in dem Kreativität wie Daten fließt und Interfaces mit Energie summen.",
+        "paragraph1": "Ich entwickle an der Schnittstelle von Identität, Code und Vorstellungskraft – wo jede Komponente ein Signal im ständigen Austausch zwischen Mensch und Maschine ist. Meine Arbeit ist modular, reaktiv und durchzogen von Absicht – wie Schaltkreise, die durch ein lebendiges Interface pulsieren.",
+        "paragraph2": "Ich entwerfe Systeme, die lebendig wirken. Jeder Pixel existiert aus einem Grund. Jede Animation ist ein Gespräch. Ob React, Tailwind, Shader oder Zustandsmaschinen – meine Werkzeuge formen reaktive, immersive Erlebnisse, die fühlen, während sie funktionieren.",
+        "paragraph3": "Dies ist nicht einfach ein Portfolio. Es ist ein Raster. Eine Reflexion meiner Denkweise, meines Schaffens und meiner Verbindung zur Welt. Ein Raum, in dem Kreativität wie Daten fließt und Interfaces vor Energie summen.",
         "closing": "Ich bin HUMBLEF0OL – willkommen in meinem Schaltkreis.",
-        "location_latlong": "BREITE: 28.5143629° N | LÄNGE: 77.0730087° E",
-        "location_sysid": "GITTER: SEKTOR-21E / SYS-ID: HUMBLEF0OL"
+        "location_latlong": "BREITE: 28.5143629° N | LÄNGE: 77.0730087° O",
+        "location_sysid": "RASTER: SEKTOR-21E / SYS-ID: HUMBLEF0OL"
     },
     "Contact": {
         "sectionTitle": "Kontakt",
-        "introTitle": "Du hast HUMBLEFOOLs Übertragungsterminal erreicht – das neuronale Gateway, wo Code auf Kommunikation trifft.",
-        "uplinkMessage": "Ob Entwickler, Ideenarchitekt oder Recruiter aus der Zukunft – dies ist deine Verbindung. Sende eine Nachricht, und ich leite sie durch mein neuronales Netz.",
+        "introTitle": "Du hast das Übertragungsterminal von HUMBLEFOOL erreicht – das neuronale Gateway, wo Code auf Kommunikation trifft.",
+        "uplinkMessage": "Ob Entwickler, Ideenschmied oder Recruiter aus der Zukunft – dies ist deine Verbindung. Sende eine Nachricht, und ich leite sie durch mein neuronales Netz.",
         "terminalLabel": "NEURAL_TERMINAL_v2.1",
         "terminalMessages": {
-            "linkEstablished": "NEURAL_LINK_HERGESTELLT...",
-            "scanningThreats": "SCANNEN_NACH_BEDROHUNGEN...",
+            "linkEstablished": "NEURONALE_VERBINDUNG_HERGESTELLT...",
+            "scanningThreats": "DURCHSUCHEN_NACH_BEDROHUNGEN...",
             "firewallActive": "FIREWALL_AKTIV...",
             "readyTransmission": "BEREIT_FÜR_ÜBERTRAGUNG...",
             "awaitingInput": "WARTE_AUF_EINGABE..."
         },
         "statusOnline": "ONLINE",
-        "statusSecure": "SICHER",
+        "statusSecure": "GESICHERT",
         "statusMonitored": "ÜBERWACHT",
         "form": {
-            "title": "GESICHERTE_ÜBERTRAGUNG",
+            "title": "SICHERE_ÜBERTRAGUNG",
             "nameLabel": "NAME_EINGABE",
-            "namePlaceholder": "Signatur eingeben...",
-            "emailLabel": "EMAIL_PROTOKOLL",
-            "emailPlaceholder": "deine@email.de",
-            "messageLabel": "NACHRICHT_PAYLOAD",
-            "messagePlaceholder": "Sende dein Datenpaket...",
+            "namePlaceholder": "Gib deine Signatur ein...",
+            "emailLabel": "EMAIL_PROTOCOL",
+            "emailPlaceholder": "deine@email.com",
+            "messageLabel": "NACHRICHTEN_PAYLOAD",
+            "messagePlaceholder": "Übermittle dein Datenpaket...",
             "sendButton": "Nachricht senden",
             "sendingButton": "Senden..."
         },
@@ -52,21 +55,141 @@
             "nameLabel": "Name",
             "nameValue": "Amit Rana",
             "roleLabel": "Rolle",
-            "roleValue": "Senior Entwicklungsingenieur",
+            "roleValue": "Senior Development Engineer",
             "statusLabel": "Status",
             "statusValue": "Online",
             "versionLabel": "Version",
             "versionValue": "v3.2.7"
         },
         "log": {
-            "auth": "[ OK ] Auth: Erfolgreich",
-            "github": "[ SYS ] GitHub verbunden",
-            "memory": "[ CORE ] Speicher geladen: 92%",
+            "auth": "[ OK ] Authentifizierung: Erfolgreich",
+            "github": "[ SYS ] GitHub verknüpft",
+            "memory": "[ CORE ] Speicher gestartet: 92%",
             "renderer": "[ NODE ] Visual Renderer: Stabil",
-            "creativity": "[ INFO ] Kreativ-Engine: Aktiv"
+            "creativity": "[ INFO ] Kreativitätsmodul: Aktiv"
         },
         "barcode": {
-            "label": "// SERIALISIERTER ID-CODE //"
+            "label": "// SERIALISIERTE ID-CODE //"
         }
+    },
+    "Experience": {
+        "sectionTitle": "Erfahrungsprotokoll",
+        "terminalLogStart": {
+            "userId": "[ BENUTZER.ID ] _HUMBLEF00L_",
+            "accessLevel": "[ ZUGRIFFSEBENE ] AUTORISIERT // FREIGABE: STUFE-03",
+            "timeframe": "[ ZEITRAUM ] AKTIVITÄTSLOGBUCH -- 2022 ▶ 2025"
+        },
+        "tabs": {
+            "sde2": {
+                "labelFull": "SOFTWAREENTWICKLER 2",
+                "labelShort": "SDE 2"
+            },
+            "sde1": {
+                "labelFull": "SOFTWAREENTWICKLER 1",
+                "labelShort": "SDE 1"
+            },
+            "intern": {
+                "labelFull": "PRAKTIKANT SOFTWAREENTWICKLUNG",
+                "labelShort": "SDE PRAKTIKANT"
+            }
+        },
+        "content": {
+            "operationsLabel": "Operationen",
+            "sde2": {
+                "title": "Softwareentwickler 2",
+                "period": "Juli 2023 – Heute",
+                "op1": "Architektur und Auslieferung eines skalierbaren Frontends für über 300K Nutzer mit Next.js und Tailwind CSS, mit Core Web Vitals >95 in Performance, SEO und Zugänglichkeit.",
+                "op2": "Frontend-Architektur entworfen und funktionsübergreifende Zusammenarbeit mit Produkt-, Backend- und Designteams geleitet.",
+                "op3": "PWA-Funktionen integriert, um das mobile Engagement und die Nutzerbindung um 30 % zu steigern.",
+                "op4": "Zustand für globales State Management und i18n für mehrsprachige Unterstützung eingeführt.",
+                "op5": "REST API Workflows mit .NET-Backend implementiert, Performance und Wartbarkeit verbessert."
+            },
+            "sde1": {
+                "title": "Softwareentwickler 1",
+                "period": "Juni 2021 – Juni 2023",
+                "op1": "Robustes Buchungssystem für 10.000+ Nutzer entwickelt und gewartet, mit hoher Verfügbarkeit und reaktionsschneller UX.",
+                "op2": "Lighthouse-Scores von 55 auf 90+ verbessert, Ladezeiten um ca. 45 % reduziert.",
+                "op3": "SEO durch semantisches HTML, Meta-Tags, strukturierte Daten und Sitemaps optimiert.",
+                "op4": "WCAG-Zugänglichkeitsstandards mit ARIA und Tastaturunterstützung umgesetzt.",
+                "op5": "Funktionen mit React.js, Redux, SCSS und Material UI entwickelt – modular und skalierbar."
+            },
+            "intern": {
+                "title": "Softwareentwicklungspraktikant",
+                "period": "Jan 2021 – Mai 2021",
+                "op1": "Google Analytics 4 integriert, um umfassende Einblicke in das Nutzerverhalten zu ermöglichen.",
+                "op2": "Internationalisierung (i18n) eingeführt, um die UI mehrsprachig zugänglich zu machen.",
+                "op3": "Wiederverwendbare UI-Komponenten mit React.js gemäß Designsystem erstellt.",
+                "op4": "Zu Unit-Tests und Code-Reviews beigetragen – Codequalität verbessert und CI/CD gestärkt."
+            }
+        },
+        "terminalLogEnd": {
+            "end": "ENDE DES LOGS",
+            "status": "[ STATUS ] ERFAHRUNGSBAUM STABIL",
+            "nextSync": "[ NÄCHSTE SYNCHRONISIERUNG ] T+30d"
+        }
+    },
+    "Footer": {
+        "tagline": "Architektur von Interfaces am Rande der Vorstellungskraft. Angetrieben von Code, Neugier & ein wenig Chaos."
+    },
+    "Header": {
+        "navLinks": {
+            "home": "Start",
+            "about": "Über mich",
+            "skills": "Fähigkeiten",
+            "projects": "Projekte",
+            "xp": "Berufserfahrung"
+        },
+        "buttons": {
+            "contact": "Kontakt",
+            "close": "Schließen"
+        },
+        "languageSelector": {
+            "label": "Sprache"
+        }
+    },
+    "Home": {
+        "headline": "Willkommen im Raster",
+        "description": "Das Raster. Eine digitale Grenze. Neon-Schaltkreise betreiben Systeme aus Logik, geformt von Kreativität. Es ist ein Raum, in dem Identität in Code geschrieben wird und Ideen mit jedem Tastendruck wachsen. Glitches zerstören nicht – sie offenbaren. Dies ist kein Netzwerk, sondern eine Reflexion menschlicher Vorstellungskraft.",
+        "buttons": {
+            "skills": "Fähigkeitenmatrix",
+            "projects": "Projektarchiv"
+        }
+    },
+    "Projects": {
+        "sectionTitle": "Projektarchiv",
+        "private": "PRIVAT",
+        "live": "Live",
+        "github": "Github",
+        "cards": {
+            "skinbattle": {
+                "title": "SkinBattle.gg",
+                "subtitle": "CS:GO Skin Battle Plattform",
+                "description": "SkinBattle.gg ist eine dynamische Plattform, auf der Benutzer in Echtzeit CS:GO-Skin-Battles austragen. Entwickelt mit Next.js, Material UI und Redux Toolkit bietet sie eine nahtlose, reaktionsfähige Benutzeroberfläche mit Live-Gameplay-Interaktion. Die Plattform unterstützt sichere Anmeldungen, Echtzeit-Updates via WebSockets und komplexe Spielmechaniken mit konsistentem UI-Zustand. Dieses Freelance-Projekt ist eine Mischung aus Engineering und nutzerzentriertem Design."
+            },
+            "hookpilot": {
+                "title": "Hookpilot",
+                "subtitle": "Flexibler Git Hook Manager für moderne Dev-Workflows",
+                "description": "Hookpilot ist ein konfigurierbarer Git-Hook-Manager zur Optimierung von Entwicklungsworkflows und Einhaltung von Best Practices. Er unterstützt vordefinierte und benutzerdefinierte Hooks für Linting, Tests, Formatierung, Sicherheitsprüfungen, Commit-Validierung und mehr. Mit interaktiver CLI, umgebungsbasierten Setups und `--no-verify` Overrides eignet sich Hookpilot ideal für Teams mit hohem Qualitätsanspruch."
+            },
+            "felis": {
+                "title": "Felis AI",
+                "subtitle": "Privater Forschungs- & Erinnerungs-Chatbot",
+                "description": "Felis AI ist ein personalisierter Forschungsassistent, der moderne RAG-Techniken (Retrieval-Augmented Generation) nutzt. Er kombiniert kontextuelles AI-Generieren mit dynamischem Dokumentenabruf und ermöglicht präzise, erinnerungsbasierte Dialoge. Basierend auf LangChain und Supabase bietet Felis eine sichere, modulare und emotionale UX mit ShadCN UI und Tailwind CSS."
+            },
+            "javascriptverse": {
+                "title": "JavaScript-Verse",
+                "subtitle": "In-Browser JS & React Playground mit Live-Ausführung",
+                "description": "JavaScript-Verse ist eine leistungsstarke In-Browser-Coding-Umgebung für JavaScript- und React-Entwicklung. Unterstützt Live-Codeausführung, JSX-Transpilation mit Babel, NPM-Imports zur Laufzeit, API-Aufrufe und sichere iframes. Ideal für Bildung, Forschung und kollaborative Entwicklung – mit Fokus auf Sicherheit, Interaktivität und Ergonomie."
+            },
+            "filesqueeze": {
+                "title": "FileSqueeze",
+                "subtitle": "Dateigrößenoptimierer für Entwickler",
+                "description": "FileSqueeze ist ein leichtgewichtiges CLI-Tool zur Komprimierung und Optimierung von Projektressourcen während des Builds oder Deployments. Unterstützt Formate wie JS, JSON, HTML und CSS. Entwickelt mit Node.js, ideal für CI/CD und lokale Entwicklungsumgebungen. Schnell, konfigurierbar, entwicklerfreundlich."
+            }
+        }
+    },
+    "Skills": {
+        "title": "Fähigkeitenmatrix",
+        "footer": "Schaltkreiskalibrierung abgeschlossen. Alle Funktionen voll betriebsbereit."
     }
 }

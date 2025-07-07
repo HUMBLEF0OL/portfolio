@@ -1,0 +1,195 @@
+{
+    "Page": {
+        "sections": {
+            "skillsModule": "/// 技能模块",
+            "experienceModule": "/// 经验模块",
+            "loading": "加载中..."
+        }
+    },
+    "About": {
+        "title": "身份日志",
+        "paragraph1": "我在身份、代码与想象力的交汇处构建，每个组件都是人与机器之间持续交流的信号。我的作品是模块化、响应式的，带着如电路般流动的意图，贯穿于活跃的界面之中。",
+        "paragraph2": "我设计的系统仿佛有生命。每一个像素都存在理由，每一个动画都是一场对话。无论是 React、Tailwind、着色器还是状态机，我的工具都能塑造出既有感知又有功能的沉浸式体验。",
+        "paragraph3": "这不仅仅是作品集。这是一个网格。反映了我的思考、创造与连接方式。创意如数据流动，界面充满能量。",
+        "closing": "我是 HUMBLEF0OL——欢迎来到我的电路。",
+        "location_latlong": "纬度: 28.5143629° N | 经度: 77.0730087° E",
+        "location_sysid": "网格: SECTOR-21E / 系统ID: HUMBLEF0OL"
+    },
+    "Contact": {
+        "sectionTitle": "联系",
+        "introTitle": "你已到达 HUMBLEFOOL 的传输终端，这里是代码与对话的神经网关。",
+        "uplinkMessage": "无论你是开发者、创意者，还是来自未来的招聘者——这是你的上行链路。发送消息，我会通过我的神经网络转发。",
+        "terminalLabel": "NEURAL_TERMINAL_v2.1",
+        "terminalMessages": {
+            "linkEstablished": "神经连接已建立...",
+            "scanningThreats": "正在扫描威胁...",
+            "firewallActive": "防火墙已激活...",
+            "readyTransmission": "准备传输...",
+            "awaitingInput": "等待输入..."
+        },
+        "statusOnline": "在线",
+        "statusSecure": "安全",
+        "statusMonitored": "监控中",
+        "form": {
+            "title": "安全传输",
+            "nameLabel": "姓名输入",
+            "namePlaceholder": "输入您的签名...",
+            "emailLabel": "邮箱协议",
+            "emailPlaceholder": "your@email.com",
+            "messageLabel": "消息载荷",
+            "messagePlaceholder": "传输您的数据包...",
+            "sendButton": "发送消息",
+            "sendingButton": "发送中..."
+        },
+        "footerStatus": "系统状态：运行中",
+        "footerTime": "本地时间"
+    },
+    "CyberIDCard": {
+        "header": {
+            "title": "身份广播",
+            "subtitle": "安全会话",
+            "id": "ID: HUMBLEFOOL-G7KX",
+            "ping": "Ping 码: 9XK-JU42-FELIS"
+        },
+        "identity": {
+            "nameLabel": "姓名",
+            "nameValue": "Amit Rana",
+            "roleLabel": "职位",
+            "roleValue": "高级开发工程师",
+            "statusLabel": "状态",
+            "statusValue": "在线",
+            "versionLabel": "版本",
+            "versionValue": "v3.2.7"
+        },
+        "log": {
+            "auth": "[ OK ] 认证：成功",
+            "github": "[ 系统 ] GitHub 已连接",
+            "memory": "[ 核心 ] 内存已启动：92%",
+            "renderer": "[ 节点 ] 可视化渲染器：稳定",
+            "creativity": "[ 信息 ] 创意引擎：活跃"
+        },
+        "barcode": {
+            "label": "// 序列化ID码 //"
+        }
+    },
+    "Experience": {
+        "sectionTitle": "经验日志",
+        "terminalLogStart": {
+            "userId": " [ 用户ID ] _HUMBLEF00L_",
+            "accessLevel": " [ 访问级别 ] 已授权 // 权限：第3级",
+            "timeframe": " [ 时间范围 ] 活动日志 -- 2022 ▶ 2025"
+        },
+        "tabs": {
+            "sde2": {
+                "labelFull": "软件开发工程师 2",
+                "labelShort": "SDE 2"
+            },
+            "sde1": {
+                "labelFull": "软件开发工程师 1",
+                "labelShort": "SDE 1"
+            },
+            "intern": {
+                "labelFull": "软件开发实习生",
+                "labelShort": "实习生"
+            }
+        },
+        "content": {
+            "operationsLabel": "操作",
+            "sde2": {
+                "title": "软件开发工程师 2",
+                "period": "2023年7月 – 至今",
+                "op1": "架构并发布了一个可扩展的前端，服务30万+用户，使用 Next.js 和 Tailwind CSS，在性能、SEO 和可访问性方面实现了95+ Core Web Vitals。",
+                "op2": "设计前端架构，主导与产品、后端和设计团队的跨部门协作。",
+                "op3": "集成PWA功能，提升移动端参与度和用户留存率30%。",
+                "op4": "使用 Zustand 进行全局状态管理，并实现多语言支持。",
+                "op5": "与基于 .NET 的后端集成 REST API 工作流，提高性能和可维护性。"
+            },
+            "sde1": {
+                "title": "软件开发工程师 1",
+                "period": "2021年6月 – 2023年6月",
+                "op1": "开发并维护了一个高可用、响应式的预订引擎，服务1万+用户。",
+                "op2": "通过性能优化将 Lighthouse 分数从55提升到90+，页面加载时间缩短约45%。",
+                "op3": "通过语义化HTML、元标签、结构化数据和站点地图提升SEO表现。",
+                "op4": "所有UI组件均符合WCAG可访问性标准，支持ARIA和键盘操作。",
+                "op5": "使用 React.js、Redux、SCSS 和 Material UI 构建功能，保证前端代码库模块化、可扩展。"
+            },
+            "intern": {
+                "title": "软件开发实习生",
+                "period": "2021年1月 – 2021年5月",
+                "op1": "集成 Google Analytics 4，实现用户行为洞察和数据驱动UI决策。",
+                "op2": "实现国际化(i18n)多语言UI，拓展产品全球可访问性。",
+                "op3": "使用 React.js 构建可复用UI组件，符合设计系统规范。",
+                "op4": "参与单元测试和代码评审，提升代码质量和CI/CD信心。"
+            }
+        },
+        "terminalLogEnd": {
+            "end": "日志结束",
+            "status": " [ 状态 ] 经验树稳定",
+            "nextSync": " [ 下次同步 ] T+30天"
+        }
+    },
+    "Footer": {
+        "tagline": "在想象力边缘架构界面。由代码、好奇心和一点点混沌驱动。"
+    },
+    "Header": {
+        "navLinks": {
+            "home": "首页",
+            "about": "关于",
+            "skills": "技能",
+            "projects": "项目",
+            "xp": "工作经验"
+        },
+        "buttons": {
+            "contact": "联系",
+            "close": "关闭"
+        },
+        "languageSelector": {
+            "label": "语言"
+        }
+    },
+    "Home": {
+        "headline": "欢迎来到网格",
+        "description": "网格。数字前沿。霓虹电路为系统供能，逻辑构建，创意塑造。在这里，身份用代码书写，想法随每一次敲击进化。故障不是破坏，而是揭示。这不仅是网络，更是人类想象力的映射。",
+        "buttons": {
+            "skills": "技能矩阵",
+            "projects": "项目档案"
+        }
+    },
+    "Projects": {
+        "sectionTitle": "项目档案",
+        "private": "私有",
+        "live": "在线",
+        "github": "Github",
+        "cards": {
+            "skinbattle": {
+                "title": "SkinBattle.gg",
+                "subtitle": "CS:GO 皮肤对战平台",
+                "description": "SkinBattle.gg 是一个动态平台，用户可实时参与 CS:GO 皮肤对战。基于 Next.js、Material UI 和 Redux Toolkit 构建，界面流畅响应，支持实时游戏互动。平台具备安全登录、WebSocket 实时更新，并集成复杂游戏逻辑，确保界面状态一致。该自由职业项目展现了前端工程与用户体验设计的完美结合。"
+            },
+            "hookpilot": {
+                "title": "Hookpilot",
+                "subtitle": "现代开发流程的灵活 Git Hook 管理器",
+                "description": "Hookpilot 是一款可配置的 Git hook 管理器，用于简化开发流程并执行最佳实践。支持预设和自定义 hook，涵盖 lint、测试、格式化、安全审计、依赖检查、提交消息校验等。提供交互式 CLI、环境特定设置，并支持 --no-verify 覆盖。适合希望自动化质量门控、自信发布的团队。"
+            },
+            "felis": {
+                "title": "Felis AI",
+                "subtitle": "私有研究与记忆聊天机器人",
+                "description": "Felis AI 是一款高度个性化的研究助手，采用先进的 RAG（检索增强生成）技术。智能融合上下文感知 AI 生成与动态文档检索，实现精准、持久记忆的对话。基于 LangChain 构建模块化 AI 流程，Supabase 提供安全向量存储。界面采用 ShadCN UI 和 Tailwind CSS，支持主题切换、动画流畅，情感化体验，兼具技术深度与温度设计。"
+            },
+            "javascriptverse": {
+                "title": "JavaScript-Verse",
+                "subtitle": "浏览器内 JavaScript & React 实时执行沙盒",
+                "description": "JavaScript-Verse 是专为 JavaScript 和 React 开发打造的强大在线编程环境。支持代码实时执行、Babel JSX 转译，通过安全 iframe 预览。可在运行时导入 NPM 模块、发起 API 调用，支持代码导出、速查表和 Markdown 文档。开发者可编写模块化多单元代码，支持 Webpack 或 ESBuild 打包。适用于教学、探索和协作，注重安全、交互性和开发体验。"
+            },
+            "filesqueeze": {
+                "title": "FileSqueeze",
+                "subtitle": "开发者文件体积优化工具",
+                "description": "FileSqueeze 是为开发者设计的轻量级 CLI 工具，用于在构建或部署阶段压缩和优化项目资源。支持 JS、JSON、HTML、CSS 等格式，加快加载速度，缩小包体积且不损失质量。基于 Node.js 构建，可通过 npm 获取，易于集成到 CI/CD 流程和本地开发。强调开发者可控、可配置和极致性能。"
+            }
+        }
+    },
+    "Skills": {
+        "title": "技能矩阵",
+        "footer": "电路校准完成。全部能力已全面激活"
+    }
+}

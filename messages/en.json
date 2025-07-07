@@ -154,5 +154,42 @@
             "skills": "Skill Matrix",
             "projects": "Project Archives"
         }
+    },
+    "Projects": {
+        "sectionTitle": "Project Archive",
+        "private": "PRIVATE",
+        "live": "Live",
+        "github": "Github",
+        "cards": {
+            "skinbattle": {
+                "title": "SkinBattle.gg",
+                "subtitle": "CS:GO Skin Battle Platform",
+                "description": "SkinBattle.gg is a dynamic platform where users compete in real-time CS:GO skin battles. Built with Next.js, Material UI, and Redux Toolkit, it delivers a seamless, responsive interface with live gameplay interactions. The platform supports secure login, real-time updates using WebSockets, and integrates complex game logic while maintaining consistent state across the UI. Designed with high performance and user engagement in mind, this freelance project reflects a polished mix of frontend engineering and user-centric design."
+            },
+            "hookpilot": {
+                "title": "Hookpilot",
+                "subtitle": "Flexible Git Hook Manager for Modern Dev Workflows",
+                "description": "Hookpilot is a configurable Git hook manager designed to streamline development workflows and enforce best practices. It supports predefined and custom hooks for tasks like linting, testing, formatting, security audits, dependency checks, commit message validation, and more. With an interactive CLI, environment-specific setups, and support for overrides via --no-verify, Hookpilot is ideal for teams looking to automate quality gates and ship confidently."
+            },
+            "felis": {
+                "title": "Felis AI",
+                "subtitle": "Private Research & Memory Chatbot",
+                "description": "Felis AI is a deeply personalized research assistant powered by advanced RAG (Retrieval-Augmented Generation) techniques. It intelligently fuses context-aware AI generation with dynamic document retrieval to deliver precise, memory-persistent conversations. Designed with LangChain for modular AI workflows and backed by Supabase for secure vector storage, Felis excels at assisting in research, ideation, and long-form knowledge work. Its interface—built with ShadCN UI and Tailwind CSS—features theme transitions, animated flows, and an emotionally expressive UX, blending technical depth with heartfelt design."
+            },
+            "javascriptverse": {
+                "title": "JavaScript-Verse",
+                "subtitle": "In-Browser JavaScript & React Playground with Live Execution",
+                "description": "JavaScript-Verse is a powerful in-browser coding environment tailored for JavaScript and React development. It supports real-time code execution, JSX transpilation using Babel, and live preview via secure iframe sandboxes. The platform enables NPM module imports at runtime, API calls, and features like exportable code, coding cheatsheets, and markdown-integrated documentation. Developers can write modular, multi-cell code and even handle import statements thanks to integrated bundling options using Webpack or ESBuild. Designed for educational, exploratory, and collaborative purposes, JavaScript-Verse emphasizes security, interactivity, and developer ergonomics."
+            },
+            "filesqueeze": {
+                "title": "FileSqueeze",
+                "subtitle": "File Size Optimizer for Developers",
+                "description": "FileSqueeze is a lightweight CLI tool designed for developers to compress and optimize project assets during the build or deployment phase. Supporting formats like JS, JSON, HTML, and CSS, it enables faster load times and smaller bundle sizes without sacrificing quality. Built with Node.js and available via npm, FileSqueeze integrates easily into CI/CD pipelines and local development workflows. The project emphasizes developer control, configurability, and blazing fast performance."
+            }
+        }
+    },
+    "Skills": {
+        "title": "Skill Matrix",
+        "footer": "Circuit calibration complete. All capabilities fully operational"
     }
 }
