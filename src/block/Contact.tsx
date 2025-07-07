@@ -103,9 +103,8 @@ const Contact = () => {
             <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start lg:px-16 gap-8 z-0">
                 {/* Left Description */}
                 <div className="flex flex-col gap-4 max-w-xl">
-                    <h3 className="text-[18px] lg:text-[20px] font-medium">
-                        You've reached the transmission terminal of Amit Rana, full-stack fabricator of interfaces, seeker of fast frontends, and guardian of clean code.
-                    </h3>
+                    <h3 className="text-[18px] lg:text-[20px]">
+                        You've reached HUMBLEFOOL'S transmission terminal — the neural gateway where code meets conversation. Whether you're a developer exploring synergies, a recruiter scanning frequencies, or a creator looking to collaborate, you're in the right sector.                    </h3>
                     <h4 className="text-[16px] lg:text-[18px] text-muted-foreground">
                         Whether you're a fellow dev, an idea-crafter, or a recruiter from the future — this is your uplink. Fire a message, and I’ll route it through my neural grid.
                     </h4>
@@ -200,7 +199,7 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
-            <div className="flex justify-between items-center text-xs font-mono text-cyan-400/60 z-10">
+            <div className="flex justify-between items-center text-xs font-mono text-highlight z-10">
                 <span className="hidden sm:inline-flex">SYSTEM_STATUS: OPERATIONAL</span>
                 <span>LOCALE_TIME: {currentTime}</span>
             </div>

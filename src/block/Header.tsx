@@ -90,7 +90,7 @@ const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
             <a href="/resume.pdf" download aria-label="Download Resume">
                 <ArrowBigDownDash className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
             </a>
-            <a download aria-label="Download Resume">
+            <a download aria-label="audio play/pause">
                 <Volume2 className="w-6 h-6 text-highlight hover:text-primary transition-colors duration-200" />
             </a>
         </div>
@@ -183,9 +183,9 @@ const Header = () => {
                             <NavIcons classStyle='flex items-center justify-between px-4 mb-6' />
                             <div className='relative flex flex-row gap-4 angular-tl-br-lg'>
                                 <TopLeft />
-                                <Button className='flex-1'>Contact Me</Button>
+                                <Button className='flex-1 text-xs'>Contact Me</Button>
                                 <DrawerClose >
-                                    <Button className='flex-1' variant={'secondary'}>Close</Button>
+                                    <Button className='flex-1 text-xs' variant={'secondary'}>Close</Button>
                                 </DrawerClose>
                             </div>
                         </DrawerFooter>

@@ -35,7 +35,7 @@ const About = () => {
                     <p className="text-background font-semibold text-justify mb-[20px]">
                         This isn’t just a portfolio. It’s a grid. A reflection of how I think, create, and connect. A space where creativity flows like data and interfaces hum with energy.
                     </p>
-                    <p className='text-background font-bold text-[20px] text-right self-start'>I’m HUMBLEF0OL—welcome to my circuit.</p>
+                    <p className='text-background font-bold text-[16px] md:text-[20px]  self-start'>I’m HUMBLEF0OL—welcome to my circuit.</p>
 
                     <div className="w-full flex flex-col items-end mt-6 text-xs text-muted-foreground font-mono tracking-wide gap-1">
                         <span className="text-background/70">LAT: 28.5143629° N | LONG: 77.0730087° E</span>
