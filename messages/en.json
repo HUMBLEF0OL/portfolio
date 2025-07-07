@@ -1,0 +1,135 @@
+{
+    "Page": {
+        "sections": {
+            "skillsModule": "/// SKILLS.MODULE",
+            "experienceModule": "/// XP.MODULE",
+            "loading": "loading..."
+        }
+    },
+    "Home": {
+        "title": "Hello world!",
+        "about": "Go to the about page"
+    },
+    "About": {
+        "title": "Identity Log",
+        "paragraph1": "I build at the intersection of identity, code, and imagination, where every component is a signal in the constant exchange between human and machine. My work is modular, reactive, and wired with intent like circuits pulsing through a living interface.",
+        "paragraph2": "I design systems that feel alive. Every pixel has a reason to exist. Every animation is a conversation. Whether it’s React, Tailwind, shaders, or state machines, my tools shape responsive, immersive experiences that feel as much as they function.",
+        "paragraph3": "This isn’t just a portfolio. It’s a grid. A reflection of how I think, create, and connect. A space where creativity flows like data and interfaces hum with energy.",
+        "closing": "I’m HUMBLEF0OL—welcome to my circuit.",
+        "location_latlong": "LAT: 28.5143629° N | LONG: 77.0730087° E",
+        "location_sysid": "GRID: SECTOR-21E / SYS-ID: HUMBLEF0OL"
+    },
+    "Contact": {
+        "sectionTitle": "Contact",
+        "introTitle": "You've reached HUMBLEFOOL'S transmission terminal, the neural gateway where code meets conversation.",
+        "uplinkMessage": "Whether you're a fellow dev, an idea-crafter, or a recruiter from the future — this is your uplink. Fire a message, and I’ll route it through my neural grid.",
+        "terminalLabel": "NEURAL_TERMINAL_v2.1",
+        "terminalMessages": {
+            "linkEstablished": "NEURAL_LINK_ESTABLISHED...",
+            "scanningThreats": "SCANNING_FOR_THREATS...",
+            "firewallActive": "FIREWALL_ACTIVE...",
+            "readyTransmission": "READY_FOR_TRANSMISSION...",
+            "awaitingInput": "AWAITING_INPUT..."
+        },
+        "statusOnline": "ONLINE",
+        "statusSecure": "SECURE",
+        "statusMonitored": "MONITORED",
+        "form": {
+            "title": "SECURE_TRANSMISSION",
+            "nameLabel": "NAME_INPUT",
+            "namePlaceholder": "Enter your signature...",
+            "emailLabel": "EMAIL_PROTOCOL",
+            "emailPlaceholder": "your@email.com",
+            "messageLabel": "MESSAGE_PAYLOAD",
+            "messagePlaceholder": "Transmit your data packet...",
+            "sendButton": "Send Message",
+            "sendingButton": "Sending..."
+        },
+        "footerStatus": "SYSTEM_STATUS: OPERATIONAL",
+        "footerTime": "LOCALE_TIME"
+    },
+    "CyberIDCard": {
+        "header": {
+            "title": "Identity Broadcast",
+            "subtitle": "Secure Session",
+            "id": "ID: HUMBLEFOOL-G7KX",
+            "ping": "Ping Code: 9XK-JU42-FELIS"
+        },
+        "identity": {
+            "nameLabel": "Name",
+            "nameValue": "Amit Rana",
+            "roleLabel": "Role",
+            "roleValue": "Senior Development Engineer",
+            "statusLabel": "Status",
+            "statusValue": "Online",
+            "versionLabel": "Version",
+            "versionValue": "v3.2.7"
+        },
+        "log": {
+            "auth": "[ OK ] Auth: Success",
+            "github": "[ SYS ] GitHub Linked",
+            "memory": "[ CORE ] Memory Booted: 92%",
+            "renderer": "[ NODE ] Visual Renderer: Stable",
+            "creativity": "[ INFO ] Creativity Engine: Active"
+        },
+        "barcode": {
+            "label": "// SERIALIZED ID CODE //"
+        }
+    },
+    "Experience": {
+        "sectionTitle": "Experience Log",
+        "terminalLogStart": {
+            "userId": " [  USER.ID  ] _HUMBLEF00L_",
+            "accessLevel": " [  ACCESS LEVEL  ] AUTHORIZED // CLEARANCE: TIER-03",
+            "timeframe": " [  TIMEFRAME  ] ACTIVITY LOG -- 2022 ▶ 2025"
+        },
+        "tabs": {
+            "sde2": {
+                "labelFull": "SOFTWARE DEVELOPMENT ENGINEER 2",
+                "labelShort": "SDE 2"
+            },
+            "sde1": {
+                "labelFull": "SOFTWARE DEVELOPMENT ENGINEER 1",
+                "labelShort": "SDE 1"
+            },
+            "intern": {
+                "labelFull": "SOFTWARE DEVELOPMENT INTERN",
+                "labelShort": "SDE INTERN"
+            }
+        },
+        "content": {
+            "operationsLabel": "Operations",
+            "sde2": {
+                "title": "Software Development Engineer 2",
+                "period": "July 2023 – Present",
+                "op1": "Architected and shipped a scalable frontend used by 300K+ users using Next.js and Tailwind CSS, achieving 95+ Core Web Vitals across performance, SEO, and accessibility.",
+                "op2": "Designed frontend architecture while leading cross-functional collaboration with product, backend, and design teams.",
+                "op3": "Integrated PWA features to boost mobile engagement and user retention by 30%.",
+                "op4": "Implemented Zustand for global state management and i18n for multilingual support across the app.",
+                "op5": "Developed REST API integration workflows with a .NET-based backend, improving performance and maintainability."
+            },
+            "sde1": {
+                "title": "Software Development Engineer 1",
+                "period": "June 2021 – June 2023",
+                "op1": "Engineered and maintained a robust booking engine serving 10,000+ users, with high availability and responsive UX.",
+                "op2": "Improved Lighthouse scores from 55 to 90+, cutting load time by ~45% through performance optimization.",
+                "op3": "Enhanced SEO via semantic HTML, meta tags, structured data, and sitemaps, improving discoverability.",
+                "op4": "Ensured WCAG accessibility compliance across all UI components using ARIA and keyboard support.",
+                "op5": "Built features using React.js, Redux, SCSS, and Material UI, ensuring a modular, scalable frontend codebase."
+            },
+            "intern": {
+                "title": "Software Development Intern",
+                "period": "Jan 2021 – May 2021",
+                "op1": "Integrated Google Analytics 4 to enable rich user behavior insights and data-driven UI decisions.",
+                "op2": "Implemented internationalization (i18n) for multilingual UI, expanding product accessibility for global users.",
+                "op3": "Built reusable UI components with React.js, aligning with design system guidelines.",
+                "op4": "Contributed to unit testing and code reviews, maintaining code quality and improving CI/CD confidence."
+            }
+        },
+        "terminalLogEnd": {
+            "end": "END OF LOG",
+            "status": " [  STATUS  ] EXPERIENCE TREE STABLE",
+            "nextSync": " [  NEXT SYNC  ] T+30d"
+        }
+    }
+}

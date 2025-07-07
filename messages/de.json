@@ -1,0 +1,72 @@
+{
+    "Home": {
+        "title": "My world!",
+        "about": "Go to the about page"
+    },
+    "About": {
+        "title": "Identitätsprotokoll",
+        "paragraph1": "Ich entwickle an der Schnittstelle von Identität, Code und Vorstellungskraft – dort, wo jede Komponente ein Signal im ständigen Austausch zwischen Mensch und Maschine ist. Meine Arbeit ist modular, reaktiv und bewusst verdrahtet, wie Schaltkreise, die durch eine lebendige Oberfläche pulsieren.",
+        "paragraph2": "Ich entwerfe Systeme, die sich lebendig anfühlen. Jeder Pixel hat seinen Zweck. Jede Animation ist ein Dialog. Ob React, Tailwind, Shader oder Zustandsmaschinen – meine Werkzeuge formen reaktive, immersive Erlebnisse, die genauso fühlen wie funktionieren.",
+        "paragraph3": "Das hier ist nicht einfach ein Portfolio. Es ist ein Gitter. Eine Reflexion davon, wie ich denke, kreiere und verbinde. Ein Raum, in dem Kreativität wie Daten fließt und Interfaces mit Energie summen.",
+        "closing": "Ich bin HUMBLEF0OL – willkommen in meinem Schaltkreis.",
+        "location_latlong": "BREITE: 28.5143629° N | LÄNGE: 77.0730087° E",
+        "location_sysid": "GITTER: SEKTOR-21E / SYS-ID: HUMBLEF0OL"
+    },
+    "Contact": {
+        "sectionTitle": "Kontakt",
+        "introTitle": "Du hast HUMBLEFOOLs Übertragungsterminal erreicht – das neuronale Gateway, wo Code auf Kommunikation trifft.",
+        "uplinkMessage": "Ob Entwickler, Ideenarchitekt oder Recruiter aus der Zukunft – dies ist deine Verbindung. Sende eine Nachricht, und ich leite sie durch mein neuronales Netz.",
+        "terminalLabel": "NEURAL_TERMINAL_v2.1",
+        "terminalMessages": {
+            "linkEstablished": "NEURAL_LINK_HERGESTELLT...",
+            "scanningThreats": "SCANNEN_NACH_BEDROHUNGEN...",
+            "firewallActive": "FIREWALL_AKTIV...",
+            "readyTransmission": "BEREIT_FÜR_ÜBERTRAGUNG...",
+            "awaitingInput": "WARTE_AUF_EINGABE..."
+        },
+        "statusOnline": "ONLINE",
+        "statusSecure": "SICHER",
+        "statusMonitored": "ÜBERWACHT",
+        "form": {
+            "title": "GESICHERTE_ÜBERTRAGUNG",
+            "nameLabel": "NAME_EINGABE",
+            "namePlaceholder": "Signatur eingeben...",
+            "emailLabel": "EMAIL_PROTOKOLL",
+            "emailPlaceholder": "deine@email.de",
+            "messageLabel": "NACHRICHT_PAYLOAD",
+            "messagePlaceholder": "Sende dein Datenpaket...",
+            "sendButton": "Nachricht senden",
+            "sendingButton": "Senden..."
+        },
+        "footerStatus": "SYSTEMSTATUS: BETRIEBSBEREIT",
+        "footerTime": "LOKALE_ZEIT"
+    },
+    "CyberIDCard": {
+        "header": {
+            "title": "Identitätsübertragung",
+            "subtitle": "Sichere Sitzung",
+            "id": "ID: HUMBLEFOOL-G7KX",
+            "ping": "Ping-Code: 9XK-JU42-FELIS"
+        },
+        "identity": {
+            "nameLabel": "Name",
+            "nameValue": "Amit Rana",
+            "roleLabel": "Rolle",
+            "roleValue": "Senior Entwicklungsingenieur",
+            "statusLabel": "Status",
+            "statusValue": "Online",
+            "versionLabel": "Version",
+            "versionValue": "v3.2.7"
+        },
+        "log": {
+            "auth": "[ OK ] Auth: Erfolgreich",
+            "github": "[ SYS ] GitHub verbunden",
+            "memory": "[ CORE ] Speicher geladen: 92%",
+            "renderer": "[ NODE ] Visual Renderer: Stabil",
+            "creativity": "[ INFO ] Kreativ-Engine: Aktiv"
+        },
+        "barcode": {
+            "label": "// SERIALISIERTER ID-CODE //"
+        }
+    }
+}
