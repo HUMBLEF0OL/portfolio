@@ -6,10 +6,6 @@
             "loading": "loading..."
         }
     },
-    "Home": {
-        "title": "Hello world!",
-        "about": "Go to the about page"
-    },
     "About": {
         "title": "Identity Log",
         "paragraph1": "I build at the intersection of identity, code, and imagination, where every component is a signal in the constant exchange between human and machine. My work is modular, reactive, and wired with intent like circuits pulsing through a living interface.",
@@ -130,6 +126,33 @@
             "end": "END OF LOG",
             "status": " [  STATUS  ] EXPERIENCE TREE STABLE",
             "nextSync": " [  NEXT SYNC  ] T+30d"
+        }
+    },
+    "Footer": {
+        "tagline": "Architecting interfaces at the edge of imagination. Powered by code, curiosity & a little chaos."
+    },
+    "Header": {
+        "navLinks": {
+            "home": "Home",
+            "about": "About",
+            "skills": "Skills",
+            "projects": "Projects",
+            "xp": "Work XP"
+        },
+        "buttons": {
+            "contact": "Contact",
+            "close": "Close"
+        },
+        "languageSelector": {
+            "label": "Language"
+        }
+    },
+    "Home": {
+        "headline": "Welcome to the Grid",
+        "description": "The Grid. A digital frontier. Neon circuits power systems built from logic, but shaped by creativity. It’s a space where identity is written in code and ideas evolve with every keystroke. Glitches don’t break things — they reveal them. This isn’t just a network; it’s a reflection of human imagination.",
+        "buttons": {
+            "skills": "Skill Matrix",
+            "projects": "Project Archives"
         }
     }
 }
