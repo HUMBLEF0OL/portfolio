@@ -17,6 +17,8 @@
     },
     "Contact": {
         "sectionTitle": "联系",
+        "successMessage": "传输成功。等待你的下一条指令。",
+        "errorMessage": "传输失败。请再试一次。",
         "introTitle": "你已到达 HUMBLEFOOL 的传输终端，这里是代码与对话的神经网关。",
         "uplinkMessage": "无论你是开发者、创意者，还是来自未来的招聘者——这是你的上行链路。发送消息，我会通过我的神经网络转发。",
         "terminalLabel": "NEURAL_TERMINAL_v2.1",

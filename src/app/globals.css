@@ -50,6 +50,24 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Prevent scroll jumping during drawer transitions */
+.drawer-transitioning {
+  overflow: hidden !important;
+}
+
+/* Ensure drawer animations don't interfere with scroll */
+[data-vaul-drawer] {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Force hardware acceleration for smoother animations */
+[data-vaul-drawer-wrapper] {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+
 h1,
 h2,
 h3,

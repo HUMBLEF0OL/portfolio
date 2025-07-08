@@ -17,6 +17,8 @@
     },
     "Contact": {
         "sectionTitle": "Kontakt",
+        "successMessage": "Übertragung erfolgreich. Warte auf deinen nächsten Befehl.",
+        "errorMessage": "Übertragung fehlgeschlagen. Bitte versuche es erneut.",
         "introTitle": "Du hast das Übertragungsterminal von HUMBLEFOOL erreicht – das neuronale Gateway, wo Code auf Kommunikation trifft.",
         "uplinkMessage": "Ob Entwickler, Ideenschmied oder Recruiter aus der Zukunft – dies ist deine Verbindung. Sende eine Nachricht, und ich leite sie durch mein neuronales Netz.",
         "terminalLabel": "NEURAL_TERMINAL_v2.1",

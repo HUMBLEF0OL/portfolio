@@ -17,6 +17,8 @@
     },
     "Contact": {
         "sectionTitle": "연락하기",
+        "successMessage": "전송 성공. 다음 명령을 기다립니다.",
+        "errorMessage": "전송 실패. 다시 시도해 주세요.",
         "introTitle": "당신은 HUMBLEFOOL의 전송 터미널에 도달했습니다 — 코드가 대화와 만나는 신경 게이트웨이입니다.",
         "uplinkMessage": "당신이 개발자든, 아이디어 제작자든, 미래에서 온 리크루터든 — 이것이 당신의 업링크입니다. 메시지를 전송하면 저의 뉴럴 그리드를 통해 라우팅하겠습니다.",
         "terminalLabel": "NEURAL_TERMINAL_v2.1",

@@ -41,8 +41,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Amit Rana", url: "https://humblefool.vercel.app/" }],
   creator: "Amit Rana",
-  themeColor: "#00ffe0",
-  viewport: "width=device-width, initial-scale=1.0",
   metadataBase: new URL("https://humblefool.vercel.app/"),
   openGraph: {
     title: "HUMBLEF0OL // Digital Interface Architect",

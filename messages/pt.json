@@ -17,6 +17,8 @@
     },
     "Contact": {
         "sectionTitle": "Contato",
+        "successMessage": "Transmissão bem-sucedida. Aguardando seu próximo comando.",
+        "errorMessage": "Falha na transmissão. Por favor, tente novamente.",
         "introTitle": "Você chegou ao terminal de transmissão de HUMBLEFOOL — o portal neural onde o código encontra a conversa.",
         "uplinkMessage": "Seja você um dev, um criador de ideias ou um recrutador do futuro — este é seu uplink. Envie uma mensagem e eu a rotearei pela minha rede neural.",
         "terminalLabel": "NEURAL_TERMINAL_v2.1",
