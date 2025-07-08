@@ -16,7 +16,7 @@ const HomeComponent = () => {
     const t = useTranslations("Home");
 
     return (
-        <div id="home" className="flex flex-col mt-0 lg:-mt-[60px] lg:flex-row justify-center lg:justify-between w-full lg:w-[75%] items-center h-screen gap-[40px]">
+        <div id="home" className="flex flex-col mt-0 mb-5 sm:mb-0  lg:-mt-[60px] lg:flex-row justify-center lg:justify-between w-full lg:w-[75%] items-center h-screen gap-[40px]">
             <div className="relative w-[350px] h-[350px] md:w-[400px] md:h-[400px]">
                 <Image
                     src={theme === "dark" ? AvatarTron : AvatarPunk}

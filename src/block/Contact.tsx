@@ -202,7 +202,7 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
-            <div className="flex justify-between items-center text-xs font-mono text-highlight z-10">
+            <div className="flex justify-center sm:justify-between items-center text-xs font-mono text-highlight z-10">
                 <span className="hidden sm:inline-flex">{t("footerStatus")}</span>
                 <span>{t("footerTime")}: {currentTime}</span>
             </div>
