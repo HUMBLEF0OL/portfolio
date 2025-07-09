@@ -101,8 +101,13 @@ const Contact = () => {
 
     return (
         <section id="contact" className="w-full relative px-4 py-8 flex flex-col gap-[40px]">
-            <Image className="-z-1 brightness-30 object-cover" src={GridBg} fill alt="grid-bg" priority />
-            <h1 className="text-[30px] lg:text-[42px] uppercase z-10 text-foreground">{t("sectionTitle")}</h1>
+            <Image
+                src={GridBg}
+                fill
+                className='brightness-30 object-cover'
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 70vw"
+                alt='background-image'
+            />            <h1 className="text-[30px] lg:text-[42px] uppercase z-10 text-foreground">{t("sectionTitle")}</h1>
 
             <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start lg:px-16 gap-8 z-0">
                 <div className="flex flex-col gap-4 max-w-xl">

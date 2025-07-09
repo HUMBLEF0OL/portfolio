@@ -15,13 +15,8 @@ const Skills = () => {
             <Image
                 src={Background}
                 fill
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    filter: "brightness(20%)",
-                    zIndex: -1
-                }}
+                className='brightness-30 object-cover'
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 70vw"
                 alt='background-image'
             />
 
