@@ -163,10 +163,9 @@ const Contact = () => {
                         </Button>
                     </form>
 
-                    {/* ✅ Feedback Banner */}
                     {statusMessage && (
-                        <div className={`mt-6 text-sm p-3 rounded-md border flex items-center justify-between gap-4
-              ${statusType === "success" ? "bg-green-900 text-green-300 border-green-600" : "bg-red-900 text-red-300 border-red-600"}
+                        <div className={`mt-6 text-sm p-3 border flex items-center justify-between gap-4
+              ${statusType === "success" ? "bg-green-900 text-green-300 border-green-600" : "bg-destructive text-highlight border-destructive"}
             `}>
                             <span>{statusMessage}</span>
                             <button onClick={() => setStatusMessage(null)}>
