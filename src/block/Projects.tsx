@@ -2,17 +2,33 @@
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel'
 import Image from 'next/image';
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BottomLeft, BottomRight, TopLeft, TopRight } from './AngularFrame';
 import { Button } from '@/components/ui/button';
 import ProjectData from '@/data/project.json'
 import { useTranslations } from 'next-intl';
 
-
-
 const Projects = () => {
     const t = useTranslations("Projects");
     const projectCards = useTranslations("Projects.cards");
+
+    // Custom hook logic for responsive orientation
+    const [orientation, setOrientation] = useState<"vertical" | "horizontal">('vertical');
+
+    useEffect(() => {
+        const handleResize = () => {
+            setOrientation(window.innerWidth >= 1024 ? 'horizontal' : 'vertical');
+        };
+
+        // Set initial orientation
+        handleResize();
+
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div id='projects' className='w-full relative px-4 py-8 mb-4 flex flex-col gap-[40px]'>
             <h1 className="text-[30px] lg:text-[42px] uppercase">{t("sectionTitle")}</h1>
@@ -20,17 +36,23 @@ const Projects = () => {
                 opts={{
                     align: "start",
                 }}
-                orientation="vertical"
+                orientation={orientation}
                 className="w-full self-center max-w-4xl"
             >
-                <CarouselContent className="-mt-1 h-[300px] sm:[400px] md:[450px] lg:h-[500px]">
+                <CarouselContent className={orientation === 'vertical' ? "-mt-1 h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px]" : "-ml-1"}>
                     {ProjectData.map((project, index) => {
                         // Extract key like "skinbattle", "felis", etc.
                         const key = project.titleKey?.split('.')?.[1] ?? '';
 
                         return (
-                            <CarouselItem key={index} className='pt-1 h-full rounded-none'>
-                                <div className='relative angular-tl-br-xl w-full h-full'>
+                            <CarouselItem
+                                key={index}
+                                className={orientation === 'vertical'
+                                    ? 'pt-1 h-full rounded-none'
+                                    : 'pl-1 basis-full'
+                                }
+                            >
+                                <div className={`relative angular-tl-br-xl w-full ${orientation === 'vertical' ? 'h-full' : 'h-[450px] lg:h-[500px]'}`}>
                                     <TopLeft width={44} height={44} />
                                     <BottomRight width={44} height={44} />
 
@@ -55,7 +77,9 @@ const Projects = () => {
 
                                         <div className='flex flex-col gap-0'>
                                             <CardContent className="flex flex-col gap-4 justify-center px-6 z-10 mb-4">
-                                                <span className="text-sm hidden md:inline-flex z-10">{projectCards(`${key}.description`)}</span>
+                                                <span className={`text-sm z-10 ${orientation === 'vertical' ? 'hidden md:inline-flex' : 'inline-flex'}`}>
+                                                    {projectCards(`${key}.description`)}
+                                                </span>
                                                 <div className='flex gap-2 flex-wrap justify-start'>
                                                     {project.techStack.map(skill => (
                                                         <div key={skill} className='relative px-2 py-1 border border-highlight angular-all-sm'>
@@ -109,7 +133,6 @@ const Projects = () => {
                 <CarouselPrevious />
                 <CarouselNext />
             </Carousel>
-
         </div>
     )
 }

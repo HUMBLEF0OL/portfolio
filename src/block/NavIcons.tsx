@@ -31,7 +31,7 @@ export const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
                 const scrollTop = window.scrollY
                 const docHeight = document.documentElement.scrollHeight - window.innerHeight
                 const progress = scrollTop / docHeight
-                const maxVolume = 0.005 // 
+                const maxVolume = 0.75 // 
                 const volume = maxVolume * (1 - progress)
                 audioRef.current.volume = Math.max(0, Math.min(maxVolume, volume))
             }
@@ -44,7 +44,7 @@ export const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
     useEffect(() => {
         const audio = new Audio('/audio/bg-audio.mp3')
         audio.loop = true
-        audio.volume = 0.005
+        audio.volume = 0.75
         audioRef.current = audio
 
         audio

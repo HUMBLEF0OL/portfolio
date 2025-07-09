@@ -188,7 +188,7 @@ function CarouselPrevious({
       className={cn(
         "absolute size-10",
         orientation === "horizontal"
-          ? "top-1/2 -left-12 -translate-y-1/2"
+          ? "top-1/2 -left-12 -translate-y-1/2 angular-tl-bl-lg"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90 angular-tl-bl-lg",
         className
       )}
@@ -197,10 +197,10 @@ function CarouselPrevious({
       {...props}
     >
       <ArrowLeft />
-      <TopLeft />
 
       {/* Bottom-left corner triangle */}
       <BottomLeft />
+      <TopLeft />
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -222,7 +222,7 @@ function CarouselNext({
       className={cn(
         "absolute size-10",
         orientation === "horizontal"
-          ? "top-1/2 -right-12 -translate-y-1/2"
+          ? "top-1/2 -right-12 -translate-y-1/2 angular-tr-br-lg"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90 angular-tr-br-lg",
         className
       )}
