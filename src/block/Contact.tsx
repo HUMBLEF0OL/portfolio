@@ -33,13 +33,13 @@ const Contact = () => {
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
             )
             .then(() => {
-                setStatusMessage(t("form.successMessage"));
+                setStatusMessage(t("successMessage"));
                 setStatusType("success");
                 formRef.current?.reset();
             })
             .catch((error) => {
                 console.error("Email error:", error);
-                setStatusMessage(t("form.errorMessage"));
+                setStatusMessage(t("errorMessage"));
                 setStatusType("error");
             })
             .finally(() => {
