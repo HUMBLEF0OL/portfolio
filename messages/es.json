@@ -193,5 +193,9 @@
     "Skills": {
         "title": "Matriz de Habilidades",
         "footer": "Calibración de circuito completa. Todas las capacidades totalmente operacionales"
+    },
+    "404": {
+        "subtitle": "Acabas de salir de la red...",
+        "backHome": "Volver al sistema principal"
     }
 }

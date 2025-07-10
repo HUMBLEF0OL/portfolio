@@ -193,5 +193,9 @@
     "Skills": {
         "title": "Matriz de Habilidades",
         "footer": "Calibração de circuito concluída. Todas as capacidades estão operacionais."
+    },
+    "404": {
+        "subtitle": "Você acabou de sair da grade...",
+        "backHome": "Voltar ao sistema principal"
     }
 }

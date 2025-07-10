@@ -193,5 +193,9 @@
     "Skills": {
         "title": "Fähigkeitenmatrix",
         "footer": "Schaltkreiskalibrierung abgeschlossen. Alle Funktionen voll betriebsbereit."
+    },
+    "404": {
+        "subtitle": "Du hast gerade das Raster verlassen...",
+        "backHome": "Zurück zum Hauptsystem"
     }
 }
