@@ -5,7 +5,6 @@ import { Github, Linkedin, ArrowBigDownDash, Volume2, VolumeX } from 'lucide-rea
 
 export const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
     const audioRef = useRef<HTMLAudioElement | null>(null)
-    const [isMuted, setIsMuted] = useState(false)
     const [hasInteracted, setHasInteracted] = useState(false)
 
     useEffect(() => {
@@ -47,6 +46,18 @@ export const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
         audio.volume = 0.75
         audioRef.current = audio
 
+        const handleVisibilityChange = () => {
+            if (!audioRef.current) return
+
+            if (document.hidden) {
+                audioRef.current.pause()
+            } else if (hasInteracted) {
+                audioRef.current.play().catch(() => { })
+            }
+        }
+
+        document.addEventListener('visibilitychange', handleVisibilityChange)
+
         audio
             .play()
             .then(() => setHasInteracted(true))
@@ -56,9 +67,11 @@ export const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
 
         return () => {
             audio.pause()
+            document.removeEventListener('visibilitychange', handleVisibilityChange)
             audioRef.current = null
         }
     }, [])
+
 
 
     return (
