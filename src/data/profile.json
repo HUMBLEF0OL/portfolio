@@ -1,0 +1,884 @@
+{
+    "$schema": "https://example.com/portfolio.schema.json",
+    "meta": {
+        "version": "3.0.0",
+        "generatedFor": "Amit Rana (HUMBLEF0OL)",
+        "generatedOn": "2026-06-12",
+        "sources": [
+            "https://humblefool.vercel.app/en",
+            "https://github.com/HUMBLEF0OL (profile, repositories, and repo READMEs)",
+            "https://www.linkedin.com/in/amit-rana-711169183/ (profile, experience, education, certifications)"
+        ],
+        "scope": "Profile data only. Site-presentation chrome (theme, SEO meta, hero/identity-card copy, navigation, contact-form, CTAs) is intentionally excluded.",
+        "preferredSourceForEmploymentDates": "LinkedIn",
+        "knownGaps": [
+            "LinkedIn 'Skills' detail list did not render under automation; skills are sourced from the portfolio Skill Matrix and per-role skill tags.",
+            "LinkedIn lists 6 university courses; only 2 were exposed on the public profile."
+        ]
+    },
+    "basics": {
+        "name": "Amit Rana",
+        "firstName": "Amit",
+        "lastName": "Rana",
+        "handle": "HUMBLEF0OL",
+        "aliases": [
+            "HUMBLEFOOL",
+            "humblef00l",
+            "HUMBLEF00L"
+        ],
+        "pronouns": "He/Him",
+        "title": "Senior Software Development Engineer (SDE-2)",
+        "headline": "Senior SDE @ Truminds | Building reliable AI-assisted & agentic developer workflows | MS Informatics",
+        "currentCompany": "Truminds Software Systems",
+        "yearsOfExperience": "4+",
+        "seniority": "Senior",
+        "primaryDomain": "Full-stack web engineering & developer tooling",
+        "availability": {
+            "openToWork": true,
+            "visibility": "Recruiters only",
+            "preferredLocations": [
+                "Bengaluru",
+                "Gurugram",
+                "Remote"
+            ],
+            "workModes": [
+                "On-site",
+                "Hybrid",
+                "Remote"
+            ]
+        },
+        "location": {
+            "city": "Gurugram",
+            "region": "Haryana",
+            "country": "India",
+            "countryCode": "IN",
+            "coordinates": {
+                "latitude": 28.5143629,
+                "longitude": 77.0730087
+            }
+        },
+        "connections": {
+            "linkedin": "500+",
+            "githubFollowers": 6,
+            "githubFollowing": 2
+        }
+    },
+    "contact": {
+        "email": "123amitrana0123@gmail.com",
+        "website": "https://humblefool.vercel.app",
+        "resume": "https://humblefool.vercel.app/resume.pdf",
+        "resumeMirror": "https://drive.google.com/file/d/1pSx7lojlNdUS6o4eggL7vDlLBVLoCuBd/view"
+    },
+    "profiles": [
+        {
+            "network": "GitHub",
+            "username": "HUMBLEF0OL",
+            "url": "https://github.com/HUMBLEF0OL",
+            "primary": true
+        },
+        {
+            "network": "LinkedIn",
+            "username": "amit-rana-711169183",
+            "vanityUrl": "https://www.linkedin.com/in/humblef00l",
+            "url": "https://www.linkedin.com/in/amit-rana-711169183/"
+        },
+        {
+            "network": "Twitter/X",
+            "username": "HUMBLEFOOL",
+            "url": "https://x.com/HUMBLEF0OL"
+        }
+    ],
+    "about": {
+        "summaryShort": "Full-stack developer & problem solver. React/Next + Node, plus developer tooling and AI-assisted workflows. Maintainer of Hookpilot.",
+        "summaryProfessional": "Full-stack developer who cares more about solving the actual problem than about which layer it lives in. Work runs from React and Next.js on the frontend to Node on the backend, with a recent focus on developer tooling and AI-assisted / agentic development workflows.",
+        "currentFocus": [
+            "Maintaining Hookpilot — 50k+ weekly downloads on npm",
+            "Building Ghostframes — zero-config skeleton loaders for React",
+            "Tooling around AI-assisted and agentic development workflows"
+        ],
+        "values": [
+            "Reliability and maintainability over throwaway code",
+            "Verifying what AI agents produce before relying on it",
+            "Technology-agnostic by principle — pick the right tool for the problem",
+            "Performance, accessibility, and SEO as first-class concerns",
+            "File-only, local-first tooling with no hidden backends or telemetry"
+        ]
+    },
+    "skills": {
+        "byCategory": {
+            "languages": [
+                "JavaScript",
+                "TypeScript",
+                "Java",
+                "SQL"
+            ],
+            "frameworksAndLibraries": [
+                "React.js",
+                "Next.js",
+                "Node.js",
+                "Express.js",
+                "Redux Toolkit",
+                "Zustand",
+                "Material UI",
+                "Tailwind CSS"
+            ],
+            "frontendFundamentals": [
+                "HTML5",
+                "CSS3 / SCSS",
+                "Responsive Design",
+                "PWA",
+                "i18n"
+            ],
+            "apisAndRealtime": [
+                "REST APIs",
+                "WebSockets"
+            ],
+            "testing": [
+                "Jest",
+                "Vitest"
+            ],
+            "buildAndTooling": [
+                "Webpack",
+                "Babel",
+                "NPM",
+                "pnpm",
+                "Shell"
+            ],
+            "devopsAndTools": [
+                "Git",
+                "Docker",
+                "Postman",
+                "Lighthouse",
+                "Jira",
+                "Google Analytics",
+                "GitHub Actions"
+            ],
+            "databases": [
+                "Supabase (PostgreSQL)",
+                "MySQL"
+            ],
+            "practices": [
+                "Web Performance Optimization",
+                "Accessibility (WCAG)",
+                "SEO",
+                "Responsive Design",
+                "Agile / Scrum"
+            ]
+        },
+        "aiAndAgentic": {
+            "tools": [
+                "OpenAI API",
+                "OpenRouter",
+                "LangChain",
+                "Claude Code",
+                "MCP (Model Context Protocol)",
+                "AI SDK"
+            ],
+            "practices": [
+                "AI-assisted SDLC",
+                "Agentic development workflows",
+                "Output verification of AI agents",
+                "LLM pipeline design"
+            ]
+        },
+        "specialInterests": [
+            "Reverse engineering",
+            "Low-level / binary & PE format work"
+        ]
+    },
+    "experience": [
+        {
+            "company": "Truminds Software Systems",
+            "totalTenure": "4 yrs 6 mos",
+            "location": "Gurugram, Haryana, India",
+            "roles": [
+                {
+                    "title": "Senior Software Development Engineer (SDE-2)",
+                    "level": "SDE-2",
+                    "employmentType": "Full-time",
+                    "startDate": "2024-07",
+                    "endDate": "Present",
+                    "workMode": "On-site",
+                    "highlights": [
+                        "Led full-stack delivery for production apps, from React/Next.js/TypeScript frontends to the services behind them, prioritizing reliability and maintainability over throwaway code.",
+                        "Brought AI-assisted and agentic workflows into the team's process, with a focus on verifying what agents produce before relying on it.",
+                        "Hit 90+ Lighthouse performance scores, with FCP under 1.2s, LCP under 2s, and TTFB under 300ms.",
+                        "Shipped WCAG-compliant interfaces (90+ Lighthouse accessibility) using semantic HTML, ARIA roles, and full keyboard navigation.",
+                        "Cut application load time by 40% through targeted performance work.",
+                        "Architected and shipped a scalable frontend used by 300K+ users with Next.js and Tailwind CSS, achieving 95+ Core Web Vitals across performance, SEO, and accessibility.",
+                        "Integrated PWA features to boost mobile engagement and user retention by 30%.",
+                        "Implemented Zustand for global state management and i18n for multilingual support.",
+                        "Developed REST API integration workflows with a .NET-based backend, improving performance and maintainability.",
+                        "Mentored junior engineers on writing clean, well-tested code."
+                    ],
+                    "skills": [
+                        "React.js",
+                        "Next.js",
+                        "TypeScript",
+                        "JavaScript",
+                        "Zustand",
+                        "Tailwind CSS",
+                        "PWA",
+                        "i18n",
+                        "Web Performance",
+                        "Accessibility"
+                    ]
+                },
+                {
+                    "title": "Software Development Engineer (SDE-1)",
+                    "level": "SDE-1",
+                    "employmentType": "Full-time",
+                    "startDate": "2022-07",
+                    "endDate": "2024-07",
+                    "highlights": [
+                        "Developed interactive and responsive UIs using React.js, JavaScript, and HTML/CSS to enhance user engagement.",
+                        "Contributed to a major client delivery, improving platform responsiveness and reducing bugs by 30%.",
+                        "Received early recognition for quality contributions, leading to a promotion to Senior Engineer."
+                    ],
+                    "skills": [
+                        "React.js",
+                        "JavaScript",
+                        "Responsive Web Design",
+                        "HTML/CSS"
+                    ]
+                },
+                {
+                    "title": "Software Engineer Intern",
+                    "level": "Intern",
+                    "employmentType": "Apprenticeship",
+                    "startDate": "2022-01",
+                    "endDate": "2022-06",
+                    "skills": [
+                        "React.js",
+                        "GitHub"
+                    ]
+                }
+            ]
+        },
+        {
+            "company": "Coding Ninjas",
+            "location": "New Delhi, Delhi, India",
+            "roles": [
+                {
+                    "title": "Teaching Assistant",
+                    "employmentType": "Internship",
+                    "startDate": "2021-06",
+                    "endDate": "2021-10",
+                    "highlights": [
+                        "Ran doubt-clearing sessions for students.",
+                        "Debugged student code and helped with assignments and projects."
+                    ],
+                    "skills": [
+                        "Java",
+                        "Data Structures & Algorithms",
+                        "Mentoring"
+                    ]
+                }
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "University of Delhi",
+            "degree": "Master of Science",
+            "field": "Informatics",
+            "startDate": "2020-12",
+            "endDate": "2022-07",
+            "grade": "8.23/10"
+        },
+        {
+            "institution": "University of Delhi",
+            "degree": "Bachelor of Science",
+            "field": "Electronics Science",
+            "startDate": "2017",
+            "endDate": "2020",
+            "grade": "8.69/10"
+        },
+        {
+            "institution": "Central Board of Secondary Education (CBSE)",
+            "degree": "Higher Secondary Education",
+            "field": "Science (PCM)",
+            "startDate": "2016",
+            "endDate": "2017",
+            "grade": "88.66%"
+        }
+    ],
+    "courses": [
+        {
+            "name": "Cloud Computing",
+            "provider": "University of Delhi"
+        },
+        {
+            "name": "Computer Networks",
+            "provider": "University of Delhi"
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Programming with JavaScript",
+            "issuer": "Coursera",
+            "issued": "2023-04",
+            "credentialId": "4ZR98TJUSX4K",
+            "skills": [
+                "Problem Solving",
+                "JavaScript"
+            ],
+            "verifyUrl": "https://www.coursera.org/account/accomplishments/certificate/4ZR98TJUSX4K"
+        },
+        {
+            "name": "Introduction to Front-End Development",
+            "issuer": "Coursera",
+            "issued": "2023-03",
+            "credentialId": "VFLKYE7ATZU6",
+            "skills": [
+                "CSS",
+                "HTML5",
+                "Front-End Development"
+            ],
+            "verifyUrl": "https://www.coursera.org/account/accomplishments/certificate/VFLKYE7ATZU6"
+        },
+        {
+            "name": "Data Structures in JAVA Excellence Certificate",
+            "issuer": "Coding Ninjas",
+            "issued": "2021-06",
+            "credentialId": "1466157a05bb721143d52207179db1998104b95",
+            "skills": [
+                "Java",
+                "Data Structures"
+            ]
+        },
+        {
+            "name": "Java",
+            "issuer": "HackerRank",
+            "issued": "2021-05",
+            "credentialId": "c6fb772a95c1",
+            "skills": [
+                "Problem Solving",
+                "Java"
+            ],
+            "verifyUrl": "https://www.hackerrank.com/certificates/c6fb772a95c1"
+        },
+        {
+            "name": "SQL",
+            "issuer": "HackerRank",
+            "issued": "2021-05",
+            "credentialId": "a013839e09a4",
+            "skills": [
+                "SQL"
+            ],
+            "verifyUrl": "https://www.hackerrank.com/certificates/a013839e09a4"
+        },
+        {
+            "name": "Introduction to JAVA",
+            "issuer": "Coding Ninjas",
+            "issued": "2021-04",
+            "credentialId": "95c2143ce972e33a",
+            "skills": [
+                "Java"
+            ]
+        },
+        {
+            "name": "MySQL Database Administration: Beginner SQL Database Design",
+            "issuer": "Udemy",
+            "issued": "2021-04",
+            "credentialId": "UC-d10bfa1a-49ed-4fb3-9376-66723013bdcb",
+            "skills": [
+                "MySQL"
+            ]
+        },
+        {
+            "name": "Crash Course on Python",
+            "issuer": "Google",
+            "issued": "2021-03",
+            "credentialId": "YZQHV3G25QNG",
+            "skills": [
+                "Python"
+            ],
+            "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/YZQHV3G25QNG"
+        },
+        {
+            "name": "LFS101x: Introduction to Linux",
+            "issuer": "The Linux Foundation",
+            "issued": "2020-09",
+            "credentialId": "33fead0677404d92bea1c3355e69c0dc",
+            "skills": [
+                "Linux"
+            ]
+        }
+    ],
+    "certificationSummary": {
+        "total": 9,
+        "byIssuer": {
+            "Coursera": 2,
+            "HackerRank": 2,
+            "Coding Ninjas": 2,
+            "Udemy": 1,
+            "Google": 1,
+            "The Linux Foundation": 1
+        }
+    },
+    "languages": [
+        {
+            "language": "English",
+            "proficiency": "Professional working proficiency"
+        },
+        {
+            "language": "Hindi",
+            "proficiency": "Native or bilingual proficiency"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Hookpilot",
+            "slug": "hook-pilot",
+            "tagline": "Flexible, configurable Git hook manager",
+            "description": "A flexible Git hook manager that lets developers automate workflows and enforce coding standards across the SDLC. Ships a library of ready-to-use hooks (linting, formatting, testing, security checks, commit-message validation, branch protection, large-file checks) plus an interactive CLI for adding, restoring, listing, and removing hooks, with support for fully custom shell/Node scripts.",
+            "tech": [
+                "Node.js",
+                "TypeScript",
+                "Shell",
+                "NPM"
+            ],
+            "status": "Live",
+            "featured": true,
+            "category": "Developer Tooling",
+            "role": "Author & Maintainer",
+            "license": "MIT",
+            "metrics": {
+                "npmWeeklyDownloads": "50,000+"
+            },
+            "features": [
+                "Predefined hooks for common pre-commit / commit-msg / pre-push / post-merge / post-checkout tasks",
+                "Interactive CLI: init, add, restore, remove, list",
+                "Per-project configuration via hooks-config.json",
+                "Custom script support with exit-code conventions",
+                "--no-verify override support"
+            ],
+            "install": "npm install hookpilot --save-dev",
+            "commands": [
+                "npx hookpilot init",
+                "npx hookpilot add",
+                "npx hookpilot list",
+                "npx hookpilot restore",
+                "npx hookpilot remove"
+            ],
+            "links": {
+                "github": "https://github.com/HUMBLEF0OL/hook-pilot",
+                "npm": "https://www.npmjs.com/package/hookpilot"
+            }
+        },
+        {
+            "name": "Coherence",
+            "slug": "coherence",
+            "tagline": "Documentation-drift detector & repair plugin for Claude Code",
+            "description": "A Claude Code plugin that detects documentation drift (code changing without its docs) and proposes surgical patches via a two-stage LLM pipeline. Runs as Claude Code hooks + slash commands; team-distributable surfaces live as committed files with no backend ever. Includes a trust-ladder auto-apply gate, an asserts: frontmatter validation system with eight engines, a corpus audit, and cosign-signed releases.",
+            "tech": [
+                "TypeScript",
+                "Claude Code",
+                "LLM",
+                "Sigstore cosign",
+                "GitHub Actions"
+            ],
+            "status": "Live",
+            "featured": true,
+            "category": "AI / Agentic Tooling",
+            "role": "Author & Maintainer",
+            "license": "MIT",
+            "features": [
+                "Two-stage LLM pipeline: Stage 1 canonical selection, Stage 2 patch writer with deterministic validation (format → apply → change-class recount → line ratio → prompt-injection → hallucination grep → asserts)",
+                "Graduated mode with per-section trust gate (score ≥ 0.85); never auto-applies destructive or frontmatter changes",
+                "asserts: frontmatter contracts with 8 validation engines (text-pattern + codebase-linked)",
+                "Per-developer trust ledger with 30-day half-life decay scoring",
+                "Corpus audit with token-budget classifier + optional LLM consistency pass",
+                "Sigstore cosign keyless OIDC signed releases, verifiable via Rekor"
+            ],
+            "architecturalCommitments": [
+                "No backend, ever (file-only; git is the substrate)",
+                "No legacy version support — each major stands alone"
+            ],
+            "install": "claude plugin install coherence",
+            "links": {
+                "github": "https://github.com/HUMBLEF0OL/coherence"
+            }
+        },
+        {
+            "name": "Ghostframes",
+            "slug": "ghostframes",
+            "tagline": "Zero-config skeleton loaders for React",
+            "description": "Zero-config skeleton loaders for React, shipped as the single public package @ghostframes/runtime. Provides build-time capture that generates skeleton manifests from real components, plus CI quality gates (validate / diff / report) that enforce schema, key coverage, invalid-entry budget, and artifact size.",
+            "tech": [
+                "TypeScript",
+                "React"
+            ],
+            "status": "Live",
+            "featured": true,
+            "category": "Frontend Library",
+            "role": "Author & Maintainer",
+            "license": "MIT",
+            "features": [
+                "AutoSkeleton component + generateStaticBlueprint helper",
+                "Build-time manifest capture with generated loader artifacts",
+                "CI quality gates: ghostframes validate / diff / report",
+                "Layered build → CI → deploy workflow"
+            ],
+            "install": "pnpm add @ghostframes/runtime",
+            "links": {
+                "github": "https://github.com/HUMBLEF0OL/ghostframes",
+                "npm": "https://www.npmjs.com/package/@ghostframes/runtime"
+            }
+        },
+        {
+            "name": "GitCompass",
+            "slug": "git-compass",
+            "tagline": "Local-first, AI-augmented Git analytics",
+            "description": "A local-first Git analytics tool that reads commit history and surfaces hotspots (high churn, too many authors), velocity spikes, contributor burnout signals, bus-factor risk, and onboarding guidance. Built as a modular monorepo and shipped as two packages: git-compass (CLI) and @git-compass/web (visual dashboard with heatmaps, churn charts, and a plain-English AI query interface). Everything runs locally — no account, cloud, or telemetry.",
+            "tech": [
+                "TypeScript",
+                "Node.js",
+                "AI SDK",
+                "pnpm monorepo"
+            ],
+            "status": "Live",
+            "featured": true,
+            "category": "Developer Tooling",
+            "role": "Author & Maintainer",
+            "startDate": "2026-01",
+            "endDate": "2026-03",
+            "packages": [
+                "git-compass (CLI)",
+                "@git-compass/core (analytics engine)",
+                "@git-compass/web (dashboard)"
+            ],
+            "features": [
+                "File hotspot detection (churn + author concentration)",
+                "Code-velocity spike detection",
+                "Contributor burnout / after-hours pattern signals",
+                "Bus-factor risk (single-owner files)",
+                "Plain-English AI querying over the repo; multi-SDK support",
+                "100% local — no account, cloud, or telemetry"
+            ],
+            "install": "pnpm install && pnpm build",
+            "links": {
+                "github": "https://github.com/HUMBLEF0OL/git-compass",
+                "npm": "https://www.npmjs.com/package/git-compass"
+            }
+        },
+        {
+            "name": "Glassbox",
+            "slug": "glassbox",
+            "tagline": "Local, read-only Claude Code session observer",
+            "description": "A local, read-only Claude Code session observer. Reads a Claude Code JSONL transcript and renders a single self-contained HTML report with six behavioural metrics, a session timeline, and a harness-health scorecard. Makes no network calls and never controls the agent. Zero-dependency, plain ESM, no build step — installable straight from GitHub. Built intentionally meta, under its own minimal harness, to illustrate what it measures.",
+            "tech": [
+                "Node.js",
+                "JavaScript",
+                "ESM"
+            ],
+            "status": "Live",
+            "version": "v1.0.0",
+            "featured": true,
+            "category": "AI / Agentic Tooling",
+            "role": "Author & Maintainer",
+            "metrics": [
+                "Grep-vs-semantic ratio",
+                "Early-victory detection",
+                "Verification density",
+                "Scope overreach",
+                "Continuity check",
+                "Loop detection"
+            ],
+            "features": [
+                "Single self-contained HTML report with session timeline + six-metric scorecard",
+                "Auto-discovery of the latest transcript across known Claude roots (--latest)",
+                "Two-session comparison mode",
+                "Secret redaction (--redact), scope globs, configurable loop threshold",
+                "Zero network calls; never controls the agent"
+            ],
+            "install": "npm install -g github:HUMBLEF0OL/glassbox",
+            "links": {
+                "github": "https://github.com/HUMBLEF0OL/glassbox"
+            }
+        },
+        {
+            "name": "mcp-sentry",
+            "slug": "mcp-sentry",
+            "tagline": "Security linter for TypeScript MCP servers",
+            "description": "A static-analysis security linter for TypeScript Model Context Protocol (MCP) servers. Detects all eight OWASP MCP Top 10 categories (MCP01–MCP08), grades the project A–F, and integrates with CI via SARIF, PR comments, and a public Shields.io badge. Includes inter-procedural taint tracking for command injection and intent-subversion detection for read-only-named tools that mutate state.",
+            "tech": [
+                "TypeScript",
+                "MCP",
+                "Cloudflare Workers",
+                "SARIF"
+            ],
+            "status": "Live",
+            "version": "v1.1",
+            "featured": true,
+            "category": "AI / Agentic Tooling",
+            "role": "Author & Maintainer",
+            "features": [
+                "All eight OWASP MCP Top 10 checks (MCP01–MCP08)",
+                "A–F project grade with --fail-on threshold for CI",
+                "Reporters: text / JSON / SARIF / Markdown",
+                "Inter-procedural taint tracking (command injection)",
+                "Cloudflare Durable Object rate limiter + optional HMAC-SHA256 request signing",
+                "GitHub Action + public badge endpoint"
+            ],
+            "install": "npx mcp-sentry@latest scan ./path/to/mcp-server",
+            "links": {
+                "github": "https://github.com/HUMBLEF0OL/mcp-sentry"
+            }
+        },
+        {
+            "name": "JavaScript-Verse",
+            "slug": "javascript-verse",
+            "tagline": "In-browser JavaScript & React playground with live execution",
+            "description": "A browser-based code execution environment and markdown editor for writing and running JavaScript and React. Supports runtime NPM modules, React component creation and rendering, API calls, side-by-side docs, a coding cheatsheet, and code export. Solves safe code execution via iframe isolation, advanced JS/JSX via in-browser Babel transpilation, and import handling via in-browser bundling.",
+            "tech": [
+                "React.js",
+                "Tailwind CSS",
+                "Babel",
+                "Webpack",
+                "Node.js"
+            ],
+            "status": "Live",
+            "featured": true,
+            "category": "Frontend / Tooling",
+            "role": "Author",
+            "features": [
+                "In-browser JavaScript & React execution with live preview",
+                "Runtime support for any NPM module",
+                "Iframe-isolated, sandboxed code execution",
+                "Babel-based in-browser transpilation of JSX/advanced syntax",
+                "In-browser bundling of imports",
+                "Side-by-side docs, cheatsheet, and code export"
+            ],
+            "links": {
+                "github": "https://github.com/HUMBLEF0OL/javascript-verse",
+                "live": "https://humblef0ol.github.io/javascript-verse/"
+            }
+        },
+        {
+            "name": "FileSqueeze",
+            "slug": "file-squeeze",
+            "tagline": "Huffman-coding file compression CLI",
+            "description": "A lightweight command-line tool that compresses and decompresses text-based files (.txt, .json, .docx, .pdf) using a custom Huffman coding implementation. Generates binary output with stored Huffman-tree metadata for decompression and reports compression ratio and original/compressed sizes.",
+            "tech": [
+                "Node.js",
+                "JavaScript",
+                "NPM"
+            ],
+            "status": "Live",
+            "featured": true,
+            "category": "Developer Tooling",
+            "role": "Author",
+            "features": [
+                "Custom Huffman coding compression / decompression",
+                "Supports .txt, .json, .docx, .pdf (text portion)",
+                "Binary output with serialized tree metadata",
+                "Per-file compression report (ratio + sizes)"
+            ],
+            "commands": [
+                "filesqueeze compress <inputFile> [--output <dir>]",
+                "filesqueeze decompress <inputDir> [--output <dir>]"
+            ],
+            "links": {
+                "github": "https://github.com/HUMBLEF0OL/file-squeeze"
+            }
+        },
+        {
+            "name": "SkinBattle.gg",
+            "slug": "skinbattle",
+            "tagline": "CS:GO skin battle platform",
+            "description": "Real-time CS:GO skin battle platform with live multiplayer interactions over WebSockets.",
+            "tech": [
+                "Next.js",
+                "Material UI",
+                "Redux Toolkit",
+                "WebSockets"
+            ],
+            "status": "Private",
+            "featured": true,
+            "category": "Web Application",
+            "role": "Frontend Engineer"
+        },
+        {
+            "name": "Felis AI",
+            "slug": "felis-ai",
+            "tagline": "Private research & memory chatbot",
+            "description": "A private research and memory chatbot combining retrieval, persistent memory, and conversational AI.",
+            "tech": [
+                "Next.js",
+                "OpenAI API",
+                "Tailwind CSS",
+                "LangChain",
+                "Supabase"
+            ],
+            "status": "Private",
+            "featured": true,
+            "category": "AI Application",
+            "role": "Author"
+        },
+        {
+            "name": "JSON Parser",
+            "slug": "json-parser",
+            "tagline": "From-scratch JSON parser & validator",
+            "description": "A Node.js JSON parser and validator that checks structural correctness (mismatched/extra brackets, trailing commas, invalid control characters) and parses valid JSON into JavaScript objects, with detailed error messages. Supports floating-point, scientific notation, and all standard JSON types.",
+            "tech": [
+                "JavaScript",
+                "Node.js"
+            ],
+            "status": "Public",
+            "featured": false,
+            "category": "Learning / Tooling",
+            "role": "Author",
+            "links": {
+                "github": "https://github.com/HUMBLEF0OL/json-parser"
+            }
+        },
+        {
+            "name": "Portfolio",
+            "slug": "portfolio",
+            "tagline": "Personal portfolio web application",
+            "description": "Personal portfolio web application built with Next.js (App Router) and TypeScript.",
+            "tech": [
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS"
+            ],
+            "status": "Live",
+            "featured": false,
+            "category": "Web Application",
+            "role": "Author",
+            "links": {
+                "live": "https://humblefool.vercel.app",
+                "github": "https://github.com/HUMBLEF0OL/portfolio"
+            }
+        }
+    ],
+    "otherRepositories": [
+        {
+            "name": "mcp-sentry-action",
+            "language": "JavaScript",
+            "note": "GitHub Action wrapper for mcp-sentry"
+        },
+        {
+            "name": "langchain-chatbot",
+            "language": "TypeScript"
+        },
+        {
+            "name": "smart-email-generator",
+            "language": "TypeScript"
+        },
+        {
+            "name": "research-chatbot",
+            "language": "TypeScript",
+            "private": true
+        },
+        {
+            "name": "review.ai",
+            "language": "TypeScript",
+            "private": true
+        },
+        {
+            "name": "prompt-os",
+            "language": "TypeScript",
+            "private": true
+        },
+        {
+            "name": "reddit-trends-scrapper",
+            "language": "Python"
+        },
+        {
+            "name": "knowledge-vault"
+        },
+        {
+            "name": "hook-pilot-python",
+            "note": "Python port of HookPilot"
+        },
+        {
+            "name": "geopolitica",
+            "private": true
+        }
+    ],
+    "openSource": {
+        "maintains": [
+            "Hookpilot",
+            "Ghostframes",
+            "Coherence",
+            "GitCompass",
+            "Glassbox",
+            "mcp-sentry"
+        ],
+        "npmPackages": [
+            "hookpilot",
+            "@ghostframes/runtime",
+            "git-compass",
+            "@git-compass/core",
+            "@git-compass/web",
+            "json-parser"
+        ],
+        "focusAreas": [
+            "Developer tooling",
+            "AI/agentic tooling for Claude Code & MCP",
+            "Git analytics",
+            "React libraries"
+        ]
+    },
+    "metrics": {
+        "highlights": [
+            {
+                "label": "Users served",
+                "value": "300K+",
+                "context": "Scalable Next.js frontend"
+            },
+            {
+                "label": "npm weekly downloads",
+                "value": "50K+",
+                "context": "Hookpilot"
+            },
+            {
+                "label": "Core Web Vitals",
+                "value": "95+",
+                "context": "Performance, SEO, accessibility"
+            },
+            {
+                "label": "Lighthouse performance",
+                "value": "90+",
+                "context": "FCP <1.2s, LCP <2s, TTFB <300ms"
+            },
+            {
+                "label": "Load time reduction",
+                "value": "40%",
+                "context": "Targeted performance work"
+            },
+            {
+                "label": "Mobile retention lift",
+                "value": "30%",
+                "context": "PWA features"
+            },
+            {
+                "label": "Bug reduction",
+                "value": "30%",
+                "context": "Major client delivery (SDE-1)"
+            }
+        ]
+    },
+    "achievements": [
+        "Promoted from SDE-1 to Senior Engineer (SDE-2) on the strength of early, high-quality contributions",
+        "Hookpilot surpassed 50,000 weekly downloads on npm",
+        "Shipped a Next.js frontend serving 300K+ users with 95+ Core Web Vitals",
+        "GitHub achievements earned (x2)",
+        "mcp-sentry covers all eight OWASP MCP Top 10 categories"
+    ],
+    "interests": [
+        "Developer tooling",
+        "AI-assisted & agentic development",
+        "Reverse engineering",
+        "Low-level / binary & PE format work",
+        "Weekend technical learning projects"
+    ],
+    "recommendations": {
+        "received": [],
+        "given": [],
+        "note": "No recommendations recorded on LinkedIn at time of capture."
+    }
+}
