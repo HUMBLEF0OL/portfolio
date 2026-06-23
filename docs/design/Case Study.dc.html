@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:72px;}
+  body{margin:0;background:#07080A;}
+  ::selection{background:#FCEE0A;color:#07080A;}
+  image-slot{display:block;}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #FCEE0A;outline-offset:3px;}
+  .anton{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.005em;}
+  [data-grain]{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  [data-scanlines]{position:fixed;inset:0;z-index:9997;pointer-events:none;opacity:0.45;background:repeating-linear-gradient(0deg,rgba(0,0,0,0) 0px,rgba(0,0,0,0) 2px,rgba(0,0,0,0.22) 3px,rgba(0,0,0,0) 4px);}
+  [data-scanbar]{position:fixed;left:0;right:0;top:-160px;height:160px;z-index:9996;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(0,229,255,0.045),transparent);animation:tm-scan 8s linear infinite;}
+  [data-bggrid]{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.6;background-image:linear-gradient(rgba(0,229,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.035) 1px,transparent 1px);background-size:48px 48px;animation:tm-grid 22s linear infinite;}
+  [data-vig]{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 90% 70% at 50% 30%,transparent 40%,rgba(7,8,10,0.7) 100%);}
+  @keyframes tm-scan{from{top:-160px}to{top:100%}}
+  @keyframes tm-grid{from{background-position:0 0}to{background-position:0 48px}}
+  @keyframes tm-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+  @media (max-width:880px){
+    [data-metrics]{grid-template-columns:1fr !important;}
+    [data-ba]{grid-template-columns:1fr !important;}
+    [data-approach]{grid-template-columns:1fr !important;}
+  }
+  @media (max-width:768px){ [data-navlinks]{display:none !important;} [data-hud]{display:none !important;} [data-cursor]{display:none !important;} }
+  @media (prefers-reduced-motion: reduce){ [data-scanbar],[data-bggrid]{animation:none !important;} }
+</style>
+</helmet>
+<div data-bggrid="true"></div>
+<div data-vig="true"></div>
+<div data-grain="true"></div>
+<div data-scanlines="true"></div>
+<div data-scanbar="true"></div>
+
+<div ref="{{ rootRef }}" style="position:relative;z-index:1;background:transparent;color:#EAEEF0;font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;">
+
+  <div data-cursor="true" style="position:fixed;top:0;left:0;width:28px;height:28px;border:1px solid rgba(0,229,255,0.85);background:radial-gradient(circle at center,#FCEE0A 0,#FCEE0A 1.6px,transparent 2.4px);transform:translate(-50%,-50%);pointer-events:none;z-index:9998;opacity:0;transition:width .18s ease,height .18s ease,opacity .25s ease,border-color .18s ease;"></div>
+  <div data-hud="true" style="position:fixed;left:22px;bottom:13px;z-index:9000;font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.16em;color:#7E8896;pointer-events:none;display:flex;gap:14px;align-items:center;">
+    <span data-coord="true" style="color:#00E5FF;">X·0000 Y·0000</span><span style="color:#233240;">//</span><span style="color:#FCEE0A;">CASE_FILE</span>
+  </div>
+
+  <nav data-nav="true" style="position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:1px solid transparent;transition:background .3s ease,border-color .3s ease;">
+    <div style="max-width:1180px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="Homepage.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;"><span style="color:#FCEE0A;font-family:'JetBrains Mono',monospace;">◂</span><span class="anton" data-glitch-hover="true" style="font-size:1.2rem;color:#EAEEF0;line-height:1;">AMIT RANA</span></a>
+      <div data-navlinks="true" style="display:flex;align-items:center;gap:28px;">
+        <a href="Homepage.dc.html#work" style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.08em;text-transform:uppercase;color:#8A94A0;text-decoration:none;transition:color .15s ease;" style-hover="color:#00E5FF;">All work</a>
+        <a href="About.dc.html" style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.08em;text-transform:uppercase;color:#8A94A0;text-decoration:none;transition:color .15s ease;" style-hover="color:#00E5FF;">About</a>
+      </div>
+      <a href="Homepage.dc.html#contact" style="display:inline-flex;align-items:center;gap:8px;background:#FCEE0A;color:#07080A;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;font-size:0.75rem;padding:11px 18px;text-decoration:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));transition:filter .15s ease;" style-hover="filter:drop-shadow(0 0 12px rgba(252,238,10,0.55));">Book a call ▸</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header style="border-bottom:1px solid #16202A;">
+    <div style="max-width:1180px;margin:0 auto;padding:140px 28px 64px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 26px;"><span style="color:#FF2A6D;">// CASE_FILE</span> &nbsp;&gt; {{ slug }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:6px 11px;">{{ tag1 }}</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#7E8896;box-shadow:inset 0 0 0 1px #1C2A33;padding:6px 11px;">{{ year }}</span>
+      </div>
+      <h1 class="anton" data-glitch-hover="true" style="font-size:clamp(2.6rem,7vw,5.5rem);line-height:0.9;letter-spacing:0;margin:0 0 24px;max-width:16ch;color:#EAEEF0;">{{ name }}</h1>
+      <p style="font-size:clamp(1.0625rem,1.8vw,1.45rem);line-height:1.45;color:#A6AEB8;max-width:52ch;margin:0 0 48px;border-left:2px solid #00E5FF;padding-left:16px;">{{ tagline }}</p>
+      <div data-metrics="true" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+        <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="3">
+          <div style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));padding:26px 24px;">
+            <div style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1;color:#FCEE0A;"><span data-countup="{{ m.v }}" data-prefix="{{ m.pre }}" data-suffix="{{ m.suffix }}" data-dec="{{ m.dec }}">0</span></div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#7E8896;margin-top:10px;">{{ m.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO VISUAL -->
+  <div style="border-bottom:1px solid #16202A;">
+    <div style="max-width:1180px;margin:0 auto;padding:44px 28px;">
+      <div data-reveal="true" style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:11px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px 10px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;color:#00E5FF;letter-spacing:0.06em;">{{ host }}</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;color:#7E8896;letter-spacing:0.06em;">FEED//LIVE</span>
+        </div>
+        <div style="position:relative;height:460px;background:#06070A;overflow:hidden;">
+          <div class="anton" style="position:absolute;right:18px;bottom:-26px;font-size:clamp(5rem,15vw,12rem);line-height:0.8;color:rgba(0,229,255,0.05);white-space:nowrap;pointer-events:none;">{{ slug }}</div>
+          <div style="position:relative;padding:26px 28px;display:flex;flex-direction:column;gap:9px;font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.02em;color:#00E5FF;">
+            <sc-for list="{{ console }}" as="ln" hint-placeholder-count="6"><div>{{ ln }}</div></sc-for>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:6px;"><span style="color:#7E8896;">$</span><span style="display:inline-block;width:9px;height:17px;background:#FCEE0A;animation:tm-blink 1s steps(1) infinite;"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <article style="max-width:820px;margin:0 auto;padding:clamp(72px,9vw,116px) 28px;">
+
+    <section data-reveal="true" style="margin-bottom:76px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 20px;"><span style="color:#FF2A6D;">// 01</span> &nbsp;&gt; CONTEXT</p>
+      <p style="font-size:1.25rem;line-height:1.65;color:#A6AEB8;margin:0;">{{ context }}</p>
+    </section>
+
+    <section data-reveal="true" style="margin-bottom:76px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 20px;"><span style="color:#FF2A6D;">// 02</span> &nbsp;&gt; THE_PROBLEM</p>
+      <h2 class="anton" style="font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.02;letter-spacing:0;margin:0 0 22px;color:#EAEEF0;">{{ problemHead }}</h2>
+      <p style="font-size:1.0625rem;line-height:1.65;color:#A6AEB8;margin:0 0 26px;">{{ problemBody }}</p>
+      <div style="border-left:2px solid #FF2A6D;padding:4px 0 4px 18px;">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#FF2A6D;margin:0 0 6px;">BEFORE</p>
+        <p style="font-size:1.0625rem;color:#EAEEF0;margin:0;">{{ beforeStr }}</p>
+      </div>
+    </section>
+
+    <section data-reveal="true" style="margin-bottom:76px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 20px;"><span style="color:#FF2A6D;">// 03</span> &nbsp;&gt; APPROACH</p>
+      <p style="font-size:1.0625rem;line-height:1.65;color:#A6AEB8;margin:0 0 28px;">{{ approachIntro }}</p>
+      <div data-approach="true" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+        <sc-for list="{{ approachCards }}" as="c" hint-placeholder-count="2">
+          <div style="background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));padding:24px;">
+            <h3 style="font-size:1.1rem;font-weight:600;margin:0 0 8px;color:#EAEEF0;">{{ c.h }}</h3>
+            <p style="font-size:0.9375rem;line-height:1.55;color:#A6AEB8;margin:0;">{{ c.p }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <sc-for list="{{ stack }}" as="t" hint-placeholder-count="5">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:6px 11px;">{{ t }}</span>
+        </sc-for>
+      </div>
+    </section>
+
+    <section data-reveal="true" style="margin-bottom:76px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 20px;"><span style="color:#FF2A6D;">// 04</span> &nbsp;&gt; THE_RESULT</p>
+      <h2 class="anton" style="font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.02;letter-spacing:0;margin:0 0 30px;color:#EAEEF0;">{{ resultHead }}</h2>
+      <div data-ba="true" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));padding:28px;">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#FF2A6D;margin:0 0 16px;">Before</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+            <sc-for list="{{ beforeList }}" as="line" hint-placeholder-count="3"><li style="font-size:1.0625rem;color:#A6AEB8;">{{ line }}</li></sc-for>
+          </ul>
+        </div>
+        <div style="background:#0E0F08;box-shadow:inset 0 0 0 1px #FCEE0A;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));padding:28px;filter:drop-shadow(0 0 20px rgba(252,238,10,0.12));">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#FCEE0A;margin:0 0 16px;">After</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+            <sc-for list="{{ afterList }}" as="line" hint-placeholder-count="3"><li style="font-size:1.0625rem;color:#EAEEF0;">{{ line }}</li></sc-for>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <figure data-reveal="true" style="margin:0;position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));padding:40px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+      <blockquote style="font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.4;color:#EAEEF0;margin:0 0 26px;"><span style="color:#00E5FF;">"</span>{{ quote }}<span style="color:#00E5FF;">"</span></blockquote>
+      <figcaption style="display:flex;align-items:center;gap:14px;">
+        <image-slot id="cs-quote" style="width:48px;height:48px;flex:none;" shape="rect" placeholder=""></image-slot>
+        <div>
+          <div style="font-size:1rem;font-weight:600;color:#EAEEF0;">{{ quoteName }}</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#7E8896;">{{ quoteRole }}</div>
+        </div>
+      </figcaption>
+    </figure>
+  </article>
+
+  <!-- CTA -->
+  <section style="border-top:1px solid #16202A;border-bottom:1px solid #16202A;background:#08090C;">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(72px,9vw,116px) 28px;text-align:center;">
+      <h2 class="anton" data-glitch-hover="true" style="font-size:clamp(1.9rem,4.6vw,3.4rem);line-height:0.98;letter-spacing:0;margin:0 auto 28px;max-width:20ch;color:#EAEEF0;">Have a similar problem?</h2>
+      <a href="Homepage.dc.html#contact" style="display:inline-flex;align-items:center;gap:9px;background:#FCEE0A;color:#07080A;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;font-size:0.9375rem;padding:16px 26px;text-decoration:none;clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,13px 100%,0 calc(100% - 13px));transition:filter .15s ease,transform .15s ease;" style-hover="filter:drop-shadow(0 0 16px rgba(252,238,10,0.6));transform:translateY(-2px);">Book a 20-min call ▸</a>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <a href="{{ nextHref }}" style="display:block;text-decoration:none;color:inherit;">
+    <div style="max-width:1180px;margin:0 auto;padding:44px 28px 72px;">
+      <div data-next="true" style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:30px 32px;transition:box-shadow .2s ease;" style-hover="box-shadow:inset 0 0 0 1px #00E5FF;">
+        <div>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#7E8896;margin:0 0 8px;">Next case file</p>
+          <h3 class="anton" style="font-size:1.6rem;line-height:1;margin:0;color:#EAEEF0;">{{ nextName }}</h3>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:1.5rem;color:#FCEE0A;">▸</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  rootRef = React.createRef();
+
+  PROJECTS = {
+    skinbattle: {
+      name: 'SkinBattle.gg', slug: 'SKINBATTLE', tag1: 'Full-stack · Real-time', year: '2026', host: 'skinbattle.gg',
+      tagline: 'A real-time betting platform was buckling under concurrent load. I rebuilt the stack to scale to 12k monthly users, without melting the budget.',
+      metrics: [
+        { v: 12, suffix: 'k', dec: 0, pre: '', label: 'Monthly active users' },
+        { v: 62, suffix: '%', dec: 0, pre: '−', label: 'p95 response time' },
+        { v: 99.9, suffix: '%', dec: 1, pre: '', label: 'Uptime at peak' }
+      ],
+      context: 'SkinBattle.gg is a real-time wagering platform where thousands of users place bets on live matches simultaneously. The founding team had built a working MVP, but as traffic grew the architecture could not keep up, and the infrastructure bill was climbing faster than revenue.',
+      problemHead: 'At 800 concurrent users, bet settlement lagged 8.3 seconds, and users churned mid-match.',
+      problemBody: 'Every bet hit the database synchronously. Under load, the write queue backed up, settlement stalled, and the UI froze right at the moment of highest engagement. The team was one viral match away from an outage, and from losing the trust that keeps a betting product alive.',
+      beforeStr: '8.3s settlement · 800 concurrent ceiling · $4.2k/mo infra',
+      approachIntro: 'I kept the product surface untouched and rebuilt the engine underneath it, moving settlement off the request path and onto an event-driven pipeline, so the UI stays instant no matter the load.',
+      approachCards: [
+        { h: 'Event-driven settlement', p: 'Bets queue to a stream and settle asynchronously, decoupled from the user request.' },
+        { h: 'Optimistic UI', p: 'The interface confirms instantly and reconciles on settlement. No frozen screens.' }
+      ],
+      stack: ['Next.js', 'Node', 'Redis Streams', 'Postgres', 'WebSockets'],
+      resultHead: 'Settlement dropped under a second, and the platform scaled 15× on a smaller bill.',
+      beforeList: ['8.3s bet settlement', '800 concurrent ceiling', '$4.2k / mo infra'],
+      afterList: ['< 0.9s settlement', '12k+ concurrent, headroom to spare', '$2.6k / mo infra'],
+      quote: 'Amit rebuilt our settlement engine in 3 weeks. We went from sweating every busy match to barely watching the dashboards.',
+      quoteName: 'Marcus Webb', quoteRole: 'Founder, SkinBattle.gg', next: 'felis',
+      console: ['> deploy skinbattle --prod', '[ok] event pipeline armed', '[ok] settlement decoupled from request', 'p95 settlement ........ 0.9s', 'concurrent ............ 12k+', 'status: SCALING']
+    },
+    felis: {
+      name: 'Felis AI', slug: 'FELIS_AI', tag1: 'AI / LLM · RAG', year: '2026', host: 'felis.ai',
+      tagline: 'AI search that returned in 9 seconds and lost users mid-query. I rebuilt it as production-grade RAG and cut latency 40%.',
+      metrics: [
+        { v: 40, suffix: '%', dec: 0, pre: '−', label: 'p95 latency' },
+        { v: 2.1, suffix: 's', dec: 1, pre: '', label: 'Median query' },
+        { v: 3, suffix: '×', dec: 0, pre: '', label: 'Answer relevance' }
+      ],
+      context: 'Felis AI offers natural-language search over a large internal knowledge base. The demo dazzled investors, but in production it crawled, and users stopped trusting the answers it returned.',
+      problemHead: 'Queries took 9 seconds and often surfaced the wrong chunk, so users gave up before the answer arrived.',
+      problemBody: 'The naive pipeline embedded the full query, hit a single vector index, and stuffed everything into one giant prompt. Latency ballooned, cost per query spiked, and relevance was close to a coin flip.',
+      beforeStr: '9.0s p95 · 41% answer relevance · $0.21 per query',
+      approachIntro: 'I rebuilt retrieval as a staged pipeline: a cheap pre-filter, hybrid search, a rerank pass, then a tight prompt, measured at every hop.',
+      approachCards: [
+        { h: 'Hybrid retrieval', p: 'Keyword plus vector search with a cross-encoder rerank, so the right chunk lands first.' },
+        { h: 'Streaming + cache', p: 'Token streaming and a semantic cache cut perceived latency and repeat cost.' }
+      ],
+      stack: ['OpenAI', 'pgvector', 'LangChain', 'Cohere Rerank', 'Redis'],
+      resultHead: 'Median answers in 2.1 seconds, relevance up 3×, at a third of the cost per query.',
+      beforeList: ['9.0s p95 latency', '41% answer relevance', '$0.21 / query'],
+      afterList: ['2.1s median latency', 'Relevance up 3×', '$0.07 / query'],
+      quote: 'He shipped our AI search in 3 weeks and cut latency 40%. Scoped it, built it, handed it back working.',
+      quoteName: 'Sarah Chen', quoteRole: 'CTO, Felis AI', next: 'hookpilot',
+      console: ['> index rebuild --hybrid', '[ok] cross-encoder rerank online', '[ok] semantic cache warm', 'p95 latency .......... 2.1s', 'relevance ............ +3x', 'status: ANSWERING']
+    },
+    hookpilot: {
+      name: 'Hookpilot', slug: 'HOOKPILOT', tag1: 'Dev tool · CLI', year: '2025', host: 'github.com/humblefool/hookpilot',
+      tagline: 'Teams kept shipping broken commits. I built an open-source git-hook CLI that cut bad merges to near-zero, now 1.2k stars.',
+      metrics: [
+        { v: 1.2, suffix: 'k', dec: 1, pre: '', label: 'GitHub stars' },
+        { v: 92, suffix: '%', dec: 0, pre: '−', label: 'Broken merges' },
+        { v: 300, suffix: '+', dec: 0, pre: '', label: 'Teams using it' }
+      ],
+      context: 'Fast-moving teams relied on CI to catch mistakes, but CI runs minutes after the push, long after the context is gone and the cost of a fix has multiplied.',
+      problemHead: 'Broken commits slipped past review and turned green pipelines red, costing hours of bisecting every week.',
+      problemBody: 'Pre-commit checks existed but were slow, inconsistent across machines, and easy to skip. Nothing enforced them at the one moment that mattered: the commit itself.',
+      beforeStr: '~6 broken merges / wk · 11 min CI feedback · checks skipped freely',
+      approachIntro: 'I built a fast, zero-config git-hook runner that runs the right checks locally in milliseconds, with a shared config the whole team inherits.',
+      approachCards: [
+        { h: 'Parallel hooks', p: 'Checks run in parallel and only on changed files, so the commit stays instant.' },
+        { h: 'Shared config', p: 'One versioned config; every clone gets the same gates, with no manual setup.' }
+      ],
+      stack: ['Node', 'TypeScript', 'Rust core', 'oclif'],
+      resultHead: 'Broken merges dropped 92%, and the project grew to 1.2k stars and 300+ teams.',
+      beforeList: ['~6 broken merges / week', '11 min CI feedback loop', 'Checks skipped freely'],
+      afterList: ['< 1 broken merge / month', 'Instant local feedback', 'Checks enforced for all'],
+      quote: 'One senior person who covered the app, the AI, and the CI tooling. It saved us hiring three contractors.',
+      quoteName: 'Priya Nair', quoteRole: 'Head of Product, Northwind', next: 'jsverse',
+      console: ['$ npx hookpilot init', '[ok] hooks linked', '[ok] checks parallelised', 'broken merges ........ -92%', 'stars ................ 1.2k', 'status: GUARDING']
+    },
+    jsverse: {
+      name: 'JavaScript-Verse', slug: 'JS_VERSE', tag1: 'Frontend · Perf', year: '2025', host: 'javascript-verse.dev',
+      tagline: 'A learning platform felt sluggish and scored poorly. I rebuilt the frontend for instant interaction and a 98 Lighthouse.',
+      metrics: [
+        { v: 98, suffix: '', dec: 0, pre: '', label: 'Lighthouse perf' },
+        { v: 71, suffix: '%', dec: 0, pre: '−', label: 'JS bundle size' },
+        { v: 1.2, suffix: 's', dec: 1, pre: '', label: 'Time to interactive' }
+      ],
+      context: 'JavaScript-Verse teaches JavaScript interactively. The lessons were rich, but the app shipped a huge bundle and janked on every interaction, exactly the wrong impression for a coding course.',
+      problemHead: 'A 2.4MB bundle and main-thread jank made lessons feel slow on the devices students actually use.',
+      problemBody: 'Everything loaded upfront, including editors and runtimes a student might never open. First load dragged, and interactions stuttered on mid-range laptops.',
+      beforeStr: '2.4MB JS · 41 Lighthouse perf · 4.6s time to interactive',
+      approachIntro: 'I re-architected the frontend around code-splitting, server streaming, and a lighter runtime, shipping only what each lesson needs.',
+      approachCards: [
+        { h: 'Route + component splitting', p: 'Editors and runtimes load on demand, not on first paint.' },
+        { h: 'Server streaming', p: 'Lessons stream in progressively, so reading starts immediately.' }
+      ],
+      stack: ['React', 'Vite', 'Web Workers', 'Partytown'],
+      resultHead: 'A 98 Lighthouse score, a 71% smaller bundle, and interactions that feel instant.',
+      beforeList: ['2.4MB JS bundle', '41 Lighthouse perf', '4.6s time to interactive'],
+      afterList: ['0.7MB JS bundle', '98 Lighthouse perf', '1.2s time to interactive'],
+      quote: 'The rebuild made the whole product feel premium overnight. Students noticed within days.',
+      quoteName: 'Davin Osei', quoteRole: 'Founder, JavaScript-Verse', next: 'skinbattle',
+      console: ['> vite build --report', '[ok] routes code-split', '[ok] runtimes offloaded to workers', 'bundle ............... -71%', 'lighthouse ........... 98', 'status: INSTANT']
+    }
+  };
+
+  current() {
+    let id = 'skinbattle';
+    try { id = new URLSearchParams(window.location.search).get('id') || 'skinbattle'; } catch (e) {}
+    return this.PROJECTS[id] ? id : 'skinbattle';
+  }
+
+  componentDidMount() {
+    const root = this.rootRef.current || document;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const runReveals = () => {
+      const items = Array.prototype.slice.call(root.querySelectorAll('[data-reveal]'));
+      const nums = Array.prototype.slice.call(root.querySelectorAll('[data-countup]'));
+      this._firstPass = true;
+      const revealEl = (el) => { if (el._revealed) return; el._revealed = true; if (this._firstPass) { el.style.transition = 'none'; el.style.opacity = '1'; el.style.transform = 'none'; } else { el.style.transitionDelay = (el.getAttribute('data-reveal-delay') || 0) + 'ms'; el.style.opacity = '1'; el.style.transform = 'none'; } };
+      const forceEl = (el) => { if (el._revealed) return; el._revealed = true; el.style.transition = 'none'; el.style.opacity = '1'; el.style.transform = 'none'; };
+      const countEl = (el) => { if (el._counted) return; el._counted = true; this.animateCount(el, reduce); };
+      if (reduce) { items.forEach(forceEl); nums.forEach(countEl); return; }
+      const vh = () => window.innerHeight || document.documentElement.clientHeight;
+      this._check = () => { const h = vh(); items.forEach(el => { if (!el._revealed && el.getBoundingClientRect().top < h - 40) revealEl(el); }); nums.forEach(el => { if (!el._counted && el.getBoundingClientRect().top < h - 40) countEl(el); }); };
+      window.addEventListener('scroll', this._check, { passive: true });
+      window.addEventListener('resize', this._check, { passive: true });
+      this._check();
+      setTimeout(() => { this._firstPass = false; }, 160);
+      this._revealTimer = setTimeout(() => { items.forEach(forceEl); nums.forEach(countEl); }, 1500);
+    };
+    // wait a tick so sc-for content is in the DOM
+    setTimeout(runReveals, 30);
+
+    this.setupGlitchHover(root, reduce);
+    if (!reduce && window.matchMedia('(pointer:fine)').matches) {
+      const cursor = root.querySelector('[data-cursor]');
+      const coord = root.querySelector('[data-coord]');
+      const pad = (n) => String(Math.max(0, Math.round(n))).padStart(4, '0');
+      if (cursor && this.rootRef.current) this.rootRef.current.style.cursor = 'none';
+      this._cursorMove = (e) => { if (cursor) { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; cursor.style.opacity = '1'; } if (coord) coord.textContent = 'X·' + pad(e.clientX) + ' Y·' + pad(e.clientY); };
+      this._cursorOver = (e) => { if (!cursor) return; const t = e.target.closest && e.target.closest('a,button,input,select,textarea,[data-glitch-hover]'); if (t) { cursor.style.width = '46px'; cursor.style.height = '46px'; cursor.style.borderColor = '#FCEE0A'; } else { cursor.style.width = '28px'; cursor.style.height = '28px'; cursor.style.borderColor = 'rgba(0,229,255,0.85)'; } };
+      window.addEventListener('mousemove', this._cursorMove, { passive: true });
+      window.addEventListener('mouseover', this._cursorOver, { passive: true });
+    }
+    const nav = root.querySelector('[data-nav]');
+    if (nav) {
+      this._scroll = () => { if (window.scrollY > 20) { nav.style.background = 'rgba(7,8,10,0.85)'; nav.style.borderBottomColor = '#16202A'; nav.style.backdropFilter = 'blur(14px)'; nav.style.webkitBackdropFilter = 'blur(14px)'; } else { nav.style.background = 'transparent'; nav.style.borderBottomColor = 'transparent'; nav.style.backdropFilter = 'none'; nav.style.webkitBackdropFilter = 'none'; } };
+      window.addEventListener('scroll', this._scroll, { passive: true });
+      this._scroll();
+    }
+  }
+  setupGlitchHover(root, reduce) {
+    if (reduce) return;
+    Array.prototype.slice.call(root.querySelectorAll('[data-glitch-hover]')).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        let n = 0; if (el._gi) clearInterval(el._gi);
+        el._gi = setInterval(() => {
+          el.style.textShadow = '-' + (Math.random()*3).toFixed(1) + 'px 0 #FF2A6D, ' + (Math.random()*3).toFixed(1) + 'px 0 #00E5FF';
+          el.style.transform = 'translateX(' + (Math.random()*6-3).toFixed(1) + 'px)';
+          if (++n >= 7) { clearInterval(el._gi); el._gi = null; el.style.textShadow = 'none'; el.style.transform = 'none'; }
+        }, 40);
+      });
+    });
+  }
+  componentWillUnmount() { if (this._scroll) window.removeEventListener('scroll', this._scroll); if (this._check) { window.removeEventListener('scroll', this._check); window.removeEventListener('resize', this._check); } if (this._revealTimer) clearTimeout(this._revealTimer); if (this._cursorMove) window.removeEventListener('mousemove', this._cursorMove); if (this._cursorOver) window.removeEventListener('mouseover', this._cursorOver); }
+  animateCount(el, reduce) {
+    const to = parseFloat(el.getAttribute('data-countup'));
+    const dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const prefix = el.getAttribute('data-prefix') || '';
+    const final = prefix + to.toFixed(dec) + suffix;
+    if (reduce || isNaN(to)) { el.textContent = final; return; }
+    const dur = 1100, t0 = performance.now();
+    const step = (t) => { let p = Math.min(1, (t - t0) / dur); p = 1 - Math.pow(1 - p, 3); el.textContent = prefix + (to * p).toFixed(dec) + suffix; if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+    setTimeout(() => { el.textContent = final; }, dur + 140);
+  }
+  renderVals() {
+    const p = this.PROJECTS[this.current()];
+    return {
+      rootRef: this.rootRef,
+      name: p.name, slug: p.slug, tag1: p.tag1, year: p.year, host: p.host, tagline: p.tagline, console: p.console,
+      metrics: p.metrics, context: p.context, problemHead: p.problemHead, problemBody: p.problemBody,
+      beforeStr: p.beforeStr, approachIntro: p.approachIntro, approachCards: p.approachCards, stack: p.stack,
+      resultHead: p.resultHead, beforeList: p.beforeList, afterList: p.afterList,
+      quote: p.quote, quoteName: p.quoteName, quoteRole: p.quoteRole,
+      nextHref: 'Case Study.dc.html?id=' + p.next, nextName: this.PROJECTS[p.next].name
+    };
+  }
+}
+</script>
+</body>
+</html>

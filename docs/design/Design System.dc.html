@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#0A0B0A;}
+  ::selection{background:#C8F03C;color:#0A0B0A;}
+  [data-grain]{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.045;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  @media (max-width:880px){
+    [data-2col]{grid-template-columns:1fr !important;}
+    [data-swatches]{grid-template-columns:repeat(2,1fr) !important;}
+    [data-comp]{grid-template-columns:1fr !important;}
+  }
+</style>
+</helmet>
+<div data-grain="true"></div>
+<div style="background:#0A0B0A;color:#F2F4F1;font-family:'Geist','Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;">
+
+  <!-- MASTHEAD -->
+  <header style="border-bottom:1px solid #1B1F1B;">
+    <div style="max-width:1180px;margin:0 auto;padding:80px 32px 64px;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;">
+        <div>
+          <p style="font-family:'Geist Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#9DBF35;margin:0 0 24px;">[ Design System · v1.0 ]</p>
+          <h1 style="font-size:clamp(2.5rem,6vw,5rem);line-height:0.95;letter-spacing:-0.03em;font-weight:600;margin:0;">Technical<br>Editorial<span style="color:#C8F03C;">.</span></h1>
+        </div>
+        <div style="max-width:34ch;">
+          <p style="font-size:1.0625rem;line-height:1.6;color:#A9B0A6;margin:0 0 14px;">Near-monochrome dark base, one electric chartreuse accent, oversized grotesque type, monospace as systematic seasoning.</p>
+          <a href="Homepage.dc.html" style="font-family:'Geist Mono',monospace;font-size:0.875rem;color:#F2F4F1;text-decoration:none;border-bottom:1px solid #3A403A;padding-bottom:2px;">View it live → Homepage</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 01 COLOR -->
+  <section style="border-bottom:1px solid #1B1F1B;">
+    <div style="max-width:1180px;margin:0 auto;padding:72px 32px;">
+      <p style="font-family:'Geist Mono',monospace;font-size:0.8125rem;letter-spacing:0.14em;text-transform:uppercase;color:#6E756B;margin:0 0 36px;"><span style="color:#9DBF35;">01</span> / Color</p>
+
+      <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:#6E756B;margin:0 0 16px;">Base — warm dark neutrals</p>
+      <div data-swatches="true" style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#1B1F1B;border:1px solid #1B1F1B;border-radius:12px;overflow:hidden;margin-bottom:40px;">
+        <div style="background:#0A0B0A;padding:20px;height:140px;display:flex;flex-direction:column;justify-content:flex-end;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#F2F4F1;">bg-base</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#6E756B;">#0A0B0A</span></div>
+        <div style="background:#111311;padding:20px;height:140px;display:flex;flex-direction:column;justify-content:flex-end;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#F2F4F1;">elev-1</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#6E756B;">#111311</span></div>
+        <div style="background:#181B18;padding:20px;height:140px;display:flex;flex-direction:column;justify-content:flex-end;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#F2F4F1;">elev-2</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#6E756B;">#181B18</span></div>
+        <div style="background:#222622;padding:20px;height:140px;display:flex;flex-direction:column;justify-content:flex-end;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#F2F4F1;">elev-3</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#6E756B;">#222622</span></div>
+        <div style="background:#2A2E2A;padding:20px;height:140px;display:flex;flex-direction:column;justify-content:flex-end;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#F2F4F1;">line</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#A9B0A6;">#2A2E2A</span></div>
+        <div style="background:#3A403A;padding:20px;height:140px;display:flex;flex-direction:column;justify-content:flex-end;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#F2F4F1;">line-strong</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#A9B0A6;">#3A403A</span></div>
+      </div>
+
+      <div data-2col="true" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+        <div>
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:#6E756B;margin:0 0 16px;">Accent — electric chartreuse</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1B1F1B;border:1px solid #1B1F1B;border-radius:12px;overflow:hidden;">
+            <div style="background:#C8F03C;padding:20px;height:120px;display:flex;flex-direction:column;justify-content:flex-end;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#0A0B0A;font-weight:500;">accent</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#0A0B0A;">#C8F03C</span></div>
+            <div style="background:#D6FF52;padding:20px;height:120px;display:flex;flex-direction:column;justify-content:flex-end;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#0A0B0A;font-weight:500;">accent-hover</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#0A0B0A;">#D6FF52</span></div>
+            <div style="background:#9DBF35;padding:20px;height:120px;display:flex;flex-direction:column;justify-content:flex-end;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#0A0B0A;font-weight:500;">accent-muted</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#0A0B0A;">#9DBF35</span></div>
+            <div style="background:#181B18;padding:20px;height:120px;display:flex;flex-direction:column;justify-content:flex-end;border-left:1px solid #1B1F1B;"><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#C8F03C;font-weight:500;">accent-glow</span><span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#6E756B;">rgba .18</span></div>
+          </div>
+        </div>
+        <div>
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:#6E756B;margin:0 0 16px;">Text &amp; semantic</p>
+          <div style="border:1px solid #1B1F1B;border-radius:12px;overflow:hidden;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #1B1F1B;"><span style="font-size:1rem;color:#F2F4F1;">Primary — headlines &amp; copy</span><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;">#F2F4F1</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #1B1F1B;"><span style="font-size:1rem;color:#A9B0A6;">Secondary — body</span><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;">#A9B0A6</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #1B1F1B;"><span style="font-size:1rem;color:#6E756B;">Tertiary — metadata</span><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;">#6E756B</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #1B1F1B;"><span style="font-size:1rem;color:#5BD178;display:inline-flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:#5BD178;"></span>Success — available</span><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;">#5BD178</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;"><span style="font-size:1rem;color:#E0B341;display:inline-flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:#E0B341;"></span>Warning — limited</span><span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;">#E0B341</span></div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.9375rem;line-height:1.55;color:#6E756B;margin:28px 0 0;max-width:70ch;">Accent discipline: <span style="color:#A9B0A6;">one accent moment per section, maximum.</span> Accent is for action and emphasis — never body text, never decoration. Hierarchy comes from elevation, not hue.</p>
+    </div>
+  </section>
+
+  <!-- 02 TYPE -->
+  <section style="border-bottom:1px solid #1B1F1B;">
+    <div style="max-width:1180px;margin:0 auto;padding:72px 32px;">
+      <p style="font-family:'Geist Mono',monospace;font-size:0.8125rem;letter-spacing:0.14em;text-transform:uppercase;color:#6E756B;margin:0 0 36px;"><span style="color:#9DBF35;">02</span> / Typography</p>
+      <div data-2col="true" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;">
+        <div style="border:1px solid #2A2E2A;border-radius:14px;background:#111311;padding:28px;">
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;margin:0 0 16px;">DISPLAY / BODY — Geist</p>
+          <p style="font-size:3.5rem;line-height:1;letter-spacing:-0.03em;font-weight:600;margin:0;">Aa</p>
+          <p style="font-size:1rem;color:#A9B0A6;margin:16px 0 0;">Geometric grotesque. The expressive register — let headlines be huge, tight, confident.</p>
+        </div>
+        <div style="border:1px solid #2A2E2A;border-radius:14px;background:#111311;padding:28px;">
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;margin:0 0 16px;">MONO — Geist Mono</p>
+          <p style="font-family:'Geist Mono',monospace;font-size:3.5rem;line-height:1;letter-spacing:-0.02em;font-weight:500;margin:0;color:#C8F03C;">Aa</p>
+          <p style="font-size:1rem;color:#A9B0A6;margin:16px 0 0;">Systematic seasoning — eyebrows, indices, tags, coordinates. Uppercase, tracked.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #2A2E2A;border-radius:14px;overflow:hidden;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:24px 28px;border-bottom:1px solid #1B1F1B;">
+          <span style="font-size:clamp(2.5rem,5vw,4rem);line-height:1;letter-spacing:-0.03em;font-weight:600;">Display</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;flex:none;">clamp(3rem, 8vw, 7rem) · 600 · -0.03em</span>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:24px 28px;border-bottom:1px solid #1B1F1B;">
+          <span style="font-size:2.5rem;line-height:1.05;letter-spacing:-0.02em;font-weight:600;">Section headline</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;flex:none;">clamp(2.25rem, 5vw, 4rem) · 600</span>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:24px 28px;border-bottom:1px solid #1B1F1B;">
+          <span style="font-size:1.4rem;font-weight:600;">Card title (H3)</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;flex:none;">1.25–1.5rem · 600</span>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:24px 28px;border-bottom:1px solid #1B1F1B;">
+          <span style="font-size:1.0625rem;color:#A9B0A6;">Body — default running text at a comfortable measure of about 68 characters.</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;flex:none;">1.0625rem · 1.6 · ~68ch</span>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:24px 28px;">
+          <span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;letter-spacing:0.12em;text-transform:uppercase;color:#9DBF35;">01 / Mono label · [ Available Q3 ]</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;flex:none;">0.8125rem · 0.12em · upper</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SPACING & MOTION -->
+  <section style="border-bottom:1px solid #1B1F1B;">
+    <div style="max-width:1180px;margin:0 auto;padding:72px 32px;">
+      <div data-2col="true" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;">
+        <div>
+          <p style="font-family:'Geist Mono',monospace;font-size:0.8125rem;letter-spacing:0.14em;text-transform:uppercase;color:#6E756B;margin:0 0 36px;"><span style="color:#9DBF35;">03</span> / Spacing — 8px grid</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:4px;background:#C8F03C;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">4</span></div>
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:8px;background:#C8F03C;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">8</span></div>
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:16px;background:#C8F03C;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">16</span></div>
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:24px;background:#C8F03C;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">24</span></div>
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:32px;background:#C8F03C;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">32</span></div>
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:48px;background:#C8F03C;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">48</span></div>
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:64px;background:#C8F03C;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">64</span></div>
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:96px;background:#9DBF35;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">96</span></div>
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:128px;background:#9DBF35;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">128</span></div>
+            <div style="display:flex;align-items:center;gap:16px;"><div style="height:8px;width:192px;background:#9DBF35;"></div><span style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#6E756B;">192</span></div>
+          </div>
+          <p style="font-size:0.9375rem;line-height:1.55;color:#6E756B;margin:24px 0 0;max-width:48ch;">Container max <span style="color:#A9B0A6;">1280px</span>. Section padding <span style="color:#A9B0A6;">clamp(96px, 12vw, 192px)</span>. Generous negative space is a feature.</p>
+        </div>
+        <div>
+          <p style="font-family:'Geist Mono',monospace;font-size:0.8125rem;letter-spacing:0.14em;text-transform:uppercase;color:#6E756B;margin:0 0 36px;"><span style="color:#9DBF35;">04</span> / Motion</p>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="border:1px solid #2A2E2A;border-radius:12px;background:#111311;padding:20px;">
+              <h3 style="font-size:1.1rem;font-weight:600;margin:0 0 6px;display:flex;align-items:center;gap:8px;">Cursor spotlight <span style="font-family:'Geist Mono',monospace;font-size:0.6875rem;color:#0A0B0A;background:#C8F03C;border-radius:5px;padding:2px 7px;">SIGNATURE</span></h3>
+              <p style="font-size:0.9375rem;line-height:1.5;color:#A9B0A6;margin:0;">Hero only. Soft radial accent-glow follows the cursor. Disabled on touch + reduced-motion.</p>
+            </div>
+            <div style="border:1px solid #2A2E2A;border-radius:12px;background:#111311;padding:20px;">
+              <h3 style="font-size:1.1rem;font-weight:600;margin:0 0 6px;">Scroll reveals</h3>
+              <p style="font-size:0.9375rem;line-height:1.5;color:#A9B0A6;margin:0;">Subtle fade + 8–16px rise. 400–600ms. No stagger overload.</p>
+            </div>
+            <div style="border:1px solid #2A2E2A;border-radius:12px;background:#111311;padding:20px;">
+              <h3 style="font-size:1.1rem;font-weight:600;margin:0 0 6px;">Micro-interactions</h3>
+              <p style="font-size:0.9375rem;line-height:1.5;color:#A9B0A6;margin:0;">120–200ms ease-out. Accent underline grow, subtle lift, focus ring.</p>
+            </div>
+            <div style="border:1px solid #2A2E2A;border-radius:12px;background:#0C0D0C;padding:20px;">
+              <p style="font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#9DBF35;margin:0 0 6px;">cubic-bezier(0.22, 1, 0.36, 1)</p>
+              <p style="font-size:0.875rem;color:#6E756B;margin:0;">Ease-out-quint for entrances. All motion behind prefers-reduced-motion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 COMPONENTS -->
+  <section>
+    <div style="max-width:1180px;margin:0 auto;padding:72px 32px 96px;">
+      <p style="font-family:'Geist Mono',monospace;font-size:0.8125rem;letter-spacing:0.14em;text-transform:uppercase;color:#6E756B;margin:0 0 36px;"><span style="color:#9DBF35;">05</span> / Components</p>
+      <div data-comp="true" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+
+        <div style="border:1px solid #2A2E2A;border-radius:14px;background:#111311;padding:28px;">
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#6E756B;margin:0 0 22px;">Buttons</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <span style="display:inline-flex;align-items:center;gap:8px;background:#C8F03C;color:#0A0B0A;font-weight:600;font-size:0.9375rem;padding:12px 20px;border-radius:9px;">Book a call <span style="font-family:'Geist Mono',monospace;">→</span></span>
+            <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid #3A403A;color:#F2F4F1;font-weight:500;font-size:0.9375rem;padding:12px 18px;border-radius:9px;">See recent work</span>
+          </div>
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;margin:20px 0 0;">primary · secondary/ghost · hover lift + glow</p>
+        </div>
+
+        <div style="border:1px solid #2A2E2A;border-radius:14px;background:#111311;padding:28px;">
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#6E756B;margin:0 0 22px;">Badges &amp; tags</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+            <span style="display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border:1px solid #2A2E2A;border-radius:999px;background:#0E100E;font-family:'Geist Mono',monospace;font-size:0.8125rem;color:#A9B0A6;"><span style="width:8px;height:8px;border-radius:50%;background:#5BD178;box-shadow:0 0 8px #5BD178;"></span>Available — Q3</span>
+            <span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#A9B0A6;border:1px solid #2A2E2A;border-radius:6px;padding:5px 9px;">Next.js</span>
+            <span style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#9DBF35;border:1px solid #2A2E2A;border-radius:6px;padding:5px 9px;">RAG</span>
+          </div>
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;margin:20px 0 0;">availability pill · mono tech chips</p>
+        </div>
+
+        <div style="border:1px solid #2A2E2A;border-radius:14px;background:#111311;padding:28px;">
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#6E756B;margin:0 0 22px;">Form field — states</p>
+          <input type="text" value="Default" style="width:100%;background:#181B18;border:1px solid #2A2E2A;border-radius:9px;padding:11px 13px;color:#F2F4F1;font-family:inherit;font-size:0.9375rem;outline:none;margin-bottom:12px;">
+          <input type="text" value="Focus — accent ring" style="width:100%;background:#181B18;border:1px solid #C8F03C;box-shadow:0 0 0 3px rgba(200,240,60,0.18);border-radius:9px;padding:11px 13px;color:#F2F4F1;font-family:inherit;font-size:0.9375rem;outline:none;">
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;margin:20px 0 0;">default · hover · focus-visible · active · disabled</p>
+        </div>
+
+        <div style="border:1px solid #2A2E2A;border-radius:14px;background:#111311;padding:28px;">
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#6E756B;margin:0 0 22px;">Metric stat</p>
+          <div style="display:flex;gap:24px;">
+            <div><div style="font-family:'Geist Mono',monospace;font-size:2rem;font-weight:500;color:#C8F03C;">−40%</div><div style="font-family:'Geist Mono',monospace;font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;color:#6E756B;margin-top:4px;">Latency cut</div></div>
+            <div><div style="font-family:'Geist Mono',monospace;font-size:2rem;font-weight:500;color:#F2F4F1;">12k</div><div style="font-family:'Geist Mono',monospace;font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;color:#6E756B;margin-top:4px;">Monthly users</div></div>
+          </div>
+          <p style="font-family:'Geist Mono',monospace;font-size:0.75rem;color:#6E756B;margin:20px 0 0;">big mono number + tracked label · count-up on scroll</p>
+        </div>
+
+      </div>
+
+      <div style="margin-top:48px;padding-top:40px;border-top:1px solid #1B1F1B;display:flex;flex-wrap:wrap;gap:14px;">
+        <a href="Homepage.dc.html" style="display:inline-flex;align-items:center;gap:9px;background:#C8F03C;color:#0A0B0A;font-weight:600;font-size:0.9375rem;padding:13px 20px;border-radius:9px;text-decoration:none;">Homepage <span style="font-family:'Geist Mono',monospace;">→</span></a>
+        <a href="Case Study.dc.html" style="display:inline-flex;align-items:center;gap:9px;border:1px solid #3A403A;color:#F2F4F1;font-weight:500;font-size:0.9375rem;padding:13px 20px;border-radius:9px;text-decoration:none;">Case study template</a>
+        <a href="About.dc.html" style="display:inline-flex;align-items:center;gap:9px;border:1px solid #3A403A;color:#F2F4F1;font-weight:500;font-size:0.9375rem;padding:13px 20px;border-radius:9px;text-decoration:none;">About page</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+</body>
+</html>

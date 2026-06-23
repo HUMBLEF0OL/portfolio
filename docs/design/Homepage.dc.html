@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:72px;}
+  body{margin:0;background:#07080A;}
+  ::selection{background:#FCEE0A;color:#07080A;}
+  image-slot{display:block;}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #FCEE0A;outline-offset:3px;}
+  .anton{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.005em;}
+  [data-grain]{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  [data-scanlines]{position:fixed;inset:0;z-index:9997;pointer-events:none;opacity:0.45;background:repeating-linear-gradient(0deg,rgba(0,0,0,0) 0px,rgba(0,0,0,0) 2px,rgba(0,0,0,0.22) 3px,rgba(0,0,0,0) 4px);}
+  [data-scanbar]{position:fixed;left:0;right:0;top:-160px;height:160px;z-index:9996;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(0,229,255,0.045),transparent);animation:tm-scan 8s linear infinite;}
+  [data-bggrid]{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.6;background-image:linear-gradient(rgba(0,229,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.035) 1px,transparent 1px);background-size:48px 48px;animation:tm-grid 22s linear infinite;}
+  [data-vig]{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 90% 70% at 50% 30%,transparent 40%,rgba(7,8,10,0.7) 100%);}
+  @keyframes tm-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes tm-scan{from{top:-160px}to{top:100%}}
+  @keyframes tm-grid{from{background-position:0 0}to{background-position:0 48px}}
+  @keyframes tm-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+  @keyframes tm-pulse{0%,100%{box-shadow:0 0 6px currentColor}50%{box-shadow:0 0 12px currentColor}}
+  @keyframes tm-glitch{
+    0%,88%,100%{text-shadow:none;transform:translate(0);clip-path:none;}
+    89%{text-shadow:-3px 0 #FF2A6D,3px 0 #00E5FF;transform:translate(2px,0);}
+    90%{text-shadow:3px 0 #FF2A6D,-3px 0 #00E5FF;transform:translate(-2px,0);}
+    91%{text-shadow:-2px 0 #FF2A6D,2px 0 #00E5FF;transform:translate(1px,0);}
+    92%{text-shadow:2px 0 #00E5FF,-2px 0 #FF2A6D;transform:translate(0);}
+    93%{text-shadow:none;}
+    96%{text-shadow:-2px 0 #FF2A6D,2px 0 #00E5FF;}
+    97%{text-shadow:none;}
+  }
+  @media (max-width:920px){
+    [data-services]{grid-template-columns:1fr !important;}
+    [data-work-grid]{grid-template-columns:1fr !important;}
+    [data-work-stage-wrap]{display:none !important;}
+    [data-contact-grid]{grid-template-columns:1fr !important;}
+    [data-process]{grid-template-columns:1fr 1fr !important;}
+    [data-pricing]{grid-template-columns:1fr !important;}
+    [data-about-grid]{grid-template-columns:1fr !important;}
+    [data-faq-grid]{grid-template-columns:1fr !important;}
+    [data-stat-bar]{flex-wrap:wrap !important;}
+  }
+  @media (max-width:768px){
+    [data-navlinks]{display:none !important;}
+    [data-mobilecta]{display:flex !important;}
+    [data-pagewrap]{padding-bottom:74px;}
+    [data-hud]{display:none !important;}
+    [data-cursor]{display:none !important;}
+    [data-process]{grid-template-columns:1fr !important;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    [data-marquee-track],[data-scanbar],[data-bggrid]{animation:none !important;}
+    .anton[style*="tm-glitch"]{animation:none !important;}
+  }
+</style>
+</helmet>
+<div data-bggrid="true"></div>
+<div data-vig="true"></div>
+<div data-grain="true"></div>
+<div data-scanlines="true"></div>
+<div data-scanbar="true"></div>
+
+<div data-pagewrap="true" ref="{{ rootRef }}" style="position:relative;z-index:1;background:transparent;color:#EAEEF0;font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;">
+
+  <!-- cursor reticle + HUD -->
+  <div data-cursor="true" style="position:fixed;top:0;left:0;width:28px;height:28px;border:1px solid rgba(0,229,255,0.85);background:radial-gradient(circle at center,#FCEE0A 0,#FCEE0A 1.6px,transparent 2.4px);transform:translate(-50%,-50%);pointer-events:none;z-index:9998;opacity:0;transition:width .18s ease,height .18s ease,opacity .25s ease,border-color .18s ease;"></div>
+  <div data-hud="true" style="position:fixed;left:22px;bottom:13px;z-index:9000;font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.16em;color:#7E8896;pointer-events:none;display:flex;gap:14px;align-items:center;">
+    <span data-coord="true" style="color:#00E5FF;">X·0000 Y·0000</span><span style="color:#233240;">//</span><span style="color:#FCEE0A;display:inline-flex;align-items:center;gap:6px;"><span style="width:6px;height:6px;background:#FCEE0A;color:#FCEE0A;animation:tm-pulse 1.6s infinite;"></span>SYS ONLINE</span>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <nav data-nav="true" style="position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:1px solid transparent;transition:background .3s ease,border-color .3s ease;">
+    <div style="max-width:1320px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="#top" style="display:flex;align-items:center;gap:11px;text-decoration:none;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:#FCEE0A;color:#07080A;font-family:'Anton',sans-serif;font-size:1rem;clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px));">A</span>
+        <span class="anton" data-glitch-hover="true" style="font-size:1.2rem;color:#EAEEF0;line-height:1;">AMIT RANA</span>
+      </a>
+      <div data-navlinks="true" style="display:flex;align-items:center;gap:28px;">
+        <a href="#work" style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.08em;text-transform:uppercase;color:#8A94A0;text-decoration:none;transition:color .15s ease;" style-hover="color:#00E5FF;">Work</a>
+        <a href="#services" style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.08em;text-transform:uppercase;color:#8A94A0;text-decoration:none;transition:color .15s ease;" style-hover="color:#00E5FF;">Services</a>
+        <a href="About.dc.html" style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.08em;text-transform:uppercase;color:#8A94A0;text-decoration:none;transition:color .15s ease;" style-hover="color:#00E5FF;">About</a>
+        <span data-clock="true" style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.08em;color:#00E5FF;min-width:116px;">00:00:00 IST</span>
+      </div>
+      <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;background:#FCEE0A;color:#07080A;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;font-size:0.75rem;padding:11px 18px;text-decoration:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));transition:filter .15s ease,transform .15s ease;" style-hover="filter:drop-shadow(0 0 12px rgba(252,238,10,0.55));transform:translateY(-1px);">Book a call ▸</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header id="top" data-screen-label="Hero" data-hero="true" style="position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;border-bottom:1px solid #16202A;">
+    <canvas data-wave="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.4;"></canvas>
+    <div style="position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(180deg,rgba(7,8,10,0.55) 0%,rgba(7,8,10,0) 24%,rgba(7,8,10,0) 52%,rgba(7,8,10,0.85) 100%);"></div>
+
+    <!-- top status row -->
+    <div style="position:relative;z-index:3;padding:94px 28px 0;">
+      <div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;border-bottom:1px solid #16202A;padding-bottom:13px;">
+        <span style="color:#00E5FF;">▸ SENIOR PRODUCT ENGINEER</span>
+        <span>10+ YRS // FULL-STACK · AI · TOOLING</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;color:#FCEE0A;"><span style="width:6px;height:6px;background:#FCEE0A;color:#FCEE0A;animation:tm-pulse 1.6s infinite;"></span>AVAILABLE Q3 2026</span>
+      </div>
+    </div>
+
+    <!-- headline -->
+    <div style="position:relative;z-index:3;width:100%;max-width:1320px;margin:0 auto;padding:0 28px 44px;">
+      <p data-reveal="true" style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.2em;text-transform:uppercase;color:#FF2A6D;margin:0 0 20px;opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;">// LOADING_OPERATOR.exe</p>
+      <h1 data-reveal="true" class="anton" data-glitch="true" style="font-size:clamp(2.4rem,8vw,6.25rem);line-height:0.92;letter-spacing:-0.005em;margin:0 0 30px;color:#EAEEF0;opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);animation:tm-glitch 6s infinite;">
+        I ship the features<br>your roadmap is<br><span data-scramble="true" data-final="STUCK ON" style="color:#FCEE0A;">STUCK ON</span><span style="color:#FCEE0A;">_</span>
+      </h1>
+      <div data-reveal="true" data-reveal-delay="120" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+        <p style="font-size:clamp(1.0625rem,1.4vw,1.25rem);line-height:1.55;color:#A6AEB8;max-width:48ch;margin:0;border-left:2px solid #00E5FF;padding-left:16px;">Full-stack web apps, AI&nbsp;/&nbsp;LLM features, and internal dev tools. One senior engineer, end to end. No agency overhead, no coordination tax.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:13px;">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:10px;background:#FCEE0A;color:#07080A;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;font-size:0.875rem;padding:16px 26px;text-decoration:none;clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,13px 100%,0 calc(100% - 13px));transition:filter .15s ease,transform .15s ease;" style-hover="filter:drop-shadow(0 0 16px rgba(252,238,10,0.6));transform:translateY(-2px);">Book a 20-min call ▸</a>
+          <a href="#work" style="display:inline-flex;align-items:center;gap:9px;background:#0A0D10;color:#00E5FF;font-weight:600;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;font-size:0.875rem;padding:16px 24px;text-decoration:none;box-shadow:inset 0 0 0 1px #00E5FF;clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,13px 100%,0 calc(100% - 13px));transition:filter .15s ease;" style-hover="filter:drop-shadow(0 0 12px rgba(0,229,255,0.5));">See recent work</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ TICKER ============ -->
+  <div style="border-bottom:1px solid #16202A;background:#0A0D10;overflow:hidden;display:flex;align-items:stretch;">
+    <div style="flex:none;display:flex;align-items:center;gap:8px;padding:0 18px;background:#FF2A6D;color:#07080A;font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;">◉ REC</div>
+    <div data-marquee-track="true" style="display:flex;align-items:center;gap:36px;white-space:nowrap;padding:14px 0;padding-left:36px;width:max-content;animation:tm-marquee 30s linear infinite;font-family:'JetBrains Mono',monospace;font-size:0.875rem;letter-spacing:0.1em;text-transform:uppercase;color:#7A8290;will-change:transform;">
+      <span>Full-stack product builds</span><span style="color:#FCEE0A;">▰</span><span>AI &amp; LLM features</span><span style="color:#00E5FF;">▰</span><span>Frontend engineering</span><span style="color:#FCEE0A;">▰</span><span>Dev tools &amp; automation</span><span style="color:#00E5FF;">▰</span><span style="color:#FCEE0A;">Shipped, not stuck</span><span style="color:#FF2A6D;">▰</span>
+      <span>Full-stack product builds</span><span style="color:#FCEE0A;">▰</span><span>AI &amp; LLM features</span><span style="color:#00E5FF;">▰</span><span>Frontend engineering</span><span style="color:#FCEE0A;">▰</span><span>Dev tools &amp; automation</span><span style="color:#00E5FF;">▰</span><span style="color:#FCEE0A;">Shipped, not stuck</span><span style="color:#FF2A6D;">▰</span>
+    </div>
+  </div>
+
+  <!-- ============ STAT BAR ============ -->
+  <div style="border-bottom:1px solid #16202A;background:#08090C;">
+    <div data-stat-bar="true" style="max-width:1320px;margin:0 auto;display:flex;align-items:stretch;">
+      <div style="flex:1;padding:32px 28px;border-right:1px solid #16202A;">
+        <div style="font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(2rem,4vw,3.25rem);line-height:1;color:#EAEEF0;"><span data-countup="32" data-suffix="">0</span>+</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:#7E8896;margin-top:10px;">Products shipped</div>
+      </div>
+      <div style="flex:1;padding:32px 28px;border-right:1px solid #16202A;">
+        <div style="font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(2rem,4vw,3.25rem);line-height:1;color:#FCEE0A;"><span data-countup="40" data-suffix="%">0%</span></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:#7E8896;margin-top:10px;">Avg latency cut</div>
+      </div>
+      <div style="flex:1;padding:32px 28px;border-right:1px solid #16202A;">
+        <div style="font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(2rem,4vw,3.25rem);line-height:1;color:#00E5FF;"><span data-countup="10" data-suffix="">0</span>+</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:#7E8896;margin-top:10px;">Years building</div>
+      </div>
+      <div style="flex:1;padding:32px 28px;">
+        <div style="font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(2rem,4vw,3.25rem);line-height:1;color:#EAEEF0;">1<span style="color:#FF2A6D;">/</span>1</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:#7E8896;margin-top:10px;">Senior, end to end</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 01 PROBLEM ============ -->
+  <section data-screen-label="Problem" style="border-bottom:1px solid #16202A;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) 28px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 40px;"><span style="color:#FF2A6D;">// SYS.01</span> &nbsp;&gt; THE_PROBLEM</p>
+      <h2 data-reveal="true" data-glitch-hover="true" class="anton" style="font-size:clamp(1.9rem,5vw,4rem);line-height:1.0;letter-spacing:0;margin:0 0 28px;color:#EAEEF0;max-width:18ch;opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">Your roadmap is full. The feature that moves the metric keeps slipping.</h2>
+      <p data-reveal="true" data-reveal-delay="80" style="font-size:1.25rem;line-height:1.6;color:#A6AEB8;max-width:62ch;margin:0;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">You don't need another contractor to manage. You need someone senior who can scope it, build it, ship it, and hand it back working, across the stack, including the AI and tooling parts most people punt on.</p>
+    </div>
+  </section>
+
+  <!-- ============ 02 SERVICES ============ -->
+  <section id="services" data-screen-label="Services" style="border-bottom:1px solid #16202A;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) 28px;">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:56px;">
+        <div>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 28px;"><span style="color:#FF2A6D;">// SYS.02</span> &nbsp;&gt; CAPABILITIES</p>
+          <h2 class="anton" data-glitch-hover="true" style="font-size:clamp(1.9rem,5vw,4rem);line-height:0.98;letter-spacing:0;margin:0;max-width:16ch;">Four kinds of work. One engineer.</h2>
+        </div>
+        <p style="font-size:1.0625rem;line-height:1.55;color:#A6AEB8;max-width:34ch;margin:0 0 6px;">No handoff gap between the app, the AI, and the tooling, because it's the same person building each.</p>
+      </div>
+      <div data-services="true" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article data-reveal="true" data-cursor-hover="true" data-svc="true" style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:34px 34px 38px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1),box-shadow .25s ease;" style-hover="box-shadow:inset 0 0 0 1px #00E5FF;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:20px;">
+            <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.4rem;line-height:1;color:#FCEE0A;">01</span>
+            <h3 style="font-size:1.5rem;font-weight:600;letter-spacing:-0.01em;margin:0;color:#EAEEF0;">Full-stack product builds</h3>
+          </div>
+          <p style="font-size:1.0625rem;line-height:1.6;color:#A6AEB8;margin:0 0 24px;max-width:42ch;">Idea to shipped web app: frontend, backend, data, and deploy. Handed back working.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">Next.js</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">Node</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">Postgres</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">TypeScript</span>
+          </div>
+        </article>
+        <article data-reveal="true" data-reveal-delay="60" data-cursor-hover="true" data-svc="true" style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:34px 34px 38px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1),box-shadow .25s ease;" style-hover="box-shadow:inset 0 0 0 1px #00E5FF;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:20px;">
+            <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.4rem;line-height:1;color:#FCEE0A;">02</span>
+            <h3 style="font-size:1.5rem;font-weight:600;letter-spacing:-0.01em;margin:0;color:#EAEEF0;">AI / LLM features</h3>
+          </div>
+          <p style="font-size:1.0625rem;line-height:1.6;color:#A6AEB8;margin:0 0 24px;max-width:42ch;">RAG, chatbots, and AI features that actually ship to production, not a demo that breaks.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">OpenAI</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">LangChain</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">RAG</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">Supabase</span>
+          </div>
+        </article>
+        <article data-reveal="true" data-cursor-hover="true" data-svc="true" style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:34px 34px 38px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1),box-shadow .25s ease;" style-hover="box-shadow:inset 0 0 0 1px #00E5FF;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:20px;">
+            <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.4rem;line-height:1;color:#FCEE0A;">03</span>
+            <h3 style="font-size:1.5rem;font-weight:600;letter-spacing:-0.01em;margin:0;color:#EAEEF0;">Frontend / UI engineering</h3>
+          </div>
+          <p style="font-size:1.0625rem;line-height:1.6;color:#A6AEB8;margin:0 0 24px;max-width:42ch;">High-craft, fast, accessible interfaces: design to code, with the details that read as senior.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">React</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">Tailwind</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">Perf</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">a11y</span>
+          </div>
+        </article>
+        <article data-reveal="true" data-reveal-delay="60" data-cursor-hover="true" data-svc="true" style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:34px 34px 38px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1),box-shadow .25s ease;" style-hover="box-shadow:inset 0 0 0 1px #00E5FF;">
+          <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:20px;">
+            <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.4rem;line-height:1;color:#FCEE0A;">04</span>
+            <h3 style="font-size:1.5rem;font-weight:600;letter-spacing:-0.01em;margin:0;color:#EAEEF0;">Dev tools &amp; automation</h3>
+          </div>
+          <p style="font-size:1.0625rem;line-height:1.6;color:#A6AEB8;margin:0 0 24px;max-width:42ch;">CLIs, git tooling, and build automation that save your team hours every week.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">Node</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">TypeScript</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#00E5FF;box-shadow:inset 0 0 0 1px #1C2A33;padding:5px 9px;">CLI</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 WORK ============ -->
+  <section id="work" data-screen-label="Work" style="border-bottom:1px solid #16202A;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) 28px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 28px;"><span style="color:#FF2A6D;">// SYS.03</span> &nbsp;&gt; MISSION_LOG</p>
+      <h2 class="anton" data-glitch-hover="true" style="font-size:clamp(1.9rem,5vw,4rem);line-height:0.98;letter-spacing:0;margin:0 0 60px;max-width:20ch;">Real problems, shipped.</h2>
+
+      <div data-work-grid="true" style="display:grid;grid-template-columns:1fr 0.78fr;gap:60px;align-items:start;">
+        <div data-work-list="true" style="border-top:1px solid #1C2A33;">
+
+          <a data-work-row="true" data-idx="0" href="Case Study.dc.html?id=skinbattle" style="display:block;text-decoration:none;color:inherit;border-bottom:1px solid #1C2A33;padding:28px 4px;transition:padding-left .3s cubic-bezier(.22,1,.36,1),background .25s ease;" style-hover="padding-left:18px;background:#0B0E11;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;">
+              <div style="display:flex;align-items:baseline;gap:20px;">
+                <span data-work-num="true" style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.5rem;line-height:1;color:#7E8896;transition:color .25s ease;">01</span>
+                <div>
+                  <h3 class="anton" data-work-title="true" style="font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1;letter-spacing:0;margin:0 0 12px;color:#EAEEF0;transition:color .25s ease;">SkinBattle.gg</h3>
+                  <p style="font-size:1rem;line-height:1.5;color:#A6AEB8;margin:0 0 12px;max-width:46ch;">Real-time betting platform buckling under concurrent load. Scaled without melting the budget.</p>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#00E5FF;">Full-stack · Real-time</span>
+                </div>
+              </div>
+              <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.5rem;line-height:1;color:#FCEE0A;white-space:nowrap;">12k<span style="font-size:0.7rem;color:#7E8896;font-family:'JetBrains Mono',monospace;"> MAU</span></span>
+            </div>
+          </a>
+
+          <a data-work-row="true" data-idx="1" href="Case Study.dc.html?id=felis" style="display:block;text-decoration:none;color:inherit;border-bottom:1px solid #1C2A33;padding:28px 4px;transition:padding-left .3s cubic-bezier(.22,1,.36,1),background .25s ease;" style-hover="padding-left:18px;background:#0B0E11;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;">
+              <div style="display:flex;align-items:baseline;gap:20px;">
+                <span data-work-num="true" style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.5rem;line-height:1;color:#7E8896;transition:color .25s ease;">02</span>
+                <div>
+                  <h3 class="anton" data-work-title="true" style="font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1;letter-spacing:0;margin:0 0 12px;color:#EAEEF0;transition:color .25s ease;">Felis AI</h3>
+                  <p style="font-size:1rem;line-height:1.5;color:#A6AEB8;margin:0 0 12px;max-width:46ch;">AI search that returned in 9s and lost users mid-query. Rebuilt as production-grade RAG.</p>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#00E5FF;">AI / LLM · RAG</span>
+                </div>
+              </div>
+              <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.5rem;line-height:1;color:#FCEE0A;white-space:nowrap;">−40<span style="font-size:0.7rem;color:#7E8896;font-family:'JetBrains Mono',monospace;"> %LAT</span></span>
+            </div>
+          </a>
+
+          <a data-work-row="true" data-idx="2" href="Case Study.dc.html?id=hookpilot" style="display:block;text-decoration:none;color:inherit;border-bottom:1px solid #1C2A33;padding:28px 4px;transition:padding-left .3s cubic-bezier(.22,1,.36,1),background .25s ease;" style-hover="padding-left:18px;background:#0B0E11;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;">
+              <div style="display:flex;align-items:baseline;gap:20px;">
+                <span data-work-num="true" style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.5rem;line-height:1;color:#7E8896;transition:color .25s ease;">03</span>
+                <div>
+                  <h3 class="anton" data-work-title="true" style="font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1;letter-spacing:0;margin:0 0 12px;color:#EAEEF0;transition:color .25s ease;">Hookpilot</h3>
+                  <p style="font-size:1rem;line-height:1.5;color:#A6AEB8;margin:0 0 12px;max-width:46ch;">Teams shipping broken commits: an open-source git-hook CLI that cut bad merges to near-zero.</p>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#00E5FF;">Dev tool · CLI</span>
+                </div>
+              </div>
+              <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.5rem;line-height:1;color:#FCEE0A;white-space:nowrap;">1.2k<span style="font-size:0.7rem;color:#7E8896;font-family:'JetBrains Mono',monospace;"> ★</span></span>
+            </div>
+          </a>
+
+          <a data-work-row="true" data-idx="3" href="Case Study.dc.html?id=jsverse" style="display:block;text-decoration:none;color:inherit;border-bottom:1px solid #1C2A33;padding:28px 4px;transition:padding-left .3s cubic-bezier(.22,1,.36,1),background .25s ease;" style-hover="padding-left:18px;background:#0B0E11;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;">
+              <div style="display:flex;align-items:baseline;gap:20px;">
+                <span data-work-num="true" style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.5rem;line-height:1;color:#7E8896;transition:color .25s ease;">04</span>
+                <div>
+                  <h3 class="anton" data-work-title="true" style="font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1;letter-spacing:0;margin:0 0 12px;color:#EAEEF0;transition:color .25s ease;">JavaScript-Verse</h3>
+                  <p style="font-size:1rem;line-height:1.5;color:#A6AEB8;margin:0 0 12px;max-width:46ch;">A learning platform that felt sluggish. Rebuilt the frontend for instant interaction.</p>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#00E5FF;">Frontend · Perf</span>
+                </div>
+              </div>
+              <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.5rem;line-height:1;color:#FCEE0A;white-space:nowrap;">98<span style="font-size:0.7rem;color:#7E8896;font-family:'JetBrains Mono',monospace;"> LH</span></span>
+            </div>
+          </a>
+        </div>
+
+        <!-- sticky preview monitor -->
+        <div data-work-stage-wrap="true" style="position:sticky;top:96px;">
+          <div style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));padding:10px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px 10px;">
+              <span data-work-host="true" style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;color:#00E5FF;letter-spacing:0.06em;">skinbattle.gg</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;color:#7E8896;letter-spacing:0.06em;">FEED//01</span>
+            </div>
+            <div data-work-stage="true" style="position:relative;width:100%;height:300px;overflow:hidden;">
+              <div data-work-card="true" data-idx="0" style="position:absolute;inset:0;opacity:1;transition:opacity .4s ease;"><image-slot id="case-1" style="width:100%;height:100%;" shape="rect" placeholder="SkinBattle.gg screenshot"></image-slot></div>
+              <div data-work-card="true" data-idx="1" style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="case-2" style="width:100%;height:100%;" shape="rect" placeholder="Felis AI screenshot"></image-slot></div>
+              <div data-work-card="true" data-idx="2" style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="case-3" style="width:100%;height:100%;" shape="rect" placeholder="Hookpilot CLI screenshot"></image-slot></div>
+              <div data-work-card="true" data-idx="3" style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="case-4" style="width:100%;height:100%;" shape="rect" placeholder="JavaScript-Verse screenshot"></image-slot></div>
+              <div data-work-sweep="true" style="position:absolute;left:0;right:0;top:0;height:40%;pointer-events:none;background:linear-gradient(180deg,rgba(0,229,255,0.12),transparent);opacity:0;transition:opacity .3s ease;"></div>
+            </div>
+          </div>
+          <p style="margin:16px 0 0;font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.06em;color:#7E8896;">▸ Hover a target to preview · click to open the dossier</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 ABOUT // OPERATOR DOSSIER ============ -->
+  <section data-screen-label="About" style="border-bottom:1px solid #16202A;background:#08090C;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) 28px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 40px;"><span style="color:#FF2A6D;">// SYS.04</span> &nbsp;&gt; OPERATOR_FILE</p>
+      <div data-about-grid="true" style="display:grid;grid-template-columns:0.78fr 1.22fr;gap:48px;align-items:stretch;">
+        <!-- HUD-framed portrait -->
+        <div data-reveal="true" style="position:relative;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <div style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));padding:12px;">
+            <img src="uploads/avatar.png" alt="Amit Rana" style="width:100%;height:440px;object-fit:cover;object-position:center 18%;display:block;">
+            <div style="position:absolute;top:18px;left:18px;width:18px;height:18px;border-left:2px solid #FCEE0A;border-top:2px solid #FCEE0A;"></div>
+            <div style="position:absolute;top:18px;right:18px;width:18px;height:18px;border-right:2px solid #FCEE0A;border-top:2px solid #FCEE0A;"></div>
+            <div style="position:absolute;bottom:18px;left:18px;width:18px;height:18px;border-left:2px solid #FCEE0A;border-bottom:2px solid #FCEE0A;"></div>
+            <div style="position:absolute;bottom:18px;right:18px;width:18px;height:18px;border-right:2px solid #FCEE0A;border-bottom:2px solid #FCEE0A;"></div>
+            <div style="position:absolute;left:18px;bottom:18px;right:18px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:0.625rem;letter-spacing:0.1em;color:#00E5FF;padding:0 6px;"><span>ID·AR-001</span><span>REC ◉</span></div>
+          </div>
+        </div>
+        <!-- file -->
+        <div>
+          <h2 class="anton" data-glitch-hover="true" style="font-size:clamp(2.2rem,5vw,4rem);line-height:0.92;letter-spacing:0;margin:0 0 6px;color:#EAEEF0;">Amit Rana</h2>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.12em;text-transform:uppercase;color:#FCEE0A;margin:0 0 26px;">CLASS: SENIOR PRODUCT ENGINEER // 10+ YRS</p>
+          <p style="font-size:1.125rem;line-height:1.6;color:#A6AEB8;max-width:58ch;margin:0 0 30px;">I work end to end: the app, the AI, and the tooling that holds it together. I keep a tight client list so each project gets senior attention from scope to handoff. No juniors, no coordination tax.</p>
+
+          <div data-bars="true" style="display:flex;flex-direction:column;gap:14px;margin-bottom:32px;max-width:520px;">
+            <div style="display:flex;align-items:center;gap:16px;">
+              <span style="flex:none;width:120px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#8A94A0;">Full-stack</span>
+              <div data-bar="true" data-fill="9" style="flex:1;display:flex;gap:4px;">
+                <span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;">
+              <span style="flex:none;width:120px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#8A94A0;">AI / LLM</span>
+              <div data-bar="true" data-fill="8" style="flex:1;display:flex;gap:4px;">
+                <span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;">
+              <span style="flex:none;width:120px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#8A94A0;">Frontend</span>
+              <div data-bar="true" data-fill="9" style="flex:1;display:flex;gap:4px;">
+                <span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;">
+              <span style="flex:none;width:120px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#8A94A0;">Tooling / Ops</span>
+              <div data-bar="true" data-fill="7" style="flex:1;display:flex;gap:4px;">
+                <span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span><span style="flex:1;height:11px;background:#16202A;"></span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#A6AEB8;box-shadow:inset 0 0 0 1px #1C2A33;padding:10px 14px;">OSS: <span style="color:#EAEEF0;">Hookpilot</span> · <span style="color:#FCEE0A;">1.2k ★</span></div>
+            <a href="About.dc.html" style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#00E5FF;text-decoration:none;box-shadow:inset 0 0 0 1px #00E5FF;padding:10px 14px;clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));transition:filter .15s ease;" style-hover="filter:drop-shadow(0 0 10px rgba(0,229,255,0.45));">Read full bio ▸</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 TESTIMONIALS ============ -->
+  <section data-screen-label="Testimonials" style="border-bottom:1px solid #16202A;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) 28px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 40px;"><span style="color:#FF2A6D;">// SYS.05</span> &nbsp;&gt; TRANSMISSION_LOG</p>
+      <div style="border-top:1px solid #1C2A33;">
+        <figure data-reveal="true" style="margin:0;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;padding:42px 0;border-bottom:1px solid #1C2A33;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <blockquote style="font-size:clamp(1.35rem,2.6vw,2.1rem);line-height:1.3;color:#EAEEF0;margin:0;max-width:30ch;font-weight:500;"><span style="color:#00E5FF;">"</span>He shipped our AI search in 3 weeks and cut latency 40%. Scoped it, built it, handed it back working.<span style="color:#00E5FF;">"</span></blockquote>
+          <figcaption style="display:flex;align-items:center;gap:13px;">
+            <image-slot id="t-1" style="width:46px;height:46px;flex:none;" shape="rect" placeholder=""></image-slot>
+            <div><div style="font-size:0.9375rem;font-weight:600;color:#EAEEF0;">Sarah Chen</div><div style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#7E8896;">CTO, Felis AI</div></div>
+          </figcaption>
+        </figure>
+        <figure data-reveal="true" data-reveal-delay="60" style="margin:0;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;padding:42px 0;border-bottom:1px solid #1C2A33;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <blockquote style="font-size:clamp(1.35rem,2.6vw,2.1rem);line-height:1.3;color:#EAEEF0;margin:0;max-width:30ch;font-weight:500;"><span style="color:#00E5FF;">"</span>Weekly demos, direct line, zero black box. We always knew where the build was, and it landed on time.<span style="color:#00E5FF;">"</span></blockquote>
+          <figcaption style="display:flex;align-items:center;gap:13px;">
+            <image-slot id="t-2" style="width:46px;height:46px;flex:none;" shape="rect" placeholder=""></image-slot>
+            <div><div style="font-size:0.9375rem;font-weight:600;color:#EAEEF0;">Marcus Webb</div><div style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#7E8896;">Founder, SkinBattle</div></div>
+          </figcaption>
+        </figure>
+        <figure data-reveal="true" data-reveal-delay="120" style="margin:0;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;padding:42px 0;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <blockquote style="font-size:clamp(1.35rem,2.6vw,2.1rem);line-height:1.3;color:#EAEEF0;margin:0;max-width:30ch;font-weight:500;"><span style="color:#00E5FF;">"</span>One senior person who covered the app, the AI, and the CI tooling. Saved us hiring three contractors.<span style="color:#00E5FF;">"</span></blockquote>
+          <figcaption style="display:flex;align-items:center;gap:13px;">
+            <image-slot id="t-3" style="width:46px;height:46px;flex:none;" shape="rect" placeholder=""></image-slot>
+            <div><div style="font-size:0.9375rem;font-weight:600;color:#EAEEF0;">Priya Nair</div><div style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#7E8896;">Head of Product, Northwind</div></div>
+          </figcaption>
+        </figure>
+      </div>
+      <div data-reveal="true" style="margin-top:48px;padding-top:36px;border-top:1px solid #1C2A33;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:#7E8896;margin:0 0 22px;">▸ Trusted by teams at</p>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:44px;">
+          <span class="anton" style="font-size:1.5rem;color:#2A3640;">FELIS</span>
+          <span class="anton" style="font-size:1.5rem;color:#2A3640;">SKINBATTLE</span>
+          <span class="anton" style="font-size:1.5rem;color:#2A3640;">NORTHWIND</span>
+          <span class="anton" style="font-size:1.5rem;color:#2A3640;">LUMEN</span>
+          <span class="anton" style="font-size:1.5rem;color:#2A3640;">POLARIS</span>
+          <span class="anton" style="font-size:1.5rem;color:#2A3640;">CASTIRON</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 PROCESS ============ -->
+  <section data-screen-label="Process" style="border-bottom:1px solid #16202A;background:#08090C;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) 28px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 28px;"><span style="color:#FF2A6D;">// SYS.06</span> &nbsp;&gt; MISSION_PHASES</p>
+      <h2 class="anton" data-glitch-hover="true" style="font-size:clamp(1.9rem,5vw,4rem);line-height:0.98;letter-spacing:0;margin:0 0 60px;max-width:18ch;">Low-risk by design. No black box.</h2>
+      <div data-process="true" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;">
+        <div data-reveal="true" style="border-top:1px solid #FCEE0A;padding:26px 26px 0 0;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <div style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.6rem;line-height:1;color:#FCEE0A;margin-bottom:18px;text-shadow:0 0 18px rgba(252,238,10,0.35);">01</div>
+          <h3 style="font-size:1.25rem;font-weight:600;margin:0 0 10px;color:#EAEEF0;">Intro call</h3>
+          <p style="font-size:1rem;line-height:1.55;color:#A6AEB8;margin:0;max-width:30ch;">20 minutes to scope your problem and see if it's a fit. Free, no obligation.</p>
+        </div>
+        <div data-reveal="true" data-reveal-delay="60" style="border-top:1px solid #FCEE0A;padding:26px 26px 0;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <div style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.6rem;line-height:1;color:#FCEE0A;margin-bottom:18px;text-shadow:0 0 18px rgba(252,238,10,0.35);">02</div>
+          <h3 style="font-size:1.25rem;font-weight:600;margin:0 0 10px;color:#EAEEF0;">Proposal &amp; scope</h3>
+          <p style="font-size:1rem;line-height:1.55;color:#A6AEB8;margin:0;max-width:30ch;">Fixed scope, timeline, and price up front. You know exactly what you're getting.</p>
+        </div>
+        <div data-reveal="true" data-reveal-delay="120" style="border-top:1px solid #FCEE0A;padding:26px 26px 0;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <div style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.6rem;line-height:1;color:#FCEE0A;margin-bottom:18px;text-shadow:0 0 18px rgba(252,238,10,0.35);">03</div>
+          <h3 style="font-size:1.25rem;font-weight:600;margin:0 0 10px;color:#EAEEF0;">Build in the open</h3>
+          <p style="font-size:1rem;line-height:1.55;color:#A6AEB8;margin:0;max-width:30ch;">Weekly demos, a direct line to me, no black box. You see progress every week.</p>
+        </div>
+        <div data-reveal="true" data-reveal-delay="180" style="border-top:1px solid #FCEE0A;padding:26px 0 0 26px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <div style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.6rem;line-height:1;color:#FCEE0A;margin-bottom:18px;text-shadow:0 0 18px rgba(252,238,10,0.35);">04</div>
+          <h3 style="font-size:1.25rem;font-weight:600;margin:0 0 10px;color:#EAEEF0;">Ship &amp; handoff</h3>
+          <p style="font-size:1rem;line-height:1.55;color:#A6AEB8;margin:0;max-width:30ch;">Tested, documented, working. Handed back to your team. No lock-in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 PRICING + FAQ ============ -->
+  <section data-screen-label="Engagement" style="border-bottom:1px solid #16202A;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) 28px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 28px;"><span style="color:#FF2A6D;">// SYS.07</span> &nbsp;&gt; ENGAGEMENT</p>
+      <h2 class="anton" data-glitch-hover="true" style="font-size:clamp(1.9rem,5vw,4rem);line-height:0.98;letter-spacing:0;margin:0 0 60px;max-width:20ch;">Three ways to work together.</h2>
+      <div data-pricing="true" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:96px;">
+        <article data-reveal="true" style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:34px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <h3 style="font-size:1.25rem;font-weight:600;margin:0 0 6px;color:#EAEEF0;">Fixed-scope sprint</h3>
+          <p style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.2rem;line-height:1;color:#EAEEF0;margin:14px 0 18px;">$6k<span style="font-size:0.85rem;color:#7E8896;font-family:'JetBrains Mono',monospace;text-transform:uppercase;"> start</span></p>
+          <p style="font-size:1rem;line-height:1.55;color:#A6AEB8;margin:0 0 22px;">A defined feature or fix, scoped and shipped in 1–2 weeks. Best for one clear thing.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:0.9375rem;color:#A6AEB8;display:flex;gap:10px;"><span style="color:#00E5FF;">▸</span>Fixed price &amp; timeline</li>
+            <li style="font-size:0.9375rem;color:#A6AEB8;display:flex;gap:10px;"><span style="color:#00E5FF;">▸</span>Tested &amp; documented</li>
+            <li style="font-size:0.9375rem;color:#A6AEB8;display:flex;gap:10px;"><span style="color:#00E5FF;">▸</span>Full handoff</li>
+          </ul>
+        </article>
+        <article data-reveal="true" data-reveal-delay="60" style="position:relative;background:#0E0F08;box-shadow:inset 0 0 0 1px #FCEE0A;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:34px;filter:drop-shadow(0 0 22px rgba(252,238,10,0.14));opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;background:#FCEE0A;color:#07080A;padding:4px 10px;margin-bottom:16px;font-weight:600;">★ Most common</span>
+          <h3 style="font-size:1.25rem;font-weight:600;margin:0 0 6px;color:#EAEEF0;">Project build</h3>
+          <p style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.2rem;line-height:1;color:#FCEE0A;margin:10px 0 18px;text-shadow:0 0 18px rgba(252,238,10,0.4);">$18k<span style="font-size:0.85rem;color:#7E8896;font-family:'JetBrains Mono',monospace;text-transform:uppercase;"> start</span></p>
+          <p style="font-size:1rem;line-height:1.55;color:#A6AEB8;margin:0 0 22px;">Idea to launched product over 4–10 weeks. Full-stack, AI, and tooling, end to end.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:0.9375rem;color:#A6AEB8;display:flex;gap:10px;"><span style="color:#FCEE0A;">▸</span>Weekly demos</li>
+            <li style="font-size:0.9375rem;color:#A6AEB8;display:flex;gap:10px;"><span style="color:#FCEE0A;">▸</span>Direct line to me</li>
+            <li style="font-size:0.9375rem;color:#A6AEB8;display:flex;gap:10px;"><span style="color:#FCEE0A;">▸</span>Production-ready handoff</li>
+          </ul>
+        </article>
+        <article data-reveal="true" data-reveal-delay="120" style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:34px;opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+          <h3 style="font-size:1.25rem;font-weight:600;margin:0 0 6px;color:#EAEEF0;">Ongoing retainer</h3>
+          <p style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.2rem;line-height:1;color:#EAEEF0;margin:14px 0 18px;">$7k<span style="font-size:0.85rem;color:#7E8896;font-family:'JetBrains Mono',monospace;text-transform:uppercase;"> /mo</span></p>
+          <p style="font-size:1rem;line-height:1.55;color:#A6AEB8;margin:0 0 22px;">Senior capacity on tap. A set block of time each month for whatever moves the metric.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:0.9375rem;color:#A6AEB8;display:flex;gap:10px;"><span style="color:#00E5FF;">▸</span>Priority scheduling</li>
+            <li style="font-size:0.9375rem;color:#A6AEB8;display:flex;gap:10px;"><span style="color:#00E5FF;">▸</span>Flexible scope</li>
+            <li style="font-size:0.9375rem;color:#A6AEB8;display:flex;gap:10px;"><span style="color:#00E5FF;">▸</span>Month-to-month</li>
+          </ul>
+        </article>
+      </div>
+
+      <div data-faq-grid="true" style="display:grid;grid-template-columns:0.7fr 1.3fr;gap:48px;align-items:start;">
+        <h3 class="anton" style="font-size:clamp(1.6rem,3vw,2.4rem);line-height:1;letter-spacing:0;margin:0;color:#EAEEF0;">Questions you're probably asking.</h3>
+        <div style="border-top:1px solid #1C2A33;">
+          <div data-faq="true" data-open="false" style="border-bottom:1px solid #1C2A33;">
+            <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:none;border:none;cursor:pointer;text-align:left;padding:22px 0;color:#EAEEF0;font-family:inherit;font-size:1.1rem;font-weight:500;">How does working with a solo engineer actually work?<span data-faq-icon="true" style="color:#FCEE0A;font-size:1.4rem;transition:transform .25s ease;flex:none;line-height:1;">+</span></button>
+            <div data-faq-panel="true" style="max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease;"><p style="font-size:1.0625rem;line-height:1.6;color:#A6AEB8;margin:0 0 22px;">You get one senior point of contact, me, from scope to handoff. Weekly demos, a direct line, and fixed scope mean there's none of the coordination overhead of an agency or a new hire.</p></div>
+          </div>
+          <div data-faq="true" data-open="false" style="border-bottom:1px solid #1C2A33;">
+            <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:none;border:none;cursor:pointer;text-align:left;padding:22px 0;color:#EAEEF0;font-family:inherit;font-size:1.1rem;font-weight:500;">What's your availability and typical timeline?<span data-faq-icon="true" style="color:#FCEE0A;font-size:1.4rem;transition:transform .25s ease;flex:none;line-height:1;">+</span></button>
+            <div data-faq-panel="true" style="max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease;"><p style="font-size:1.0625rem;line-height:1.6;color:#A6AEB8;margin:0 0 22px;">I take a small number of projects at once. Sprints start within 1–2 weeks; project builds run 4–10 weeks depending on scope. Current availability is shown live in the nav.</p></div>
+          </div>
+          <div data-faq="true" data-open="false" style="border-bottom:1px solid #1C2A33;">
+            <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:none;border:none;cursor:pointer;text-align:left;padding:22px 0;color:#EAEEF0;font-family:inherit;font-size:1.1rem;font-weight:500;">Who owns the code and IP?<span data-faq-icon="true" style="color:#FCEE0A;font-size:1.4rem;transition:transform .25s ease;flex:none;line-height:1;">+</span></button>
+            <div data-faq-panel="true" style="max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease;"><p style="font-size:1.0625rem;line-height:1.6;color:#A6AEB8;margin:0 0 22px;">You do. Everything I build is yours: tested, documented, and handed back to your team with no lock-in.</p></div>
+          </div>
+          <div data-faq="true" data-open="false" style="border-bottom:1px solid #1C2A33;">
+            <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:none;border:none;cursor:pointer;text-align:left;padding:22px 0;color:#EAEEF0;font-family:inherit;font-size:1.1rem;font-weight:500;">What happens if scope changes mid-project?<span data-faq-icon="true" style="color:#FCEE0A;font-size:1.4rem;transition:transform .25s ease;flex:none;line-height:1;">+</span></button>
+            <div data-faq-panel="true" style="max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease;"><p style="font-size:1.0625rem;line-height:1.6;color:#A6AEB8;margin:0 0 22px;">We re-scope openly. I'll flag the impact on timeline and price before doing the work, with no surprise invoices, ever.</p></div>
+          </div>
+          <div data-faq="true" data-open="false">
+            <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:none;border:none;cursor:pointer;text-align:left;padding:22px 0;color:#EAEEF0;font-family:inherit;font-size:1.1rem;font-weight:500;">How do we communicate during the build?<span data-faq-icon="true" style="color:#FCEE0A;font-size:1.4rem;transition:transform .25s ease;flex:none;line-height:1;">+</span></button>
+            <div data-faq-panel="true" style="max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease;"><p style="font-size:1.0625rem;line-height:1.6;color:#A6AEB8;margin:0 0 22px;">A shared Slack or channel of your choice, plus a weekly demo. You'll never wonder where things stand.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 CONTACT ============ -->
+  <section id="contact" data-screen-label="Contact" style="border-bottom:1px solid #16202A;background:#08090C;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,140px) 28px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.16em;text-transform:uppercase;color:#7E8896;margin:0 0 28px;"><span style="color:#FF2A6D;">// SYS.08</span> &nbsp;&gt; ESTABLISH_UPLINK</p>
+      <div data-contact-grid="true" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+        <div>
+          <h2 class="anton" data-glitch="true" style="font-size:clamp(2.2rem,6vw,5rem);line-height:0.92;letter-spacing:0;margin:0 0 28px;color:#EAEEF0;animation:tm-glitch 7s infinite;">Tell me what you're trying to build.</h2>
+          <p style="font-size:1.1875rem;line-height:1.6;color:#A6AEB8;max-width:42ch;margin:0 0 36px;">Book a free 20-minute intro call, or send a note. I reply within 1 business day.</p>
+          <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px;">
+            <div style="display:flex;align-items:center;gap:13px;"><span style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#00E5FF;width:22px;">▸</span><span style="font-size:1.0625rem;color:#EAEEF0;">Free, no-obligation intro call</span></div>
+            <div style="display:flex;align-items:center;gap:13px;"><span style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#00E5FF;width:22px;">▸</span><span style="font-size:1.0625rem;color:#EAEEF0;">Response within 1 business day</span></div>
+            <div style="display:flex;align-items:center;gap:13px;"><span style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#00E5FF;width:22px;">▸</span><span style="font-size:1.0625rem;color:#EAEEF0;">You'll talk to me, not a sales rep</span></div>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:10px;padding:9px 15px;box-shadow:inset 0 0 0 1px #1C2A33;background:#0B0E11;">
+            <span style="width:8px;height:8px;background:#FCEE0A;color:#FCEE0A;animation:tm-pulse 1.6s infinite;"></span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.08em;color:#A6AEB8;">STATUS: AVAILABLE // Q3 2026</span>
+          </div>
+        </div>
+        <div style="position:relative;background:#0B0E11;box-shadow:inset 0 0 0 1px #1C2A33;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));padding:34px;">
+          <a href="https://cal.com/amitrana/intro" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#FCEE0A;color:#07080A;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;font-size:0.875rem;padding:16px;text-decoration:none;margin-bottom:24px;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));transition:filter .15s ease;" style-hover="filter:drop-shadow(0 0 14px rgba(252,238,10,0.55));">Book a 20-min call ▸</a>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;"><span style="flex:1;height:1px;background:#1C2A33;"></span><span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#7E8896;">OR SEND A NOTE</span><span style="flex:1;height:1px;background:#1C2A33;"></span></div>
+          <form onSubmit="{{ noSubmit }}" style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div>
+                <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#7E8896;margin-bottom:7px;">Name</label>
+                <input type="text" placeholder="Jane Doe" style="width:100%;background:#07090B;box-shadow:inset 0 0 0 1px #1C2A33;border:none;padding:12px 13px;color:#EAEEF0;font-family:inherit;font-size:0.9375rem;outline:none;transition:box-shadow .15s ease;" style-focus="box-shadow:inset 0 0 0 1px #FCEE0A;">
+              </div>
+              <div>
+                <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#7E8896;margin-bottom:7px;">Email</label>
+                <input type="email" placeholder="jane@company.com" style="width:100%;background:#07090B;box-shadow:inset 0 0 0 1px #1C2A33;border:none;padding:12px 13px;color:#EAEEF0;font-family:inherit;font-size:0.9375rem;outline:none;transition:box-shadow .15s ease;" style-focus="box-shadow:inset 0 0 0 1px #FCEE0A;">
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div>
+                <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#7E8896;margin-bottom:7px;">Project type</label>
+                <select style="width:100%;background:#07090B;box-shadow:inset 0 0 0 1px #1C2A33;border:none;padding:12px 13px;color:#A6AEB8;font-family:inherit;font-size:0.9375rem;outline:none;transition:box-shadow .15s ease;" style-focus="box-shadow:inset 0 0 0 1px #FCEE0A;">
+                  <option>Full-stack build</option><option>AI / LLM feature</option><option>Frontend / UI</option><option>Dev tool</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#7E8896;margin-bottom:7px;">Budget tier</label>
+                <select style="width:100%;background:#07090B;box-shadow:inset 0 0 0 1px #1C2A33;border:none;padding:12px 13px;color:#A6AEB8;font-family:inherit;font-size:0.9375rem;outline:none;transition:box-shadow .15s ease;" style-focus="box-shadow:inset 0 0 0 1px #FCEE0A;">
+                  <option>$6k – $15k</option><option>$15k – $40k</option><option>$40k+</option><option>Retainer</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#7E8896;margin-bottom:7px;">Timeline</label>
+              <select style="width:100%;background:#07090B;box-shadow:inset 0 0 0 1px #1C2A33;border:none;padding:12px 13px;color:#A6AEB8;font-family:inherit;font-size:0.9375rem;outline:none;transition:box-shadow .15s ease;" style-focus="box-shadow:inset 0 0 0 1px #FCEE0A;">
+                <option>ASAP</option><option>1–3 months</option><option>3–6 months</option><option>Just exploring</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:#7E8896;margin-bottom:7px;">What are you building?</label>
+              <textarea rows="3" placeholder="A one-liner is plenty to start." style="width:100%;background:#07090B;box-shadow:inset 0 0 0 1px #1C2A33;border:none;padding:12px 13px;color:#EAEEF0;font-family:inherit;font-size:0.9375rem;outline:none;resize:vertical;transition:box-shadow .15s ease;" style-focus="box-shadow:inset 0 0 0 1px #FCEE0A;"></textarea>
+            </div>
+            <button type="submit" style="width:100%;background:#0A0D10;color:#00E5FF;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;font-size:0.875rem;padding:15px;box-shadow:inset 0 0 0 1px #00E5FF;cursor:pointer;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));transition:filter .15s ease;" style-hover="filter:drop-shadow(0 0 12px rgba(0,229,255,0.5));">Transmit ▸</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#07080A;overflow:hidden;">
+    <div style="max-width:1320px;margin:0 auto;padding:64px 28px 0;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px;padding-bottom:40px;">
+        <p style="font-size:1.0625rem;color:#A6AEB8;margin:0;max-width:34ch;">Senior product engineer. Full-stack, AI, and the tooling around it. Shipped.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;background:#FCEE0A;color:#07080A;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;font-size:0.8125rem;padding:13px 22px;text-decoration:none;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,11px 100%,0 calc(100% - 11px));transition:filter .15s ease;" style-hover="filter:drop-shadow(0 0 12px rgba(252,238,10,0.5));">Book a call ▸</a>
+          <div style="display:flex;gap:20px;">
+            <a href="mailto:hello@amitrana.dev" style="font-family:'JetBrains Mono',monospace;font-size:0.875rem;color:#8A94A0;text-decoration:none;" style-hover="color:#00E5FF;">Email</a>
+            <a href="https://github.com/humblefool" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:0.875rem;color:#8A94A0;text-decoration:none;" style-hover="color:#00E5FF;">GitHub</a>
+            <a href="https://www.linkedin.com/in/amitrana" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:0.875rem;color:#8A94A0;text-decoration:none;" style-hover="color:#00E5FF;">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-top:1px solid #16202A;flex-wrap:wrap;gap:12px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#7E8896;">© 2026 AMIT RANA</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#7E8896;display:inline-flex;align-items:center;gap:7px;"><span style="width:7px;height:7px;background:#FF2A6D;"></span>END OF TRANSMISSION</span>
+      </div>
+      <div class="anton" data-glitch-hover="true" style="font-size:clamp(3rem,18vw,16rem);line-height:0.8;letter-spacing:-0.01em;color:#0E1014;margin:8px 0 -0.12em;white-space:nowrap;">AMIT RANA</div>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE STICKY CTA ============ -->
+  <div data-mobilecta="true" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:1100;padding:12px 16px;background:rgba(7,8,10,0.94);backdrop-filter:blur(12px);border-top:1px solid #1C2A33;align-items:center;gap:12px;">
+    <div style="flex:1;display:flex;flex-direction:column;">
+      <span style="font-size:0.9375rem;font-weight:600;color:#EAEEF0;line-height:1.1;">Free 20-min intro call</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;color:#7E8896;display:inline-flex;align-items:center;gap:6px;margin-top:3px;"><span style="width:6px;height:6px;background:#FCEE0A;"></span>AVAILABLE // Q3 2026</span>
+    </div>
+    <a href="#contact" style="display:inline-flex;align-items:center;gap:7px;background:#FCEE0A;color:#07080A;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;font-size:0.8125rem;padding:13px 18px;text-decoration:none;flex:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));">Book ▸</a>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  rootRef = React.createRef();
+
+  componentDidMount() {
+    const root = this.rootRef.current || document;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---- scroll reveals + countups + attribute bars ----
+    const items = Array.prototype.slice.call(root.querySelectorAll('[data-reveal]'));
+    const nums = Array.prototype.slice.call(root.querySelectorAll('[data-countup]'));
+    const bars = Array.prototype.slice.call(root.querySelectorAll('[data-bar]'));
+    this._firstPass = true;
+    const revealEl = (el) => {
+      if (el._revealed) return; el._revealed = true;
+      if (this._firstPass) { el.style.transition = 'none'; el.style.opacity = '1'; el.style.transform = 'none'; }
+      else { el.style.transitionDelay = (el.getAttribute('data-reveal-delay') || 0) + 'ms'; el.style.opacity = '1'; el.style.transform = 'none'; }
+    };
+    const forceEl = (el) => { if (el._revealed) return; el._revealed = true; el.style.transition = 'none'; el.style.opacity = '1'; el.style.transform = 'none'; };
+    const countEl = (el) => { if (el._counted) return; el._counted = true; this.animateCount(el, reduce); };
+    const fillBar = (el) => { if (el._filled) return; el._filled = true; this.animateBar(el, reduce); };
+
+    if (reduce) { items.forEach(forceEl); nums.forEach(countEl); bars.forEach(b => this.animateBar(b, true)); }
+    else {
+      const vh = () => window.innerHeight || document.documentElement.clientHeight;
+      this._check = () => {
+        const h = vh();
+        items.forEach(el => { if (!el._revealed && el.getBoundingClientRect().top < h - 40) revealEl(el); });
+        nums.forEach(el => { if (!el._counted && el.getBoundingClientRect().top < h - 40) countEl(el); });
+        bars.forEach(el => { if (!el._filled && el.getBoundingClientRect().top < h - 40) fillBar(el); });
+      };
+      window.addEventListener('scroll', this._check, { passive: true });
+      window.addEventListener('resize', this._check, { passive: true });
+      this._check();
+      setTimeout(() => { this._firstPass = false; }, 180);
+      this._revealTimer = setTimeout(() => { items.forEach(forceEl); nums.forEach(countEl); bars.forEach(b => this.animateBar(b, true)); }, 1600);
+    }
+
+    this.setupScramble(root, reduce);
+    this.setupWave(root, reduce);
+    this.setupWork(root, reduce);
+    this.setupClock(root);
+    this.setupGlitchHover(root, reduce);
+
+    // ---- custom cursor reticle + coord HUD ----
+    if (!reduce && window.matchMedia('(pointer:fine)').matches) {
+      const cursor = root.querySelector('[data-cursor]');
+      const coord = root.querySelector('[data-coord]');
+      const pad = (n) => String(Math.max(0, Math.round(n))).padStart(4, '0');
+      if (cursor && this.rootRef.current) this.rootRef.current.style.cursor = 'none';
+      this._cursorMove = (e) => {
+        if (cursor) { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; cursor.style.opacity = '1'; }
+        if (coord) coord.textContent = 'X·' + pad(e.clientX) + ' Y·' + pad(e.clientY);
+      };
+      this._cursorOver = (e) => {
+        if (!cursor) return;
+        const t = e.target.closest && e.target.closest('a,button,input,select,textarea,[data-cursor-hover]');
+        if (t) { cursor.style.width = '46px'; cursor.style.height = '46px'; cursor.style.borderColor = '#FCEE0A'; }
+        else { cursor.style.width = '28px'; cursor.style.height = '28px'; cursor.style.borderColor = 'rgba(0,229,255,0.85)'; }
+      };
+      window.addEventListener('mousemove', this._cursorMove, { passive: true });
+      window.addEventListener('mouseover', this._cursorOver, { passive: true });
+    }
+
+    // ---- nav condense ----
+    const nav = root.querySelector('[data-nav]');
+    if (nav) {
+      this._scroll = () => {
+        if (window.scrollY > 20) {
+          nav.style.background = 'rgba(7,8,10,0.85)'; nav.style.borderBottomColor = '#16202A';
+          nav.style.backdropFilter = 'blur(14px)'; nav.style.webkitBackdropFilter = 'blur(14px)';
+        } else {
+          nav.style.background = 'transparent'; nav.style.borderBottomColor = 'transparent';
+          nav.style.backdropFilter = 'none'; nav.style.webkitBackdropFilter = 'none';
+        }
+      };
+      window.addEventListener('scroll', this._scroll, { passive: true });
+      this._scroll();
+    }
+  }
+
+  setupScramble(root, reduce) {
+    const el = root.querySelector('[data-scramble]');
+    if (!el) return;
+    const final = el.getAttribute('data-final') || el.textContent;
+    if (reduce) { el.textContent = final; return; }
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ#%&/<>0123456789';
+    const run = () => {
+      let frame = 0; const total = 30;
+      if (this._scrAnim) cancelAnimationFrame(this._scrAnim);
+      const tick = () => {
+        const reveal = Math.floor((frame / total) * final.length);
+        let out = '';
+        for (let i = 0; i < final.length; i++) {
+          const c = final[i];
+          if (c === ' ') { out += ' '; continue; }
+          out += i < reveal ? c : chars[Math.floor(Math.random() * chars.length)];
+        }
+        el.textContent = out; frame++;
+        if (frame <= total) this._scrAnim = requestAnimationFrame(tick);
+        else el.textContent = final;
+      };
+      tick();
+    };
+    setTimeout(run, 520);
+    el.addEventListener('mouseenter', run);
+  }
+
+  setupGlitchHover(root, reduce) {
+    if (reduce) return;
+    const els = Array.prototype.slice.call(root.querySelectorAll('[data-glitch-hover]'));
+    els.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        let n = 0; const max = 7;
+        if (el._gi) clearInterval(el._gi);
+        el._gi = setInterval(() => {
+          const dx = (Math.random() * 6 - 3).toFixed(1);
+          el.style.textShadow = '-' + (Math.random()*3).toFixed(1) + 'px 0 #FF2A6D, ' + (Math.random()*3).toFixed(1) + 'px 0 #00E5FF';
+          el.style.transform = 'translateX(' + dx + 'px)';
+          if (++n >= max) { clearInterval(el._gi); el._gi = null; el.style.textShadow = 'none'; el.style.transform = 'none'; }
+        }, 40);
+      });
+    });
+  }
+
+  setupWave(root, reduce) {
+    const canvas = root.querySelector('[data-wave]');
+    const hero = root.querySelector('[data-hero]');
+    if (!canvas || !hero) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const FS = 17;
+    const GLYPHS = '0123456789=<>[]{}/\\$#@*%+!?:;ABCDEFGHJKLMNPQRSTUVWXYZ0101';
+    let W = 0, H = 0, mx = 0.5, raf = null;
+    let cols = 0, drops = [], speed = [], tint = [];
+    const init = () => {
+      cols = Math.ceil(W / FS);
+      drops = new Array(cols); speed = new Array(cols); tint = new Array(cols);
+      for (let c = 0; c < cols; c++) {
+        drops[c] = Math.random() * -(H / FS);
+        speed[c] = 0.16 + Math.random() * 0.38;
+        const r = Math.random();
+        tint[c] = r > 0.9 ? '252,238,10' : (r > 0.82 ? '255,42,109' : '0,229,255');
+      }
+    };
+    const layout = () => {
+      const r = hero.getBoundingClientRect();
+      W = r.width; H = r.height;
+      if (W <= 0 || H <= 0) return;
+      canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+      canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      init();
+      ctx.fillStyle = '#07080A'; ctx.fillRect(0, 0, W, H);
+    };
+    const draw = () => {
+      ctx.fillStyle = 'rgba(7,8,10,0.085)';
+      ctx.fillRect(0, 0, W, H);
+      ctx.font = '700 ' + FS + "px 'JetBrains Mono',monospace";
+      ctx.textBaseline = 'top';
+      const mxpx = mx * W;
+      for (let c = 0; c < cols; c++) {
+        const x = c * FS;
+        const y = drops[c] * FS;
+        const near = 1 - Math.min(1, Math.abs(x - mxpx) / 170);
+        if (y > -FS && y < H) {
+          ctx.fillStyle = 'rgba(214,252,255,' + (0.58 + near * 0.22) + ')';
+          ctx.fillText(GLYPHS[(Math.random() * GLYPHS.length) | 0], x, y);
+          ctx.fillStyle = 'rgba(' + tint[c] + ',' + (0.3 + near * 0.3) + ')';
+          ctx.fillText(GLYPHS[(Math.random() * GLYPHS.length) | 0], x, y - FS);
+        }
+        drops[c] += speed[c] * (0.5 + near * 0.5);
+        if (y > H && Math.random() > 0.975) { drops[c] = Math.random() * -8; speed[c] = 0.16 + Math.random() * 0.38; }
+      }
+    };
+    if (reduce) {
+      layout();
+      ctx.fillStyle = '#07080A'; ctx.fillRect(0, 0, W, H);
+      ctx.font = '700 ' + FS + "px 'JetBrains Mono',monospace"; ctx.textBaseline = 'top';
+      for (let c = 0; c < cols; c++) for (let r2 = 0; r2 < H / FS; r2 += 3) { ctx.fillStyle = 'rgba(0,229,255,0.1)'; ctx.fillText(GLYPHS[(Math.random() * GLYPHS.length) | 0], c * FS, r2 * FS); }
+    } else {
+      const loop = () => { draw(); raf = requestAnimationFrame(loop); };
+      const start = () => { if (!raf) raf = requestAnimationFrame(loop); };
+      const stop = () => { if (raf) { cancelAnimationFrame(raf); raf = null; } };
+      layout(); start();
+      // Pause the canvas loop while the hero is offscreen (CWV / battery).
+      if ('IntersectionObserver' in window) {
+        this._waveIO = new IntersectionObserver((entries) => {
+          entries.forEach(e => { e.isIntersecting ? start() : stop(); });
+        }, { threshold: 0 });
+        this._waveIO.observe(hero);
+      }
+      this._waveStop = () => { stop(); if (this._waveIO) this._waveIO.disconnect(); };
+      this._waveMove = (e) => { const r = hero.getBoundingClientRect(); mx = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)); };
+      hero.addEventListener('mousemove', this._waveMove, { passive: true });
+    }
+    this._waveLayout = layout;
+    window.addEventListener('resize', this._waveLayout, { passive: true });
+    setTimeout(layout, 300); setTimeout(layout, 1000);
+  }
+
+  setupWork(root, reduce) {
+    const rows = Array.prototype.slice.call(root.querySelectorAll('[data-work-row]'));
+    const cards = Array.prototype.slice.call(root.querySelectorAll('[data-work-card]'));
+    const host = root.querySelector('[data-work-host]');
+    const sweep = root.querySelector('[data-work-sweep]');
+    const hosts = ['skinbattle.gg', 'felis.ai', 'github.com/humblefool/hookpilot', 'javascript-verse.dev'];
+    if (!rows.length) return;
+    const activate = (idx) => {
+      cards.forEach(c => { c.style.opacity = c.getAttribute('data-idx') === String(idx) ? '1' : '0'; });
+      rows.forEach(r => {
+        const on = r.getAttribute('data-idx') === String(idx);
+        const num = r.querySelector('[data-work-num]');
+        const title = r.querySelector('[data-work-title]');
+        if (num) num.style.color = on ? '#FCEE0A' : '#7E8896';
+        if (title) title.style.color = on ? '#00E5FF' : '#EAEEF0';
+      });
+      if (host) host.textContent = hosts[idx] || '';
+      if (sweep && !reduce) { sweep.style.opacity = '1'; setTimeout(() => { sweep.style.opacity = '0'; }, 260); }
+    };
+    rows.forEach(r => {
+      const idx = parseInt(r.getAttribute('data-idx'), 10);
+      r.addEventListener('mouseenter', () => activate(idx));
+    });
+    activate(0);
+  }
+
+  setupClock(root) {
+    const el = root.querySelector('[data-clock]');
+    if (!el) return;
+    const tick = () => {
+      const now = new Date();
+      const ist = new Date(now.getTime() + (now.getTimezoneOffset() + 330) * 60000);
+      const p = (n) => String(n).padStart(2, '0');
+      el.textContent = p(ist.getHours()) + ':' + p(ist.getMinutes()) + ':' + p(ist.getSeconds()) + ' IST';
+    };
+    tick();
+    this._clockInt = setInterval(tick, 1000);
+  }
+
+  animateBar(el, reduce) {
+    const fill = parseInt(el.getAttribute('data-fill') || '0', 10);
+    const segs = Array.prototype.slice.call(el.children);
+    const light = (i) => { if (segs[i]) { segs[i].style.background = '#FCEE0A'; segs[i].style.boxShadow = '0 0 8px rgba(252,238,10,0.5)'; } };
+    if (reduce) { for (let i = 0; i < fill; i++) light(i); return; }
+    let i = 0;
+    const step = () => { if (i < fill) { light(i); i++; setTimeout(step, 70); } };
+    step();
+  }
+
+  componentWillUnmount() {
+    if (this._scroll) window.removeEventListener('scroll', this._scroll);
+    if (this._check) { window.removeEventListener('scroll', this._check); window.removeEventListener('resize', this._check); }
+    if (this._revealTimer) clearTimeout(this._revealTimer);
+    if (this._cursorMove) window.removeEventListener('mousemove', this._cursorMove);
+    if (this._cursorOver) window.removeEventListener('mouseover', this._cursorOver);
+    if (this._waveStop) this._waveStop();
+    if (this._waveLayout) window.removeEventListener('resize', this._waveLayout);
+    if (this._scrAnim) cancelAnimationFrame(this._scrAnim);
+    if (this._clockInt) clearInterval(this._clockInt);
+  }
+
+  animateCount(el, reduce) {
+    const to = parseFloat(el.getAttribute('data-countup'));
+    const dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const prefix = el.getAttribute('data-prefix') || '';
+    const final = prefix + to.toFixed(dec) + suffix;
+    if (reduce) { el.textContent = final; return; }
+    const dur = 1100, t0 = performance.now();
+    const step = (t) => {
+      let p = Math.min(1, (t - t0) / dur); p = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + (to * p).toFixed(dec) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+    setTimeout(() => { el.textContent = final; }, dur + 140);
+  }
+
+  toggleFaq = (e) => {
+    const item = e.currentTarget.closest('[data-faq]');
+    if (!item) return;
+    const panel = item.querySelector('[data-faq-panel]');
+    const icon = item.querySelector('[data-faq-icon]');
+    const isOpen = item.getAttribute('data-open') === 'true';
+    if (isOpen) {
+      panel.style.maxHeight = '0px'; panel.style.opacity = '0';
+      if (icon) icon.style.transform = 'rotate(0deg)';
+      item.setAttribute('data-open', 'false');
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + 'px'; panel.style.opacity = '1';
+      if (icon) icon.style.transform = 'rotate(45deg)';
+      item.setAttribute('data-open', 'true');
+    }
+  };
+
+  noSubmit = (e) => { e.preventDefault(); };
+
+  renderVals() {
+    return { rootRef: this.rootRef, toggleFaq: this.toggleFaq, noSubmit: this.noSubmit };
+  }
+}
+</script>
+</body>
+</html>
