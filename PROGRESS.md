@@ -30,6 +30,15 @@ goal); no marking Done on self-assessment alone.
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-23` — External audit: two independent auditors verified the harness
+> against the spec (all 5 layers + checker contract) and re-ran the gates — both
+> returned green (check:harness 14/14, lint 0 errors, typecheck, test:run 3/3,
+> test:gates 5/5, build SSG×12, commitlint accept/reject confirmed). Added
+> `docs/specs/_template.md` for Layer B parity (the one minor finding). Note:
+> untracked `src/data/*.json` (about/caseStudies/faq/pricing/process/services/
+> site/testimonials) belong to a separate portfolio-revamp effort — not part of
+> this harness work, left untracked.
+>
 > `2026-06-23` — Phase 6: activated enforcement. Added `prepare: husky`,
 > `.husky/pre-commit` (lint-staged → check-harness → typecheck →
 > check-co-modification) and `.husky/commit-msg` (commitlint). Full go-green
