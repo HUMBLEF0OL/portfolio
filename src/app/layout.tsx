@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
-import ThemeSwitch from '@/block/ThemeSwitch'
 import { Anton, Chakra_Petch, JetBrains_Mono, Oxanium } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { siteConfig } from '@/config/site'
@@ -101,7 +100,6 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <ThemeProvider attribute={'class'} defaultTheme="light" enableSystem>
             {children}
-            <ThemeSwitch />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

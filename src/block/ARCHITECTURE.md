@@ -1,13 +1,19 @@
 # src/block — Page sections
 
-Page-level section components (PascalCase), composed by `src/app/[locale]/page.tsx`
-and the layouts: `Home`, `About`, `Skills`, `Projects`, `Experience`,
-`Contact`, `Header`, `Footer`, plus helpers like `Divider`, `AngularFrame`,
-`ThemeSwitch`, `NavIcons`, `CyberId`, `TextEncoder`.
+Page-level section components (PascalCase) for the neural-grid "operator"
+services site.
+
+- `op/` — the homepage section blocks composed by `src/app/[locale]/page.tsx`
+  (`Hero`, `Ticker`, `StatBar`, `Problem`, `Services`, `Work`, `AboutBlock`,
+  `Testimonials`, `Process`, `Engagement`, `Contact`).
+- `Header` / `Footer` — operator chrome mounted by `src/app/[locale]/layout.tsx`.
+- `AngularFrame` — angular corner-frame helpers (used by `not-found`).
+
+Conventions:
 
 - Default to Server Components; add `'use client'` only for hooks/events.
-- Compose shadcn primitives from `@/components/ui`, read content from
-  `@/data/*.json`, and read copy via next-intl. Never hardcode user-facing strings.
-- Use theme tokens and angular-clip utilities (see `design-tokens` skill).
+- Read content from `@/data/*.json` and shared FX primitives from
+  `@/components/op`. Use theme tokens and the `clip-notch-*` / angular-clip
+  utilities (see `design-tokens` skill).
 
 See the `components` and `add-section` skills.

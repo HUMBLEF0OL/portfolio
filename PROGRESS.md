@@ -37,6 +37,17 @@ external-auditor sign-off; that is unchanged by this cleanup work.
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-23` — Removed legacy components made dead by the redesign: 10 old
+> `src/block/*` sections (About, Skills, Projects, Experience, Home, Contact,
+> CyberId, Divider, TextEncoder, NavIcons), the entire shadcn `src/components/ui/`
+> primitive kit (8 files — none imported by any live path), and the vestigial
+> floating `ThemeSwitch` (dropped from the root layout; single-theme operator
+> design). `AngularFrame` + `theme-provider` kept (still used by `not-found` /
+> root layout). Refreshed `src/block` + `src/components` ARCHITECTURE.md.
+> Verified: `typecheck` clean, `lint` 0 errors. (Unused deps the removed kit
+> pulled in — embla-carousel-react, vaul, radix tabs/select/dialog, react-barcode
+> — left in package.json as an optional follow-up.)
+
 > `2026-06-23` — Committed the neural-grid "operator" services-site redesign as a
 > baseline: shared FX primitives (`src/components/op/`), 11 homepage section
 > blocks (`src/block/op/`), `/about` + `/work/[slug]` routes, operator
