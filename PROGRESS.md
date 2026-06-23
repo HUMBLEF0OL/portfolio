@@ -37,10 +37,10 @@ external-auditor sign-off; that is unchanged by this cleanup work.
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
-> `2026-06-23` — Slowed the hero matrix-rain (`HeroCanvas`) fall speed to ~55%
-> of the original (per-column `0.16 + rand*0.38` → `0.09 + rand*0.2`) — the
-> hero animation read as too fast. Verified rendering at 1280px; typecheck +
-> lint clean.
+> `2026-06-23` — Slowed the hero matrix-rain (`HeroCanvas`) — read as too fast.
+> Cut per-column fall speed to ~30% of the original (`0.16 + rand*0.38` →
+> `0.05 + rand*0.1`) over two passes, and softened the near-cursor speed boost
+> (`1 + near` → `1 + near*0.5`). Verified rendering; typecheck + lint clean.
 
 > `2026-06-23` — Responsive pass across the operator site. Fixed the squishing
 > homepage `StatBar` (now a 2-col mobile / 4-col desktop grid with `gap-px`
