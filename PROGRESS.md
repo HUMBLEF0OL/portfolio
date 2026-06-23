@@ -37,6 +37,16 @@ external-auditor sign-off; that is unchanged by this cleanup work.
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-23` — Responsive pass across the operator site. Fixed the squishing
+> homepage `StatBar` (now a 2-col mobile / 4-col desktop grid with `gap-px`
+> dividers), the `Contact` form (single-column fields + lighter card padding on
+> mobile), the about-page STATS grid (same `gap-px` treatment, removed stray
+> divider/indent), about-page DOCTRINE gutters (now `md:`-only), `Testimonials`
+> stacking, and tightened `Services`/`Engagement` card padding on mobile.
+> Verified with Playwright at 375 / 768 / 1280px on `/`, `/about`, and
+> `/work/[slug]`: **zero horizontal overflow** at every width, dividers clean,
+> no desktop regression. `typecheck` clean, `lint` 0 errors / 0 warnings.
+
 > `2026-06-23` — Removed legacy components made dead by the redesign: 10 old
 > `src/block/*` sections (About, Skills, Projects, Experience, Home, Contact,
 > CyberId, Divider, TextEncoder, NavIcons), the entire shadcn `src/components/ui/`

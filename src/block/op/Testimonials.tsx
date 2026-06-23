@@ -41,7 +41,7 @@ export function Testimonials() {
           <div className="mt-12">
             {quotes.map((q, i) => (
               <Reveal key={`${q.name}-${i}`} delay={i * 40}>
-                <figure className="border-op-line-strong grid grid-cols-[1fr_auto] items-end gap-8 border-b py-[42px]">
+                <figure className="border-op-line-strong grid grid-cols-1 items-end gap-5 border-b py-[42px] sm:grid-cols-[1fr_auto] sm:gap-8">
                   <blockquote
                     className="text-op-text max-w-[30ch] leading-[1.3] font-medium"
                     style={{ fontSize: 'clamp(1.35rem,2.6vw,2.1rem)' }}

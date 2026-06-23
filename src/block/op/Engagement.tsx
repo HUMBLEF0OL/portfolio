@@ -33,7 +33,7 @@ export default function Engagement() {
             <Reveal key={tier.name} delay={i * 60}>
               <article
                 className={cn(
-                  'clip-notch-18 p-[34px]',
+                  'clip-notch-18 p-6 sm:p-[34px]',
                   tier.featured
                     ? 'bg-op-elev-warm shadow-[inset_0_0_0_1px_var(--color-op-yellow)]'
                     : 'bg-op-elev shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]'

@@ -100,16 +100,11 @@ export default async function AboutPage({ params }: PageProps) {
 
       {/* STATS */}
       <section className="border-op-line bg-op-elev-alt border-b">
-        <div className="mx-auto grid max-w-[1180px] grid-cols-2 px-7 md:grid-cols-4">
+        {/* gap-px over a line track = clean dividers in both 2-col mobile and
+            4-col desktop, without per-cell border/padding math. */}
+        <div className="bg-op-line mx-auto grid max-w-[1180px] grid-cols-2 gap-px md:grid-cols-4">
           {p.stats.map((s, i) => (
-            <div
-              key={s.label}
-              className={
-                i < p.stats.length - 1
-                  ? 'border-op-line border-r py-[34px] pl-7 first:pl-0'
-                  : 'py-[34px] pl-7'
-              }
-            >
+            <div key={s.label} className="bg-op-elev-alt px-7 py-[34px]">
               <div
                 className={
                   i === 2
@@ -160,7 +155,7 @@ export default async function AboutPage({ params }: PageProps) {
             {p.doctrine.values.map((v, i) => (
               <div
                 key={v.title}
-                className={`${i < 2 ? 'border-op-yellow border-t' : 'border-op-line-strong border-t'} ${i % 2 === 0 ? 'py-[22px] pr-7' : 'py-[22px] pl-7'}`}
+                className={`border-t py-[22px] ${i < 2 ? 'border-op-yellow' : 'border-op-line-strong'} ${i % 2 === 0 ? 'md:pr-7' : 'md:pl-7'}`}
               >
                 <h3 className="text-op-text mb-2 text-[1.15rem] font-semibold">{v.title}</h3>
                 <p className="text-op-muted text-[1rem] leading-[1.55]">{v.description}</p>

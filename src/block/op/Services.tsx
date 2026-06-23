@@ -40,7 +40,7 @@ export default function Services() {
               <article
                 data-cursor-hover
                 className={cn(
-                  'bg-op-elev clip-notch-18 p-[34px] transition-shadow',
+                  'bg-op-elev clip-notch-18 p-6 transition-shadow sm:p-[34px]',
                   'shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]',
                   'hover:shadow-[inset_0_0_0_1px_var(--color-op-cyan)]'
                 )}

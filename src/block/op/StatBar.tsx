@@ -14,17 +14,15 @@ export default function StatBar() {
   const stats = site.stats
 
   return (
-    <section className="border-op-line bg-op-elev-alt border-b">
-      <div className="mx-auto flex max-w-[1320px] flex-wrap items-stretch">
-        {stats.map((stat, i) => {
+    <section className="border-op-line bg-op-line border-b">
+      {/* gap-px over a line-colored track draws clean 1px dividers in both the
+          2-col mobile grid and the 4-col desktop row, no per-cell border math. */}
+      <div className="mx-auto grid max-w-[1320px] grid-cols-2 gap-px sm:grid-cols-4">
+        {stats.map((stat) => {
           const accentClass = ACCENT_CLASS[stat.accent as Accent]
-          const isLast = i === stats.length - 1
 
           return (
-            <div
-              key={stat.label}
-              className={cn('flex-1 px-7 py-8', !isLast && 'border-op-line border-r')}
-            >
+            <div key={stat.label} className="bg-op-elev-alt px-7 py-8">
               {stat.value === null ? (
                 <span
                   className={cn('font-numeric leading-none font-semibold', accentClass)}

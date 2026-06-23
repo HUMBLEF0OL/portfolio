@@ -81,7 +81,7 @@ export default function Contact() {
           </div>
 
           {/* RIGHT */}
-          <div className="bg-op-elev clip-notch-20 p-[34px] shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]">
+          <div className="bg-op-elev clip-notch-20 p-6 shadow-[inset_0_0_0_1px_var(--color-op-line-strong)] sm:p-[34px]">
             <a
               href={contact.calLink}
               target="_blank"
@@ -98,7 +98,7 @@ export default function Contact() {
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label htmlFor="op-name" className={labelClass}>
                     Name
@@ -127,7 +127,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label htmlFor="op-project" className={labelClass}>
                     Project type
