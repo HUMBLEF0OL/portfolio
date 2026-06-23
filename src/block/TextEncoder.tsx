@@ -14,7 +14,7 @@ const TextEncoder: React.FC<TextEncoderProps> = ({ text, className = '', type = 
     const [isRevealed, setIsRevealed] = useState(false);
 
     useEffect(() => {
-        let timeouts: NodeJS.Timeout[] = [];
+        const timeouts: NodeJS.Timeout[] = [];
 
         if (type === "original" ? !isRevealed : isRevealed) {
             // Reveal animation - character by character

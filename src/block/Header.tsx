@@ -9,7 +9,7 @@ import { TopLeft } from "./AngularFrame"
 import { NavIcons } from "./NavIcons"
 import languages from "@/data/languages.json"
 import { useLocale, useTranslations } from "next-intl"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 
 const Header = () => {
     const locale = useLocale()
@@ -17,7 +17,6 @@ const Header = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
     const t = useTranslations("Header")
     const pathname = usePathname()
-    const router = useRouter()
 
     const navLinks = [
         { name: t("navLinks.home"), href: "#home" },

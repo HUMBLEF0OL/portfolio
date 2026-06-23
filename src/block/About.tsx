@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import { useTheme } from 'next-themes'
 import CyberIDCard from './CyberId'
 import { useTranslations } from 'next-intl'
 

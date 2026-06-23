@@ -2,11 +2,25 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest",
+    "test:run": "vitest --run",
+    "test:e2e": "playwright test",
+    "test:gates": "node scripts/check-co-modification.test.mjs",
+    "check:harness": "node scripts/check-harness.mjs",
+    "update:check": "node scripts/check-updates.js"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
@@ -28,12 +42,37 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/eslintrc": "^3.2.0",
+    "@playwright/test": "^1.49.1",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "15.3.4",
+    "husky": "^9.1.7",
+    "jsdom": "^25.0.1",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,mdx,css,yml,yaml}": [
+      "prettier --write"
+    ]
   }
 }

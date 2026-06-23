@@ -1,5 +1,5 @@
 "use client"
-import { CpuIcon, Monitor, Zap } from "lucide-react";
+import { CpuIcon, Zap } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";

@@ -12,6 +12,11 @@
 
 # testing
 /coverage
+/test-results
+/playwright-report
+
+# claude code worktrees (linked git worktrees, not part of the harness)
+.claude/worktrees/
 
 # next.js
 /.next/

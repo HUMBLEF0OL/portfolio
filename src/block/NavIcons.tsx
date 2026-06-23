@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { Github, Linkedin, ArrowBigDownDash, Volume2, VolumeX } from 'lucide-react'
+import { Github, Linkedin, ArrowBigDownDash } from 'lucide-react'
 
 export const NavIcons: React.FC<{ classStyle: string }> = ({ classStyle }) => {
     const audioRef = useRef<HTMLAudioElement | null>(null)

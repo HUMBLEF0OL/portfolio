@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Header from "@/block/Header";
-import Footer from "@/block/Footer";
 import ThemeSwitch from "@/block/ThemeSwitch";
-import { Black_Ops_One, Chakra_Petch, Orbitron, Oxanium, Syne } from "next/font/google";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { routing } from "@/i18n/routing";
-import { notFound } from "next/navigation";
+import { Chakra_Petch, Oxanium } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
 
 const chakra = Chakra_Petch({
   variable: "--font-chakra",

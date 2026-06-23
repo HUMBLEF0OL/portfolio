@@ -3,7 +3,7 @@ import React from 'react'
 import TextEncoder from './TextEncoder';
 import Background from '@/assets/grid-bg.jpg'
 import Image from 'next/image';
-import { BottomLeft, BottomRight, TopLeft, TopRight } from './AngularFrame';
+import { BottomRight, TopLeft } from './AngularFrame';
 import skillSet from '@/data/skills.json'
 import { useTranslations } from 'next-intl';
 

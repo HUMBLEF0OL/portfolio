@@ -3,7 +3,6 @@
 import React from "react";
 import Barcode from "react-barcode";
 import Passport from '@/assets/passport.jpg'
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
