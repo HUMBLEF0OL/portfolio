@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 @import '../styles/glitch.css';
 
 @custom-variant dark (&:is(.dark *));
@@ -7,8 +7,31 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-body: var(--font-chakra);
-  --font-heading: var(--font-oxanium);
+  --font-body: var(--font-mono);
+  --font-heading: var(--font-anton);
+  --font-mono: var(--font-jetbrains);
+  --font-display: var(--font-anton);
+  --font-numeric: var(--font-chakra);
+
+  /* === NEURAL-GRID / OPERATOR PALETTE (revamped services-site design) === */
+  --color-op-base: #07080a;
+  --color-op-elev: #0b0e11;
+  --color-op-elev-alt: #08090c;
+  --color-op-elev-warm: #0e0f08;
+  --color-op-console: #06070a;
+  --color-op-input: #07090b;
+  --color-op-line: #16202a;
+  --color-op-line-strong: #1c2a33;
+  --color-op-divider: #233240;
+  --color-op-text: #eaeef0;
+  --color-op-muted: #a6aeb8;
+  --color-op-dim: #7e8896;
+  --color-op-dim2: #8a94a0;
+  --color-op-yellow: #fcee0a;
+  --color-op-cyan: #00e5ff;
+  --color-op-magenta: #ff2a6d;
+  --color-op-ghost: #0e1014;
+  --color-op-logowall: #2a3640;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -67,7 +90,6 @@ html {
   backface-visibility: hidden;
 }
 
-
 h1,
 h2,
 h3,
@@ -99,25 +121,25 @@ h6 {
   --primary: oklch(0.98 0.22 102);
   /* Neon yellow #FFF700 */
   --primary-foreground: var(--background);
-  --primary-glow: 0 0 8px #FFF700, 0 0 16px #FFF70099;
+  --primary-glow: 0 0 8px #fff700, 0 0 16px #fff70099;
 
   --secondary: oklch(0.62 0.3 15);
   /* Cyberpunk red-pink #FF0040 */
   --secondary-foreground: var(--foreground);
-  --secondary-glow: 0 0 8px #FF0040, 0 0 16px #FF004099;
+  --secondary-glow: 0 0 8px #ff0040, 0 0 16px #ff004099;
 
   --accent: oklch(0.84 0.18 195);
   /* Cyberpunk cyan #00E4FF */
   --accent-foreground: var(--background);
-  --accent-glow: 0 0 10px #00E4FF, 0 0 18px #00E4FF80;
+  --accent-glow: 0 0 10px #00e4ff, 0 0 18px #00e4ff80;
 
   --highlight: oklch(1 0.0002 270);
   /* Sharp white-blue for holographic effect */
 
   --muted: oklch(0.15 0.03 270);
-  --muted-foreground: oklch(0.72 0.10 102);
+  --muted-foreground: oklch(0.72 0.1 102);
 
-  --destructive: oklch(0.60 0.28 12);
+  --destructive: oklch(0.6 0.28 12);
   /* Violent neon red */
   --destructive-foreground: var(--foreground);
 
@@ -134,7 +156,7 @@ h6 {
   --glass-blur: blur(12px);
 
   /* === SIDEBAR === */
-  --sidebar: oklch(0.10 0.03 270);
+  --sidebar: oklch(0.1 0.03 270);
   --sidebar-foreground: var(--foreground);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: var(--background);
@@ -153,8 +175,6 @@ h6 {
   /* Toxic neon green */
 }
 
-
-
 .dark {
   --radius: 0.125rem;
   /* Sharp UI like the Grid */
@@ -162,7 +182,7 @@ h6 {
   /* === BACKGROUND & TEXT === */
   --background: oklch(0.04 0.008 240);
   /* Deep grid void */
-  --foreground: oklch(0.90 0.15 200);
+  --foreground: oklch(0.9 0.15 200);
   /* Ice blue glow text */
 
   /* === PANELS / SURFACES === */
@@ -180,10 +200,10 @@ h6 {
   --primary-glow: 0 0 10px oklch(0.78 0.21 200), 0 0 20px oklch(0.78 0.21 200 / 0.6);
 
   /* === TRON ORANGE (Clu’s UI / alert states) === */
-  --secondary: oklch(0.72 0.20 45);
+  --secondary: oklch(0.72 0.2 45);
   /* Bright warning orange */
   --secondary-foreground: var(--background);
-  --secondary-glow: 0 0 10px oklch(0.72 0.20 45), 0 0 20px oklch(0.72 0.20 45 / 0.5);
+  --secondary-glow: 0 0 10px oklch(0.72 0.2 45), 0 0 20px oklch(0.72 0.2 45 / 0.5);
 
   /* === HIGHLIGHT === */
   --highlight: oklch(1 0.00015 240);
@@ -191,14 +211,14 @@ h6 {
 
   /* === MUTED TEXT / BG === */
   --muted: oklch(0.09 0.015 240);
-  --muted-foreground: oklch(0.60 0.10 200);
+  --muted-foreground: oklch(0.6 0.1 200);
   /* Dimmed Tron blue */
 
   /* === ACCENT (Alt Glow) === */
-  --accent: oklch(0.76 0.20 195);
+  --accent: oklch(0.76 0.2 195);
   /* Cyan mix for variety */
   --accent-foreground: var(--background);
-  --accent-glow: 0 0 10px oklch(0.76 0.20 195), 0 0 16px oklch(0.76 0.20 195 / 0.4);
+  --accent-glow: 0 0 10px oklch(0.76 0.2 195), 0 0 16px oklch(0.76 0.2 195 / 0.4);
 
   /* === DESTRUCTIVE === */
   --destructive: var(--secondary);
@@ -215,11 +235,11 @@ h6 {
   /* Tron blue */
   --chart-2: var(--secondary);
   /* Orange alert */
-  --chart-3: oklch(0.70 0.17 185);
+  --chart-3: oklch(0.7 0.17 185);
   /* Mid-cyan */
   --chart-4: oklch(0.82 0.12 215);
   /* Pale electric blue */
-  --chart-5: oklch(0.90 0.15 200);
+  --chart-5: oklch(0.9 0.15 200);
   /* Bright ice blue */
 
   /* === SIDEBAR / GRID PANELS === */
@@ -232,9 +252,7 @@ h6 {
   --sidebar-accent-foreground: var(--background);
   --sidebar-border: var(--primary);
   --sidebar-ring: var(--primary);
-
 }
-
 
 @layer base {
   * {
@@ -262,7 +280,6 @@ html::-webkit-scrollbar {
 }
 
 @layer utilities {
-
   /* Single Corner Angles */
   .angular-tl-lg {
     clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 12px);
@@ -290,45 +307,123 @@ html::-webkit-scrollbar {
   }
 
   .angular-tl-br-lg {
-    clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
+    clip-path: polygon(
+      12px 0%,
+      100% 0%,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      0% 100%,
+      0% 12px
+    );
   }
 
   .angular-tr-bl-lg {
-    clip-path: polygon(0% 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, 12px 100%, 0% calc(100% - 12px));
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 12px) 0%,
+      100% 12px,
+      100% 100%,
+      12px 100%,
+      0% calc(100% - 12px)
+    );
   }
 
   .angular-tr-br-lg {
-    clip-path: polygon(0% 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%);
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 12px) 0%,
+      100% 12px,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      0% 100%
+    );
   }
 
   .angular-bl-br-lg {
-    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      12px 100%,
+      0% calc(100% - 12px)
+    );
   }
 
   /* Three Corner Combinations */
   .angular-tl-tr-bl-lg {
-    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+    clip-path: polygon(
+      12px 0%,
+      calc(100% - 12px) 0%,
+      100% 12px,
+      100% 100%,
+      12px 100%,
+      0% calc(100% - 12px),
+      0% 12px
+    );
   }
 
   .angular-tl-tr-br-lg {
-    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
+    clip-path: polygon(
+      12px 0%,
+      calc(100% - 12px) 0%,
+      100% 12px,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      0% 100%,
+      0% 12px
+    );
   }
 
   .angular-tl-bl-br-lg {
-    clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+    clip-path: polygon(
+      12px 0%,
+      100% 0%,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      12px 100%,
+      0% calc(100% - 12px),
+      0% 12px
+    );
   }
 
   .angular-tr-bl-br-lg {
-    clip-path: polygon(0% 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 12px) 0%,
+      100% 12px,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      12px 100%,
+      0% calc(100% - 12px)
+    );
   }
 
   /* All Four Corners */
   .angular-all-lg {
-    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+    clip-path: polygon(
+      12px 0%,
+      calc(100% - 12px) 0%,
+      100% 12px,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      12px 100%,
+      0% calc(100% - 12px),
+      0% 12px
+    );
   }
 
   .angular-all-sm {
-    clip-path: polygon(6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px), 0% 6px);
+    clip-path: polygon(
+      6px 0%,
+      calc(100% - 6px) 0%,
+      100% 6px,
+      100% calc(100% - 6px),
+      calc(100% - 6px) 100%,
+      6px 100%,
+      0% calc(100% - 6px),
+      0% 6px
+    );
   }
 
   /* Bonus: Different Size Variants */
@@ -341,11 +436,25 @@ html::-webkit-scrollbar {
   }
 
   .angular-tl-br-xl {
-    clip-path: polygon(36px 0%, 100% 0%, 100% calc(100% - 36px), calc(100% - 36px) 100%, 0% 100%, 0% 36px);
+    clip-path: polygon(
+      36px 0%,
+      100% 0%,
+      100% calc(100% - 36px),
+      calc(100% - 36px) 100%,
+      0% 100%,
+      0% 36px
+    );
   }
 
   .angular-tr-bl-xl {
-    clip-path: polygon(0% 0%, calc(100% - 36px) 0%, 100% 36px, 100% 100%, 36px 100%, 0% calc(100% - 36px));
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 36px) 0%,
+      100% 36px,
+      100% 100%,
+      36px 100%,
+      0% calc(100% - 36px)
+    );
   }
 
   .angular-br-md {
@@ -354,5 +463,273 @@ html::-webkit-scrollbar {
 
   .angular-bl-2xl {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 56px 100%, 0% calc(100% - 56px));
+  }
+}
+
+/* ============================================================
+   NEURAL-GRID / OPERATOR DESIGN SYSTEM (revamped services site)
+   Source of truth: docs/design/*.dc.html mockups.
+   These rules are intentionally placed last and target both
+   :root and .dark so the operator palette is stable regardless
+   of the theme toggle.
+   ============================================================ */
+:root,
+.dark {
+  --radius: 0px;
+  --background: var(--color-op-base);
+  --foreground: var(--color-op-text);
+  --card: var(--color-op-elev);
+  --card-foreground: var(--color-op-text);
+  --popover: var(--color-op-elev);
+  --popover-foreground: var(--color-op-text);
+  --primary: var(--color-op-yellow);
+  --primary-foreground: var(--color-op-base);
+  --secondary: var(--color-op-magenta);
+  --secondary-foreground: var(--color-op-base);
+  --accent: var(--color-op-cyan);
+  --accent-foreground: var(--color-op-base);
+  --highlight: var(--color-op-text);
+  --muted: var(--color-op-elev);
+  --muted-foreground: var(--color-op-dim);
+  --border: var(--color-op-line);
+  --input: var(--color-op-input);
+  --ring: var(--color-op-yellow);
+  --destructive: var(--color-op-magenta);
+}
+
+html {
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--color-op-base);
+  color: var(--color-op-text);
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--color-op-yellow);
+  color: var(--color-op-base);
+}
+
+/* Display type */
+.anton,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-anton), system-ui, sans-serif;
+}
+
+.anton {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+}
+
+.font-numeric {
+  font-family: var(--font-chakra), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Keyboard focus ring (operator yellow) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-op-yellow);
+  outline-offset: 3px;
+}
+
+/* ---- Keyframes ---- */
+@keyframes tm-grid {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 48px;
+  }
+}
+@keyframes tm-scan {
+  from {
+    top: -160px;
+  }
+  to {
+    top: 100%;
+  }
+}
+@keyframes tm-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes tm-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes tm-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 12px currentColor;
+  }
+}
+@keyframes tm-glitch {
+  0%,
+  87%,
+  100% {
+    text-shadow: none;
+    transform: none;
+  }
+  88% {
+    text-shadow:
+      -2px 0 var(--color-op-magenta),
+      2px 0 var(--color-op-cyan);
+    transform: translateX(2px);
+  }
+  90% {
+    text-shadow:
+      2px 0 var(--color-op-magenta),
+      -2px 0 var(--color-op-cyan);
+    transform: translateX(-2px);
+  }
+  92% {
+    text-shadow:
+      -1px 0 var(--color-op-magenta),
+      1px 0 var(--color-op-cyan);
+    transform: translateX(1px);
+  }
+  95% {
+    text-shadow:
+      1px 0 var(--color-op-magenta),
+      -1px 0 var(--color-op-cyan);
+    transform: none;
+  }
+}
+
+.tm-glitch {
+  animation: tm-glitch 6s infinite;
+}
+.tm-blink {
+  animation: tm-blink 1s steps(1) infinite;
+}
+.tm-pulse-dot {
+  animation: tm-pulse 2s ease-in-out infinite;
+}
+
+@layer utilities {
+  /* Operator angular notch: top-right + bottom-left cut (the design's signature). */
+  .clip-notch-7 {
+    clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
+  }
+  .clip-notch-9 {
+    clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px));
+  }
+  .clip-notch-10 {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
+  }
+  .clip-notch-11 {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 11px) 0,
+      100% 11px,
+      100% 100%,
+      11px 100%,
+      0 calc(100% - 11px)
+    );
+  }
+  .clip-notch-12 {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 12px) 0,
+      100% 12px,
+      100% 100%,
+      12px 100%,
+      0 calc(100% - 12px)
+    );
+  }
+  .clip-notch-13 {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 13px) 0,
+      100% 13px,
+      100% 100%,
+      13px 100%,
+      0 calc(100% - 13px)
+    );
+  }
+  .clip-notch-14 {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 14px) 0,
+      100% 14px,
+      100% 100%,
+      14px 100%,
+      0 calc(100% - 14px)
+    );
+  }
+  .clip-notch-16 {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 16px) 0,
+      100% 16px,
+      100% 100%,
+      16px 100%,
+      0 calc(100% - 16px)
+    );
+  }
+  .clip-notch-18 {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 18px) 0,
+      100% 18px,
+      100% 100%,
+      18px 100%,
+      0 calc(100% - 18px)
+    );
+  }
+  .clip-notch-20 {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 20px) 0,
+      100% 20px,
+      100% 100%,
+      20px 100%,
+      0 calc(100% - 20px)
+    );
+  }
+}
+
+/* Reduced motion: disable all signature animations */
+@media (prefers-reduced-motion: reduce) {
+  .tm-glitch,
+  .tm-blink,
+  .tm-pulse-dot,
+  [data-op-grid],
+  [data-op-scanbar],
+  [data-op-marquee] {
+    animation: none !important;
   }
 }

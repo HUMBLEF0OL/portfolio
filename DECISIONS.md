@@ -34,6 +34,24 @@ state.
 
 ---
 
+### 2026-06-23 — Verify redesign cleanup with typecheck+lint, not `build` (Node 26 worker break)
+
+- **Decision:** For the neural-grid redesign cleanup work (dead-code removal +
+  responsive pass), use `npm run typecheck` + `npm run lint` as the verification
+  gates instead of `npm run build`.
+- **Rationale:** Under the local runtime **Node v26.3.0**, `next build` (15.3.4)
+  compiles and type-checks successfully but its "Collecting page data" worker
+  phase fails to resolve `chunks/ssr/[turbopack]_runtime.js` (with a
+  `module.register()` deprecation warning) — a Node 23+/Next 15.3 worker
+  incompatibility, not a code regression. Typecheck + lint cover the failure
+  modes of file removal and class-only responsive edits.
+- **Rejected alternatives:** Downgrading Node (out of scope, affects whole env);
+  upgrading Next (risky, unrelated to the goal); `--no-verify` commits (defeats
+  the harness gates).
+- **Constraints:** Harness layer = **Environment** (runtime/Next mismatch). The
+  pre-commit `npm run typecheck` gate still runs and must stay green.
+- **Status:** accepted.
+
 ### 2026-06-23 — Adopt the starter agentic harness, adapted to the portfolio stack
 
 - **Decision:** Port the starter boilerplate's full five-layer agentic harness

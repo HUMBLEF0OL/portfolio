@@ -1,0 +1,32 @@
+{
+  "$schema": "https://example.com/portfolio.faq.schema.json",
+  "_meta": {
+    "purpose": "FAQ accordion on the homepage (within the // SYS.07 ENGAGEMENT section).",
+    "consumedBy": ["Homepage > FAQ accordion"]
+  },
+  "section": {
+    "heading": "Questions you're probably asking."
+  },
+  "items": [
+    {
+      "question": "How does working with a solo engineer actually work?",
+      "answer": "You get one senior point of contact, me, from scope to handoff. Weekly demos, a direct line, and fixed scope mean there's none of the coordination overhead of an agency or a new hire."
+    },
+    {
+      "question": "What's your availability and typical timeline?",
+      "answer": "I take a small number of projects at once. Sprints start within 1–2 weeks; project builds run 4–10 weeks depending on scope. Current availability is shown live in the nav."
+    },
+    {
+      "question": "Who owns the code and IP?",
+      "answer": "You do. Everything I build is yours: tested, documented, and handed back to your team with no lock-in."
+    },
+    {
+      "question": "What happens if scope changes mid-project?",
+      "answer": "We re-scope openly. I'll flag the impact on timeline and price before doing the work, with no surprise invoices, ever."
+    },
+    {
+      "question": "How do we communicate during the build?",
+      "answer": "A shared Slack or channel of your choice, plus a weekly demo. You'll never wonder where things stand."
+    }
+  ]
+}

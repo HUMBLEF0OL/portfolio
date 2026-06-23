@@ -1,0 +1,676 @@
+{
+  "$schema": "https://example.com/portfolio.caseStudies.schema.json",
+  "_meta": {
+    "purpose": "Drives the homepage Work list (// SYS.03) and the Case Study detail page. Each entry is one mission dossier.",
+    "consumedBy": [
+      "Homepage > Work section (work-row + sticky preview monitor)",
+      "Case Study page (header, hero console, body, before/after, quote, next-link)"
+    ],
+    "ordering": "Array order is the display order in the Work list (idx 0..n).",
+    "routing": "slug is the ?id= value used by the Case Study page and the work-row href.",
+    "sources": [
+      "src/data/profile.json (real project records)",
+      "https://github.com/HUMBLEF0OL (verified June 2026)"
+    ],
+    "correctness": {
+      "facts": "Names, taglines, tech stacks, links, descriptions, and metrics are real, sourced from profile.json and the live GitHub profile.",
+      "quotes": "quote.* are FIRST-PERSON author design-principles by Amit Rana, NOT third-party testimonials. Replace with real client/user quotes when available.",
+      "beforeAfter": "result.before / result.after are qualitative without-it / with-it capability contrasts, not measured client metrics.",
+      "pendingAssets": "image is null where no screenshot exists yet in /public/projects (coherence, mcp-sentry, git-compass, glassbox, ghostframes).",
+      "years": "year is approximate for hookpilot and javascript-verse; private engagements use \"Private\" in place of a date.",
+      "privateWork": "skinbattle and felis are real but private. isPrivate and private flags are set. skinbattle is a Counter-Strike skin-trading platform and online casino (Plinko, Mines, Cases, Battles, Crash built from scratch) at 5k concurrent users, per the owner; Amit's role was Frontend Engineer and its quote is his own. felis was built for research scholar Vanshika Tyagi (RAG over her research papers); its quote is from her, with verified: false until exact wording and consent are confirmed.",
+      "displayMetrics": "When a metric has value: null and a `display` string, render it as static text (no count-up). Used for private engagements where numeric KPIs are not public."
+    }
+  },
+  "caseStudies": [
+    {
+      "slug": "hookpilot",
+      "displaySlug": "HOOKPILOT",
+      "name": "Hookpilot",
+      "category": "Dev tool · CLI",
+      "year": "2024",
+      "host": "npmjs.com/package/hookpilot",
+      "image": "/projects/hookpilot.png",
+      "isPrivate": false,
+      "links": {
+        "github": "https://github.com/HUMBLEF0OL/hook-pilot",
+        "npm": "https://www.npmjs.com/package/hookpilot"
+      },
+      "row": {
+        "blurb": "Pre-commit checks were slow, inconsistent, and easy to skip. An open-source Git hook manager that makes the right checks automatic.",
+        "headlineMetric": { "value": "50k", "unit": "DL/wk" }
+      },
+      "tagline": "Teams kept skipping inconsistent pre-commit checks. I built a flexible Git hook manager that makes the right checks automatic, now 50k+ weekly downloads on npm.",
+      "metrics": [
+        {
+          "value": 50,
+          "prefix": "",
+          "suffix": "k+",
+          "decimals": 0,
+          "label": "Weekly npm downloads"
+        },
+        { "value": 5, "prefix": "", "suffix": "", "decimals": 0, "label": "Git lifecycle stages" },
+        { "value": 0, "prefix": "", "suffix": "", "decimals": 0, "label": "Config files to start" }
+      ],
+      "context": "Hookpilot is an open-source Git hook manager. It ships a library of ready-to-use hooks (linting, formatting, testing, security checks, commit-message validation, branch protection, large-file checks) plus an interactive CLI for adding, restoring, listing, and removing them.",
+      "problem": {
+        "head": "Pre-commit checks were slow, inconsistent across machines, and trivially skipped, so standards only got enforced after CI, long after the commit.",
+        "body": "Every project reinvented its hook setup by hand. Configs drifted between clones, new contributors started with nothing wired up, and a quick override let anyone bypass the gates entirely.",
+        "before": "Hand-rolled hooks · drift across clones · checks skipped freely"
+      },
+      "approach": {
+        "intro": "I built a zero-config CLI that wires standard hooks across the full Git lifecycle from one versioned config, with first-class support for custom shell and Node scripts.",
+        "cards": [
+          {
+            "heading": "Predefined hook library",
+            "body": "Ready-made hooks for pre-commit, commit-msg, pre-push, post-merge, and post-checkout tasks."
+          },
+          {
+            "heading": "One versioned config",
+            "body": "hooks-config.json is committed once; every clone inherits the same gates with a single init."
+          }
+        ]
+      },
+      "stack": ["Node.js", "TypeScript", "Shell", "NPM"],
+      "result": {
+        "head": "A single init wires the whole team's gates, and the package now sees 50k+ weekly downloads on npm.",
+        "before": [
+          "Manual hook setup per repo",
+          "Configs drift between machines",
+          "Checks easy to skip"
+        ],
+        "after": ["One npx hookpilot init", "Shared, versioned config", "50k+ weekly npm downloads"]
+      },
+      "quote": {
+        "text": "I wanted hooks to be the easy path, not a chore you bypass. One config, committed once, and the whole team is on the same gates.",
+        "name": "Amit Rana",
+        "role": "Author & Maintainer, Hookpilot"
+      },
+      "console": [
+        "$ npm i -D hookpilot",
+        "$ npx hookpilot init",
+        "[ok] hooks linked",
+        "[ok] checks staged-only",
+        "downloads/wk ......... 50k+",
+        "status: GUARDING"
+      ],
+      "next": "coherence"
+    },
+    {
+      "slug": "coherence",
+      "displaySlug": "COHERENCE",
+      "name": "Coherence",
+      "category": "AI / Agentic · Claude Code",
+      "year": "2026",
+      "host": "github.com/HUMBLEF0OL/coherence",
+      "image": null,
+      "isPrivate": false,
+      "links": {
+        "github": "https://github.com/HUMBLEF0OL/coherence"
+      },
+      "row": {
+        "blurb": "Docs rot the moment code changes. A Claude Code plugin that detects documentation drift and proposes validated, surgical patches.",
+        "headlineMetric": { "value": "8", "unit": "ENGINES" }
+      },
+      "tagline": "Docs rot the moment code changes. I built a Claude Code plugin that detects documentation drift and proposes surgical patches through a validated two-stage LLM pipeline.",
+      "metrics": [
+        {
+          "value": 2,
+          "prefix": "",
+          "suffix": "-stage",
+          "decimals": 0,
+          "label": "Validated LLM pipeline"
+        },
+        { "value": 8, "prefix": "", "suffix": "", "decimals": 0, "label": "Validation engines" },
+        {
+          "value": 0.85,
+          "prefix": "≥",
+          "suffix": "",
+          "decimals": 2,
+          "label": "Auto-apply trust gate"
+        }
+      ],
+      "context": "Coherence runs as Claude Code hooks and slash commands. It watches for code changing without its docs and proposes patches, with every team-distributable surface living as committed files and no backend, ever.",
+      "problem": {
+        "head": "Documentation drifts silently: code changes, the docs that describe it do not, and the gap is only found when someone is misled by it.",
+        "body": "Naively asking an LLM to fix the docs is unsafe: it hallucinates, rewrites too much, and can be steered by injected text. There was no trustworthy way to let an agent touch documentation unsupervised.",
+        "before": "Docs drift unnoticed · risky blind LLM edits · no safe auto-apply"
+      },
+      "approach": {
+        "intro": "I split the work into a two-stage pipeline with deterministic validation between the model and the filesystem, and gated auto-apply behind a per-developer trust ledger.",
+        "cards": [
+          {
+            "heading": "Two-stage pipeline",
+            "body": "Stage 1 selects the canonical source; Stage 2 writes a patch that must pass format, apply, change-class, line-ratio, injection, hallucination, and asserts checks."
+          },
+          {
+            "heading": "Graduated trust gate",
+            "body": "Auto-applies only above a 0.85 trust score, decayed on a 30-day half-life, and never for destructive or frontmatter changes."
+          }
+        ]
+      },
+      "stack": ["TypeScript", "Claude Code", "LLM", "Sigstore cosign", "GitHub Actions"],
+      "result": {
+        "head": "An agent can keep docs in sync safely, with eight validation engines and cosign-signed releases standing between the model and your repo.",
+        "before": [
+          "Drift caught by humans, late",
+          "Blind LLM edits, no guardrails",
+          "No verifiable releases"
+        ],
+        "after": [
+          "Drift detected automatically",
+          "8-engine deterministic validation",
+          "Keyless cosign-signed, Rekor-verifiable"
+        ]
+      },
+      "quote": {
+        "text": "I won't let a model write to a repo on trust alone. Every patch has to survive deterministic checks before it ever lands.",
+        "name": "Amit Rana",
+        "role": "Author & Maintainer, Coherence"
+      },
+      "console": [
+        "$ claude plugin install coherence",
+        "[ok] drift scan armed",
+        "[ok] stage-1 canonical select",
+        "[ok] stage-2 patch + validate",
+        "trust gate ........... >=0.85",
+        "status: COHERENT"
+      ],
+      "next": "mcp-sentry"
+    },
+    {
+      "slug": "mcp-sentry",
+      "displaySlug": "MCP_SENTRY",
+      "name": "mcp-sentry",
+      "category": "Security · MCP",
+      "year": "2026",
+      "host": "github.com/HUMBLEF0OL/mcp-sentry",
+      "image": null,
+      "isPrivate": false,
+      "links": {
+        "github": "https://github.com/HUMBLEF0OL/mcp-sentry"
+      },
+      "row": {
+        "blurb": "MCP servers ship with quiet security holes. A static-analysis linter covering all eight OWASP MCP Top 10 categories, graded A to F in CI.",
+        "headlineMetric": { "value": "8", "unit": "OWASP" }
+      },
+      "tagline": "MCP servers ship with quiet security holes. I built a static analysis linter that covers all eight OWASP MCP Top 10 categories and grades a project A to F in CI.",
+      "metrics": [
+        { "value": 8, "prefix": "", "suffix": "", "decimals": 0, "label": "OWASP MCP checks" },
+        { "value": 4, "prefix": "", "suffix": "", "decimals": 0, "label": "Reporter formats" },
+        { "value": 6, "prefix": "", "suffix": "", "decimals": 0, "label": "A–F grade bands" }
+      ],
+      "context": "mcp-sentry is a static-analysis security linter for TypeScript Model Context Protocol servers. It integrates with CI via SARIF, PR comments, and a public Shields.io badge.",
+      "problem": {
+        "head": "MCP servers expose tools to agents, and a mislabeled or injectable tool can hand an attacker command execution, with nothing flagging it in review.",
+        "body": "There was no MCP-aware linter. Generic scanners miss MCP-specific risks like a read-only-named tool that mutates state, or untrusted input flowing into a shell call across function boundaries.",
+        "before": "No MCP-aware scanning · injection risks unflagged · intent mislabeling invisible"
+      },
+      "approach": {
+        "intro": "I mapped the OWASP MCP Top 10 to concrete checks, added inter-procedural taint tracking for command injection, and made the whole thing CI-native with a gradeable threshold.",
+        "cards": [
+          {
+            "heading": "Inter-procedural taint tracking",
+            "body": "Follows untrusted input across functions to catch command injection that single-function scanners miss."
+          },
+          {
+            "heading": "Intent-subversion detection",
+            "body": "Flags read-only-named tools that actually mutate state, a classic MCP trust violation."
+          }
+        ]
+      },
+      "stack": ["TypeScript", "MCP", "Cloudflare Workers", "SARIF"],
+      "result": {
+        "head": "One scan grades an MCP server A to F across all eight OWASP MCP categories, fails CI on a threshold, and posts a public badge.",
+        "before": ["MCP risks unscanned", "Injection paths invisible", "No security signal in CI"],
+        "after": [
+          "MCP01–MCP08 covered",
+          "Taint-traced injection findings",
+          "A–F grade + SARIF + badge"
+        ]
+      },
+      "quote": {
+        "text": "Security tooling has to live where the work happens. mcp-sentry fails the build and posts the grade, so nobody has to remember to run it.",
+        "name": "Amit Rana",
+        "role": "Author & Maintainer, mcp-sentry"
+      },
+      "console": [
+        "$ npx mcp-sentry scan ./server",
+        "[ok] taint trace complete",
+        "MCP01..MCP08 .......... pass",
+        "grade ................ A",
+        "report ............... SARIF",
+        "status: HARDENED"
+      ],
+      "next": "git-compass"
+    },
+    {
+      "slug": "git-compass",
+      "displaySlug": "GIT_COMPASS",
+      "name": "GitCompass",
+      "category": "Dev tool · Analytics",
+      "year": "2026",
+      "host": "github.com/HUMBLEF0OL/git-compass",
+      "image": null,
+      "isPrivate": false,
+      "links": {
+        "github": "https://github.com/HUMBLEF0OL/git-compass",
+        "npm": "https://www.npmjs.com/package/git-compass"
+      },
+      "row": {
+        "blurb": "Repo risk hides in commit history. A local-first analytics tool surfacing hotspots, burnout, and bus-factor risk, with plain-English AI querying.",
+        "headlineMetric": { "value": "100%", "unit": "LOCAL" }
+      },
+      "tagline": "Repo risk hides in commit history. I built a local-first analytics tool that surfaces hotspots, burnout signals, and bus-factor risk, with plain-English AI querying.",
+      "metrics": [
+        { "value": 5, "prefix": "", "suffix": "", "decimals": 0, "label": "Repo risk signals" },
+        { "value": 3, "prefix": "", "suffix": "", "decimals": 0, "label": "Published packages" },
+        { "value": 100, "prefix": "", "suffix": "%", "decimals": 0, "label": "Local, no telemetry" }
+      ],
+      "context": "GitCompass reads commit history to surface high-churn hotspots, velocity spikes, contributor burnout signals, bus-factor risk, and onboarding guidance. It ships as a CLI and a visual dashboard, and runs entirely on your machine.",
+      "problem": {
+        "head": "The signals that predict delivery risk, churn, single-owner files, after-hours spikes, are buried in Git history that nobody has time to mine.",
+        "body": "Existing analytics meant shipping your repo to a cloud service, an immediate non-starter for private code, and still answered fixed questions rather than the one you actually had.",
+        "before": "Risk signals buried in history · cloud upload required · fixed dashboards only"
+      },
+      "approach": {
+        "intro": "I built a modular monorepo: an analytics core, a CLI, and a dashboard, with an AI query layer that answers questions in plain English, all running locally.",
+        "cards": [
+          {
+            "heading": "Local-first by design",
+            "body": "Everything runs on your machine. No account, no cloud, no telemetry, so it works on private repos."
+          },
+          {
+            "heading": "Plain-English querying",
+            "body": "Ask the repo a question in natural language; multi-SDK support over the local analytics."
+          }
+        ]
+      },
+      "stack": ["TypeScript", "Node.js", "AI SDK", "pnpm monorepo"],
+      "result": {
+        "head": "Hotspots, burnout, and bus-factor risk surface from one local scan, queryable in plain English, with nothing leaving the machine.",
+        "before": [
+          "History too costly to mine",
+          "Cloud upload to analyze",
+          "Pre-canned questions only"
+        ],
+        "after": [
+          "5 risk signals from one scan",
+          "100% local, no telemetry",
+          "Natural-language queries"
+        ]
+      },
+      "quote": {
+        "text": "Analytics shouldn't cost you your privacy. GitCompass never phones home, and you can just ask it what you want to know.",
+        "name": "Amit Rana",
+        "role": "Author & Maintainer, GitCompass"
+      },
+      "console": [
+        "$ git-compass scan",
+        "[ok] hotspots mapped",
+        "[ok] bus-factor flagged",
+        "query> who owns auth?",
+        "mode ................. 100% local",
+        "status: CHARTED"
+      ],
+      "next": "glassbox"
+    },
+    {
+      "slug": "glassbox",
+      "displaySlug": "GLASSBOX",
+      "name": "Glassbox",
+      "category": "AI / Agentic · Observability",
+      "year": "2026",
+      "host": "github.com/HUMBLEF0OL/glassbox",
+      "image": null,
+      "isPrivate": false,
+      "links": {
+        "github": "https://github.com/HUMBLEF0OL/glassbox"
+      },
+      "row": {
+        "blurb": "You can't improve an agent you can't see. A local, read-only observer that turns a Claude Code transcript into a six-metric behavioural report.",
+        "headlineMetric": { "value": "6", "unit": "METRICS" }
+      },
+      "tagline": "You can't improve an agent you can't see. I built a local, read-only observer that turns a Claude Code transcript into a six-metric behavioural report.",
+      "metrics": [
+        { "value": 6, "prefix": "", "suffix": "", "decimals": 0, "label": "Behavioural metrics" },
+        { "value": 1, "prefix": "", "suffix": "", "decimals": 0, "label": "Self-contained report" },
+        { "value": 0, "prefix": "", "suffix": "", "decimals": 0, "label": "Network calls" }
+      ],
+      "context": "Glassbox reads a Claude Code JSONL transcript and renders a single self-contained HTML report with six behavioural metrics, a session timeline, and a harness-health scorecard. It makes no network calls and never controls the agent.",
+      "problem": {
+        "head": "Agent sessions are opaque: when a run goes sideways, there's no readable account of what the agent actually did or why.",
+        "body": "The raw transcript is a wall of JSONL. There was no way to see whether an agent over-searched, declared victory early, skipped verification, or looped, the patterns that separate a healthy run from a wasteful one.",
+        "before": "Sessions opaque · raw JSONL only · no behavioural signal"
+      },
+      "approach": {
+        "intro": "I built a zero-dependency, read-only observer that scores six behaviours and renders one portable HTML report, intentionally built under its own harness to illustrate what it measures.",
+        "cards": [
+          {
+            "heading": "Six behavioural metrics",
+            "body": "Grep-vs-semantic ratio, early-victory detection, verification density, scope overreach, continuity, and loop detection."
+          },
+          {
+            "heading": "Safe by construction",
+            "body": "Read-only and offline: it auto-discovers the latest transcript, redacts secrets, and never controls the agent."
+          }
+        ]
+      },
+      "stack": ["Node.js", "JavaScript", "ESM"],
+      "result": {
+        "head": "A messy transcript becomes one self-contained HTML report scoring six behaviours, with zero network calls and full secret redaction.",
+        "before": [
+          "Sessions hard to inspect",
+          "No behavioural metrics",
+          "Manual transcript reading"
+        ],
+        "after": [
+          "6-metric scorecard + timeline",
+          "0 network calls, secrets redacted",
+          "Two-session comparison"
+        ]
+      },
+      "quote": {
+        "text": "If you can't measure how an agent behaves, you can't fix it. Glassbox stays read-only and offline, so observing never changes the run.",
+        "name": "Amit Rana",
+        "role": "Author & Maintainer, Glassbox"
+      },
+      "console": [
+        "$ npx glassbox --latest",
+        "[ok] transcript parsed",
+        "[ok] 6 metrics scored",
+        "network calls ........ 0",
+        "report ............... glassbox.html",
+        "status: OBSERVED"
+      ],
+      "next": "ghostframes"
+    },
+    {
+      "slug": "ghostframes",
+      "displaySlug": "GHOSTFRAMES",
+      "name": "Ghostframes",
+      "category": "Frontend · React library",
+      "year": "2026",
+      "host": "npmjs.com/package/@ghostframes/runtime",
+      "image": null,
+      "isPrivate": false,
+      "links": {
+        "github": "https://github.com/HUMBLEF0OL/ghostframes",
+        "npm": "https://www.npmjs.com/package/@ghostframes/runtime"
+      },
+      "row": {
+        "blurb": "Hand-maintained skeleton loaders drift from their components. Zero-config skeletons generated from real components, gated by CI.",
+        "headlineMetric": { "value": "0", "unit": "CONFIG" }
+      },
+      "tagline": "Hand-maintained skeleton loaders rot as components change. I built zero-config skeletons generated from real components, gated by CI.",
+      "metrics": [
+        { "value": 1, "prefix": "", "suffix": "", "decimals": 0, "label": "Public package" },
+        { "value": 3, "prefix": "", "suffix": "", "decimals": 0, "label": "CI quality gates" },
+        { "value": 0, "prefix": "", "suffix": "", "decimals": 0, "label": "Runtime config" }
+      ],
+      "context": "Ghostframes is a React skeleton-loader library shipped as a single public package, @ghostframes/runtime. It captures skeleton manifests from real components at build time and enforces their quality in CI.",
+      "problem": {
+        "head": "Skeleton loaders are written by hand and drift from the components they mimic, so they decay into the wrong shape over time.",
+        "body": "Maintaining skeletons manually is tedious and error-prone, and nothing catches when a skeleton stops matching its component, so loading states quietly degrade.",
+        "before": "Hand-written skeletons · drift from components · no quality gate"
+      },
+      "approach": {
+        "intro": "I generated skeletons from real components at build time and added CI gates that enforce schema, key coverage, an invalid-entry budget, and artifact size.",
+        "cards": [
+          {
+            "heading": "Build-time capture",
+            "body": "AutoSkeleton and generateStaticBlueprint produce loader artifacts from the real component tree."
+          },
+          {
+            "heading": "CI quality gates",
+            "body": "ghostframes validate, diff, and report enforce schema, coverage, and size on every change."
+          }
+        ]
+      },
+      "stack": ["TypeScript", "React"],
+      "result": {
+        "head": "Skeletons are generated from the real components and held in line by CI gates, so loading states stay accurate with no hand-maintenance.",
+        "before": [
+          "Skeletons written by hand",
+          "Drift from real components",
+          "No automated checks"
+        ],
+        "after": ["Generated at build time", "Schema + coverage gates in CI", "Zero runtime config"]
+      },
+      "quote": {
+        "text": "A skeleton should come from the component, not a second copy you maintain by hand. Generate it, then let CI keep it honest.",
+        "name": "Amit Rana",
+        "role": "Author & Maintainer, Ghostframes"
+      },
+      "console": [
+        "$ pnpm add @ghostframes/runtime",
+        "[ok] blueprint captured",
+        "ghostframes validate .. pass",
+        "ghostframes diff ...... clean",
+        "config ............... 0",
+        "status: SKELETAL"
+      ],
+      "next": "javascript-verse"
+    },
+    {
+      "slug": "javascript-verse",
+      "displaySlug": "JS_VERSE",
+      "name": "JavaScript-Verse",
+      "category": "Frontend · Tooling",
+      "year": "2024",
+      "host": "humblef0ol.github.io/javascript-verse",
+      "image": "/projects/javascript-verse.png",
+      "isPrivate": false,
+      "links": {
+        "github": "https://github.com/HUMBLEF0OL/javascript-verse",
+        "live": "https://humblef0ol.github.io/javascript-verse/"
+      },
+      "row": {
+        "blurb": "Trying JS or React usually means a sandbox setup. An in-browser playground that runs real code, real npm modules, and React, with no install.",
+        "headlineMetric": { "value": "0", "unit": "INSTALL" }
+      },
+      "tagline": "Trying JavaScript or React usually means a sandbox setup. I built an in-browser playground that runs real code, real npm modules, and React, with no install.",
+      "metrics": [
+        {
+          "value": 100,
+          "prefix": "",
+          "suffix": "%",
+          "decimals": 0,
+          "label": "In-browser, no server"
+        },
+        { "value": 0, "prefix": "", "suffix": "", "decimals": 0, "label": "Install required" },
+        { "value": 1, "prefix": "", "suffix": "", "decimals": 0, "label": "Click to run" }
+      ],
+      "context": "JavaScript-Verse is a browser-based code execution environment and markdown editor for writing and running JavaScript and React, with side-by-side docs, a cheatsheet, and code export.",
+      "problem": {
+        "head": "Experimenting with JavaScript or React meant a local toolchain or a limited sandbox that couldn't pull real npm modules or render components.",
+        "body": "Running untrusted code in the browser safely, transpiling JSX and modern syntax, and resolving imports without a server are each non-trivial, so most playgrounds punt on one of them.",
+        "before": "Local setup to experiment · no real npm modules · JSX unsupported"
+      },
+      "approach": {
+        "intro": "I solved safe execution with iframe isolation, advanced syntax with in-browser Babel transpilation, and imports with in-browser bundling.",
+        "cards": [
+          {
+            "heading": "Sandboxed execution",
+            "body": "Code runs inside an isolated iframe with live preview, so arbitrary code is safe to run."
+          },
+          {
+            "heading": "Real modules + JSX",
+            "body": "In-browser Babel transpiles JSX and modern syntax; in-browser bundling resolves any npm import."
+          }
+        ]
+      },
+      "stack": ["React.js", "Tailwind CSS", "Babel", "Webpack", "Node.js"],
+      "result": {
+        "head": "Anyone can write and run JavaScript or React in the browser, pull real npm modules, and export their code, with nothing to install.",
+        "before": ["Local toolchain required", "No npm module support", "No JSX / React rendering"],
+        "after": [
+          "Runs in the browser, no install",
+          "Any npm module at runtime",
+          "JSX + React, sandboxed"
+        ]
+      },
+      "quote": {
+        "text": "The fastest way to learn something is to run it. I wanted real JavaScript and React, real modules, with nothing to install first.",
+        "name": "Amit Rana",
+        "role": "Author, JavaScript-Verse"
+      },
+      "console": [
+        "> run main.jsx",
+        "[ok] babel transpile",
+        "[ok] npm module resolved",
+        "[ok] iframe sandbox",
+        "preview .............. live",
+        "status: RUNNING"
+      ],
+      "next": "skinbattle"
+    },
+    {
+      "slug": "skinbattle",
+      "displaySlug": "SKINBATTLE",
+      "name": "SkinBattle.gg",
+      "category": "Web app · Real-time casino",
+      "year": "Private",
+      "host": "skinbattle.gg",
+      "image": "/projects/skinbattle.jpeg",
+      "isPrivate": true,
+      "private": true,
+      "links": {
+        "live": "https://skinbattle.gg/"
+      },
+      "row": {
+        "blurb": "Counter-Strike skin trading platform and online casino. Plinko, Mines, Cases, Battles, and Crash, built from scratch, at 5k concurrent users.",
+        "headlineMetric": { "value": "5k", "unit": "CCU" }
+      },
+      "tagline": "A Counter-Strike skin trading platform and online casino, with games like Plinko, Mines, Cases, Battles, and Crash built from scratch, serving 5k concurrent users.",
+      "metrics": [
+        { "value": 5, "prefix": "", "suffix": "k", "decimals": 0, "label": "Concurrent users" },
+        {
+          "value": 5,
+          "prefix": "",
+          "suffix": "+",
+          "decimals": 0,
+          "label": "Games built from scratch"
+        },
+        { "value": null, "display": "Real-time", "label": "WebSocket multiplayer" }
+      ],
+      "context": "SkinBattle.gg is a Counter-Strike skin trading platform and online casino. The team built its games, Plinko, Mines, Cases, Battles, Crash and more, from scratch, with live multiplayer over WebSockets, serving up to 5k concurrent users. I worked on the frontend, building the real-time game interfaces and client state.",
+      "problem": {
+        "head": "A casino platform has to keep fast, animated game interfaces in perfect sync with live server state for thousands of players at once, with money on every round.",
+        "body": "Games like Crash and Battles update many times a second and resolve in real time. The frontend has to render those updates smoothly, stay consistent with the server's outcome, and hold up at 5k concurrent users without stutter or desync.",
+        "before": "Casino games from scratch · live outcomes · 5k concurrent players"
+      },
+      "approach": {
+        "intro": "I built the game frontends around a WebSocket-driven state layer with Redux Toolkit on Next.js and Material UI, so each game stays smooth and in sync with the server's live outcomes.",
+        "cards": [
+          {
+            "heading": "Real-time game UIs",
+            "body": "Plinko, Mines, Cases, Battles, and Crash render live, driven by server events, with no desync between animation and outcome."
+          },
+          {
+            "heading": "State that holds at scale",
+            "body": "A single Redux Toolkit store reflects live round state cleanly, staying responsive at 5k concurrent users."
+          }
+        ]
+      },
+      "stack": ["Next.js", "Material UI", "Redux Toolkit", "WebSockets"],
+      "result": {
+        "head": "A full casino of from-scratch games, live and in sync for up to 5k concurrent players. Private engagement.",
+        "before": [
+          "Casino games built from scratch",
+          "Live, money-on-the-line outcomes",
+          "5k concurrent players"
+        ],
+        "after": [
+          "Plinko, Mines, Cases, Battles, Crash, live",
+          "Smooth, in-sync game UIs",
+          "Holds at 5k concurrent"
+        ]
+      },
+      "quote": {
+        "text": "Casino UIs are unforgiving: the animation and the server outcome have to agree, every round, for thousands of players at once. That sync is the whole job.",
+        "name": "Amit Rana",
+        "role": "Frontend Engineer, SkinBattle.gg"
+      },
+      "console": [
+        "> connect wss://skinbattle",
+        "[ok] socket live",
+        "[ok] crash round started",
+        "ccu .................. 5k",
+        "game state ........... in sync",
+        "status: LIVE"
+      ],
+      "next": "felis"
+    },
+    {
+      "slug": "felis",
+      "displaySlug": "FELIS_AI",
+      "name": "Felis AI",
+      "category": "AI app · RAG (research)",
+      "year": "Private",
+      "host": "private engagement",
+      "image": "/projects/felis-ai.png",
+      "isPrivate": true,
+      "private": true,
+      "links": {},
+      "row": {
+        "blurb": "Built for a research scholar buried in papers: a RAG app where she uploads her research papers and queries across all of them in plain language.",
+        "headlineMetric": { "value": "RAG", "unit": "PAPERS" }
+      },
+      "tagline": "Built for a research scholar drowning in papers. A RAG application where she uploads her research papers and asks questions across all of them in plain language.",
+      "metrics": [
+        { "value": null, "display": "RAG", "label": "Retrieval over papers" },
+        { "value": null, "display": "Papers", "label": "Upload + query corpus" },
+        { "value": null, "display": "Private", "label": "Built for a research scholar" }
+      ],
+      "context": "Felis AI was built for Vanshika Tyagi, a research scholar who has to read through a large volume of research papers. The goal was a tool that lets a scholar hand their papers to an application and query across them in plain language, instead of re-reading everything by hand.",
+      "problem": {
+        "head": "Research scholars read a huge volume of papers, and finding the passage that answers a question means combing back through all of them by hand.",
+        "body": "A scholar's working set is dozens of dense papers. Keyword search misses paraphrased ideas, and there was no way to ask a question across the whole corpus and get a grounded answer that points back to the source.",
+        "before": "Dozens of papers to re-read · keyword search misses meaning · no cross-paper querying"
+      },
+      "approach": {
+        "intro": "I built a RAG application where a scholar uploads their papers and queries across them in natural language, with retrieval grounding every answer in the actual source and persistent memory across a research session.",
+        "cards": [
+          {
+            "heading": "Upload and query papers",
+            "body": "Scholars add their own research papers; the app retrieves the relevant passages and answers in plain language."
+          },
+          {
+            "heading": "Grounded, with memory",
+            "body": "Every answer is grounded in the retrieved source, and persistent memory carries context across a long research session."
+          }
+        ]
+      },
+      "stack": ["Next.js", "OpenAI API", "Tailwind CSS", "LangChain", "Supabase"],
+      "result": {
+        "head": "A research scholar can hand Felis her papers and ask questions across all of them, instead of re-reading by hand. Private engagement.",
+        "before": [
+          "Re-reading dozens of papers",
+          "Keyword search misses meaning",
+          "No querying across the corpus"
+        ],
+        "after": [
+          "Upload papers, ask in plain language",
+          "Answers grounded in the source",
+          "Memory across the research session"
+        ]
+      },
+      "quote": {
+        "text": "I read a huge number of research papers, and Felis changed how I work. I hand it my papers and ask questions across all of them instead of digging back through each one, and it points me to the right passage.",
+        "name": "Vanshika Tyagi",
+        "role": "Research Scholar",
+        "verified": false
+      },
+      "console": [
+        "> felis upload papers/",
+        "[ok] papers indexed",
+        "> ask across corpus",
+        "[ok] context retrieved",
+        "grounding ............ on",
+        "status: ANSWERING"
+      ],
+      "next": "hookpilot"
+    }
+  ]
+}

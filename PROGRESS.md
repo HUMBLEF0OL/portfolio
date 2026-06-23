@@ -19,16 +19,29 @@
 
 ## Current Focus
 
-Agentic workflow harness — all 6 phases landed (spec
-`docs/superpowers/specs/2026-06-23-agentic-workflow-harness-design.md`, plan
-`docs/superpowers/plans/2026-06-23-agentic-workflow-harness.md`). Husky
-enforcement is active and `npm run check:harness` is **14/14 green**. Awaiting
-**external auditor** sign-off before declaring the goal complete (per session
-goal); no marking Done on self-assessment alone.
+Neural-grid operator redesign cleanup — committing the completed services-site
+redesign as a baseline, then (1) removing now-dead legacy design components and
+(2) making the application fully responsive. The agentic workflow harness landed
+earlier on this branch (`npm run check:harness` **14/14 green**) and is awaiting
+external-auditor sign-off; that is unchanged by this cleanup work.
+
+> **Verification note:** local `npm run build` cannot complete its "Collecting
+> page data" worker phase under **Node v26.3.0** (Next 15.3.4 emits a
+> `module.register()` deprecation and fails to resolve the build-worker
+> turbopack runtime chunk). Compilation + type-checking succeed. Verification
+> for this work therefore uses `npm run typecheck` + `npm run lint` (both green);
+> the build worker issue is a pre-existing runtime mismatch, tracked in
+> `DECISIONS.md`, not a regression from these changes.
 
 ## Done
 
 _Completed and verified work. Add a date and a one-line summary per entry._
+
+> `2026-06-23` — Committed the neural-grid "operator" services-site redesign as a
+> baseline: shared FX primitives (`src/components/op/`), 11 homepage section
+> blocks (`src/block/op/`), `/about` + `/work/[slug]` routes, operator
+> `Header`/`Footer`, `globals.css` operator tokens + notch utilities, and the
+> `src/data/*.json` content layer. Verified: `typecheck` clean, `lint` 0 errors.
 
 > `2026-06-23` — External audit: two independent auditors verified the harness
 > against the spec (all 5 layers + checker contract) and re-ran the gates — both

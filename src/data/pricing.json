@@ -1,0 +1,49 @@
+{
+  "$schema": "https://example.com/portfolio.pricing.schema.json",
+  "_meta": {
+    "purpose": "Engagement tiers on the homepage (// SYS.07 > ENGAGEMENT).",
+    "consumedBy": [
+      "Homepage > Pricing section (3-tier grid)",
+      "Contact form budget tiers (site.json)"
+    ],
+    "basis": "Standard senior full-stack / AI freelance rates, remote, USD. `rate` is the hourly anchor the tiers derive from. Adjust currency and figures to your market.",
+    "currency": "USD"
+  },
+  "section": {
+    "eyebrow": "// SYS.07",
+    "kicker": "ENGAGEMENT",
+    "heading": "Three ways to work together."
+  },
+  "rate": {
+    "hourly": "$75/hr",
+    "weekly": "~$2.5k/wk",
+    "note": "Standard senior remote rate. Sprints and project builds are quoted as fixed scope; the hourly is the anchor."
+  },
+  "tiers": [
+    {
+      "name": "Fixed-scope sprint",
+      "price": "$3k",
+      "priceUnit": "start",
+      "description": "A defined feature or fix, scoped and shipped in 1–2 weeks. Best for one clear thing.",
+      "features": ["Fixed price & timeline", "Tested & documented", "Full handoff"],
+      "featured": false
+    },
+    {
+      "name": "Project build",
+      "price": "$12k",
+      "priceUnit": "start",
+      "description": "Idea to launched product over 4–10 weeks. Full-stack, AI, and tooling, end to end.",
+      "features": ["Weekly demos", "Direct line to me", "Production-ready handoff"],
+      "featured": true,
+      "badge": "★ Most common"
+    },
+    {
+      "name": "Ongoing retainer",
+      "price": "$5k",
+      "priceUnit": "/mo",
+      "description": "Senior capacity on tap. A set block of time each month for whatever moves the metric.",
+      "features": ["Priority scheduling", "Flexible scope", "Month-to-month"],
+      "featured": false
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://example.com/portfolio.process.schema.json",
+  "_meta": {
+    "purpose": "Engagement phases on the homepage (// SYS.06 > MISSION_PHASES).",
+    "consumedBy": ["Homepage > Process section (4-step grid)"]
+  },
+  "section": {
+    "eyebrow": "// SYS.06",
+    "kicker": "MISSION_PHASES",
+    "heading": "Low-risk by design. No black box."
+  },
+  "phases": [
+    {
+      "number": "01",
+      "title": "Intro call",
+      "description": "20 minutes to scope your problem and see if it's a fit. Free, no obligation."
+    },
+    {
+      "number": "02",
+      "title": "Proposal & scope",
+      "description": "Fixed scope, timeline, and price up front. You know exactly what you're getting."
+    },
+    {
+      "number": "03",
+      "title": "Build in the open",
+      "description": "Weekly demos, a direct line to me, no black box. You see progress every week."
+    },
+    {
+      "number": "04",
+      "title": "Ship & handoff",
+      "description": "Tested, documented, working. Handed back to your team. No lock-in."
+    }
+  ]
+}

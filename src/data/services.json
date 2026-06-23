@@ -1,0 +1,40 @@
+{
+  "$schema": "https://example.com/portfolio.services.schema.json",
+  "_meta": {
+    "purpose": "Capabilities grid on the homepage (// SYS.02 > CAPABILITIES).",
+    "consumedBy": ["Homepage > Services section (4-card grid)"],
+    "ordering": "Array order = display order; number is the rendered 01..04 index."
+  },
+  "section": {
+    "eyebrow": "// SYS.02",
+    "kicker": "CAPABILITIES",
+    "heading": "Four kinds of work. One engineer.",
+    "intro": "No handoff gap between the app, the AI, and the tooling, because it's the same person building each."
+  },
+  "services": [
+    {
+      "number": "01",
+      "title": "Full-stack product builds",
+      "description": "Idea to shipped web app: frontend, backend, data, and deploy. Handed back working.",
+      "tags": ["Next.js", "Node", "Postgres", "TypeScript"]
+    },
+    {
+      "number": "02",
+      "title": "AI / LLM features",
+      "description": "RAG, chatbots, and AI features that actually ship to production, not a demo that breaks.",
+      "tags": ["OpenAI", "LangChain", "RAG", "Supabase"]
+    },
+    {
+      "number": "03",
+      "title": "Frontend / UI engineering",
+      "description": "High-craft, fast, accessible interfaces: design to code, with the details that read as senior.",
+      "tags": ["React", "Tailwind", "Perf", "a11y"]
+    },
+    {
+      "number": "04",
+      "title": "Dev tools & automation",
+      "description": "CLIs, git tooling, and build automation that save your team hours every week.",
+      "tags": ["Node", "TypeScript", "CLI"]
+    }
+  ]
+}
