@@ -20,7 +20,8 @@
     "test:e2e": "playwright test",
     "test:gates": "node scripts/check-co-modification.test.mjs",
     "check:harness": "node scripts/check-harness.mjs",
-    "update:check": "node scripts/check-updates.js"
+    "update:check": "node scripts/check-updates.js",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",

@@ -19,15 +19,23 @@
 
 ## Current Focus
 
-Implementing the agentic workflow harness (spec
+Agentic workflow harness — all 6 phases landed (spec
 `docs/superpowers/specs/2026-06-23-agentic-workflow-harness-design.md`, plan
-`docs/superpowers/plans/2026-06-23-agentic-workflow-harness.md`). Phases 1–5
-landed; `npm run check:harness` is **14/14 green**. Phase 6 next: finalize the
-checker, activate husky, and run the full go-green verification.
+`docs/superpowers/plans/2026-06-23-agentic-workflow-harness.md`). Husky
+enforcement is active and `npm run check:harness` is **14/14 green**. Awaiting
+**external auditor** sign-off before declaring the goal complete (per session
+goal); no marking Done on self-assessment alone.
 
 ## Done
 
 _Completed and verified work. Add a date and a one-line summary per entry._
+
+> `2026-06-23` — Phase 6: activated enforcement. Added `prepare: husky`,
+> `.husky/pre-commit` (lint-staged → check-harness → typecheck →
+> check-co-modification) and `.husky/commit-msg` (commitlint). Full go-green
+> verification: `check:harness` 14/14, `lint` 0 errors, `typecheck`, `test:run`
+> 3/3, `test:gates` 5/5, `build` (SSG 12 locales). Harness implementation
+> complete pending external-auditor sign-off.
 
 > `2026-06-23` — Phases 2–5: governance & state files; docs harness
 > (architecture/workflows/agent-ops/verification/packages + archive READMEs +
@@ -43,16 +51,16 @@ _Completed and verified work. Add a date and a one-line summary per entry._
 > Prettier, commitlint config, Vitest + Testing Library + jsdom, Playwright,
 > lint-staged, and the checker scripts (`check-harness.mjs` adapted: SEO
 > predicates trimmed, `seoRoutes` predicate removed; `check-co-modification.mjs`
-> + test; `check-updates.js`). Verified: `lint` 0 errors, `typecheck`,
-> `test:run` 3/3, `build`, `test:gates` 5/5. No husky yet (Phase 6).
+>
+> - test; `check-updates.js`). Verified: `lint` 0 errors, `typecheck`,
+>   `test:run` 3/3, `build`, `test:gates` 5/5. No husky yet (Phase 6).
 
 ## In Progress
 
 > **WIP=1** — finish and verify one task before activating the next.
 
-> Phase 6 — finalize `check-harness.mjs`, activate husky (`prepare: husky`,
-> `.husky/pre-commit` + `commit-msg`), run the full go-green verification, and a
-> trial commit through the hook chain.
+> External auditor review of the harness (the goal's definition of done). Local
+> verification is fully green; no further implementation pending.
 
 ## Blocked
 

@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+npx lint-staged
+
+# Verify harness structure (mechanical Fresh Session Test) — fast, zero-dep,
+# so every commit represents a valid harness state (ACID Consistency).
+# `|| exit 1` is required: this hook runs under plain `sh` with no `set -e`, so
+# a bare failing command would not abort the commit on its own.
+node scripts/check-harness.mjs || exit 1
+
+# Type-correctness gate (Feedback subsystem) — fail the commit on any type error
+# so build-breaking code can't enter history. Skip with SKIP_TYPECHECK=1 git commit.
+[ "${SKIP_TYPECHECK}" = "1" ] || npm run typecheck || exit 1
+
+# Co-modification gate (commit-time only, git-index aware) — enforces state-
+# transition rules, e.g. a src/** change must stage PROGRESS.md in the same
+# commit (ACID Atomicity). Kept SEPARATE from check-harness.mjs, which is git-
+# agnostic and CI-safe. Fails open if there's no git index; scoped skip:
+# SKIP_STATE_CHECK=1 git commit.
+node scripts/check-co-modification.mjs || exit 1
