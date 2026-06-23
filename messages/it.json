@@ -1,4 +1,10 @@
 {
+    "Seo": {
+        "home": {
+            "title": "HUMBLEF0OL // Architetto di Interfacce Digitali",
+            "description": "Entra nella Griglia — la frontiera digitale di HUMBLEF0OL. Interfacce cibernetiche, codice modulare ed esperienze glitch."
+        }
+    },
     "Page": {
         "sections": {
             "skillsModule": "/// SKILLS.MODULO",

@@ -1,4 +1,10 @@
 {
+    "Seo": {
+        "home": {
+            "title": "HUMBLEF0OL // 数字界面架构师",
+            "description": "进入网格 — HUMBLEF0OL 的数字前沿。赛博界面、模块化代码与故障艺术体验。"
+        }
+    },
     "Page": {
         "sections": {
             "skillsModule": "/// 技能模块",

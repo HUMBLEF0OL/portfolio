@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import ThemeSwitch from "@/block/ThemeSwitch";
 import { Chakra_Petch, Oxanium } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
+import { siteConfig } from "@/config/site";
 
 const chakra = Chakra_Petch({
   variable: "--font-chakra",
@@ -35,24 +36,25 @@ export const metadata: Metadata = {
     "Modular Frontend Systems",
     "Digital Grid"
   ],
-  authors: [{ name: "Amit Rana", url: "https://humblefool.vercel.app/" }],
-  creator: "Amit Rana",
-  metadataBase: new URL("https://humblefool.vercel.app/"),
+  authors: [{ name: siteConfig.organization.name, url: siteConfig.url }],
+  creator: siteConfig.organization.name,
+  // Single source of truth: the production URL lives in src/config/site.ts.
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     title: "HUMBLEF0OL // Digital Interface Architect",
     description:
       "Amit Rana (HUMBLEF0OL) crafts futuristic web experiences using React, Tailwind, and Next.js. Dive into his glitch-touched, pixel-perfect world of code and creativity.",
-    url: "https://humblefool.vercel.app/",
-    siteName: "HUMBLEF0OL",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     images: [
       {
-        url: "https://humblefool.vercel.app/og-image.png",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
         alt: "HUMBLEF0OL Portfolio"
       }
     ],
-    locale: "en",
+    locale: siteConfig.ogLocaleMap[siteConfig.defaultLocale],
     type: "website"
   },
   twitter: {
@@ -60,8 +62,8 @@ export const metadata: Metadata = {
     title: "HUMBLEF0OL // Web Interface Engineer",
     description:
       "Enter the digital playground of Amit Rana — where code pulses with emotion and design meets data.",
-    images: ["https://humblefool.vercel.app/og-image.png"],
-    creator: "@HUMBLEFOOL"
+    images: [siteConfig.ogImage],
+    creator: siteConfig.twitter
   }
 };
 

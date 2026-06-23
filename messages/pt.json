@@ -1,4 +1,10 @@
 {
+    "Seo": {
+        "home": {
+            "title": "HUMBLEF0OL // Arquiteto de Interfaces Digitais",
+            "description": "Entre na Grade — a fronteira digital de HUMBLEF0OL. Interfaces cibernéticas, código modular e experiências com efeito glitch."
+        }
+    },
     "Page": {
         "sections": {
             "skillsModule": "/// MÓDULO.HABILIDADES",

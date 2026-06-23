@@ -1,4 +1,10 @@
 {
+    "Seo": {
+        "home": {
+            "title": "HUMBLEF0OL // Architecte d'Interfaces Numériques",
+            "description": "Entrez dans la Grille — la frontière numérique de HUMBLEF0OL. Interfaces cybernétiques, code modulaire et expériences glitch."
+        }
+    },
     "Page": {
         "sections": {
             "skillsModule": "/// MODULE.COMPÉTENCES",

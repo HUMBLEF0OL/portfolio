@@ -5,9 +5,32 @@ import Skills from '@/block/Skills';
 import Projects from '@/block/Projects';
 import Experience from '@/block/Experience';
 import Contact from '@/block/Contact';
-import { getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { siteConfig } from '@/config/site';
 
-export default async function HomePage() {
+const base = siteConfig.url.replace(/\/$/, '');
+
+type PageProps = Readonly<{ params: Promise<{ locale: string }> }>;
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Seo' });
+    return {
+        title: t('home.title'),
+        description: t('home.description'),
+        alternates: {
+            canonical: `${base}/${locale}`,
+            languages: Object.fromEntries(
+                siteConfig.locales.map((l) => [l, `${base}/${l}`])
+            ),
+        },
+    };
+}
+
+export default async function HomePage({ params }: PageProps) {
+    const { locale } = await params;
+    setRequestLocale(locale);
     const t = await getTranslations('Page');
     return (
         <div className="w-full h-[fit-content] max-w-[1440px] flex flex-col items-center justify-center">

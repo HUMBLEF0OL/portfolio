@@ -1,4 +1,10 @@
 {
+    "Seo": {
+        "home": {
+            "title": "HUMBLEF0OL // デジタルインターフェース・アーキテクト",
+            "description": "グリッドへ — HUMBLEF0OL のデジタルフロンティア。サイバネティックな UI、モジュラーコード、グリッチ表現の体験。"
+        }
+    },
     "Page": {
         "sections": {
             "skillsModule": "/// スキル.モジュール",

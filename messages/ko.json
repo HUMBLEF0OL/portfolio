@@ -1,4 +1,10 @@
 {
+    "Seo": {
+        "home": {
+            "title": "HUMBLEF0OL // 디지털 인터페이스 아키텍트",
+            "description": "그리드로 들어가세요 — HUMBLEF0OL의 디지털 프런티어. 사이버네틱 UI, 모듈식 코드, 글리치 경험."
+        }
+    },
     "Page": {
         "sections": {
             "skillsModule": "/// 스킬.모듈",

@@ -1,4 +1,10 @@
 {
+    "Seo": {
+        "home": {
+            "title": "HUMBLEF0OL // Digital Interface Architect",
+            "description": "Step into the Grid — the digital frontier of HUMBLEF0OL. Cybernetic UIs, modular code, and glitch-crafted experiences."
+        }
+    },
     "Page": {
         "sections": {
             "skillsModule": "/// SKILLS.MODULE",

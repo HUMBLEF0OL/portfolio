@@ -1,4 +1,10 @@
 {
+    "Seo": {
+        "home": {
+            "title": "HUMBLEF0OL // Architekt digitaler Schnittstellen",
+            "description": "Betritt das Grid — die digitale Grenze von HUMBLEF0OL. Kybernetische UIs, modularer Code und glitch-gestaltete Erlebnisse."
+        }
+    },
     "Page": {
         "sections": {
             "skillsModule": "/// FÄHIGKEITEN.MODUL",

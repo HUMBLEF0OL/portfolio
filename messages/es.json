@@ -1,4 +1,10 @@
 {
+    "Seo": {
+        "home": {
+            "title": "HUMBLEF0OL // Arquitecto de Interfaces Digitales",
+            "description": "Entra en la Red — la frontera digital de HUMBLEF0OL. Interfaces cibernéticas, código modular y experiencias con estética glitch."
+        }
+    },
     "Page": {
         "sections": {
             "skillsModule": "/// MÓDULO.HABILIDADES",

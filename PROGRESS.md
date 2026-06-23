@@ -21,15 +21,23 @@
 
 Implementing the agentic workflow harness (spec
 `docs/superpowers/specs/2026-06-23-agentic-workflow-harness-design.md`, plan
-`docs/superpowers/plans/2026-06-23-agentic-workflow-harness.md`). Landing in 6
-phases, each ending green; husky enforcement is activated only in the final
-phase. Phase 1 (enforcement tooling + checker scripts) and Phase 2 (governance
-& state files) are in flight.
+`docs/superpowers/plans/2026-06-23-agentic-workflow-harness.md`). Phases 1–5
+landed; `npm run check:harness` is **14/14 green**. Phase 6 next: finalize the
+checker, activate husky, and run the full go-green verification.
 
 ## Done
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-23` — Phases 2–5: governance & state files; docs harness
+> (architecture/workflows/agent-ops/verification/packages + archive READMEs +
+> templates); `.claude/` orchestration (4 agents, 7 commands, 13 skills,
+> settings, `.mcp.json`, agent-memory); right-sized SEO module (`src/config/site.ts`,
+> robots/sitemap/manifest, root-layout reconciliation, `[locale]` static
+> rendering + localized `generateMetadata`), 9 per-module `ARCHITECTURE.md`, and
+> `Seo` keys in all 12 locales. `npm run check:harness` 14/14 green; lint 0
+> errors; typecheck; test:run 3/3; build SSG for all 12 locales.
+>
 > `2026-06-23` — Phase 1: enforcement tooling. Added `engines.node>=20.19.0`,
 > `.nvmrc 22`, ESLint 9 flat config (FlatCompat over `eslint-config-next`),
 > Prettier, commitlint config, Vitest + Testing Library + jsdom, Playwright,
@@ -42,8 +50,9 @@ _Completed and verified work. Add a date and a one-line summary per entry._
 
 > **WIP=1** — finish and verify one task before activating the next.
 
-> Phase 2 — governance & state files (`AGENTS.md`, `CONSTRAINTS.md`,
-> `PROGRESS.md`, `DECISIONS.md`, `INITIALIZATION.md`, `CHANGELOG.md`).
+> Phase 6 — finalize `check-harness.mjs`, activate husky (`prepare: husky`,
+> `.husky/pre-commit` + `commit-msg`), run the full go-green verification, and a
+> trial commit through the hook chain.
 
 ## Blocked
 
