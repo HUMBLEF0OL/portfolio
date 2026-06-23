@@ -44,7 +44,7 @@ export function HeroCanvas({ className }: { className?: string }) {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       cols = Math.ceil(W / FS)
       drops = new Array(cols).fill(0).map(() => Math.random() * (H / FS))
-      speeds = new Array(cols).fill(0).map(() => 0.16 + Math.random() * 0.38)
+      speeds = new Array(cols).fill(0).map(() => 0.09 + Math.random() * 0.2)
       tints = new Array(cols).fill(0).map(() => {
         const r = Math.random()
         if (r < 0.1) return '252,238,10'
