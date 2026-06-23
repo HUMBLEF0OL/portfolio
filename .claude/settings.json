@@ -1,0 +1,48 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Edit(src/**)",
+            "command": "npm run lint:fix",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "if": "Write(src/**)",
+            "command": "npm run lint:fix",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "if": "Edit(src/**/*.test.*)",
+            "command": "npm run test:run",
+            "timeout": 60
+          },
+          {
+            "type": "command",
+            "if": "Write(src/**/*.test.*)",
+            "command": "npm run test:run",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run typecheck",
+            "async": true,
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}
