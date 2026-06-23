@@ -73,13 +73,10 @@ _Items waiting on a decision, dependency, or human checkpoint. Note the blocker.
 
 _Planned work, in rough priority order._
 
-- Phase 3 — docs harness (`docs/ARCHITECTURE.md`, `WORKFLOWS.md`, `AGENT_OPS.md`,
-  `VERIFICATION.md`, `PACKAGES.md`, archive READMEs, templates).
-- Phase 4 — `.claude/` orchestration (agents, commands, 10 added skills,
-  settings, `.mcp.json`, agent-memory).
-- Phase 5 — right-sized SEO module + 9 per-module `ARCHITECTURE.md` + SEO copy
-  in all 12 locales.
-- Phase 6 — finalize `check-harness.mjs`, activate husky, go-green.
+- Address any findings from the external auditor's review of the harness.
+- (Deferred) merge `feat/agentic-harness` into `master` once signed off.
+- (Optional) add a CI workflow running the `check:harness` + lint/typecheck/test
+  command set from `docs/VERIFICATION.md`.
 
 ## Decisions & Notes
 
