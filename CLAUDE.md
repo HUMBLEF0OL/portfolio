@@ -4,7 +4,7 @@ Project rules for Claude Code when working in this repository.
 
 ## Project overview
 
-A personal portfolio built with **Next.js 15 (App Router) + React 19 + TypeScript**, styled with **Tailwind CSS v4** and **shadcn/ui** (New York style), and fully internationalized with **next-intl** (12 locales). It has a cyberpunk / "neural grid" visual theme using a custom angular-clip design system.
+A personal portfolio built with **Next.js 15 (App Router) + React 19 + TypeScript**, styled with **Tailwind CSS v4** and **shadcn/ui** (New York style), and fully internationalized with **next-intl** (3 locales: en, es, zh). It has a cyberpunk / "neural grid" visual theme using a custom angular-clip design system.
 
 ## Tech stack
 
@@ -53,7 +53,7 @@ Always run `npm run lint` after changes and a `npm run build` for non-trivial wo
   - Client Components: `const m = useMessages(); const hero = m.Hero as HeroContent`.
   - Server Components: `const m = await getMessages(); const hero = m.Hero as HeroContent` (the section must be `async`; `[locale]/layout` already calls `setRequestLocale`).
   - **Avoid** the namespace-positional `useTranslations('Ns')` / `getTranslations('Ns')` form — the top-level `Stats` array collapses next-intl's namespace-key typing, so it fails to type-check. Use `useMessages`/`getMessages` + a cast to a `src/types/content.ts` type instead. The root translator `getTranslations({ locale })` + a dotted key (e.g. `t('Seo.home.title')`) is fine for flat metadata.
-- When adding or changing a key, update **all 12 locale files** in `messages/` (en, es, fr, it, pt, ru, ja, ko, zh, ar, hi, de) and the matching `src/types/content.ts` type. Keep the same key structure across every file (the `src/i18n/messages-parity.test.ts` test enforces this). `en.json` is the source of truth.
+- When adding or changing a key, update **all 3 locale files** in `messages/` (en, es, zh) and the matching `src/types/content.ts` type. Keep the same key structure across every file (the `src/i18n/messages-parity.test.ts` test enforces this). `en.json` is the source of truth.
 - For navigation/links use the wrappers from `@/i18n/navigation` (`Link`, `redirect`, `useRouter`, `usePathname`), not raw `next/link` / `next/navigation`, so locale prefixes are preserved.
 - Non-translatable config (URLs, slugs, numeric metric values, tech tokens) stays in `src/data/config.json` / `caseStudies.json`; components join it with the translated copy.
 

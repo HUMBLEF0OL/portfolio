@@ -16,7 +16,7 @@ per-skill files that carry the library-specific patterns and code templates.
 ## Project Identity
 
 A personal portfolio — **Next.js 15 (App Router) · React 19 · TypeScript
-(strict) · Tailwind v4 (CSS-first, no config file) · next-intl (12 locales) ·
+(strict) · Tailwind v4 (CSS-first, no config file) · next-intl (3 locales) ·
 shadcn/ui (New York) · emailjs contact form**. Cyberpunk "neural grid" theme
 built on a custom angular-clip design system. Node pinned in `.nvmrc`.
 
@@ -28,21 +28,21 @@ built on a custom angular-clip design system. Node pinned in `.nvmrc`.
 
 ## Per-Skill Guidance Index
 
-| Skill           | What it owns                                              |
-| --------------- | --------------------------------------------------------- |
-| architecture    | File organization, naming, imports                        |
-| components      | Server/client component patterns                          |
-| routing         | App Router structure, `[locale]` routing                  |
-| i18n            | Locale routing, `messages/*`, translation wiring          |
-| add-translations| Adding/updating copy across all 12 locale files           |
-| add-section     | New page-section/block components                         |
-| add-shadcn-ui   | Adding/using shadcn/ui primitives                         |
-| design-tokens   | CSS-first `@theme` tokens + angular-clip utility system   |
-| seo             | `site.ts`-driven metadata, robots/sitemap/manifest        |
-| testing         | Vitest + Testing Library + Playwright usage               |
-| error-handling  | Error boundaries and not-found handling                   |
-| security        | OWASP boundary checks for this stack                      |
-| context7        | Fetching up-to-date library docs                          |
+| Skill            | What it owns                                            |
+| ---------------- | ------------------------------------------------------- |
+| architecture     | File organization, naming, imports                      |
+| components       | Server/client component patterns                        |
+| routing          | App Router structure, `[locale]` routing                |
+| i18n             | Locale routing, `messages/*`, translation wiring        |
+| add-translations | Adding/updating copy across all 12 locale files         |
+| add-section      | New page-section/block components                       |
+| add-shadcn-ui    | Adding/using shadcn/ui primitives                       |
+| design-tokens    | CSS-first `@theme` tokens + angular-clip utility system |
+| seo              | `site.ts`-driven metadata, robots/sitemap/manifest      |
+| testing          | Vitest + Testing Library + Playwright usage             |
+| error-handling   | Error boundaries and not-found handling                 |
+| security         | OWASP boundary checks for this stack                    |
+| context7         | Fetching up-to-date library docs                        |
 
 > Only the skills installed under `.claude/skills/` are active. Stack-irrelevant
 > skills (auth, proxy, api, db, data-fetching, state, forms, validation) are
@@ -76,17 +76,17 @@ Contract** and **Session Protocol** (clock-in/out) in `docs/AGENT_OPS.md`; the
 
 ## Where the rest lives
 
-| Concern                                              | Canonical file                 |
-| ---------------------------------------------------- | ------------------------------ |
-| Hard MUST / MUST NOT rules + approvals               | `CONSTRAINTS.md`               |
-| Startup-readiness / initialization phase             | `INITIALIZATION.md`            |
-| Dev flow, git, commit format, testing, packages      | `docs/WORKFLOWS.md`            |
-| Handoff, routing, feature order, memory, session     | `docs/AGENT_OPS.md`            |
-| Verification, Fresh Session Test, ACID, archival     | `docs/VERIFICATION.md`         |
-| Cross-session State (current "what")                 | `PROGRESS.md`                  |
-| Durable decisions & rationale ("why")                | `DECISIONS.md`                 |
-| Global architecture + key file locations             | `docs/ARCHITECTURE.md`         |
-| Per-module proximity docs                            | `src/<module>/ARCHITECTURE.md` |
+| Concern                                          | Canonical file                 |
+| ------------------------------------------------ | ------------------------------ |
+| Hard MUST / MUST NOT rules + approvals           | `CONSTRAINTS.md`               |
+| Startup-readiness / initialization phase         | `INITIALIZATION.md`            |
+| Dev flow, git, commit format, testing, packages  | `docs/WORKFLOWS.md`            |
+| Handoff, routing, feature order, memory, session | `docs/AGENT_OPS.md`            |
+| Verification, Fresh Session Test, ACID, archival | `docs/VERIFICATION.md`         |
+| Cross-session State (current "what")             | `PROGRESS.md`                  |
+| Durable decisions & rationale ("why")            | `DECISIONS.md`                 |
+| Global architecture + key file locations         | `docs/ARCHITECTURE.md`         |
+| Per-module proximity docs                        | `src/<module>/ARCHITECTURE.md` |
 
 ## Working agreement (all agents)
 

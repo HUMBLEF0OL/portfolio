@@ -25,7 +25,7 @@ portfolio/
 │   ├── check-co-modification.mjs  # src/** ⇒ PROGRESS.md staged (pre-commit)
 │   ├── check-co-modification.test.mjs  # gate self-test (npm run test:gates)
 │   └── check-updates.js           # Dependency / audit checker
-├── messages/                      # next-intl catalogs — one JSON per locale (12)
+├── messages/                      # next-intl catalogs — one JSON per locale (3)
 ├── e2e/                           # Playwright end-to-end tests
 ├── public/                        # Static assets (audio/, projects/, images)
 ├── src/                           # Each top-level module carries an ARCHITECTURE.md
@@ -55,14 +55,14 @@ portfolio/
 
 ## Naming Conventions
 
-| Item            | Convention              | Example                |
-| --------------- | ----------------------- | ---------------------- |
-| Page sections   | PascalCase (`src/block`)| `Projects.tsx`         |
-| shadcn UI       | kebab files (generated) | `components/ui/card.tsx`|
-| Shared comps    | kebab-case              | `theme-provider.tsx`   |
-| Hooks           | `use` prefix, camelCase | `useTheme`             |
-| Route folders   | bracket segment         | `app/[locale]/`        |
-| Translation keys| dot.namespaced          | `projects.skinbattle.title` |
+| Item             | Convention               | Example                     |
+| ---------------- | ------------------------ | --------------------------- |
+| Page sections    | PascalCase (`src/block`) | `Projects.tsx`              |
+| shadcn UI        | kebab files (generated)  | `components/ui/card.tsx`    |
+| Shared comps     | kebab-case               | `theme-provider.tsx`        |
+| Hooks            | `use` prefix, camelCase  | `useTheme`                  |
+| Route folders    | bracket segment          | `app/[locale]/`             |
+| Translation keys | dot.namespaced           | `projects.skinbattle.title` |
 
 ---
 
@@ -92,12 +92,12 @@ APIs, or event handlers — and never on a `page.tsx` (push it into children).
 
 ## Internationalization
 
-- `src/i18n/routing.ts` defines the 12 locales + `defaultLocale`. `request.ts`
+- `src/i18n/routing.ts` defines the 3 locales (en, es, zh) + `defaultLocale`. `request.ts`
   loads `messages/<locale>.json`; `navigation.ts` exports the locale-aware
   navigation wrappers.
 - Server Components read copy via `getTranslations`; Client Components via
   `useTranslations`. Data files in `src/data/*.json` reference translation keys.
-- Every user-facing string lives in `messages/*` and must exist in all 12 files.
+- Every user-facing string lives in `messages/*` and must exist in all 3 files.
 
 ---
 
@@ -123,11 +123,11 @@ localized metadata via `generateMetadata`. See the `seo` skill.
 
 ## Key Code Locations
 
-| What                 | Where                      |
-| -------------------- | -------------------------- |
-| SEO config           | `src/config/site.ts`       |
-| `cn()` class util    | `src/lib/utils.ts`         |
+| What                 | Where                               |
+| -------------------- | ----------------------------------- |
+| SEO config           | `src/config/site.ts`                |
+| `cn()` class util    | `src/lib/utils.ts`                  |
 | Theme provider       | `src/components/theme-provider.tsx` |
-| Locale routing       | `src/i18n/routing.ts`      |
-| Translation catalogs | `messages/<locale>.json`   |
-| Design system        | `src/app/globals.css`      |
+| Locale routing       | `src/i18n/routing.ts`               |
+| Translation catalogs | `messages/<locale>.json`            |
+| Design system        | `src/app/globals.css`               |

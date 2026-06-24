@@ -22,7 +22,7 @@ The validator agent ([.claude/agents/validator.md](../agents/validator.md)) will
 2. Run `npm run lint`, `npm run typecheck`, `npm run test:run`, `npm run build`
 3. Check portfolio conventions (`@/` imports, `cn()`, no `any`, no `console.log`,
    named exports, `next/image`, `@/i18n/navigation` wrappers, no hardcoded strings,
-   all 12 locales in sync)
+   all 3 locales in sync)
 4. Produce a scored report (Convention / Quality / Security / Performance — 100 pts)
 5. Output a pass/fail handoff block
 

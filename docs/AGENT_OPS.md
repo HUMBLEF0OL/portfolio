@@ -69,7 +69,7 @@ canonical map.
 When scaffolding a new section/feature, create files in this order (consult the
 matching skill file at each step):
 
-1. Translation keys in `messages/*` (all 12 locales) — see `add-translations`
+1. Translation keys in `messages/*` (all 3 locales) — see `add-translations`
 2. Static content in `src/data/*.json` — if the section is data-driven
 3. UI primitives (`src/components/ui/`) via `add-shadcn-ui` — if needed
 4. Section component (`src/block/`) via `add-section`
@@ -86,10 +86,10 @@ Agent memory is **session-local scratch**: agents write it to the project folder
 git-ignored — not durable across clones and possibly absent. Durable
 cross-session / cross-agent knowledge belongs in `PROGRESS.md` and `DECISIONS.md`.
 
-| Scope              | Path                                      | When to write                    |
-| ------------------ | ----------------------------------------- | -------------------------------- |
-| Cross-agent shared | `.claude/agent-memory/shared/MEMORY.md`   | Every run — append a dated entry |
-| Agent-specific     | `.claude/agent-memory/{agent}/MEMORY.md`  | Every run — append a dated entry |
+| Scope              | Path                                     | When to write                    |
+| ------------------ | ---------------------------------------- | -------------------------------- |
+| Cross-agent shared | `.claude/agent-memory/shared/MEMORY.md`  | Every run — append a dated entry |
+| Agent-specific     | `.claude/agent-memory/{agent}/MEMORY.md` | Every run — append a dated entry |
 
 Rules: **read** the shared memory first **if present** (a fresh clone has none —
 don't block on it); **append** a dated entry (`## YYYY-MM-DD — {summary}` +

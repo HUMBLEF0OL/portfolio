@@ -6,17 +6,17 @@ live in the matching file under `.claude/skills/`.
 
 ## Selected Stack
 
-| Category   | Choice                                            |
-| ---------- | ------------------------------------------------- |
-| Framework  | Next.js 15.3 (App Router, Turbopack dev)          |
-| Language   | TypeScript 5 (strict mode), `@/*` → `src/*`       |
-| UI runtime | React 19                                          |
-| Styling    | Tailwind CSS v4 (CSS-first, no config file)       |
-| UI kit     | shadcn/ui (New York), Radix primitives, lucide    |
-| i18n       | next-intl 4 (12 locales, locale-prefixed routing) |
-| Email      | emailjs-com (contact form)                        |
-| Carousel   | embla-carousel-react · Drawer: vaul · Themes: next-themes |
-| Testing    | Vitest 3 + Testing Library + jsdom · Playwright   |
+| Category   | Choice                                                        |
+| ---------- | ------------------------------------------------------------- |
+| Framework  | Next.js 15.3 (App Router, Turbopack dev)                      |
+| Language   | TypeScript 5 (strict mode), `@/*` → `src/*`                   |
+| UI runtime | React 19                                                      |
+| Styling    | Tailwind CSS v4 (CSS-first, no config file)                   |
+| UI kit     | shadcn/ui (New York), Radix primitives, lucide                |
+| i18n       | next-intl 4 (3 locales, locale-prefixed routing)              |
+| Email      | emailjs-com (contact form)                                    |
+| Carousel   | embla-carousel-react · Drawer: vaul · Themes: next-themes     |
+| Testing    | Vitest 3 + Testing Library + jsdom · Playwright               |
 | Tooling    | ESLint 9 (flat) · Prettier · commitlint · lint-staged · Husky |
 
 ## Runtime dependencies

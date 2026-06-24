@@ -39,6 +39,17 @@ mirroring polish is a tracked follow-up (spec non-goal).
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-24` — Reduced supported locales from 12 → 3 (`en` default, `es`, `zh`):
+> the three with the broadest reach and none RTL. Trimmed `routing.ts`,
+> `siteConfig` (`locales` + `ogLocaleMap`), and `languages.json`; deleted the 9
+> other `messages/*` catalogs; dropped the Arabic RTL branch in `LocaleHtml`
+> (no kept locale is RTL → `dir` fixed to `ltr`); synced the current-state docs
+> (CLAUDE/AGENTS/ARCHITECTURE/PACKAGES/AGENT_OPS/WORKFLOWS/i18n skill) to "3
+> locales". Also swapped the dated "AVAILABLE Q3 2026" availability copy for
+> evergreen "AVAILABLE FOR WORK" / "OPEN FOR WORK" (separate commit). Verified:
+> `check:harness` 14/14 (locales match routing), `test:run` parity green, `lint`
+> 0 errors, `build` SSG emits en/es/zh only.
+
 > `2026-06-24` — i18n re-internationalization complete (all 12 locales). Migrated
 > every section + route off `data/*.json` onto next-intl messages via
 > `useMessages()`/`getMessages()` typed against `en.json` (`AppConfig.Messages`

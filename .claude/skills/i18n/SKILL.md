@@ -1,6 +1,6 @@
 ---
 name: i18n
-description: next-intl i18n conventions for the portfolio — locale routing, message catalogs (12 locales), translation helpers, locale switcher, and middleware locale detection. Use when adding or translating pages, adding message keys, or touching anything under src/i18n or messages.
+description: next-intl i18n conventions for the portfolio — locale routing, message catalogs (3 locales), translation helpers, locale switcher, and middleware locale detection. Use when adding or translating pages, adding message keys, or touching anything under src/i18n or messages.
 ---
 
 # i18n Skill — next-intl
@@ -12,8 +12,7 @@ description: next-intl i18n conventions for the portfolio — locale routing, me
   `usePathname`, `redirect`). Always import navigation from here.
 - `src/i18n/request.ts` — server request config; loads `messages/<locale>.json`.
 - `messages/<locale>.json` — translation catalogs at the **repo root**, one per
-  locale: `en, es, fr, it, pt, ru, ja, ko, zh, ar, hi, de` (`en` is the source
-  of truth).
+  locale: `en, es, zh` (`en` is the source of truth).
 - `src/app/layout.tsx` — wraps the tree in `NextIntlClientProvider`.
 - `src/app/[locale]/layout.tsx` — `generateStaticParams` + `setRequestLocale`.
 - `src/middleware.ts` — locale detection + redirect.

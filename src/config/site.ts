@@ -18,23 +18,14 @@ export const siteConfig = {
 
   // i18n — mirrors src/i18n/routing.ts (harness-enforced).
   defaultLocale: 'en',
-  locales: ['en', 'es', 'fr', 'it', 'pt', 'ru', 'ja', 'ko', 'zh', 'ar', 'hi', 'de'],
+  locales: ['en', 'es', 'zh'],
 
   // Social cards.
   ogImage: '/og-image.png',
   ogLocaleMap: {
     en: 'en_US',
     es: 'es_ES',
-    fr: 'fr_FR',
-    it: 'it_IT',
-    pt: 'pt_BR',
-    ru: 'ru_RU',
-    ja: 'ja_JP',
-    ko: 'ko_KR',
     zh: 'zh_CN',
-    ar: 'ar_AR',
-    hi: 'hi_IN',
-    de: 'de_DE',
   },
   twitter: '@HUMBLEFOOL',
 

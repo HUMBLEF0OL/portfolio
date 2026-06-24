@@ -53,7 +53,7 @@ Commit discipline (ACID) lives in [`VERIFICATION.md`](VERIFICATION.md) →
 
 1. **Describe** the feature to your AI tool.
 2. **Scaffold** using the scaffold agent — generates the section/component,
-   wires i18n keys across all 12 locales, and adds metadata where relevant.
+   wires i18n keys across all 3 locales, and adds metadata where relevant.
 3. **Review** the generated code — naming, Server/Client split, edge cases.
 4. **Validate** using the validator agent — convention, i18n, security checks.
 5. **Test** — add/verify unit (vitest) and, for flows, e2e (playwright) tests.
@@ -78,11 +78,11 @@ map, and feature-creation order live in [`AGENT_OPS.md`](AGENT_OPS.md).
 
 ## Testing Strategy
 
-| Type      | Location                          | When         |
-| --------- | --------------------------------- | ------------ |
-| Unit      | `src/**/*.test.{ts,tsx}`          | Every commit |
-| Component | `src/**/*.test.tsx`               | Every commit |
-| E2E       | `e2e/**/*.spec.ts`                | Pre-merge    |
+| Type      | Location                 | When         |
+| --------- | ------------------------ | ------------ |
+| Unit      | `src/**/*.test.{ts,tsx}` | Every commit |
+| Component | `src/**/*.test.tsx`      | Every commit |
+| E2E       | `e2e/**/*.spec.ts`       | Pre-merge    |
 
 Unit/component tests run on Vitest + Testing Library (`npm run test:run`); E2E
 runs on Playwright (`npm run test:e2e`). Verification commands by phase live in

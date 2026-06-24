@@ -1,6 +1,6 @@
 # src/i18n — Internationalization (next-intl)
 
-- `routing.ts` — the 12 locales and `defaultLocale` (`defineRouting`). Source of
+- `routing.ts` — the 3 locales (en, es, zh) and `defaultLocale` (`defineRouting`). Source of
   truth for the locale list; `src/config/site.ts` must mirror it.
 - `request.ts` — server request config; loads `messages/<locale>.json`.
 - `navigation.ts` — locale-aware `Link`, `redirect`, `useRouter`,
