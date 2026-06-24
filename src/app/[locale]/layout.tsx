@@ -1,6 +1,7 @@
 import Footer from '@/block/Footer'
 import Header from '@/block/Header'
 import { EasterEggs } from '@/components/easter-egg'
+import { LocaleHtml } from '@/components/op/LocaleHtml'
 import { NeuralGridFX } from '@/components/op/NeuralGridFX'
 import { routing } from '@/i18n/routing'
 import { hasLocale } from 'next-intl'
@@ -28,6 +29,7 @@ const layout = async (props: LayoutProps) => {
 
   return (
     <div className="bg-op-base relative z-[1] flex min-h-screen w-full flex-col">
+      <LocaleHtml />
       <NeuralGridFX />
       <Header />
       <main className="relative z-[1] w-full flex-1">{props.children}</main>

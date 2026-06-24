@@ -51,6 +51,13 @@ _Completed and verified work. Add a date and a one-line summary per entry._
 > `getMessages()` + indexed access instead. Verified: `typecheck`, `lint` 0
 > errors, `test:run` 4/4, `build` SSG **140/140 pages across 12 locales**.
 
+> `2026-06-24` — RTL `lang`/`dir`: the root layout sits above `[locale]` so it
+> can't resolve a per-page locale during static rendering — added a small client
+> `LocaleHtml` corrector (in the `[locale]` layout) that sets
+> `document.documentElement.lang`/`dir` from `useLocale()`. Verified at runtime
+> with Playwright: `/ar` → `lang="ar" dir="rtl"` + Arabic copy, `/de` → `ltr` +
+> German copy, titles localized. Build SSG 140/140.
+
 > `2026-06-24` — Committed a pre-existing, uncommitted working-tree "easter-egg"
 > feature as its own commit (not part of the i18n effort, preserved so the i18n
 > `Header` migration lands on a clean base): `src/components/easter-egg.tsx`,

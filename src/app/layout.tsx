@@ -3,6 +3,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Anton, Chakra_Petch, JetBrains_Mono, Oxanium } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
+import { getLocale } from 'next-intl/server'
 import { siteConfig } from '@/config/site'
 
 const chakra = Chakra_Petch({
@@ -81,12 +82,14 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode
-  params: Promise<{ locale: string }>
 }>) {
-  const { locale } = await params
+  // The root layout sits above the [locale] segment, so neither `params` nor
+  // `getLocale()` resolves a per-page locale here during static rendering.
+  // Render a stable baseline; <LocaleHtml> (in the [locale] layout, which knows
+  // the locale) corrects `lang`/`dir` on the client per locale.
+  const locale = (await getLocale()) || 'en'
   const dir = locale === 'ar' ? 'rtl' : 'ltr'
 
   return (
