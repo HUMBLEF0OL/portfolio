@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import type { Locale } from 'next-intl'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
+import type { CommonContent } from '@/types/content'
 import { siteConfig } from '@/config/site'
 import Hero from '@/block/op/Hero'
 import Ticker from '@/block/op/Ticker'
@@ -15,7 +16,6 @@ import Engagement from '@/block/op/Engagement'
 import Contact from '@/block/op/Contact'
 import { CursorHUD } from '@/components/op/CursorHUD'
 import { MobileCTA } from '@/components/op/MobileCTA'
-import site from '@/data/site.json'
 
 const base = siteConfig.url.replace(/\/$/, '')
 
@@ -40,9 +40,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function HomePage({ params }: PageProps) {
   const { locale } = await params
   setRequestLocale(locale)
+  const messages = await getMessages()
+  const common = messages.Common as CommonContent
   return (
     <>
-      <CursorHUD label={site.availability.hudLabel} />
+      <CursorHUD label={common.homeHudLabel} />
       <Hero />
       <Ticker />
       <StatBar />

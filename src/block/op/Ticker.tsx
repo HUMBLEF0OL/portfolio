@@ -1,6 +1,9 @@
+import { getMessages } from 'next-intl/server'
 import { Marquee } from '@/components/op/Marquee'
-import site from '@/data/site.json'
+import type { TickerContent } from '@/types/content'
 
-export default function Ticker() {
-  return <Marquee items={site.ticker.items} />
+export default async function Ticker() {
+  const messages = await getMessages()
+  const ticker = messages.Ticker as TickerContent
+  return <Marquee items={ticker.items} />
 }

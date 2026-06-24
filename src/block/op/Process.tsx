@@ -1,9 +1,11 @@
+import { getMessages } from 'next-intl/server'
 import { Reveal } from '@/components/op/Reveal'
 import { GlitchText } from '@/components/op/GlitchText'
-import process from '@/data/process.json'
+import type { ProcessContent } from '@/types/content'
 
-export default function Process() {
-  const { section, phases } = process
+export default async function Process() {
+  const messages = await getMessages()
+  const { section, phases } = messages.Process as ProcessContent
 
   return (
     <section className="bg-op-elev-alt">

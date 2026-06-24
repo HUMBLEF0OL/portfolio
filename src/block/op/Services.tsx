@@ -1,11 +1,12 @@
-import services from '@/data/services.json'
+import { getMessages } from 'next-intl/server'
 import { cn } from '@/lib/utils'
 import { Reveal } from '@/components/op/Reveal'
 import { GlitchText } from '@/components/op/GlitchText'
+import type { ServicesContent } from '@/types/content'
 
-const { section, services: items } = services
-
-export default function Services() {
+export default async function Services() {
+  const messages = await getMessages()
+  const { section, items } = messages.Services as ServicesContent
   return (
     <section id="services" className="border-op-line border-b">
       <div

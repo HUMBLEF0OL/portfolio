@@ -1,9 +1,11 @@
-import site from '@/data/site.json'
+import { getMessages } from 'next-intl/server'
 import { Reveal } from '@/components/op/Reveal'
 import { GlitchText } from '@/components/op/GlitchText'
+import type { ProblemContent } from '@/types/content'
 
-export default function Problem() {
-  const { eyebrow, kicker, heading, body } = site.problem
+export default async function Problem() {
+  const messages = await getMessages()
+  const { eyebrow, kicker, heading, body } = messages.Problem as ProblemContent
 
   return (
     <section className="border-op-line border-b">

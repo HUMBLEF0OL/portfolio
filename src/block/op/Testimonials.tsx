@@ -1,25 +1,19 @@
 import Image from 'next/image'
+import { getMessages } from 'next-intl/server'
 
 import { Reveal } from '@/components/op/Reveal'
 import { cn } from '@/lib/utils'
+import type { TestimonialsContent } from '@/types/content'
 
-import t from '@/data/testimonials.json'
+export async function Testimonials() {
+  const messages = await getMessages()
+  const data = messages.Testimonials as TestimonialsContent
 
-type Quote = {
-  text: string
-  name: string
-  role: string
-  avatar?: string | null
-  verified?: boolean
-}
-type Brand = { name: string; verified?: boolean }
-
-export function Testimonials() {
   // Only render entries explicitly marked verified (real, consented). Drafts
   // (verified:false) stay hidden, and the whole section hides until at least
-  // one verified entry exists. Casts avoid `never[]` inference on empty arrays.
-  const quotes = (t.quotes as Quote[]).filter((q) => q.verified)
-  const trustedBy = (t.trustedBy as Brand[]).filter((b) => b.verified)
+  // one verified entry exists.
+  const quotes = data.quotes.filter((q) => q.verified)
+  const trustedBy = data.trustedBy.filter((b) => b.verified)
 
   if (quotes.length === 0 && trustedBy.length === 0) {
     return null
@@ -33,7 +27,8 @@ export function Testimonials() {
       >
         <Reveal>
           <p className="text-op-dim font-mono text-[0.8125rem] tracking-[0.16em] uppercase">
-            <span className="text-op-magenta">{t.section.eyebrow}</span> {'>'} {t.section.kicker}
+            <span className="text-op-magenta">{data.section.eyebrow}</span> {'>'}{' '}
+            {data.section.kicker}
           </p>
         </Reveal>
 
@@ -80,7 +75,7 @@ export function Testimonials() {
           <Reveal delay={80}>
             <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-4">
               <p className="text-op-dim font-mono text-[0.8125rem] tracking-[0.16em] uppercase">
-                {t.section.trustedByLabel}
+                {data.section.trustedByLabel}
               </p>
               <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
                 {trustedBy.map((brand, i) => (

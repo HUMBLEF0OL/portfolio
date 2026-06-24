@@ -1,19 +1,23 @@
 'use client'
 
 import { useState } from 'react'
+import { useMessages } from 'next-intl'
 
 import { GlitchText } from '@/components/op/GlitchText'
 import { cn } from '@/lib/utils'
-import site from '@/data/site.json'
-
-const { contact, availability, social } = site
-const { form } = contact
+import config from '@/data/config.json'
+import type { CommonContent, ContactContent } from '@/types/content'
 
 const labelClass = 'font-mono text-[0.6875rem] uppercase tracking-[0.1em] text-op-dim mb-1.5 block'
 const fieldClass =
   'bg-op-input shadow-[inset_0_0_0_1px_var(--color-op-line-strong)] px-3 py-3 text-op-text text-[0.9375rem] outline-none focus:shadow-[inset_0_0_0_1px_var(--color-op-yellow)] w-full'
 
 export default function Contact() {
+  const messages = useMessages()
+  const contact = messages.Contact as ContactContent
+  const availability = (messages.Common as CommonContent).availability
+  const social = config.social
+  const form = contact.form
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [projectType, setProjectType] = useState(form.projectTypes[0])
@@ -83,17 +87,17 @@ export default function Contact() {
           {/* RIGHT */}
           <div className="bg-op-elev clip-notch-20 p-6 shadow-[inset_0_0_0_1px_var(--color-op-line-strong)] sm:p-[34px]">
             <a
-              href={contact.calLink}
+              href={config.contact.calLink}
               target="_blank"
               rel="noopener noreferrer"
               className="clip-notch-12 bg-op-yellow text-op-base mb-6 flex w-full items-center justify-center gap-2 px-[26px] py-4 font-mono text-[0.875rem] font-bold tracking-[0.06em] uppercase transition-[filter,transform] hover:translate-y-[-2px] hover:[filter:drop-shadow(0_0_16px_rgba(252,238,10,0.6))]"
             >
-              Book a 20-min call ▸
+              {contact.bookCall} ▸
             </a>
 
             <div className="mb-6 flex items-center gap-3">
               <span className="bg-op-line-strong h-px flex-1" />
-              <span className="text-op-dim font-mono text-[0.75rem]">OR SEND A NOTE</span>
+              <span className="text-op-dim font-mono text-[0.75rem]">{contact.orDivider}</span>
               <span className="bg-op-line-strong h-px flex-1" />
             </div>
 
@@ -101,27 +105,27 @@ export default function Contact() {
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label htmlFor="op-name" className={labelClass}>
-                    Name
+                    {contact.fields.name}
                   </label>
                   <input
                     id="op-name"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Jane Doe"
+                    placeholder={contact.placeholders.name}
                     className={fieldClass}
                   />
                 </div>
                 <div>
                   <label htmlFor="op-email" className={labelClass}>
-                    Email
+                    {contact.fields.email}
                   </label>
                   <input
                     id="op-email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="jane@company.com"
+                    placeholder={contact.placeholders.email}
                     className={fieldClass}
                   />
                 </div>
@@ -130,7 +134,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label htmlFor="op-project" className={labelClass}>
-                    Project type
+                    {contact.fields.projectType}
                   </label>
                   <select
                     id="op-project"
@@ -147,7 +151,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="op-budget" className={labelClass}>
-                    Budget tier
+                    {contact.fields.budget}
                   </label>
                   <select
                     id="op-budget"
@@ -166,7 +170,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="op-timeline" className={labelClass}>
-                  Timeline
+                  {contact.fields.timeline}
                 </label>
                 <select
                   id="op-timeline"
@@ -184,14 +188,14 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="op-message" className={labelClass}>
-                  What are you building?
+                  {contact.fields.message}
                 </label>
                 <textarea
                   id="op-message"
                   rows={3}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="A one-liner is plenty to start."
+                  placeholder={contact.placeholders.message}
                   className={cn(fieldClass, 'resize-none')}
                 />
               </div>

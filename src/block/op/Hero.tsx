@@ -1,12 +1,14 @@
 'use client'
 
+import { useMessages } from 'next-intl'
 import { cn } from '@/lib/utils'
 import { HeroCanvas } from '@/components/op/HeroCanvas'
 import { ScrambleText } from '@/components/op/ScrambleText'
-import site from '@/data/site.json'
+import type { HeroContent } from '@/types/content'
 
 export default function Hero() {
-  const { hero } = site
+  const messages = useMessages()
+  const hero = messages.Hero as HeroContent
 
   return (
     <header className="border-op-line relative flex min-h-screen flex-col justify-between overflow-hidden border-b">

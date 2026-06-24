@@ -1,6 +1,7 @@
+import { getMessages } from 'next-intl/server'
 import { CountUp } from '@/components/op/CountUp'
 import { cn } from '@/lib/utils'
-import site from '@/data/site.json'
+import type { StatItem } from '@/types/content'
 
 type Accent = 'foreground' | 'highlight' | 'primary'
 
@@ -10,8 +11,9 @@ const ACCENT_CLASS: Record<Accent, string> = {
   primary: 'text-op-cyan',
 }
 
-export default function StatBar() {
-  const stats = site.stats
+export default async function StatBar() {
+  const messages = await getMessages()
+  const stats = messages.Stats as StatItem[]
 
   return (
     <section className="border-op-line bg-op-line border-b">

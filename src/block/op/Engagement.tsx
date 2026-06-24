@@ -1,13 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import { useMessages } from 'next-intl'
 import { cn } from '@/lib/utils'
 import { Reveal } from '@/components/op/Reveal'
 import { GlitchText } from '@/components/op/GlitchText'
-import pricing from '@/data/pricing.json'
-import faq from '@/data/faq.json'
+import type { EngagementContent } from '@/types/content'
 
 export default function Engagement() {
+  const messages = useMessages()
+  const { pricing, faq } = messages.Engagement as EngagementContent
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (

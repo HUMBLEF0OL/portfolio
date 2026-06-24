@@ -1,12 +1,14 @@
 import Image from 'next/image'
+import { getMessages } from 'next-intl/server'
 import { cn } from '@/lib/utils'
 import { Reveal } from '@/components/op/Reveal'
 import { GlitchText } from '@/components/op/GlitchText'
-import about from '@/data/about.json'
+import config from '@/data/config.json'
+import type { AboutContent } from '@/types/content'
 
-const dossier = about.homepageDossier
-
-export default function AboutBlock({ locale }: { locale: string }) {
+export default async function AboutBlock({ locale }: { locale: string }) {
+  const messages = await getMessages()
+  const dossier = (messages.About as AboutContent).homepageDossier
   const bioHref = '/' + locale + dossier.bioLink.href
 
   return (
@@ -25,7 +27,7 @@ export default function AboutBlock({ locale }: { locale: string }) {
             <div className="bg-op-elev clip-notch-20 relative p-3 shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]">
               <div className="relative">
                 <Image
-                  src="/avatar.png"
+                  src={config.avatar.src}
                   alt={dossier.name}
                   width={600}
                   height={440}

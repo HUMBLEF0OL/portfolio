@@ -24,7 +24,8 @@ all copy into English-only `src/data/*.json`, leaving only `Seo`/`404`
 localized. Consolidating all user-facing copy back onto next-intl messages
 (spec: `docs/superpowers/specs/2026-06-23-i18n-content-reinternationalization-design.md`,
 plan: `docs/superpowers/plans/2026-06-23-i18n-content-reinternationalization.md`).
-Foundation landed; locale translation + component migration in progress.
+Implementation complete and verified (build SSG ×12 locales); RTL visual
+mirroring polish is a tracked follow-up (spec non-goal).
 
 > **Verification note:** local `npm run build` cannot complete its "Collecting
 > page data" worker phase under **Node v26.3.0** (Next 15.3.4 emits a
@@ -37,6 +38,18 @@ Foundation landed; locale translation + component migration in progress.
 ## Done
 
 _Completed and verified work. Add a date and a one-line summary per entry._
+
+> `2026-06-24` — i18n re-internationalization complete (all 12 locales). Migrated
+> every section + route off `data/*.json` onto next-intl messages via
+> `useMessages()`/`getMessages()` typed against `en.json` (`AppConfig.Messages`
+> augmentation in `src/global.ts`); deleted the 7 migrated data files. Translated
+> the 11 non-en locales (parallel workflow, one agent per locale) honoring the
+> keep-verbatim glossary; `messages` key-parity test green (all 12 mirror
+> `en.json`). Added `dir="rtl"` for Arabic. Note: namespace-positional
+> `getTranslations('Ns')` is unusable here (the top-level `Stats` array collapses
+> next-intl's namespace-key typing) — components use `useMessages()`/
+> `getMessages()` + indexed access instead. Verified: `typecheck`, `lint` 0
+> errors, `test:run` 4/4, `build` SSG **140/140 pages across 12 locales**.
 
 > `2026-06-24` — Committed a pre-existing, uncommitted working-tree "easter-egg"
 > feature as its own commit (not part of the i18n effort, preserved so the i18n
@@ -128,12 +141,8 @@ _Completed and verified work. Add a date and a one-line summary per entry._
 
 > **WIP=1** — finish and verify one task before activating the next.
 
-> **i18n re-internationalization** — remaining: translate the 11 non-en locales
-> to mirror `en.json` (parity test goes green), migrate the remaining sections
-> (`Hero`, `Ticker`, `StatBar`, `Problem`, `Services`, `Process`, `Engagement`,
-> `Testimonials`, `Contact`, `Header`, `Footer`, `MobileCTA`, home + about
-> routes) off `data/*.json` onto messages, delete the migrated data files, add
-> RTL `dir` for Arabic, then full verification.
+> i18n: optional follow-ups — native-speaker review of machine translations, and
+> full RTL visual mirroring of the operator layout for Arabic (spec non-goal).
 
 > External auditor review of the harness (the goal's definition of done). Local
 > verification is fully green; no further implementation pending.

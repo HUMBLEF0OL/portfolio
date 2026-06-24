@@ -6,7 +6,814 @@
   "Seo": {
     "home": {
       "title": "HUMBLEF0OL // Architetto di Interfacce Digitali",
-      "description": "Entra nella Griglia — la frontiera digitale di HUMBLEF0OL. Interfacce cibernetiche, codice modulare ed esperienze glitch."
+      "description": "Entra nella Griglia — la frontiera digitale di HUMBLEF0OL. Interfacce cibernetiche, codice modulare ed esperienze plasmate dal glitch."
+    }
+  },
+  "Common": {
+    "availability": {
+      "label": "AVAILABLE Q3 2026",
+      "statusLine": "STATUS: AVAILABLE // Q3 2026",
+      "hudLabel": "SYS ONLINE"
+    },
+    "mobileCta": { "title": "Chiamata introduttiva gratuita di 20 minuti", "button": "Prenota" },
+    "homeHudLabel": "SYS ONLINE"
+  },
+  "Nav": {
+    "links": [
+      { "label": "Lavori", "href": "#work" },
+      { "label": "Servizi", "href": "#services" },
+      { "label": "Chi sono", "href": "/about" }
+    ],
+    "cta": { "label": "Prenota una chiamata", "href": "#contact" }
+  },
+  "Hero": {
+    "eyebrow": "// LOADING_OPERATOR.exe",
+    "headlineLines": ["Realizzo le funzionalità", "su cui la tua roadmap è"],
+    "headlineHighlight": "BLOCCATA",
+    "subhead": "App web full-stack, funzionalità AI / LLM e strumenti di sviluppo interni. Un solo ingegnere senior, dall'inizio alla fine. Nessun sovraccarico d'agenzia, nessuna tassa di coordinamento.",
+    "statusRow": {
+      "left": "▸ SENIOR PRODUCT ENGINEER",
+      "center": "5+ YRS // FULL-STACK · AI · TOOLING",
+      "right": "AVAILABLE Q3 2026"
+    },
+    "ctas": [
+      { "label": "Prenota una chiamata di 20 minuti", "href": "#contact", "variant": "primary" },
+      { "label": "Guarda i lavori recenti", "href": "#work", "variant": "secondary" }
+    ]
+  },
+  "Ticker": {
+    "items": [
+      "Sviluppo di prodotti full-stack",
+      "Funzionalità AI e LLM",
+      "Ingegneria frontend",
+      "Strumenti di sviluppo e automazione",
+      "Consegnato, non bloccato"
+    ]
+  },
+  "Stats": [
+    {
+      "value": 12,
+      "decimals": 0,
+      "prefix": "",
+      "suffix": "+",
+      "label": "Prodotti consegnati",
+      "accent": "foreground"
+    },
+    {
+      "value": 40,
+      "decimals": 0,
+      "prefix": "",
+      "suffix": "%",
+      "label": "Tempo di caricamento ridotto",
+      "accent": "highlight"
+    },
+    {
+      "value": 5,
+      "decimals": 0,
+      "prefix": "",
+      "suffix": "+",
+      "label": "Anni di sviluppo",
+      "accent": "primary"
+    },
+    {
+      "value": null,
+      "display": "1/1",
+      "label": "Senior, dall'inizio alla fine",
+      "accent": "foreground"
+    }
+  ],
+  "Problem": {
+    "eyebrow": "// SYS.01",
+    "kicker": "THE_PROBLEM",
+    "heading": "La tua roadmap è piena. La funzionalità che sposta la metrica continua a slittare.",
+    "body": "Non ti serve un altro collaboratore da gestire. Ti serve qualcuno di senior che sappia definirla, costruirla, consegnarla e restituirtela funzionante, su tutto lo stack, comprese le parti di AI e tooling che la maggior parte delle persone evita."
+  },
+  "Services": {
+    "section": {
+      "eyebrow": "// SYS.02",
+      "kicker": "CAPABILITIES",
+      "heading": "Quattro tipi di lavoro. Un solo ingegnere.",
+      "intro": "Nessuna frattura di passaggio tra l'app, l'AI e il tooling, perché è la stessa persona a costruire ognuna di esse."
+    },
+    "items": [
+      {
+        "number": "01",
+        "title": "Sviluppo di prodotti full-stack",
+        "description": "Dall'idea all'app web consegnata: frontend, backend, dati e deploy. Restituita funzionante.",
+        "tags": ["Next.js", "Node", "Postgres", "TypeScript"]
+      },
+      {
+        "number": "02",
+        "title": "Funzionalità AI / LLM",
+        "description": "RAG, chatbot e funzionalità AI che arrivano davvero in produzione, non una demo che si rompe.",
+        "tags": ["OpenAI", "LangChain", "RAG", "Supabase"]
+      },
+      {
+        "number": "03",
+        "title": "Ingegneria frontend / UI",
+        "description": "Interfacce curate, veloci e accessibili: dal design al codice, con i dettagli che si percepiscono come senior.",
+        "tags": ["React", "Tailwind", "Perf", "a11y"]
+      },
+      {
+        "number": "04",
+        "title": "Strumenti di sviluppo e automazione",
+        "description": "CLI, strumenti per git e automazione delle build che fanno risparmiare ore al tuo team ogni settimana.",
+        "tags": ["Node", "TypeScript", "CLI"]
+      }
+    ]
+  },
+  "Work": {
+    "eyebrow": "// SYS.03",
+    "kicker": "MISSION_LOG",
+    "heading": "Problemi reali, risolti.",
+    "feedLabel": "FEED//01",
+    "hint": "▸ Passa sopra un obiettivo per l'anteprima · clicca per aprire il dossier"
+  },
+  "Testimonials": {
+    "section": {
+      "eyebrow": "// SYS.05",
+      "kicker": "TRANSMISSION_LOG",
+      "trustedByLabel": "▸ Hanno scelto me"
+    },
+    "quotes": [
+      {
+        "text": "Leggo un'enorme quantità di articoli di ricerca, e Felis ha cambiato il mio modo di lavorare. Le passo i miei articoli e faccio domande su tutti contemporaneamente invece di sfogliarli uno per uno, e lei mi indica il passaggio giusto.",
+        "name": "Vanshika Tyagi",
+        "role": "Ricercatrice",
+        "avatar": null,
+        "verified": false
+      }
+    ],
+    "trustedBy": []
+  },
+  "Process": {
+    "section": {
+      "eyebrow": "// SYS.06",
+      "kicker": "MISSION_PHASES",
+      "heading": "A basso rischio per progettazione. Nessuna scatola nera."
+    },
+    "phases": [
+      {
+        "number": "01",
+        "title": "Chiamata introduttiva",
+        "description": "20 minuti per inquadrare il tuo problema e vedere se c'è affinità. Gratis, senza impegno."
+      },
+      {
+        "number": "02",
+        "title": "Proposta e perimetro",
+        "description": "Perimetro, tempistiche e prezzo fissati in anticipo. Sai esattamente cosa ricevi."
+      },
+      {
+        "number": "03",
+        "title": "Sviluppo in chiaro",
+        "description": "Demo settimanali, una linea diretta con me, nessuna scatola nera. Vedi i progressi ogni settimana."
+      },
+      {
+        "number": "04",
+        "title": "Consegna e passaggio",
+        "description": "Testato, documentato, funzionante. Restituito al tuo team. Nessun vincolo."
+      }
+    ]
+  },
+  "Engagement": {
+    "pricing": {
+      "section": {
+        "eyebrow": "// SYS.07",
+        "kicker": "ENGAGEMENT",
+        "heading": "Tre modi di lavorare insieme."
+      },
+      "tiers": [
+        {
+          "name": "Sprint a perimetro fisso",
+          "price": "$3k",
+          "priceUnit": "iniziale",
+          "description": "Una funzionalità o una correzione definita, inquadrata e consegnata in 1–2 settimane. Ideale per una cosa chiara.",
+          "features": ["Prezzo e tempistiche fissi", "Testato e documentato", "Passaggio completo"],
+          "featured": false
+        },
+        {
+          "name": "Sviluppo di progetto",
+          "price": "$12k",
+          "priceUnit": "iniziale",
+          "description": "Dall'idea al prodotto lanciato in 4–10 settimane. Full-stack, AI e tooling, dall'inizio alla fine.",
+          "features": [
+            "Demo settimanali",
+            "Linea diretta con me",
+            "Passaggio pronto per la produzione"
+          ],
+          "featured": true,
+          "badge": "★ Il più richiesto"
+        },
+        {
+          "name": "Retainer continuativo",
+          "price": "$5k",
+          "priceUnit": "/mese",
+          "description": "Capacità senior su richiesta. Un blocco di tempo fisso ogni mese per qualunque cosa sposti la metrica.",
+          "features": ["Pianificazione prioritaria", "Perimetro flessibile", "Mese per mese"],
+          "featured": false
+        }
+      ]
+    },
+    "faq": {
+      "section": { "heading": "Le domande che probabilmente ti stai facendo." },
+      "items": [
+        {
+          "question": "Come funziona davvero lavorare con un ingegnere solo?",
+          "answer": "Hai un unico punto di contatto senior, io, dall'inquadramento al passaggio. Demo settimanali, una linea diretta e un perimetro fisso fanno sì che non ci sia nessun sovraccarico di coordinamento di un'agenzia o di una nuova assunzione."
+        },
+        {
+          "question": "Qual è la tua disponibilità e la tempistica tipica?",
+          "answer": "Prendo un piccolo numero di progetti alla volta. Gli sprint iniziano entro 1–2 settimane; gli sviluppi di progetto durano 4–10 settimane a seconda del perimetro. La disponibilità attuale è mostrata in tempo reale nella barra di navigazione."
+        },
+        {
+          "question": "Chi possiede il codice e la proprietà intellettuale?",
+          "answer": "Tu. Tutto ciò che costruisco è tuo: testato, documentato e restituito al tuo team senza alcun vincolo."
+        },
+        {
+          "question": "Cosa succede se il perimetro cambia a progetto in corso?",
+          "answer": "Lo ridefiniamo in chiaro. Ti segnalo l'impatto su tempistiche e prezzo prima di fare il lavoro, senza mai fatture a sorpresa."
+        },
+        {
+          "question": "Come comunichiamo durante lo sviluppo?",
+          "answer": "Uno Slack condiviso o il canale che preferisci, più una demo settimanale. Non ti chiederai mai a che punto siamo."
+        }
+      ]
+    }
+  },
+  "Contact": {
+    "eyebrow": "// SYS.08",
+    "kicker": "ESTABLISH_UPLINK",
+    "heading": "Raccontami cosa stai cercando di costruire.",
+    "subhead": "Prenota una chiamata introduttiva gratuita di 20 minuti, o lascia un messaggio. Rispondo entro 1 giorno lavorativo.",
+    "points": [
+      "Chiamata introduttiva gratuita e senza impegno",
+      "Risposta entro 1 giorno lavorativo",
+      "Parlerai con me, non con un commerciale"
+    ],
+    "form": {
+      "projectTypes": [
+        "Sviluppo full-stack",
+        "Funzionalità AI / LLM",
+        "Frontend / UI",
+        "Strumento di sviluppo"
+      ],
+      "budgetTiers": ["$3k – $12k", "$12k – $30k", "$30k+", "Retainer"],
+      "timelines": ["Il prima possibile", "1–3 mesi", "3–6 mesi", "Sto solo esplorando"],
+      "submitLabel": "Trasmetti"
+    },
+    "bookCall": "Prenota una chiamata di 20 minuti",
+    "orDivider": "OPPURE LASCIA UN MESSAGGIO",
+    "fields": {
+      "name": "Nome",
+      "email": "Email",
+      "projectType": "Tipo di progetto",
+      "budget": "Fascia di budget",
+      "timeline": "Tempistica",
+      "message": "Cosa stai costruendo?"
+    },
+    "placeholders": {
+      "name": "Mario Rossi",
+      "email": "mario@azienda.com",
+      "message": "Una riga è più che sufficiente per iniziare."
+    }
+  },
+  "Footer": {
+    "blurb": "Ingegnere di prodotto senior. Full-stack, AI e il tooling che ci ruota attorno. Consegnato.",
+    "cta": { "label": "Prenota una chiamata", "href": "#contact" },
+    "copyright": "© 2026 AMIT RANA",
+    "endLabel": "END OF TRANSMISSION",
+    "wordmark": "AMIT RANA"
+  },
+  "About": {
+    "homepageDossier": {
+      "eyebrow": "// SYS.04",
+      "kicker": "OPERATOR_FILE",
+      "name": "Amit Rana",
+      "class": "CLASS: SENIOR PRODUCT ENGINEER // 5+ YRS",
+      "blurb": "Lavoro dall'inizio alla fine: l'app, l'AI e il tooling che tiene tutto insieme. Mantengo una lista clienti ristretta così ogni progetto riceve attenzione senior dall'inquadramento al passaggio. Niente junior, nessuna tassa di coordinamento.",
+      "skillBars": [
+        { "label": "Full-stack", "fill": 9, "max": 10 },
+        { "label": "AI / LLM", "fill": 8, "max": 10 },
+        { "label": "Frontend", "fill": 9, "max": 10 },
+        { "label": "Tooling / Ops", "fill": 7, "max": 10 }
+      ],
+      "ossChip": { "label": "OSS", "name": "Hookpilot", "metric": "50k+ DL/wk" },
+      "bioLink": { "label": "Leggi la biografia completa", "href": "/about" }
+    },
+    "page": {
+      "eyebrow": "// SYS.00",
+      "kicker": "OPERATOR_FILE",
+      "hudLabel": "OPERATOR_FILE",
+      "intro": {
+        "headline": "Cinque anni di consegne.",
+        "headlineHighlight": "Una sola persona con cui parlare.",
+        "subhead": "Sono Amit Rana, un ingegnere di prodotto senior che trasforma roadmap bloccate in prodotti consegnati, dall'inizio alla fine."
+      },
+      "stats": [
+        { "value": 5, "decimals": 0, "prefix": "", "suffix": "+", "label": "Anni di consegne" },
+        { "value": 12, "decimals": 0, "prefix": "", "suffix": "+", "label": "Prodotti consegnati" },
+        {
+          "value": 50,
+          "decimals": 0,
+          "prefix": "",
+          "suffix": "k+",
+          "label": "Download settimanali · Hookpilot"
+        },
+        {
+          "value": 4,
+          "decimals": 0,
+          "prefix": "",
+          "suffix": "",
+          "label": "Discipline, un solo ingegnere"
+        }
+      ],
+      "dossier": {
+        "eyebrow": "// SYS.01",
+        "kicker": "DOSSIER",
+        "paragraphs": [
+          "Per cinque anni ho lavorato lungo l'intero arco dell'ingegneria di prodotto: l'app, l'AI e il tooling che tiene tutto insieme. Gran parte di questa ampiezza l'ho guadagnata consegnando sotto scadenze reali, non collezionando certificazioni.",
+          "Ho iniziato come ingegnere frontend ossessionato dalla cura e dalle prestazioni, sono entrato a fondo nel full-stack e nell'infrastruttura man mano che i prodotti che costruivo iniziavano a scalare, e ho passato gli ultimi anni a costruire funzionalità AI in produzione quando \"basta chiamare l'API\" si rompeva ancora in una dozzina di modi silenziosi.",
+          "Oggi lavoro come ingegnere senior frazionario per team in fase iniziale finanziati. Mantengo deliberatamente una lista clienti ristretta, così ogni progetto riceve attenzione senior dall'inquadramento al passaggio. Niente junior che imparano in sordina a spese del tuo budget, nessuna tassa di coordinamento."
+        ]
+      },
+      "doctrine": {
+        "eyebrow": "// SYS.02",
+        "kicker": "DOCTRINE",
+        "values": [
+          {
+            "title": "Risultati invece di output",
+            "description": "Inquadro il lavoro sulla metrica che stai cercando di spostare, non sull'elenco delle funzionalità."
+          },
+          {
+            "title": "Sviluppo in chiaro",
+            "description": "Demo settimanali e una linea diretta. Sai sempre a che punto siamo."
+          },
+          {
+            "title": "Senior, dall'inizio alla fine",
+            "description": "Chi lo inquadra è la stessa persona che lo consegna."
+          },
+          {
+            "title": "Nessun vincolo",
+            "description": "Testato, documentato e restituito. Il codice è tuo."
+          }
+        ]
+      },
+      "inTheOpen": {
+        "eyebrow": "// SYS.03",
+        "kicker": "IN_THE_OPEN",
+        "name": "Hookpilot",
+        "metric": "50k+ DL/wk",
+        "description": "Un gestore di hook Git open-source che rende automatici i controlli giusti prima ancora che un commit raggiunga la CI. Ora con oltre 50k download settimanali su npm.",
+        "link": {
+          "label": "github.com/HUMBLEF0OL/hook-pilot",
+          "href": "https://github.com/HUMBLEF0OL/hook-pilot"
+        }
+      },
+      "cta": {
+        "heading": "Costruiamo la cosa su cui la tua roadmap è bloccata.",
+        "subhead": "Chiamata introduttiva gratuita di 20 minuti. Rispondo entro 1 giorno lavorativo.",
+        "button": { "label": "Prenota una chiamata di 20 minuti", "href": "/#contact" }
+      }
+    }
+  },
+  "CaseStudyPage": {
+    "private": "Privato",
+    "ctaHeading": "Hai un problema simile?",
+    "ctaButton": "Prenota una chiamata di 20 minuti",
+    "nextLabel": "Prossimo caso studio",
+    "before": "Prima",
+    "after": "Dopo",
+    "linkLabels": { "github": "GitHub", "npm": "npm", "live": "Live" }
+  },
+  "CaseStudies": {
+    "hookpilot": {
+      "name": "Hookpilot",
+      "category": "Strumento di sviluppo · CLI",
+      "tagline": "I team continuavano a saltare controlli pre-commit incoerenti. Ho costruito un gestore di hook Git flessibile che rende automatici i controlli giusti, ora con oltre 50k download settimanali su npm.",
+      "row": {
+        "blurb": "I controlli pre-commit erano lenti, incoerenti e facili da saltare. Un gestore di hook Git open-source che rende automatici i controlli giusti."
+      },
+      "context": "Hookpilot è un gestore di hook Git open-source. Offre una libreria di hook pronti all'uso (linting, formattazione, testing, controlli di sicurezza, validazione dei messaggi di commit, protezione dei branch, controlli sui file di grandi dimensioni) più una CLI interattiva per aggiungerli, ripristinarli, elencarli e rimuoverli.",
+      "problem": {
+        "head": "I controlli pre-commit erano lenti, incoerenti tra le macchine e banalmente saltabili, quindi gli standard venivano applicati solo dopo la CI, molto dopo il commit.",
+        "body": "Ogni progetto reinventava a mano la propria configurazione di hook. Le configurazioni divergevano tra i cloni, i nuovi contributori partivano senza nulla collegato, e un rapido override permetteva a chiunque di aggirare del tutto i controlli.",
+        "before": "Hook artigianali · divergenza tra i cloni · controlli saltati liberamente"
+      },
+      "approach": {
+        "intro": "Ho costruito una CLI zero-config che collega gli hook standard lungo l'intero ciclo di vita di Git da un'unica configurazione versionata, con supporto di prim'ordine per script shell e Node personalizzati.",
+        "cards": [
+          {
+            "heading": "Libreria di hook predefiniti",
+            "body": "Hook pronti all'uso per le attività pre-commit, commit-msg, pre-push, post-merge e post-checkout."
+          },
+          {
+            "heading": "Un'unica configurazione versionata",
+            "body": "hooks-config.json viene committato una volta; ogni clone eredita gli stessi controlli con un singolo init."
+          }
+        ]
+      },
+      "result": {
+        "head": "Un singolo init collega i controlli di tutto il team, e il pacchetto ora registra oltre 50k download settimanali su npm.",
+        "before": [
+          "Configurazione manuale degli hook per ogni repo",
+          "Le configurazioni divergono tra le macchine",
+          "Controlli facili da saltare"
+        ],
+        "after": [
+          "Un solo npx hookpilot init",
+          "Configurazione condivisa e versionata",
+          "50k+ download npm settimanali"
+        ]
+      },
+      "quote": {
+        "text": "Volevo che gli hook fossero la via più facile, non una scocciatura da aggirare. Una configurazione, committata una volta, e tutto il team ha gli stessi controlli.",
+        "role": "Autore e Manutentore, Hookpilot"
+      },
+      "metricLabels": [
+        "Download npm settimanali",
+        "Fasi del ciclo di vita di Git",
+        "File di configurazione per iniziare"
+      ]
+    },
+    "coherence": {
+      "name": "Coherence",
+      "category": "AI / Agentico · Claude Code",
+      "tagline": "La documentazione marcisce nell'istante in cui il codice cambia. Ho costruito un plugin per Claude Code che rileva la deriva della documentazione e propone patch chirurgiche tramite una pipeline LLM validata a due stadi.",
+      "row": {
+        "blurb": "La documentazione marcisce nell'istante in cui il codice cambia. Un plugin per Claude Code che rileva la deriva della documentazione e propone patch chirurgiche validate."
+      },
+      "context": "Coherence gira come hook e slash command di Claude Code. Sorveglia il codice che cambia senza la sua documentazione e propone patch, con ogni superficie distribuibile al team che vive come file committati e senza alcun backend, mai.",
+      "problem": {
+        "head": "La documentazione deriva in silenzio: il codice cambia, la documentazione che lo descrive no, e il divario si scopre solo quando qualcuno ne viene tratto in inganno.",
+        "body": "Chiedere ingenuamente a un LLM di sistemare la documentazione non è sicuro: allucina, riscrive troppo e può essere pilotato da testo iniettato. Non c'era un modo affidabile per lasciare che un agente toccasse la documentazione senza supervisione.",
+        "before": "Deriva della documentazione non rilevata · modifiche LLM cieche e rischiose · nessun auto-apply sicuro"
+      },
+      "approach": {
+        "intro": "Ho diviso il lavoro in una pipeline a due stadi con validazione deterministica tra il modello e il filesystem, e ho vincolato l'auto-apply dietro un registro di fiducia per singolo sviluppatore.",
+        "cards": [
+          {
+            "heading": "Pipeline a due stadi",
+            "body": "Lo Stadio 1 seleziona la fonte canonica; lo Stadio 2 scrive una patch che deve superare i controlli di formato, applicazione, classe di modifica, rapporto di righe, iniezione, allucinazione e asserzioni."
+          },
+          {
+            "heading": "Cancello di fiducia graduale",
+            "body": "Applica automaticamente solo sopra un punteggio di fiducia di 0,85, che decade con un'emivita di 30 giorni, e mai per modifiche distruttive o al frontmatter."
+          }
+        ]
+      },
+      "result": {
+        "head": "Un agente può mantenere la documentazione sincronizzata in sicurezza, con otto motori di validazione e release firmate con cosign tra il modello e il tuo repo.",
+        "before": [
+          "Deriva rilevata dalle persone, in ritardo",
+          "Modifiche LLM cieche, senza protezioni",
+          "Nessuna release verificabile"
+        ],
+        "after": [
+          "Deriva rilevata automaticamente",
+          "Validazione deterministica a 8 motori",
+          "Firmata con cosign senza chiavi, verificabile con Rekor"
+        ]
+      },
+      "quote": {
+        "text": "Non lascio che un modello scriva su un repo solo per fiducia. Ogni patch deve sopravvivere a controlli deterministici prima ancora di approdare.",
+        "role": "Autore e Manutentore, Coherence"
+      },
+      "metricLabels": [
+        "Pipeline LLM validata",
+        "Motori di validazione",
+        "Cancello di fiducia per l'auto-apply"
+      ]
+    },
+    "mcp-sentry": {
+      "name": "mcp-sentry",
+      "category": "Sicurezza · MCP",
+      "tagline": "I server MCP vengono rilasciati con falle di sicurezza silenziose. Ho costruito un linter di analisi statica che copre tutte e otto le categorie della OWASP MCP Top 10 e assegna a un progetto un voto da A a F in CI.",
+      "row": {
+        "blurb": "I server MCP vengono rilasciati con falle di sicurezza silenziose. Un linter di analisi statica che copre tutte e otto le categorie della OWASP MCP Top 10, con voto da A a F in CI."
+      },
+      "context": "mcp-sentry è un linter di sicurezza ad analisi statica per server TypeScript del Model Context Protocol. Si integra con la CI tramite SARIF, commenti sulle PR e un badge pubblico Shields.io.",
+      "problem": {
+        "head": "I server MCP espongono strumenti agli agenti, e uno strumento etichettato male o iniettabile può consegnare a un attaccante l'esecuzione di comandi, senza che nulla lo segnali in revisione.",
+        "body": "Non esisteva un linter consapevole di MCP. Gli scanner generici mancano i rischi specifici di MCP, come uno strumento dal nome di sola lettura che muta lo stato, o input non fidato che fluisce in una chiamata shell attraverso i confini delle funzioni.",
+        "before": "Nessuna scansione consapevole di MCP · rischi di iniezione non segnalati · errata etichettatura dell'intento invisibile"
+      },
+      "approach": {
+        "intro": "Ho mappato la OWASP MCP Top 10 su controlli concreti, ho aggiunto il tracciamento taint interprocedurale per l'iniezione di comandi, e ho reso il tutto nativo per la CI con una soglia valutabile.",
+        "cards": [
+          {
+            "heading": "Tracciamento taint interprocedurale",
+            "body": "Segue l'input non fidato attraverso le funzioni per intercettare l'iniezione di comandi che gli scanner a singola funzione mancano."
+          },
+          {
+            "heading": "Rilevamento della sovversione dell'intento",
+            "body": "Segnala gli strumenti dal nome di sola lettura che in realtà mutano lo stato, una classica violazione di fiducia MCP."
+          }
+        ]
+      },
+      "result": {
+        "head": "Una scansione assegna a un server MCP un voto da A a F su tutte e otto le categorie OWASP MCP, fa fallire la CI su una soglia e pubblica un badge pubblico.",
+        "before": [
+          "Rischi MCP non scansionati",
+          "Percorsi di iniezione invisibili",
+          "Nessun segnale di sicurezza in CI"
+        ],
+        "after": [
+          "MCP01–MCP08 coperti",
+          "Risultati di iniezione tracciati con taint",
+          "Voto A–F + SARIF + badge"
+        ]
+      },
+      "quote": {
+        "text": "Gli strumenti di sicurezza devono vivere dove avviene il lavoro. mcp-sentry fa fallire la build e pubblica il voto, così nessuno deve ricordarsi di eseguirlo.",
+        "role": "Autore e Manutentore, mcp-sentry"
+      },
+      "metricLabels": ["Controlli OWASP MCP", "Formati di report", "Fasce di voto A–F"]
+    },
+    "git-compass": {
+      "name": "GitCompass",
+      "category": "Strumento di sviluppo · Analisi",
+      "tagline": "Il rischio di un repo si nasconde nella cronologia dei commit. Ho costruito uno strumento di analisi local-first che fa emergere hotspot, segnali di burnout e rischio di bus-factor, con interrogazione AI in linguaggio naturale.",
+      "row": {
+        "blurb": "Il rischio di un repo si nasconde nella cronologia dei commit. Uno strumento di analisi local-first che fa emergere hotspot, burnout e rischio di bus-factor, con interrogazione AI in linguaggio naturale."
+      },
+      "context": "GitCompass legge la cronologia dei commit per far emergere hotspot ad alta turnazione, picchi di velocità, segnali di burnout dei contributori, rischio di bus-factor e guida all'onboarding. Viene fornito come CLI e come dashboard visuale, e gira interamente sulla tua macchina.",
+      "problem": {
+        "head": "I segnali che predicono il rischio di consegna, la turnazione, i file a proprietario unico, i picchi fuori orario, sono sepolti in una cronologia Git che nessuno ha il tempo di esaminare.",
+        "body": "Le soluzioni di analisi esistenti significavano inviare il tuo repo a un servizio cloud, un ostacolo immediato per il codice privato, e rispondevano comunque a domande fisse anziché a quella che avevi davvero.",
+        "before": "Segnali di rischio sepolti nella cronologia · upload sul cloud richiesto · solo dashboard fisse"
+      },
+      "approach": {
+        "intro": "Ho costruito un monorepo modulare: un nucleo di analisi, una CLI e una dashboard, con un livello di interrogazione AI che risponde alle domande in linguaggio naturale, il tutto in esecuzione locale.",
+        "cards": [
+          {
+            "heading": "Local-first per progettazione",
+            "body": "Tutto gira sulla tua macchina. Nessun account, nessun cloud, nessuna telemetria, così funziona sui repo privati."
+          },
+          {
+            "heading": "Interrogazione in linguaggio naturale",
+            "body": "Fai una domanda al repo in linguaggio naturale; supporto multi-SDK sulle analisi locali."
+          }
+        ]
+      },
+      "result": {
+        "head": "Hotspot, burnout e rischio di bus-factor emergono da una scansione locale, interrogabili in linguaggio naturale, senza che nulla lasci la macchina.",
+        "before": [
+          "Cronologia troppo costosa da esaminare",
+          "Upload sul cloud per analizzare",
+          "Solo domande preconfezionate"
+        ],
+        "after": [
+          "5 segnali di rischio da una scansione",
+          "100% locale, nessuna telemetria",
+          "Interrogazioni in linguaggio naturale"
+        ]
+      },
+      "quote": {
+        "text": "L'analisi non dovrebbe costarti la privacy. GitCompass non telefona mai a casa, e puoi semplicemente chiedergli ciò che vuoi sapere.",
+        "role": "Autore e Manutentore, GitCompass"
+      },
+      "metricLabels": [
+        "Segnali di rischio del repo",
+        "Pacchetti pubblicati",
+        "Locale, nessuna telemetria"
+      ]
+    },
+    "glassbox": {
+      "name": "Glassbox",
+      "category": "AI / Agentico · Osservabilità",
+      "tagline": "Non puoi migliorare un agente che non riesci a vedere. Ho costruito un osservatore locale e in sola lettura che trasforma una trascrizione di Claude Code in un report comportamentale a sei metriche.",
+      "row": {
+        "blurb": "Non puoi migliorare un agente che non riesci a vedere. Un osservatore locale e in sola lettura che trasforma una trascrizione di Claude Code in un report comportamentale a sei metriche."
+      },
+      "context": "Glassbox legge una trascrizione JSONL di Claude Code e produce un singolo report HTML autosufficiente con sei metriche comportamentali, una timeline della sessione e una scheda di valutazione della salute dell'harness. Non effettua chiamate di rete e non controlla mai l'agente.",
+      "problem": {
+        "head": "Le sessioni degli agenti sono opache: quando un'esecuzione va storta, non c'è alcun resoconto leggibile di cosa l'agente abbia effettivamente fatto o perché.",
+        "body": "La trascrizione grezza è un muro di JSONL. Non c'era modo di capire se un agente cercasse troppo, dichiarasse vittoria in anticipo, saltasse la verifica o entrasse in loop, gli schemi che separano un'esecuzione sana da una dispendiosa.",
+        "before": "Sessioni opache · solo JSONL grezzo · nessun segnale comportamentale"
+      },
+      "approach": {
+        "intro": "Ho costruito un osservatore in sola lettura e senza dipendenze che valuta sei comportamenti e produce un unico report HTML portatile, costruito di proposito sotto il suo stesso harness per illustrare ciò che misura.",
+        "cards": [
+          {
+            "heading": "Sei metriche comportamentali",
+            "body": "Rapporto grep-vs-semantico, rilevamento della vittoria anticipata, densità di verifica, eccesso di perimetro, continuità e rilevamento dei loop."
+          },
+          {
+            "heading": "Sicuro per costruzione",
+            "body": "In sola lettura e offline: scopre automaticamente l'ultima trascrizione, redige i segreti e non controlla mai l'agente."
+          }
+        ]
+      },
+      "result": {
+        "head": "Una trascrizione disordinata diventa un unico report HTML autosufficiente che valuta sei comportamenti, con zero chiamate di rete e piena redazione dei segreti.",
+        "before": [
+          "Sessioni difficili da ispezionare",
+          "Nessuna metrica comportamentale",
+          "Lettura manuale della trascrizione"
+        ],
+        "after": [
+          "Scheda a 6 metriche + timeline",
+          "0 chiamate di rete, segreti redatti",
+          "Confronto tra due sessioni"
+        ]
+      },
+      "quote": {
+        "text": "Se non puoi misurare come si comporta un agente, non puoi sistemarlo. Glassbox resta in sola lettura e offline, così osservare non altera mai l'esecuzione.",
+        "role": "Autore e Manutentore, Glassbox"
+      },
+      "metricLabels": ["Metriche comportamentali", "Report autosufficiente", "Chiamate di rete"]
+    },
+    "ghostframes": {
+      "name": "Ghostframes",
+      "category": "Frontend · Libreria React",
+      "tagline": "Gli skeleton loader mantenuti a mano marciscono man mano che i componenti cambiano. Ho costruito skeleton zero-config generati da componenti reali, vincolati dalla CI.",
+      "row": {
+        "blurb": "Gli skeleton loader mantenuti a mano divergono dai loro componenti. Skeleton zero-config generati da componenti reali, vincolati dalla CI."
+      },
+      "context": "Ghostframes è una libreria React di skeleton loader rilasciata come un unico pacchetto pubblico, @ghostframes/runtime. Cattura i manifest degli skeleton da componenti reali in fase di build e ne impone la qualità in CI.",
+      "problem": {
+        "head": "Gli skeleton loader vengono scritti a mano e divergono dai componenti che imitano, quindi col tempo decadono nella forma sbagliata.",
+        "body": "Mantenere gli skeleton manualmente è tedioso e soggetto a errori, e nulla intercetta quando uno skeleton smette di corrispondere al suo componente, così gli stati di caricamento si degradano in silenzio.",
+        "before": "Skeleton scritti a mano · divergenza dai componenti · nessun cancello di qualità"
+      },
+      "approach": {
+        "intro": "Ho generato gli skeleton da componenti reali in fase di build e ho aggiunto cancelli CI che impongono lo schema, la copertura delle chiavi, un budget di voci non valide e la dimensione degli artefatti.",
+        "cards": [
+          {
+            "heading": "Cattura in fase di build",
+            "body": "AutoSkeleton e generateStaticBlueprint producono artefatti loader dall'albero reale dei componenti."
+          },
+          {
+            "heading": "Cancelli di qualità in CI",
+            "body": "ghostframes validate, diff e report impongono schema, copertura e dimensione a ogni modifica."
+          }
+        ]
+      },
+      "result": {
+        "head": "Gli skeleton vengono generati dai componenti reali e tenuti in riga dai cancelli CI, così gli stati di caricamento restano accurati senza manutenzione manuale.",
+        "before": [
+          "Skeleton scritti a mano",
+          "Divergenza dai componenti reali",
+          "Nessun controllo automatizzato"
+        ],
+        "after": [
+          "Generati in fase di build",
+          "Cancelli schema + copertura in CI",
+          "Zero configurazione a runtime"
+        ]
+      },
+      "quote": {
+        "text": "Uno skeleton dovrebbe venire dal componente, non da una seconda copia che mantieni a mano. Generalo, poi lascia che la CI lo tenga onesto.",
+        "role": "Autore e Manutentore, Ghostframes"
+      },
+      "metricLabels": [
+        "Pacchetto pubblico",
+        "Cancelli di qualità in CI",
+        "Configurazione a runtime"
+      ]
+    },
+    "javascript-verse": {
+      "name": "JavaScript-Verse",
+      "category": "Frontend · Tooling",
+      "tagline": "Provare JavaScript o React di solito significa configurare un sandbox. Ho costruito un playground in-browser che esegue codice reale, moduli npm reali e React, senza alcuna installazione.",
+      "row": {
+        "blurb": "Provare JS o React di solito significa configurare un sandbox. Un playground in-browser che esegue codice reale, moduli npm reali e React, senza alcuna installazione."
+      },
+      "context": "JavaScript-Verse è un ambiente di esecuzione del codice basato su browser e un editor markdown per scrivere ed eseguire JavaScript e React, con documentazione affiancata, un cheatsheet ed esportazione del codice.",
+      "problem": {
+        "head": "Sperimentare con JavaScript o React significava una toolchain locale o un sandbox limitato che non poteva attingere a moduli npm reali né renderizzare componenti.",
+        "body": "Eseguire codice non fidato nel browser in sicurezza, transpilare JSX e sintassi moderna, e risolvere gli import senza un server sono ciascuno tutt'altro che banali, quindi la maggior parte dei playground rinuncia a uno di essi.",
+        "before": "Configurazione locale per sperimentare · nessun modulo npm reale · JSX non supportato"
+      },
+      "approach": {
+        "intro": "Ho risolto l'esecuzione sicura con l'isolamento tramite iframe, la sintassi avanzata con la transpilazione Babel in-browser, e gli import con il bundling in-browser.",
+        "cards": [
+          {
+            "heading": "Esecuzione in sandbox",
+            "body": "Il codice gira dentro un iframe isolato con anteprima live, così è sicuro eseguire codice arbitrario."
+          },
+          {
+            "heading": "Moduli reali + JSX",
+            "body": "Babel in-browser transpila JSX e sintassi moderna; il bundling in-browser risolve qualsiasi import npm."
+          }
+        ]
+      },
+      "result": {
+        "head": "Chiunque può scrivere ed eseguire JavaScript o React nel browser, attingere a moduli npm reali ed esportare il proprio codice, senza nulla da installare.",
+        "before": [
+          "Toolchain locale richiesta",
+          "Nessun supporto per moduli npm",
+          "Nessun rendering JSX / React"
+        ],
+        "after": [
+          "Gira nel browser, nessuna installazione",
+          "Qualsiasi modulo npm a runtime",
+          "JSX + React, in sandbox"
+        ]
+      },
+      "quote": {
+        "text": "Il modo più veloce per imparare qualcosa è eseguirlo. Volevo JavaScript e React reali, moduli reali, senza nulla da installare prima.",
+        "role": "Autore, JavaScript-Verse"
+      },
+      "metricLabels": [
+        "In-browser, nessun server",
+        "Installazione richiesta",
+        "Clicca per eseguire"
+      ]
+    },
+    "skinbattle": {
+      "name": "SkinBattle.gg",
+      "category": "App web · Casinò in tempo reale",
+      "tagline": "Una piattaforma di scambio di skin di Counter-Strike e un casinò online, con giochi come Plinko, Mines, Cases, Battles e Crash costruiti da zero, al servizio di 5k utenti contemporanei.",
+      "row": {
+        "blurb": "Piattaforma di scambio di skin di Counter-Strike e casinò online. Plinko, Mines, Cases, Battles e Crash, costruiti da zero, con 5k utenti contemporanei."
+      },
+      "context": "SkinBattle.gg è una piattaforma di scambio di skin di Counter-Strike e un casinò online. Il team ha costruito i suoi giochi, Plinko, Mines, Cases, Battles, Crash e altri, da zero, con multiplayer live su WebSockets, al servizio di un massimo di 5k utenti contemporanei. Mi sono occupato del frontend, costruendo le interfacce di gioco in tempo reale e lo stato del client.",
+      "problem": {
+        "head": "Una piattaforma di casinò deve mantenere interfacce di gioco veloci e animate in perfetta sincronia con lo stato live del server per migliaia di giocatori contemporaneamente, con del denaro a ogni round.",
+        "body": "Giochi come Crash e Battles si aggiornano molte volte al secondo e si risolvono in tempo reale. Il frontend deve renderizzare quegli aggiornamenti in modo fluido, restare coerente con l'esito del server e reggere a 5k utenti contemporanei senza scatti o desincronizzazioni.",
+        "before": "Giochi da casinò da zero · esiti live · 5k giocatori contemporanei"
+      },
+      "approach": {
+        "intro": "Ho costruito i frontend dei giochi attorno a un livello di stato pilotato da WebSocket con Redux Toolkit su Next.js e Material UI, così ogni gioco resta fluido e in sincronia con gli esiti live del server.",
+        "cards": [
+          {
+            "heading": "Interfacce di gioco in tempo reale",
+            "body": "Plinko, Mines, Cases, Battles e Crash si renderizzano live, pilotati dagli eventi del server, senza desincronizzazione tra animazione ed esito."
+          },
+          {
+            "heading": "Uno stato che regge su scala",
+            "body": "Un unico store Redux Toolkit riflette in modo pulito lo stato live del round, restando reattivo a 5k utenti contemporanei."
+          }
+        ]
+      },
+      "result": {
+        "head": "Un casinò completo di giochi costruiti da zero, live e in sincronia per un massimo di 5k giocatori contemporanei. Incarico privato.",
+        "before": [
+          "Giochi da casinò costruiti da zero",
+          "Esiti live, con denaro in gioco",
+          "5k giocatori contemporanei"
+        ],
+        "after": [
+          "Plinko, Mines, Cases, Battles, Crash, live",
+          "Interfacce di gioco fluide e sincronizzate",
+          "Regge a 5k contemporanei"
+        ]
+      },
+      "quote": {
+        "text": "Le interfacce dei casinò sono impietose: l'animazione e l'esito del server devono concordare, a ogni round, per migliaia di giocatori contemporaneamente. Quella sincronia è l'intero lavoro.",
+        "role": "Ingegnere Frontend, SkinBattle.gg"
+      },
+      "metricLabels": ["Utenti contemporanei", "Giochi costruiti da zero", "Multiplayer WebSocket"]
+    },
+    "felis": {
+      "name": "Felis AI",
+      "category": "App AI · RAG (ricerca)",
+      "tagline": "Costruito per una ricercatrice sommersa dagli articoli. Un'applicazione RAG dove carica i suoi articoli di ricerca e fa domande su tutti contemporaneamente in linguaggio naturale.",
+      "row": {
+        "blurb": "Costruito per una ricercatrice sepolta dagli articoli: un'app RAG dove carica i suoi articoli di ricerca e li interroga tutti contemporaneamente in linguaggio naturale."
+      },
+      "context": "Felis AI è stato costruito per Vanshika Tyagi, una ricercatrice che deve leggere un grande volume di articoli di ricerca. L'obiettivo era uno strumento che permettesse a una studiosa di passare i propri articoli a un'applicazione e interrogarli in linguaggio naturale, invece di rileggere tutto a mano.",
+      "problem": {
+        "head": "I ricercatori leggono un enorme volume di articoli, e trovare il passaggio che risponde a una domanda significa ripassarli tutti a mano.",
+        "body": "L'insieme di lavoro di una studiosa è composto da dozzine di articoli densi. La ricerca per parole chiave manca le idee parafrasate, e non c'era modo di porre una domanda sull'intero corpus e ottenere una risposta fondata che rimandasse alla fonte.",
+        "before": "Dozzine di articoli da rileggere · la ricerca per parole chiave manca il significato · nessuna interrogazione trasversale tra gli articoli"
+      },
+      "approach": {
+        "intro": "Ho costruito un'applicazione RAG dove una studiosa carica i propri articoli e li interroga in linguaggio naturale, con il recupero che fonda ogni risposta sulla fonte effettiva e una memoria persistente lungo una sessione di ricerca.",
+        "cards": [
+          {
+            "heading": "Carica e interroga gli articoli",
+            "body": "Le studiose aggiungono i propri articoli di ricerca; l'app recupera i passaggi pertinenti e risponde in linguaggio naturale."
+          },
+          {
+            "heading": "Fondato, con memoria",
+            "body": "Ogni risposta è fondata sulla fonte recuperata, e la memoria persistente porta il contesto lungo una lunga sessione di ricerca."
+          }
+        ]
+      },
+      "result": {
+        "head": "Una ricercatrice può passare a Felis i suoi articoli e fare domande su tutti contemporaneamente, invece di rileggere a mano. Incarico privato.",
+        "before": [
+          "Rileggere dozzine di articoli",
+          "La ricerca per parole chiave manca il significato",
+          "Nessuna interrogazione sull'intero corpus"
+        ],
+        "after": [
+          "Carica gli articoli, chiedi in linguaggio naturale",
+          "Risposte fondate sulla fonte",
+          "Memoria lungo la sessione di ricerca"
+        ]
+      },
+      "quote": {
+        "text": "Leggo un'enorme quantità di articoli di ricerca, e Felis ha cambiato il mio modo di lavorare. Le passo i miei articoli e faccio domande su tutti contemporaneamente invece di sfogliarli uno per uno, e lei mi indica il passaggio giusto.",
+        "role": "Ricercatrice"
+      },
+      "metricLabels": [
+        "Recupero sugli articoli",
+        "Carica + interroga il corpus",
+        "Costruito per una ricercatrice"
+      ]
     }
   }
 }

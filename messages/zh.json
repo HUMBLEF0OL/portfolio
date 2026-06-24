@@ -1,12 +1,703 @@
 {
   "404": {
-    "subtitle": "你已经离开了网格...",
-    "backHome": "返回主系统"
+    "subtitle": "你刚刚走出了网格……",
+    "backHome": "返回主机"
   },
   "Seo": {
     "home": {
       "title": "HUMBLEF0OL // 数字界面架构师",
-      "description": "进入网格 — HUMBLEF0OL 的数字前沿。赛博界面、模块化代码与故障艺术体验。"
+      "description": "步入网格 —— HUMBLEF0OL 的数字前沿。赛博界面、模块化代码与故障美学打造的体验。"
+    }
+  },
+  "Common": {
+    "availability": {
+      "label": "AVAILABLE Q3 2026",
+      "statusLine": "STATUS: AVAILABLE // Q3 2026",
+      "hudLabel": "SYS ONLINE"
+    },
+    "mobileCta": { "title": "免费 20 分钟咨询通话", "button": "预约" },
+    "homeHudLabel": "SYS ONLINE"
+  },
+  "Nav": {
+    "links": [
+      { "label": "作品", "href": "#work" },
+      { "label": "服务", "href": "#services" },
+      { "label": "关于", "href": "/about" }
+    ],
+    "cta": { "label": "预约通话", "href": "#contact" }
+  },
+  "Hero": {
+    "eyebrow": "// LOADING_OPERATOR.exe",
+    "headlineLines": ["我交付你的路线图", "卡住的"],
+    "headlineHighlight": "那些功能",
+    "subhead": "全栈 Web 应用、AI / LLM 功能以及内部开发工具。一位资深工程师，端到端全程负责。没有代理公司的额外开销，没有协调成本。",
+    "statusRow": {
+      "left": "▸ SENIOR PRODUCT ENGINEER",
+      "center": "5+ YRS // FULL-STACK · AI · TOOLING",
+      "right": "AVAILABLE Q3 2026"
+    },
+    "ctas": [
+      { "label": "预约 20 分钟通话", "href": "#contact", "variant": "primary" },
+      { "label": "查看近期作品", "href": "#work", "variant": "secondary" }
+    ]
+  },
+  "Ticker": {
+    "items": ["全栈产品开发", "AI 与 LLM 功能", "前端工程", "开发工具与自动化", "已交付，绝不卡壳"]
+  },
+  "Stats": [
+    {
+      "value": 12,
+      "decimals": 0,
+      "prefix": "",
+      "suffix": "+",
+      "label": "已交付产品",
+      "accent": "foreground"
+    },
+    {
+      "value": 40,
+      "decimals": 0,
+      "prefix": "",
+      "suffix": "%",
+      "label": "加载时间缩减",
+      "accent": "highlight"
+    },
+    {
+      "value": 5,
+      "decimals": 0,
+      "prefix": "",
+      "suffix": "+",
+      "label": "开发年限",
+      "accent": "primary"
+    },
+    { "value": null, "display": "1/1", "label": "资深，端到端", "accent": "foreground" }
+  ],
+  "Problem": {
+    "eyebrow": "// SYS.01",
+    "kicker": "THE_PROBLEM",
+    "heading": "你的路线图排满了。真正能推动指标的功能却一拖再拖。",
+    "body": "你不需要再多一个要去管理的外包人员。你需要一位资深的人，能够界定范围、构建实现、交付上线，并把可用的成果交回给你 —— 贯穿整个技术栈，包括大多数人会回避的 AI 与工具部分。"
+  },
+  "Services": {
+    "section": {
+      "eyebrow": "// SYS.02",
+      "kicker": "CAPABILITIES",
+      "heading": "四类工作。一位工程师。",
+      "intro": "应用、AI 与工具之间不存在交接断层，因为每一部分都由同一个人构建。"
+    },
+    "items": [
+      {
+        "number": "01",
+        "title": "全栈产品开发",
+        "description": "从创意到上线的 Web 应用：前端、后端、数据与部署。交回时即可用。",
+        "tags": ["Next.js", "Node", "Postgres", "TypeScript"]
+      },
+      {
+        "number": "02",
+        "title": "AI / LLM 功能",
+        "description": "RAG、聊天机器人以及真正能上线到生产环境的 AI 功能，而不是一碰就崩的演示。",
+        "tags": ["OpenAI", "LangChain", "RAG", "Supabase"]
+      },
+      {
+        "number": "03",
+        "title": "前端 / UI 工程",
+        "description": "高工艺、快速、可访问的界面：从设计到代码，连那些彰显资深水准的细节都到位。",
+        "tags": ["React", "Tailwind", "Perf", "a11y"]
+      },
+      {
+        "number": "04",
+        "title": "开发工具与自动化",
+        "description": "命令行工具、Git 工具与构建自动化，每周为你的团队节省数小时。",
+        "tags": ["Node", "TypeScript", "CLI"]
+      }
+    ]
+  },
+  "Work": {
+    "eyebrow": "// SYS.03",
+    "kicker": "MISSION_LOG",
+    "heading": "真实的问题，已交付。",
+    "feedLabel": "FEED//01",
+    "hint": "▸ 悬停目标可预览 · 点击打开档案"
+  },
+  "Testimonials": {
+    "section": {
+      "eyebrow": "// SYS.05",
+      "kicker": "TRANSMISSION_LOG",
+      "trustedByLabel": "▸ 信任之选"
+    },
+    "quotes": [
+      {
+        "text": "我要阅读海量的研究论文，而 Felis 改变了我的工作方式。我把论文交给它，跨所有论文提问，而不必再逐篇翻找，它会直接指向正确的段落。",
+        "name": "Vanshika Tyagi",
+        "role": "研究学者",
+        "avatar": null,
+        "verified": false
+      }
+    ],
+    "trustedBy": []
+  },
+  "Process": {
+    "section": {
+      "eyebrow": "// SYS.06",
+      "kicker": "MISSION_PHASES",
+      "heading": "设计上低风险。没有黑箱。"
+    },
+    "phases": [
+      {
+        "number": "01",
+        "title": "咨询通话",
+        "description": "用 20 分钟界定你的问题，看看是否合适。免费，无任何义务。"
+      },
+      {
+        "number": "02",
+        "title": "方案与范围",
+        "description": "范围、时间表与价格事先固定。你确切知道自己将得到什么。"
+      },
+      {
+        "number": "03",
+        "title": "公开构建",
+        "description": "每周演示，与我直接对接，没有黑箱。你每周都能看到进展。"
+      },
+      {
+        "number": "04",
+        "title": "交付与移交",
+        "description": "经过测试、有文档、可运行。交回给你的团队。没有锁定。"
+      }
+    ]
+  },
+  "Engagement": {
+    "pricing": {
+      "section": {
+        "eyebrow": "// SYS.07",
+        "kicker": "ENGAGEMENT",
+        "heading": "三种合作方式。"
+      },
+      "tiers": [
+        {
+          "name": "固定范围冲刺",
+          "price": "$3k",
+          "priceUnit": "起",
+          "description": "一个明确界定的功能或修复，在 1–2 周内界定范围并交付。最适合一件清晰的事情。",
+          "features": ["固定价格与时间表", "经过测试并有文档", "完整移交"],
+          "featured": false
+        },
+        {
+          "name": "项目构建",
+          "price": "$12k",
+          "priceUnit": "起",
+          "description": "从创意到上线的产品，历时 4–10 周。全栈、AI 与工具，端到端全程负责。",
+          "features": ["每周演示", "与我直接对接", "可投产的移交"],
+          "featured": true,
+          "badge": "★ Most common"
+        },
+        {
+          "name": "长期顾问",
+          "price": "$5k",
+          "priceUnit": "/月",
+          "description": "随取随用的资深产能。每月固定一段时间，用于任何能推动指标的事。",
+          "features": ["优先排期", "灵活范围", "按月计费"],
+          "featured": false
+        }
+      ]
+    },
+    "faq": {
+      "section": { "heading": "你可能想问的问题。" },
+      "items": [
+        {
+          "question": "与一位独立工程师合作实际是怎样运作的？",
+          "answer": "你拥有一位资深的单一联系人，也就是我，从界定范围到移交全程负责。每周演示、直接对接以及固定范围，意味着没有代理公司或新员工带来的协调开销。"
+        },
+        {
+          "question": "你的可接洽时间和通常的时间表是怎样的？",
+          "answer": "我同时只接少量项目。冲刺在 1–2 周内启动；项目构建视范围历时 4–10 周。当前的可接洽状态会在导航栏实时显示。"
+        },
+        {
+          "question": "代码和知识产权归谁所有？",
+          "answer": "归你所有。我构建的一切都是你的：经过测试、有文档，并交回给你的团队，没有任何锁定。"
+        },
+        {
+          "question": "如果项目进行中范围发生变化怎么办？",
+          "answer": "我们会公开重新界定范围。在动手之前我会标明对时间表和价格的影响，永远不会有意外账单。"
+        },
+        {
+          "question": "构建期间我们如何沟通？",
+          "answer": "通过共享的 Slack 或你选择的频道，外加每周一次演示。你绝不会搞不清进展到了哪一步。"
+        }
+      ]
+    }
+  },
+  "Contact": {
+    "eyebrow": "// SYS.08",
+    "kicker": "ESTABLISH_UPLINK",
+    "heading": "告诉我你想构建什么。",
+    "subhead": "预约一次免费的 20 分钟咨询通话，或发来留言。我会在 1 个工作日内回复。",
+    "points": ["免费、无义务的咨询通话", "1 个工作日内回复", "你直接与我对话，而非销售代表"],
+    "form": {
+      "projectTypes": ["全栈构建", "AI / LLM 功能", "前端 / UI", "开发工具"],
+      "budgetTiers": ["$3k – $12k", "$12k – $30k", "$30k+", "长期顾问"],
+      "timelines": ["尽快", "1–3 个月", "3–6 个月", "只是了解一下"],
+      "submitLabel": "发送"
+    },
+    "bookCall": "预约 20 分钟通话",
+    "orDivider": "或留言",
+    "fields": {
+      "name": "姓名",
+      "email": "邮箱",
+      "projectType": "项目类型",
+      "budget": "预算档位",
+      "timeline": "时间表",
+      "message": "你在构建什么？"
+    },
+    "placeholders": {
+      "name": "张三",
+      "email": "jane@company.com",
+      "message": "一句话足以开始。"
+    }
+  },
+  "Footer": {
+    "blurb": "资深产品工程师。全栈、AI 以及围绕它们的工具。已交付。",
+    "cta": { "label": "预约通话", "href": "#contact" },
+    "copyright": "© 2026 AMIT RANA",
+    "endLabel": "END OF TRANSMISSION",
+    "wordmark": "AMIT RANA"
+  },
+  "About": {
+    "homepageDossier": {
+      "eyebrow": "// SYS.04",
+      "kicker": "OPERATOR_FILE",
+      "name": "Amit Rana",
+      "class": "CLASS: SENIOR PRODUCT ENGINEER // 5+ YRS",
+      "blurb": "我端到端地工作：应用、AI 以及把它们维系在一起的工具。我把客户名单保持精简，让每个项目从界定范围到移交都得到资深的关注。没有初级人员，没有协调成本。",
+      "skillBars": [
+        { "label": "全栈", "fill": 9, "max": 10 },
+        { "label": "AI / LLM", "fill": 8, "max": 10 },
+        { "label": "前端", "fill": 9, "max": 10 },
+        { "label": "工具 / 运维", "fill": 7, "max": 10 }
+      ],
+      "ossChip": { "label": "OSS", "name": "Hookpilot", "metric": "50k+ DL/wk" },
+      "bioLink": { "label": "阅读完整简介", "href": "/about" }
+    },
+    "page": {
+      "eyebrow": "// SYS.00",
+      "kicker": "OPERATOR_FILE",
+      "hudLabel": "OPERATOR_FILE",
+      "intro": {
+        "headline": "五年的交付经验。",
+        "headlineHighlight": "一个可对话的人。",
+        "subhead": "我是 Amit Rana，一位资深产品工程师，端到端地把卡住的路线图变成已交付的产品。"
+      },
+      "stats": [
+        { "value": 5, "decimals": 0, "prefix": "", "suffix": "+", "label": "交付年限" },
+        { "value": 12, "decimals": 0, "prefix": "", "suffix": "+", "label": "已交付产品" },
+        {
+          "value": 50,
+          "decimals": 0,
+          "prefix": "",
+          "suffix": "k+",
+          "label": "每周下载量 · Hookpilot"
+        },
+        {
+          "value": 4,
+          "decimals": 0,
+          "prefix": "",
+          "suffix": "",
+          "label": "多个领域，一位工程师"
+        }
+      ],
+      "dossier": {
+        "eyebrow": "// SYS.01",
+        "kicker": "DOSSIER",
+        "paragraphs": [
+          "五年来，我贯穿了产品工程的完整链条：应用、AI 以及把它们维系在一起的工具。这份广度大多是在真实截止期下交付中赢得的，而不是靠攒证书。",
+          "我起步时是一名痴迷于工艺和性能的前端工程师，随着我构建的产品开始扩展，我深入到全栈与基础设施，并在过去几年里构建生产级 AI 功能 —— 那时“直接调用 API”还会以十几种悄无声息的方式出问题。",
+          "如今我以兼职资深工程师的身份，为已获融资的早期团队工作。我刻意保持精简的客户名单，让每个项目从界定范围到移交都得到资深关注。没有初级人员悄悄拿你的预算练手，没有协调成本。"
+        ]
+      },
+      "doctrine": {
+        "eyebrow": "// SYS.02",
+        "kicker": "DOCTRINE",
+        "values": [
+          {
+            "title": "结果重于产出",
+            "description": "我按你想推动的指标来界定范围，而不是按功能清单。"
+          },
+          {
+            "title": "公开构建",
+            "description": "每周演示，直接对接。你始终清楚进展到了哪里。"
+          },
+          {
+            "title": "资深，端到端",
+            "description": "界定范围的人就是交付的人。"
+          },
+          {
+            "title": "没有锁定",
+            "description": "经过测试、有文档，并交回给你。代码归你所有。"
+          }
+        ]
+      },
+      "inTheOpen": {
+        "eyebrow": "// SYS.03",
+        "kicker": "IN_THE_OPEN",
+        "name": "Hookpilot",
+        "metric": "50k+ DL/wk",
+        "description": "一款开源的 Git 钩子管理器，让恰当的检查在提交进入 CI 之前就自动完成。如今在 npm 上每周下载量已达 50k+。",
+        "link": {
+          "label": "github.com/HUMBLEF0OL/hook-pilot",
+          "href": "https://github.com/HUMBLEF0OL/hook-pilot"
+        }
+      },
+      "cta": {
+        "heading": "让我们一起构建你路线图上卡住的那件事。",
+        "subhead": "免费 20 分钟咨询通话。我会在 1 个工作日内回复。",
+        "button": { "label": "预约 20 分钟通话", "href": "/#contact" }
+      }
+    }
+  },
+  "CaseStudyPage": {
+    "private": "保密",
+    "ctaHeading": "遇到了类似的问题？",
+    "ctaButton": "预约 20 分钟通话",
+    "nextLabel": "下一个案例文件",
+    "before": "之前",
+    "after": "之后",
+    "linkLabels": { "github": "GitHub", "npm": "npm", "live": "在线" }
+  },
+  "CaseStudies": {
+    "hookpilot": {
+      "name": "Hookpilot",
+      "category": "开发工具 · CLI",
+      "tagline": "团队总是跳过不一致的提交前检查。我构建了一款灵活的 Git 钩子管理器，让恰当的检查自动完成，如今在 npm 上每周下载量已达 50k+。",
+      "row": {
+        "blurb": "提交前检查缓慢、不一致且容易被跳过。一款让恰当检查自动完成的开源 Git 钩子管理器。"
+      },
+      "context": "Hookpilot 是一款开源的 Git 钩子管理器。它附带一个开箱即用的钩子库（代码检查、格式化、测试、安全检查、提交信息校验、分支保护、大文件检查），外加一个用于添加、恢复、列出和移除钩子的交互式 CLI。",
+      "problem": {
+        "head": "提交前检查缓慢、各机器之间不一致且轻易就能被跳过，因此标准只能在 CI 之后才被强制执行，那已远在提交之后。",
+        "body": "每个项目都手动重造一套钩子配置。配置在各个克隆之间漂移，新贡献者一开始什么都没接好，而一个快速的覆盖开关就能让任何人彻底绕过这些关卡。",
+        "before": "手搓钩子 · 各克隆间漂移 · 检查随意跳过"
+      },
+      "approach": {
+        "intro": "我构建了一款零配置 CLI，通过一份纳入版本管理的配置，在整个 Git 生命周期中接好标准钩子，并对自定义 Shell 和 Node 脚本提供一等支持。",
+        "cards": [
+          {
+            "heading": "预定义钩子库",
+            "body": "为 pre-commit、commit-msg、pre-push、post-merge 和 post-checkout 等任务提供现成的钩子。"
+          },
+          {
+            "heading": "一份纳入版本管理的配置",
+            "body": "hooks-config.json 提交一次；每个克隆只需一次 init 即可继承相同的关卡。"
+          }
+        ]
+      },
+      "result": {
+        "head": "一次 init 即可接好整个团队的关卡，而该软件包如今在 npm 上每周下载量已达 50k+。",
+        "before": ["每个仓库手动设置钩子", "配置在各机器间漂移", "检查容易被跳过"],
+        "after": ["一句 npx hookpilot init", "共享、纳入版本管理的配置", "每周 npm 下载量 50k+"]
+      },
+      "quote": {
+        "text": "我希望钩子成为最省事的路径，而不是一件你会绕过去的苦差事。一份配置，提交一次，整个团队就处在同一套关卡之上。",
+        "role": "Author & Maintainer, Hookpilot"
+      },
+      "metricLabels": ["每周 npm 下载量", "Git 生命周期阶段", "启动所需配置文件"]
+    },
+    "coherence": {
+      "name": "Coherence",
+      "category": "AI / 智能体 · Claude Code",
+      "tagline": "代码一改，文档就开始腐坏。我构建了一款 Claude Code 插件，通过一条经校验的两段式 LLM 流水线检测文档漂移并提出外科手术式的补丁。",
+      "row": {
+        "blurb": "代码一改，文档就开始腐坏。一款检测文档漂移并提出经校验、外科手术式补丁的 Claude Code 插件。"
+      },
+      "context": "Coherence 以 Claude Code 钩子和斜杠命令的形式运行。它监视代码在文档未同步的情况下发生变化，并提出补丁，所有可在团队中分发的部分都以提交的文件形式存在，永远没有后端。",
+      "problem": {
+        "head": "文档会悄无声息地漂移：代码变了，描述它的文档却没变，而这道鸿沟只有在有人被它误导时才被发现。",
+        "body": "天真地让 LLM 去修文档并不安全：它会产生幻觉、改写过多，还会被注入的文本带偏。此前没有可信赖的方式让智能体在无人监督下触碰文档。",
+        "before": "文档无声漂移 · 盲目的 LLM 编辑有风险 · 无法安全自动应用"
+      },
+      "approach": {
+        "intro": "我把工作拆成一条两段式流水线，在模型与文件系统之间加入确定性校验，并把自动应用门控在按开发者维护的信任账本之后。",
+        "cards": [
+          {
+            "heading": "两段式流水线",
+            "body": "第一阶段选定权威来源；第二阶段写出补丁，必须通过格式、应用、变更类别、行比例、注入、幻觉与断言等检查。"
+          },
+          {
+            "heading": "渐进式信任门",
+            "body": "仅在信任分超过 0.85 时自动应用，该分数以 30 天半衰期衰减，且绝不应用于破坏性或 frontmatter 变更。"
+          }
+        ]
+      },
+      "result": {
+        "head": "智能体可以安全地让文档保持同步，在模型与你的仓库之间有八个校验引擎和经 cosign 签名的发布版本把守。",
+        "before": ["漂移由人发现，且为时已晚", "盲目的 LLM 编辑，没有护栏", "没有可验证的发布版本"],
+        "after": ["自动检测漂移", "8 引擎确定性校验", "无密钥 cosign 签名、Rekor 可验证"]
+      },
+      "quote": {
+        "text": "我不会仅凭信任就让模型写入仓库。每个补丁在落地之前都必须挺过确定性检查。",
+        "role": "Author & Maintainer, Coherence"
+      },
+      "metricLabels": ["经校验的 LLM 流水线", "校验引擎", "自动应用信任门"]
+    },
+    "mcp-sentry": {
+      "name": "mcp-sentry",
+      "category": "安全 · MCP",
+      "tagline": "MCP 服务器上线时带着悄无声息的安全漏洞。我构建了一款静态分析检查器，覆盖 OWASP MCP Top 10 全部八个类别，并在 CI 中给项目从 A 到 F 评级。",
+      "row": {
+        "blurb": "MCP 服务器上线时带着悄无声息的安全漏洞。一款覆盖 OWASP MCP Top 10 全部八个类别、在 CI 中从 A 到 F 评级的静态分析检查器。"
+      },
+      "context": "mcp-sentry 是一款面向 TypeScript Model Context Protocol 服务器的静态分析安全检查器。它通过 SARIF、PR 评论和一枚公开的 Shields.io 徽章与 CI 集成。",
+      "problem": {
+        "head": "MCP 服务器向智能体暴露工具，而一个标注错误或可被注入的工具就能把命令执行权交到攻击者手中，且评审中无人察觉。",
+        "body": "此前没有面向 MCP 的检查器。通用扫描器会漏掉 MCP 特有的风险，比如一个名为只读却会改变状态的工具，或是跨函数边界流入 Shell 调用的不可信输入。",
+        "before": "无 MCP 感知扫描 · 注入风险未被标记 · 意图错误标注不可见"
+      },
+      "approach": {
+        "intro": "我把 OWASP MCP Top 10 映射为具体的检查项，加入跨过程的污点追踪以发现命令注入，并通过一个可评级的阈值让整套工具原生融入 CI。",
+        "cards": [
+          {
+            "heading": "跨过程污点追踪",
+            "body": "跨函数追踪不可信输入，以捕获单函数扫描器会漏掉的命令注入。"
+          },
+          {
+            "heading": "意图颠覆检测",
+            "body": "标记那些名为只读却实际改变状态的工具 —— 一种典型的 MCP 信任违规。"
+          }
+        ]
+      },
+      "result": {
+        "head": "一次扫描即可在 OWASP MCP 全部八个类别上给 MCP 服务器从 A 到 F 评级，在阈值处让 CI 失败，并发布一枚公开徽章。",
+        "before": ["MCP 风险未被扫描", "注入路径不可见", "CI 中没有安全信号"],
+        "after": ["覆盖 MCP01–MCP08", "污点追踪的注入发现", "A–F 评级 + SARIF + 徽章"]
+      },
+      "quote": {
+        "text": "安全工具必须置于工作发生的地方。mcp-sentry 会让构建失败并发布评级，这样就没人需要记着去运行它。",
+        "role": "Author & Maintainer, mcp-sentry"
+      },
+      "metricLabels": ["OWASP MCP 检查项", "报告器格式", "A–F 评级档"]
+    },
+    "git-compass": {
+      "name": "GitCompass",
+      "category": "开发工具 · 分析",
+      "tagline": "仓库风险隐藏在提交历史里。我构建了一款本地优先的分析工具，揭示热点、倦怠信号与巴士因子风险，并支持用平实英语进行 AI 查询。",
+      "row": {
+        "blurb": "仓库风险隐藏在提交历史里。一款本地优先的分析工具，揭示热点、倦怠与巴士因子风险，并支持用平实英语进行 AI 查询。"
+      },
+      "context": "GitCompass 读取提交历史，揭示高频改动热点、速度激增、贡献者倦怠信号、巴士因子风险与上手指引。它以 CLI 和可视化仪表盘的形式发布，完全运行在你自己的机器上。",
+      "problem": {
+        "head": "那些预示交付风险的信号 —— 改动量、单一负责人的文件、加班时段的激增 —— 都埋藏在没人有时间去挖掘的 Git 历史里。",
+        "body": "现有的分析方案意味着要把你的仓库上传到云服务，这对私有代码而言立刻就行不通，而且它们仍然只回答固定的问题，而非你真正想问的那个。",
+        "before": "风险信号埋藏于历史 · 需要上传到云 · 只有固定仪表盘"
+      },
+      "approach": {
+        "intro": "我构建了一个模块化 monorepo：一个分析内核、一个 CLI 和一个仪表盘，外加一个用平实英语回答问题的 AI 查询层，全部在本地运行。",
+        "cards": [
+          {
+            "heading": "本地优先的设计",
+            "body": "一切都运行在你的机器上。无账户、无云端、无遥测，因此它能用于私有仓库。"
+          },
+          {
+            "heading": "平实英语查询",
+            "body": "用自然语言向仓库提问；在本地分析之上支持多 SDK。"
+          }
+        ]
+      },
+      "result": {
+        "head": "热点、倦怠与巴士因子风险只需一次本地扫描即可浮现，可用平实英语查询，且没有任何数据离开机器。",
+        "before": ["历史挖掘代价太高", "需上传云端才能分析", "只有预设好的问题"],
+        "after": ["一次扫描得出 5 类风险信号", "100% 本地，无遥测", "自然语言查询"]
+      },
+      "quote": {
+        "text": "分析不该以你的隐私为代价。GitCompass 从不回传数据，你想知道什么直接问它就行。",
+        "role": "Author & Maintainer, GitCompass"
+      },
+      "metricLabels": ["仓库风险信号", "已发布软件包", "本地，无遥测"]
+    },
+    "glassbox": {
+      "name": "Glassbox",
+      "category": "AI / 智能体 · 可观测性",
+      "tagline": "看不见的智能体无从改进。我构建了一个本地、只读的观察器，把一份 Claude Code 会话记录转化为一份六指标的行为报告。",
+      "row": {
+        "blurb": "看不见的智能体无从改进。一个本地、只读的观察器，把一份 Claude Code 会话记录转化为一份六指标的行为报告。"
+      },
+      "context": "Glassbox 读取一份 Claude Code JSONL 会话记录，渲染出一份自包含的 HTML 报告，内含六个行为指标、一条会话时间线和一张框架健康度记分卡。它不发起任何网络调用，也从不控制智能体。",
+      "problem": {
+        "head": "智能体会话是不透明的：当一次运行出岔子时，没有可读的记录说明智能体到底做了什么、为什么这么做。",
+        "body": "原始会话记录是一整面 JSONL 的墙。此前无法看出智能体是否搜索过度、是否过早宣告胜利、是否跳过了验证、是否陷入循环 —— 而正是这些模式区分了健康的运行和浪费的运行。",
+        "before": "会话不透明 · 只有原始 JSONL · 没有行为信号"
+      },
+      "approach": {
+        "intro": "我构建了一个零依赖、只读的观察器，为六种行为评分并渲染一份可移植的 HTML 报告，并刻意在它自身的框架下构建它，以诠释它所度量的内容。",
+        "cards": [
+          {
+            "heading": "六个行为指标",
+            "body": "Grep 与语义搜索之比、过早宣告胜利检测、验证密度、范围越界、连续性以及循环检测。"
+          },
+          {
+            "heading": "构造即安全",
+            "body": "只读且离线：它自动发现最新的会话记录，对机密信息进行脱敏，且从不控制智能体。"
+          }
+        ]
+      },
+      "result": {
+        "head": "一份杂乱的会话记录变成一份自包含的 HTML 报告，为六种行为评分，零网络调用，并对机密信息完全脱敏。",
+        "before": ["会话难以检视", "没有行为指标", "手动阅读会话记录"],
+        "after": ["6 指标记分卡 + 时间线", "0 次网络调用，机密已脱敏", "两次会话对比"]
+      },
+      "quote": {
+        "text": "如果你无法度量一个智能体的行为，你就无法修正它。Glassbox 始终保持只读且离线，因此观察从不改变运行本身。",
+        "role": "Author & Maintainer, Glassbox"
+      },
+      "metricLabels": ["行为指标", "自包含报告", "网络调用"]
+    },
+    "ghostframes": {
+      "name": "Ghostframes",
+      "category": "前端 · React 库",
+      "tagline": "手工维护的骨架占位会随组件变化而腐坏。我构建了从真实组件生成、由 CI 把关的零配置骨架。",
+      "row": {
+        "blurb": "手工维护的骨架占位会从其组件漂移。从真实组件生成、由 CI 把关的零配置骨架。"
+      },
+      "context": "Ghostframes 是一个 React 骨架占位库，以单一公开软件包 @ghostframes/runtime 的形式发布。它在构建时从真实组件捕获骨架清单，并在 CI 中强制保证其质量。",
+      "problem": {
+        "head": "骨架占位是手写的，会从它们所模仿的组件漂移开去，因此随着时间推移会衰退成错误的形状。",
+        "body": "手动维护骨架既乏味又易出错，而且当骨架不再匹配其组件时没有任何机制能捕获，于是加载状态会悄无声息地劣化。",
+        "before": "手写骨架 · 从组件漂移 · 没有质量关卡"
+      },
+      "approach": {
+        "intro": "我在构建时从真实组件生成骨架，并加入 CI 关卡，强制执行 schema、键覆盖率、无效条目预算和产物大小。",
+        "cards": [
+          {
+            "heading": "构建时捕获",
+            "body": "AutoSkeleton 和 generateStaticBlueprint 从真实的组件树产出占位产物。"
+          },
+          {
+            "heading": "CI 质量关卡",
+            "body": "ghostframes validate、diff 和 report 在每次变更时强制执行 schema、覆盖率和大小。"
+          }
+        ]
+      },
+      "result": {
+        "head": "骨架从真实组件生成，并由 CI 关卡保持一致，因此加载状态始终准确，无需手工维护。",
+        "before": ["手写的骨架", "从真实组件漂移", "没有自动化检查"],
+        "after": ["构建时生成", "CI 中的 schema + 覆盖率关卡", "零运行时配置"]
+      },
+      "quote": {
+        "text": "骨架应当来自组件，而不是你手工维护的第二份副本。生成它，然后让 CI 保持它诚实。",
+        "role": "Author & Maintainer, Ghostframes"
+      },
+      "metricLabels": ["公开软件包", "CI 质量关卡", "运行时配置"]
+    },
+    "javascript-verse": {
+      "name": "JavaScript-Verse",
+      "category": "前端 · 工具",
+      "tagline": "试用 JavaScript 或 React 通常意味着要搭一套沙箱。我构建了一个浏览器内的演练场，运行真实代码、真实的 npm 模块和 React，无需安装。",
+      "row": {
+        "blurb": "试用 JS 或 React 通常意味着要搭一套沙箱。一个浏览器内的演练场，运行真实代码、真实的 npm 模块和 React，无需安装。"
+      },
+      "context": "JavaScript-Verse 是一个基于浏览器的代码执行环境与 Markdown 编辑器，用于编写和运行 JavaScript 与 React，配有并排文档、速查表和代码导出。",
+      "problem": {
+        "head": "试验 JavaScript 或 React 意味着要么本地装一套工具链，要么用一个无法拉取真实 npm 模块或渲染组件的受限沙箱。",
+        "body": "在浏览器中安全地运行不可信代码、转译 JSX 与现代语法，以及在没有服务器的情况下解析导入，每一项都非同小可，因此大多数演练场都会在其中一项上偷懒。",
+        "before": "试验需本地搭建 · 没有真实 npm 模块 · 不支持 JSX"
+      },
+      "approach": {
+        "intro": "我用 iframe 隔离解决安全执行，用浏览器内的 Babel 转译解决高级语法，用浏览器内打包解决导入。",
+        "cards": [
+          {
+            "heading": "沙箱化执行",
+            "body": "代码在一个隔离的 iframe 内运行并实时预览，因此任意代码都能安全运行。"
+          },
+          {
+            "heading": "真实模块 + JSX",
+            "body": "浏览器内的 Babel 转译 JSX 与现代语法；浏览器内打包解析任意 npm 导入。"
+          }
+        ]
+      },
+      "result": {
+        "head": "任何人都能在浏览器中编写并运行 JavaScript 或 React、拉取真实的 npm 模块并导出代码，无需安装任何东西。",
+        "before": ["需要本地工具链", "不支持 npm 模块", "不支持 JSX / React 渲染"],
+        "after": ["在浏览器中运行，无需安装", "运行时支持任意 npm 模块", "JSX + React，沙箱化"]
+      },
+      "quote": {
+        "text": "学一样东西最快的方式就是运行它。我想要真实的 JavaScript 和 React、真实的模块，而无需先安装任何东西。",
+        "role": "Author, JavaScript-Verse"
+      },
+      "metricLabels": ["浏览器内，无服务器", "需要安装", "点击即运行"]
+    },
+    "skinbattle": {
+      "name": "SkinBattle.gg",
+      "category": "Web 应用 · 实时博彩",
+      "tagline": "一个《反恐精英》皮肤交易平台与在线博彩站，Plinko、Mines、Cases、Battles、Crash 等游戏均从零构建，承载 5k 并发用户。",
+      "row": {
+        "blurb": "《反恐精英》皮肤交易平台与在线博彩站。Plinko、Mines、Cases、Battles 和 Crash，从零构建，承载 5k 并发用户。"
+      },
+      "context": "SkinBattle.gg 是一个《反恐精英》皮肤交易平台与在线博彩站。团队从零构建了它的游戏 —— Plinko、Mines、Cases、Battles、Crash 等 —— 通过 WebSockets 实现实时多人对战，承载最高 5k 并发用户。我负责前端，构建实时游戏界面与客户端状态。",
+      "problem": {
+        "head": "博彩平台必须让快速、带动画的游戏界面与实时服务器状态对成千上万的玩家保持完美同步，而每一局都关乎金钱。",
+        "body": "像 Crash 和 Battles 这样的游戏每秒更新多次并实时结算。前端必须流畅地渲染这些更新、与服务器的结果保持一致，并在 5k 并发用户下不卡顿、不失步。",
+        "before": "从零构建的博彩游戏 · 实时结果 · 5k 并发玩家"
+      },
+      "approach": {
+        "intro": "我围绕一个由 WebSocket 驱动的状态层构建游戏前端，在 Next.js 上使用 Redux Toolkit 和 Material UI，让每个游戏都保持流畅并与服务器的实时结果同步。",
+        "cards": [
+          {
+            "heading": "实时游戏界面",
+            "body": "Plinko、Mines、Cases、Battles 和 Crash 由服务器事件驱动实时渲染，动画与结果之间不失步。"
+          },
+          {
+            "heading": "在规模下稳住的状态",
+            "body": "单一的 Redux Toolkit store 干净地反映实时局面状态，在 5k 并发用户下保持响应。"
+          }
+        ]
+      },
+      "result": {
+        "head": "一整套从零构建的博彩游戏，对最高 5k 并发玩家实时且同步。保密合作。",
+        "before": ["从零构建的博彩游戏", "实时、押注其上的结果", "5k 并发玩家"],
+        "after": [
+          "Plinko、Mines、Cases、Battles、Crash，实时",
+          "流畅、同步的游戏界面",
+          "在 5k 并发下稳住"
+        ]
+      },
+      "quote": {
+        "text": "博彩界面毫不容情：动画与服务器结果必须每一局都一致，对成千上万的玩家同时如此。那种同步就是全部活计。",
+        "role": "Frontend Engineer, SkinBattle.gg"
+      },
+      "metricLabels": ["并发用户", "从零构建的游戏", "WebSocket 多人对战"]
+    },
+    "felis": {
+      "name": "Felis AI",
+      "category": "AI 应用 · RAG（研究）",
+      "tagline": "为一位淹没在论文中的研究学者而打造。一款 RAG 应用，她在其中上传自己的研究论文，并用平实语言跨所有论文提问。",
+      "row": {
+        "blurb": "为一位埋头于论文的研究学者而打造：一款 RAG 应用，她在其中上传自己的研究论文，并用平实语言跨所有论文查询。"
+      },
+      "context": "Felis AI 是为 Vanshika Tyagi 打造的，她是一位需要通读大量研究论文的研究学者。目标是做一款工具，让学者把论文交给应用并用平实语言跨论文查询，而不必手动逐篇重读。",
+      "problem": {
+        "head": "研究学者要阅读海量论文，而要找到回答某个问题的那个段落，意味着手动把所有论文重新梳理一遍。",
+        "body": "一位学者的工作集是数十篇密集的论文。关键词搜索会漏掉被改述的观点，而此前没有办法跨整个语料库提出一个问题并得到一个有据可依、能指回来源的答案。",
+        "before": "数十篇论文要重读 · 关键词搜索漏掉含义 · 无法跨论文查询"
+      },
+      "approach": {
+        "intro": "我构建了一款 RAG 应用，学者在其中上传论文并用自然语言跨论文查询，检索让每个答案都扎根于真实来源，并在一次研究会话中保持持久记忆。",
+        "cards": [
+          {
+            "heading": "上传并查询论文",
+            "body": "学者添加自己的研究论文；应用检索相关段落并用平实语言作答。"
+          },
+          {
+            "heading": "有据可依，带记忆",
+            "body": "每个答案都扎根于检索到的来源，持久记忆在漫长的研究会话中承载上下文。"
+          }
+        ]
+      },
+      "result": {
+        "head": "一位研究学者可以把论文交给 Felis 并跨所有论文提问，而不必手动重读。保密合作。",
+        "before": ["重读数十篇论文", "关键词搜索漏掉含义", "无法跨语料库查询"],
+        "after": ["上传论文，用平实语言提问", "答案扎根于来源", "贯穿研究会话的记忆"]
+      },
+      "quote": {
+        "text": "我要阅读海量的研究论文，而 Felis 改变了我的工作方式。我把论文交给它，跨所有论文提问，而不必再逐篇翻找，它会直接指向正确的段落。",
+        "role": "研究学者"
+      },
+      "metricLabels": ["跨论文检索", "上传 + 查询语料库", "为研究学者打造"]
     }
   }
 }

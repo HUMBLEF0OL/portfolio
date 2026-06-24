@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 import type { Locale } from 'next-intl'
 import Image from 'next/image'
-import { setRequestLocale } from 'next-intl/server'
-import about from '@/data/about.json'
-import site from '@/data/site.json'
+import { getMessages, setRequestLocale } from 'next-intl/server'
+import config from '@/data/config.json'
 import { Reveal } from '@/components/op/Reveal'
 import { CountUp } from '@/components/op/CountUp'
 import { GlitchText } from '@/components/op/GlitchText'
 import { CursorHUD } from '@/components/op/CursorHUD'
 import { siteConfig } from '@/config/site'
+import type { AboutContent } from '@/types/content'
 
 const base = siteConfig.url.replace(/\/$/, '')
 
@@ -16,9 +16,11 @@ type PageProps = Readonly<{ params: Promise<{ locale: Locale }> }>
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
+  const messages = await getMessages({ locale })
+  const page = (messages.About as AboutContent).page
   return {
-    title: `About · ${site.identity.name}`,
-    description: about.page.intro.subhead,
+    title: `About · ${config.identity.name}`,
+    description: page.intro.subhead,
     alternates: {
       canonical: `${base}/${locale}/about`,
       languages: {
@@ -47,7 +49,8 @@ const CornerBrackets = () => (
 export default async function AboutPage({ params }: PageProps) {
   const { locale } = await params
   setRequestLocale(locale)
-  const p = about.page
+  const messages = await getMessages()
+  const p = (messages.About as AboutContent).page
 
   return (
     <>
@@ -85,8 +88,8 @@ export default async function AboutPage({ params }: PageProps) {
             <Reveal delay={120} className="relative order-first md:order-none">
               <div className="clip-notch-18 bg-op-elev relative p-[11px] shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]">
                 <Image
-                  src={about.avatar.src}
-                  alt={about.avatar.alt}
+                  src={config.avatar.src}
+                  alt={config.avatar.alt}
                   width={600}
                   height={360}
                   className="block h-[360px] w-full object-cover"

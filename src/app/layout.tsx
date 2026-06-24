@@ -87,10 +87,12 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>
 }>) {
   const { locale } = await params
+  const dir = locale === 'ar' ? 'rtl' : 'ltr'
 
   return (
     <html
       lang={locale}
+      dir={dir}
       suppressHydrationWarning
       className={`${chakra.variable} ${oxanium.variable} ${anton.variable} ${jetbrains.variable}`}
     >

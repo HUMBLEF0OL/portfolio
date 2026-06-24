@@ -2,14 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Menu } from 'lucide-react'
-import { useLocale } from 'next-intl'
+import { useLocale, useMessages } from 'next-intl'
 import { usePathname } from 'next/navigation'
-import site from '@/data/site.json'
+import config from '@/data/config.json'
 import languages from '@/data/languages.json'
 import { GlitchText } from '@/components/op/GlitchText'
 import { LiveClock } from '@/components/op/LiveClock'
 import { EASTER_EGGS_ENABLED, LOGO_COMBO_EVENT } from '@/lib/easter-eggs'
 import { cn } from '@/lib/utils'
+import type { NavContent } from '@/types/content'
 
 // 5 rapid clicks within this window fire the logo easter egg instead of
 // navigating home.
@@ -20,6 +21,8 @@ const LOGO_COMBO_WINDOW_MS = 350
 const Header = () => {
   const locale = useLocale()
   const pathname = usePathname()
+  const messages = useMessages()
+  const nav = messages.Nav as NavContent
   const [condensed, setCondensed] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const logoClicksRef = useRef(0)
@@ -82,16 +85,16 @@ const Header = () => {
         {/* Logo */}
         <a href={localize('/')} onClick={onLogoClick} className="flex items-center gap-[11px]">
           <span className="clip-notch-7 bg-op-yellow font-display text-op-base inline-flex h-[26px] w-[26px] items-center justify-center text-[1rem] leading-none">
-            {site.identity.monogram}
+            {config.identity.monogram}
           </span>
           <GlitchText className="anton text-op-text text-[1.2rem] leading-none">
-            {site.identity.name.toUpperCase()}
+            {config.identity.name.toUpperCase()}
           </GlitchText>
         </a>
 
         {/* Desktop links */}
         <nav className="hidden items-center gap-7 md:flex">
-          {site.nav.links.map((link) => (
+          {nav.links.map((link) => (
             <a
               key={link.label}
               href={localize(link.href)}
@@ -100,9 +103,9 @@ const Header = () => {
               {link.label}
             </a>
           ))}
-          {site.nav.showClock && (
+          {config.nav.showClock && (
             <span className="font-mono text-[0.8125rem] tracking-[0.08em]">
-              <LiveClock timezone={site.nav.clockTimezone} />
+              <LiveClock timezone={config.nav.clockTimezone} />
             </span>
           )}
         </nav>
@@ -123,10 +126,10 @@ const Header = () => {
           </select>
 
           <a
-            href={localize(site.nav.cta.href)}
+            href={localize(nav.cta.href)}
             className="clip-notch-10 bg-op-yellow text-op-base inline-flex items-center gap-2 px-[18px] py-[11px] font-mono text-[0.75rem] font-bold tracking-[0.06em] uppercase transition-[filter,transform] hover:translate-y-[-1px] hover:[filter:drop-shadow(0_0_12px_rgba(252,238,10,0.55))]"
           >
-            {site.nav.cta.label} ▸
+            {nav.cta.label} ▸
           </a>
 
           <button
@@ -145,7 +148,7 @@ const Header = () => {
       {menuOpen && (
         <div className="border-op-line border-t bg-[rgba(7,8,10,0.97)] px-7 py-4 md:hidden">
           <nav className="flex flex-col gap-1">
-            {site.nav.links.map((link) => (
+            {nav.links.map((link) => (
               <a
                 key={link.label}
                 href={localize(link.href)}
