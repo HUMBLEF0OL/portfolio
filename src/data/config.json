@@ -1,0 +1,13 @@
+{
+  "identity": { "name": "Amit Rana", "monogram": "A" },
+  "social": {
+    "email": "123amitrana0123@gmail.com",
+    "emailHref": "mailto:123amitrana0123@gmail.com",
+    "github": "https://github.com/HUMBLEF0OL",
+    "linkedin": "https://www.linkedin.com/in/humblef00l",
+    "twitter": "https://x.com/HUMBLEF0OL"
+  },
+  "contact": { "calLink": "https://cal.com/amitrana/intro" },
+  "nav": { "showClock": true, "clockTimezone": "IST" },
+  "avatar": { "src": "/avatar.png", "alt": "Amit Rana", "id": "ID·AR-001" }
+}

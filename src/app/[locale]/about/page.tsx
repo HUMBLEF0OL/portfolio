@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { Locale } from 'next-intl'
 import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 import about from '@/data/about.json'
@@ -11,7 +12,7 @@ import { siteConfig } from '@/config/site'
 
 const base = siteConfig.url.replace(/\/$/, '')
 
-type PageProps = Readonly<{ params: Promise<{ locale: string }> }>
+type PageProps = Readonly<{ params: Promise<{ locale: Locale }> }>
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params

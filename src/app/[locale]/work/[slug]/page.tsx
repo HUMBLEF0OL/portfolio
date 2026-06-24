@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
+import type { Locale } from 'next-intl'
 import { notFound } from 'next/navigation'
-import { setRequestLocale } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import csData from '@/data/caseStudies.json'
-import site from '@/data/site.json'
+import config from '@/data/config.json'
 import { Reveal } from '@/components/op/Reveal'
 import { CountUp } from '@/components/op/CountUp'
 import { GlitchText } from '@/components/op/GlitchText'
 import { CursorHUD } from '@/components/op/CursorHUD'
 import { siteConfig } from '@/config/site'
+import type { CaseStudyCopy, CaseStudyPageContent } from '@/types/content'
 
 const base = siteConfig.url.replace(/\/$/, '')
 const studies = csData.caseStudies
@@ -15,7 +17,7 @@ const bySlug = (slug: string) => studies.find((s) => s.slug === slug)
 
 type Study = (typeof studies)[number]
 
-type PageProps = Readonly<{ params: Promise<{ locale: string; slug: string }> }>
+type PageProps = Readonly<{ params: Promise<{ locale: Locale; slug: string }> }>
 
 export function generateStaticParams() {
   return studies.map((s) => ({ slug: s.slug }))
@@ -25,9 +27,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale, slug } = await params
   const study = bySlug(slug)
   if (!study) return {}
+  const messages = await getMessages({ locale })
+  const copy = (messages.CaseStudies as Record<string, CaseStudyCopy>)[slug]
   return {
-    title: `${study.name} · Case study · ${site.identity.name}`,
-    description: study.tagline,
+    title: `${copy.name} · Case study · ${config.identity.name}`,
+    description: copy.tagline,
     alternates: {
       canonical: `${base}/${locale}/work/${slug}`,
       languages: {
@@ -44,8 +48,6 @@ const Eyebrow = ({ prefix, kicker }: { prefix: string; kicker: string }) => (
   </p>
 )
 
-const LINK_LABELS: Record<string, string> = { github: 'GitHub', npm: 'npm', live: 'Live' }
-
 export default async function CaseStudyPage({ params }: PageProps) {
   const { locale, slug } = await params
   setRequestLocale(locale)
@@ -54,6 +56,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
   const s = study as Study
   const next = bySlug(s.next)
   const links = Object.entries(s.links ?? {})
+  const messages = await getMessages()
+  const copyBySlug = messages.CaseStudies as Record<string, CaseStudyCopy>
+  const copy = copyBySlug[slug]
+  const pageChrome = messages.CaseStudyPage as CaseStudyPageContent
 
   return (
     <>
@@ -65,14 +71,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <Eyebrow prefix="// CASE_FILE" kicker={s.displaySlug} />
           <div className="mb-[26px] flex flex-wrap gap-2.5">
             <span className="text-op-cyan px-[11px] py-[6px] font-mono text-[0.6875rem] tracking-[0.1em] uppercase shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]">
-              {s.category}
+              {copy.category}
             </span>
             <span className="text-op-dim px-[11px] py-[6px] font-mono text-[0.6875rem] tracking-[0.1em] uppercase shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]">
               {s.year}
             </span>
             {s.isPrivate && (
               <span className="text-op-magenta px-[11px] py-[6px] font-mono text-[0.6875rem] tracking-[0.1em] uppercase shadow-[inset_0_0_0_1px_var(--color-op-magenta)]">
-                Private
+                {pageChrome.private}
               </span>
             )}
           </div>
@@ -85,14 +91,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 display: 'inline-block',
               }}
             >
-              {s.name}
+              {copy.name}
             </span>
           </GlitchText>
           <p
             className="border-op-cyan text-op-muted mb-8 max-w-[52ch] border-l-2 pl-4"
             style={{ fontSize: 'clamp(1.0625rem,1.8vw,1.45rem)', lineHeight: 1.45 }}
           >
-            {s.tagline}
+            {copy.tagline}
           </p>
 
           {links.length > 0 && (
@@ -105,7 +111,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   rel="noopener noreferrer"
                   className="clip-notch-10 bg-op-console text-op-cyan inline-flex items-center gap-1.5 px-4 py-2.5 font-mono text-[0.75rem] font-semibold tracking-[0.06em] uppercase shadow-[inset_0_0_0_1px_var(--color-op-cyan)] transition-[filter] hover:[filter:drop-shadow(0_0_10px_rgba(0,229,255,0.45))]"
                 >
-                  {LINK_LABELS[key] ?? key} ▸
+                  {pageChrome.linkLabels[key as keyof typeof pageChrome.linkLabels] ?? key} ▸
                 </a>
               ))}
             </div>
@@ -134,7 +140,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   )}
                 </div>
                 <div className="text-op-dim mt-2.5 font-mono text-[0.6875rem] tracking-[0.1em] uppercase">
-                  {m.label}
+                  {copy.metricLabels[i]}
                 </div>
               </div>
             ))}
@@ -187,7 +193,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         {/* 01 CONTEXT */}
         <Reveal className="mb-[76px]">
           <Eyebrow prefix="// 01" kicker="CONTEXT" />
-          <p className="text-op-muted text-[1.25rem] leading-[1.65]">{s.context}</p>
+          <p className="text-op-muted text-[1.25rem] leading-[1.65]">{copy.context}</p>
         </Reveal>
 
         {/* 02 THE_PROBLEM */}
@@ -197,25 +203,27 @@ export default async function CaseStudyPage({ params }: PageProps) {
             className="anton text-op-text mb-[22px]"
             style={{ fontSize: 'clamp(1.6rem,3.4vw,2.6rem)', lineHeight: 1.02 }}
           >
-            {s.problem.head}
+            {copy.problem.head}
           </h2>
           <p className="text-op-muted mb-[26px] text-[1.0625rem] leading-[1.65]">
-            {s.problem.body}
+            {copy.problem.body}
           </p>
           <div className="border-op-magenta border-l-2 py-1 pl-[18px]">
             <p className="text-op-magenta mb-1.5 font-mono text-[0.75rem] tracking-[0.12em] uppercase">
-              BEFORE
+              {pageChrome.before}
             </p>
-            <p className="text-op-text text-[1.0625rem]">{s.problem.before}</p>
+            <p className="text-op-text text-[1.0625rem]">{copy.problem.before}</p>
           </div>
         </Reveal>
 
         {/* 03 APPROACH */}
         <Reveal className="mb-[76px]">
           <Eyebrow prefix="// 03" kicker="APPROACH" />
-          <p className="text-op-muted mb-7 text-[1.0625rem] leading-[1.65]">{s.approach.intro}</p>
+          <p className="text-op-muted mb-7 text-[1.0625rem] leading-[1.65]">
+            {copy.approach.intro}
+          </p>
           <div className="mb-7 grid grid-cols-1 gap-4 md:grid-cols-2">
-            {s.approach.cards.map((c) => (
+            {copy.approach.cards.map((c) => (
               <div
                 key={c.heading}
                 className="clip-notch-14 bg-op-elev p-6 shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]"
@@ -244,15 +252,15 @@ export default async function CaseStudyPage({ params }: PageProps) {
             className="anton text-op-text mb-[30px]"
             style={{ fontSize: 'clamp(1.6rem,3.4vw,2.6rem)', lineHeight: 1.02 }}
           >
-            {s.result.head}
+            {copy.result.head}
           </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div className="clip-notch-16 bg-op-elev p-7 shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]">
               <p className="text-op-magenta mb-4 font-mono text-[0.75rem] tracking-[0.12em] uppercase">
-                Before
+                {pageChrome.before}
               </p>
               <ul className="flex flex-col gap-3">
-                {s.result.before.map((b, i) => (
+                {copy.result.before.map((b, i) => (
                   <li key={i} className="text-op-muted text-[1.0625rem]">
                     {b}
                   </li>
@@ -264,10 +272,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
               style={{ filter: 'drop-shadow(0 0 20px rgba(252,238,10,0.12))' }}
             >
               <p className="text-op-yellow mb-4 font-mono text-[0.75rem] tracking-[0.12em] uppercase">
-                After
+                {pageChrome.after}
               </p>
               <ul className="flex flex-col gap-3">
-                {s.result.after.map((a, i) => (
+                {copy.result.after.map((a, i) => (
                   <li key={i} className="text-op-text text-[1.0625rem]">
                     {a}
                   </li>
@@ -287,7 +295,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             style={{ fontSize: 'clamp(1.25rem,2.2vw,1.6rem)', lineHeight: 1.4 }}
           >
             <span className="text-op-cyan">&ldquo;</span>
-            {s.quote.text}
+            {copy.quote.text}
             <span className="text-op-cyan">&rdquo;</span>
           </blockquote>
           <figcaption className="flex items-center gap-3.5">
@@ -296,7 +304,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </span>
             <span>
               <span className="text-op-text block text-[1rem] font-semibold">{s.quote.name}</span>
-              <span className="text-op-dim block font-mono text-[0.8125rem]">{s.quote.role}</span>
+              <span className="text-op-dim block font-mono text-[0.8125rem]">
+                {copy.quote.role}
+              </span>
             </span>
           </figcaption>
         </Reveal>
@@ -317,14 +327,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 display: 'inline-block',
               }}
             >
-              Have a similar problem?
+              {pageChrome.ctaHeading}
             </span>
           </GlitchText>
           <a
             href={`/${locale}#contact`}
             className="clip-notch-13 bg-op-yellow text-op-base inline-flex items-center gap-2 px-[26px] py-4 font-mono text-[0.9375rem] font-bold tracking-[0.06em] uppercase transition-[filter,transform] hover:translate-y-[-2px] hover:[filter:drop-shadow(0_0_16px_rgba(252,238,10,0.6))]"
           >
-            Book a 20-min call ▸
+            {pageChrome.ctaButton} ▸
           </a>
         </div>
       </section>
@@ -338,10 +348,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
           >
             <span>
               <span className="text-op-dim mb-2 block font-mono text-[0.75rem] tracking-[0.12em] uppercase">
-                Next case file
+                {pageChrome.nextLabel}
               </span>
               <span className="anton text-op-text block text-[1.6rem] leading-none">
-                {next.name}
+                {copyBySlug[next.slug].name}
               </span>
             </span>
             <span className="text-op-yellow font-mono text-[1.5rem]">▸</span>

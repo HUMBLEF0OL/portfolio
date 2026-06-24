@@ -2,30 +2,35 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { useLocale } from 'next-intl'
+import { useLocale, useMessages } from 'next-intl'
 import { cn } from '@/lib/utils'
 import { GlitchText } from '@/components/op/GlitchText'
 import cs from '@/data/caseStudies.json'
+import type { WorkChrome, CaseStudyCopy } from '@/types/content'
 
 const items = cs.caseStudies
 
 export default function Work() {
   const locale = useLocale()
+  const messages = useMessages()
+  const chrome = messages.Work as WorkChrome
+  const copyBySlug = messages.CaseStudies as Record<string, CaseStudyCopy>
   const [active, setActive] = useState(0)
   const activeItem = items[active]
+  const activeCopy = copyBySlug[activeItem.slug]
 
   return (
     <section id="work" className="border-op-line border-b">
       <div className="mx-auto max-w-[1320px]" style={{ padding: 'clamp(80px,10vw,140px) 28px' }}>
         <p className="text-op-dim font-mono text-[0.8125rem] tracking-[0.16em] uppercase">
-          <span className="text-op-magenta">{'// SYS.03'}</span> {'>'} MISSION_LOG
+          <span className="text-op-magenta">{chrome.eyebrow}</span> {'>'} {chrome.kicker}
         </p>
         <GlitchText
           as="h2"
           className="anton text-op-text mb-[60px]"
           style={{ fontSize: 'clamp(1.9rem,5vw,4rem)', lineHeight: 0.98 }}
         >
-          Real problems, shipped.
+          {chrome.heading}
         </GlitchText>
 
         <div className="grid grid-cols-1 items-start gap-[60px] lg:grid-cols-[1fr_0.78fr]">
@@ -33,6 +38,7 @@ export default function Work() {
           <div className="border-op-line-strong border-t">
             {items.map((item, i) => {
               const isActive = i === active
+              const copy = copyBySlug[item.slug]
               return (
                 <a
                   key={item.slug}
@@ -58,13 +64,13 @@ export default function Work() {
                           className={cn('anton', isActive ? 'text-op-cyan' : 'text-op-text')}
                           style={{ fontSize: 'clamp(1.6rem,2.6vw,2.4rem)', lineHeight: 1 }}
                         >
-                          {item.name}
+                          {copy.name}
                         </h3>
                         <p className="text-op-muted max-w-[46ch] text-[1rem] leading-[1.5]">
-                          {item.row.blurb}
+                          {copy.row.blurb}
                         </p>
                         <span className="text-op-cyan font-mono text-[0.6875rem] tracking-[0.1em] uppercase">
-                          {item.category}
+                          {copy.category}
                         </span>
                       </div>
                     </div>
@@ -86,13 +92,13 @@ export default function Work() {
             <div className="bg-op-elev clip-notch-16 p-2.5 shadow-[inset_0_0_0_1px_var(--color-op-line-strong)]">
               <div className="flex justify-between px-2 pb-2.5">
                 <span className="text-op-cyan font-mono text-[0.6875rem]">{activeItem.host}</span>
-                <span className="text-op-dim font-mono text-[0.6875rem]">FEED//01</span>
+                <span className="text-op-dim font-mono text-[0.6875rem]">{chrome.feedLabel}</span>
               </div>
               <div className="bg-op-console relative h-[300px] overflow-hidden">
                 {activeItem.image ? (
                   <Image
                     src={activeItem.image}
-                    alt={activeItem.name}
+                    alt={activeCopy.name}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 0px, 40vw"
@@ -109,9 +115,7 @@ export default function Work() {
           </div>
         </div>
 
-        <p className="text-op-dim mt-6 font-mono text-[0.75rem]">
-          ▸ Hover a target to preview · click to open the dossier
-        </p>
+        <p className="text-op-dim mt-6 font-mono text-[0.75rem]">{chrome.hint}</p>
       </div>
     </section>
   )

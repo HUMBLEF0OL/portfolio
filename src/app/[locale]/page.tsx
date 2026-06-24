@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { Locale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { siteConfig } from '@/config/site'
 import Hero from '@/block/op/Hero'
@@ -18,14 +19,14 @@ import site from '@/data/site.json'
 
 const base = siteConfig.url.replace(/\/$/, '')
 
-type PageProps = Readonly<{ params: Promise<{ locale: string }> }>
+type PageProps = Readonly<{ params: Promise<{ locale: Locale }> }>
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'Seo' })
+  const t = await getTranslations({ locale })
   return {
-    title: t('home.title'),
-    description: t('home.description'),
+    title: t('Seo.home.title'),
+    description: t('Seo.home.description'),
     alternates: {
       canonical: `${base}/${locale}`,
       languages: {

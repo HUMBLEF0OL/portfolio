@@ -19,11 +19,12 @@
 
 ## Current Focus
 
-Neural-grid operator redesign cleanup — committing the completed services-site
-redesign as a baseline, then (1) removing now-dead legacy design components and
-(2) making the application fully responsive. The agentic workflow harness landed
-earlier on this branch (`npm run check:harness` **14/14 green**) and is awaiting
-external-auditor sign-off; that is unchanged by this cleanup work.
+**Re-internationalize the operator site (12 locales).** The redesign had moved
+all copy into English-only `src/data/*.json`, leaving only `Seo`/`404`
+localized. Consolidating all user-facing copy back onto next-intl messages
+(spec: `docs/superpowers/specs/2026-06-23-i18n-content-reinternationalization-design.md`,
+plan: `docs/superpowers/plans/2026-06-23-i18n-content-reinternationalization.md`).
+Foundation landed; locale translation + component migration in progress.
 
 > **Verification note:** local `npm run build` cannot complete its "Collecting
 > page data" worker phase under **Node v26.3.0** (Next 15.3.4 emits a
@@ -36,6 +37,19 @@ external-auditor sign-off; that is unchanged by this cleanup work.
 ## Done
 
 _Completed and verified work. Add a date and a one-line summary per entry._
+
+> `2026-06-24` — Dead-code cleanup + i18n foundation. Removed 9 unused deps,
+> the `profile/project/skills/xp` data files, orphaned vaul CSS, and unused
+> `AngularFrame` exports; gutted 10 dead message namespaces (kept `Seo`/`404`).
+> Then authored `messages/en.json` as the content source of truth (18
+> namespaces), added `src/data/config.json` (non-linguistic constants) + trimmed
+> `caseStudies.json` to config-only, `src/types/content.ts`, `src/global.ts`
+> (next-intl `Messages` augmentation), and a message key-parity test (red until
+> locales are translated). Migrated `Work` + `work/[slug]` to read copy from
+> messages. Verified: `typecheck` clean, `lint` 0 errors. (Note: an unrelated,
+> pre-existing "easter-egg" feature sits uncommitted in the working tree —
+> `src/components/easter-egg.tsx`, `src/lib/easter-eggs.ts`, `glitch.css`,
+> `Header.tsx` hunks — kept out of this commit.)
 
 > `2026-06-23` — Slowed the hero matrix-rain (`HeroCanvas`) — read as too fast.
 > Cut per-column fall speed to ~30% of the original (`0.16 + rand*0.38` →
@@ -106,6 +120,13 @@ _Completed and verified work. Add a date and a one-line summary per entry._
 ## In Progress
 
 > **WIP=1** — finish and verify one task before activating the next.
+
+> **i18n re-internationalization** — remaining: translate the 11 non-en locales
+> to mirror `en.json` (parity test goes green), migrate the remaining sections
+> (`Hero`, `Ticker`, `StatBar`, `Problem`, `Services`, `Process`, `Engagement`,
+> `Testimonials`, `Contact`, `Header`, `Footer`, `MobileCTA`, home + about
+> routes) off `data/*.json` onto messages, delete the migrated data files, add
+> RTL `dir` for Arabic, then full verification.
 
 > External auditor review of the harness (the goal's definition of done). Local
 > verification is fully green; no further implementation pending.
