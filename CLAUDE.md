@@ -29,11 +29,11 @@ Always run `npm run lint` after changes and a `npm run build` for non-trivial wo
 
 - `src/app/` — App Router. Root `layout.tsx`, `page.tsx`, `not-found.tsx`; locale segment in `src/app/[locale]/`.
 - `src/block/` — page-level section components (Header, Home, About, Projects, Skills, Experience, Contact, Footer, etc.). PascalCase files.
-- `src/components/ui/` — shadcn/ui primitives. Do not hand-edit unless customizing; prefer `npx shadcn@latest add <component>`.
-- `src/components/` — shared non-ui components (e.g. `theme-provider.tsx`).
-- `src/data/` — static JSON content (`profile.json`, `project.json`, `skills.json`, `xp.json`, `languages.json`).
+- `src/components/op/` — neural-grid FX + shared client primitives. `src/components/` — other shared components (e.g. `theme-provider.tsx`). (The shadcn `ui/` kit was removed in the operator redesign; re-add on demand with `npx shadcn@latest add <component>` if needed.)
+- `src/data/` — **non-linguistic** JSON only: `config.json` (social/identity/calLink/clock/avatar), `caseStudies.json` (per-project config: slug, links, metric values, stack, console), `languages.json` (locale switcher). All user-facing copy lives in `messages/`, not here.
 - `src/i18n/` — next-intl config: `routing.ts`, `request.ts`, `navigation.ts`.
-- `messages/` — translation catalogs, one JSON per locale (`en.json`, `es.json`, …).
+- `src/types/content.ts` — types mirroring each `messages` content namespace (cast targets for `useMessages()`/`getMessages()`); `src/global.ts` augments next-intl's `Messages` from `en.json`.
+- `messages/` — translation catalogs, one JSON per locale (`en.json`, `es.json`, …). `en.json` is the source of truth; all content namespaces live here.
 - `src/styles/` — extra CSS (`glitch.css`).
 - `public/` — static assets (`audio/`, `projects/`).
 
@@ -41,19 +41,21 @@ Always run `npm run lint` after changes and a `npm run build` for non-trivial wo
 
 ### Components
 
-- Use **functional components** with TypeScript. Default to **Server Components**; add `"use client"` only when using hooks, browser APIs, or event handlers (see `Projects.tsx`).
+- Use **functional components** with TypeScript. Default to **Server Components**; add `"use client"` only when using hooks, browser APIs, or event handlers (see `src/block/op/Contact.tsx`).
 - Place page sections in `src/block/`, reusable primitives in `src/components/`.
 - Merge class names with the `cn()` helper from `@/lib/utils`. Never concatenate Tailwind classes manually when conditional.
 - Use the `next/image` `Image` component for images (remote patterns are open in `next.config.ts`).
 
 ### Internationalization (important)
 
-- **Never hardcode user-facing strings.** All copy lives in `messages/<locale>.json` and is read via next-intl.
-  - Server Components: `const t = await getTranslations("Namespace")`.
-  - Client Components: `const t = useTranslations("Namespace")`.
-- When adding or changing a key, update **all 12 locale files** in `messages/` (en, es, fr, it, pt, ru, ja, ko, zh, ar, hi, de). Keep the same key structure across every file. `en.json` is the source of truth.
+- **Never hardcode user-facing strings.** All copy lives in `messages/<locale>.json` (one top-level namespace per section, e.g. `Hero`, `Services`, `CaseStudies`) and is read via next-intl.
+- **Read whole content blocks, not single keys.** Sections consume a structured namespace object:
+  - Client Components: `const m = useMessages(); const hero = m.Hero as HeroContent`.
+  - Server Components: `const m = await getMessages(); const hero = m.Hero as HeroContent` (the section must be `async`; `[locale]/layout` already calls `setRequestLocale`).
+  - **Avoid** the namespace-positional `useTranslations('Ns')` / `getTranslations('Ns')` form — the top-level `Stats` array collapses next-intl's namespace-key typing, so it fails to type-check. Use `useMessages`/`getMessages` + a cast to a `src/types/content.ts` type instead. The root translator `getTranslations({ locale })` + a dotted key (e.g. `t('Seo.home.title')`) is fine for flat metadata.
+- When adding or changing a key, update **all 12 locale files** in `messages/` (en, es, fr, it, pt, ru, ja, ko, zh, ar, hi, de) and the matching `src/types/content.ts` type. Keep the same key structure across every file (the `src/i18n/messages-parity.test.ts` test enforces this). `en.json` is the source of truth.
 - For navigation/links use the wrappers from `@/i18n/navigation` (`Link`, `redirect`, `useRouter`, `usePathname`), not raw `next/link` / `next/navigation`, so locale prefixes are preserved.
-- Data in `src/data/*.json` references translations by key (e.g. `titleKey: "projects.skinbattle.title"`); add the matching keys to every `messages/*.json`.
+- Non-translatable config (URLs, slugs, numeric metric values, tech tokens) stays in `src/data/config.json` / `caseStudies.json`; components join it with the translated copy.
 
 ### Styling / design system
 
