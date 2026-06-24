@@ -11,8 +11,8 @@
   },
   "Common": {
     "availability": {
-      "label": "AVAILABLE Q3 2026",
-      "statusLine": "STATUS: AVAILABLE // Q3 2026",
+      "label": "AVAILABLE FOR WORK",
+      "statusLine": "STATUS: AVAILABLE // OPEN FOR WORK",
       "hudLabel": "SYS ONLINE"
     },
     "mobileCta": { "title": "Free 20-min intro call", "button": "Book" },
@@ -34,7 +34,7 @@
     "statusRow": {
       "left": "▸ SENIOR PRODUCT ENGINEER",
       "center": "5+ YRS // FULL-STACK · AI · TOOLING",
-      "right": "AVAILABLE Q3 2026"
+      "right": "AVAILABLE FOR WORK"
     },
     "ctas": [
       { "label": "Book a 20-min call", "href": "#contact", "variant": "primary" },

@@ -11,8 +11,8 @@
   },
   "Common": {
     "availability": {
-      "label": "AVAILABLE Q3 2026",
-      "statusLine": "STATUS: AVAILABLE // Q3 2026",
+      "label": "AVAILABLE FOR WORK",
+      "statusLine": "STATUS: AVAILABLE // OPEN FOR WORK",
       "hudLabel": "SYS ONLINE"
     },
     "mobileCta": { "title": "Llamada de presentación gratis de 20 min", "button": "Reservar" },
@@ -34,7 +34,7 @@
     "statusRow": {
       "left": "▸ SENIOR PRODUCT ENGINEER",
       "center": "5+ YRS // FULL-STACK · AI · TOOLING",
-      "right": "AVAILABLE Q3 2026"
+      "right": "AVAILABLE FOR WORK"
     },
     "ctas": [
       { "label": "Reservar una llamada de 20 min", "href": "#contact", "variant": "primary" },
