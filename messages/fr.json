@@ -422,7 +422,7 @@
       },
       "quote": {
         "text": "Je voulais que les hooks soient la voie facile, pas une corvée que l'on contourne. Une config, committée une fois, et toute l'équipe est sur les mêmes barrières.",
-        "role": "Author & Maintainer, Hookpilot"
+        "role": "Auteur et mainteneur, Hookpilot"
       },
       "metricLabels": [
         "Téléchargements npm hebdomadaires",
@@ -466,12 +466,12 @@
         "after": [
           "Dérive détectée automatiquement",
           "Validation déterministe à 8 moteurs",
-          "Signé par Sigstore cosign sans clé, vérifiable via Rekor"
+          "Signé avec cosign sans clé, vérifiable via Rekor"
         ]
       },
       "quote": {
         "text": "Je ne laisserai pas un modèle écrire dans un dépôt sur la seule confiance. Chaque correctif doit survivre à des vérifications déterministes avant d'atterrir.",
-        "role": "Author & Maintainer, Coherence"
+        "role": "Auteur et mainteneur, Coherence"
       },
       "metricLabels": [
         "Pipeline LLM validé",
@@ -520,7 +520,7 @@
       },
       "quote": {
         "text": "L'outillage de sécurité doit vivre là où le travail se fait. mcp-sentry fait échouer le build et publie la note, pour que personne n'ait à penser à le lancer.",
-        "role": "Author & Maintainer, mcp-sentry"
+        "role": "Auteur et mainteneur, mcp-sentry"
       },
       "metricLabels": ["Vérifications OWASP MCP", "Formats de rapport", "Bandes de note A–F"]
     },
@@ -565,7 +565,7 @@
       },
       "quote": {
         "text": "L'analytique ne devrait pas vous coûter votre confidentialité. GitCompass n'appelle jamais la maison, et vous pouvez simplement lui demander ce que vous voulez savoir.",
-        "role": "Author & Maintainer, GitCompass"
+        "role": "Auteur et mainteneur, GitCompass"
       },
       "metricLabels": ["Signaux de risque du dépôt", "Paquets publiés", "Local, pas de télémétrie"]
     },
@@ -610,7 +610,7 @@
       },
       "quote": {
         "text": "Si vous ne pouvez pas mesurer le comportement d'un agent, vous ne pouvez pas le corriger. Glassbox reste en lecture seule et hors ligne, pour qu'observer ne modifie jamais l'exécution.",
-        "role": "Author & Maintainer, Glassbox"
+        "role": "Auteur et mainteneur, Glassbox"
       },
       "metricLabels": ["Métriques comportementales", "Rapport autonome", "Appels réseau"]
     },
@@ -655,7 +655,7 @@
       },
       "quote": {
         "text": "Un squelette devrait provenir du composant, pas d'une seconde copie que vous maintenez à la main. Générez-le, puis laissez la CI le garder honnête.",
-        "role": "Author & Maintainer, Ghostframes"
+        "role": "Auteur et mainteneur, Ghostframes"
       },
       "metricLabels": ["Paquet public", "Barrières de qualité CI", "Config au runtime"]
     },
@@ -700,7 +700,7 @@
       },
       "quote": {
         "text": "La façon la plus rapide d'apprendre quelque chose est de l'exécuter. Je voulais du vrai JavaScript et React, de vrais modules, sans rien à installer d'abord.",
-        "role": "Author, JavaScript-Verse"
+        "role": "Auteur, JavaScript-Verse"
       },
       "metricLabels": [
         "Dans le navigateur, sans serveur",
@@ -749,7 +749,7 @@
       },
       "quote": {
         "text": "Les interfaces de casino sont impitoyables : l'animation et le résultat du serveur doivent concorder, à chaque manche, pour des milliers de joueurs à la fois. Cette synchronisation, c'est tout le métier.",
-        "role": "Frontend Engineer, SkinBattle.gg"
+        "role": "Ingénieur frontend, SkinBattle.gg"
       },
       "metricLabels": [
         "Utilisateurs simultanés",
@@ -798,7 +798,7 @@
       },
       "quote": {
         "text": "Je lis un nombre énorme d'articles de recherche, et Felis a changé ma façon de travailler. Je lui confie mes articles et je pose des questions sur l'ensemble plutôt que de fouiller à nouveau dans chacun, et il me renvoie au bon passage.",
-        "role": "Research Scholar"
+        "role": "Chercheuse"
       },
       "metricLabels": [
         "Récupération sur les articles",

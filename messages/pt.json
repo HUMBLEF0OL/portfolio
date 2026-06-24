@@ -422,7 +422,7 @@
       },
       "quote": {
         "text": "Eu queria que os hooks fossem o caminho fácil, não uma tarefa chata que você burla. Uma configuração, commitada uma vez, e a equipe inteira nos mesmos portões.",
-        "role": "Author & Maintainer, Hookpilot"
+        "role": "Autor e mantenedor, Hookpilot"
       },
       "metricLabels": [
         "Downloads semanais no npm",
@@ -471,7 +471,7 @@
       },
       "quote": {
         "text": "Eu não deixo um modelo escrever em um repositório apenas com base na confiança. Toda correção tem que sobreviver a verificações determinísticas antes de ser aplicada.",
-        "role": "Author & Maintainer, Coherence"
+        "role": "Autor e mantenedor, Coherence"
       },
       "metricLabels": [
         "Pipeline de LLM validado",
@@ -520,7 +520,7 @@
       },
       "quote": {
         "text": "As ferramentas de segurança têm que viver onde o trabalho acontece. O mcp-sentry falha o build e publica a nota, então ninguém precisa se lembrar de executá-lo.",
-        "role": "Author & Maintainer, mcp-sentry"
+        "role": "Autor e mantenedor, mcp-sentry"
       },
       "metricLabels": ["Verificações do OWASP MCP", "Formatos de relatório", "Faixas de nota A–F"]
     },
@@ -565,7 +565,7 @@
       },
       "quote": {
         "text": "O analytics não deveria custar a sua privacidade. O GitCompass nunca liga para casa, e você pode simplesmente perguntar a ele o que quiser saber.",
-        "role": "Author & Maintainer, GitCompass"
+        "role": "Autor e mantenedor, GitCompass"
       },
       "metricLabels": [
         "Sinais de risco do repositório",
@@ -614,7 +614,7 @@
       },
       "quote": {
         "text": "Se você não consegue medir como um agente se comporta, não consegue corrigi-lo. O Glassbox permanece somente leitura e offline, então observar nunca altera a execução.",
-        "role": "Author & Maintainer, Glassbox"
+        "role": "Autor e mantenedor, Glassbox"
       },
       "metricLabels": ["Métricas comportamentais", "Relatório autocontido", "Chamadas de rede"]
     },
@@ -659,7 +659,7 @@
       },
       "quote": {
         "text": "Um skeleton deve vir do componente, não de uma segunda cópia que você mantém à mão. Gere-o, e então deixe a CI mantê-lo honesto.",
-        "role": "Author & Maintainer, Ghostframes"
+        "role": "Autor e mantenedor, Ghostframes"
       },
       "metricLabels": ["Pacote público", "Portões de qualidade na CI", "Configuração em runtime"]
     },
@@ -704,7 +704,7 @@
       },
       "quote": {
         "text": "A forma mais rápida de aprender algo é executá-lo. Eu queria JavaScript e React reais, módulos reais, sem nada para instalar primeiro.",
-        "role": "Author, JavaScript-Verse"
+        "role": "Autor, JavaScript-Verse"
       },
       "metricLabels": [
         "No navegador, sem servidor",
@@ -753,7 +753,7 @@
       },
       "quote": {
         "text": "As UIs de cassino são implacáveis: a animação e o resultado do servidor têm que concordar, a cada rodada, para milhares de jogadores de uma vez. Essa sincronia é o trabalho inteiro.",
-        "role": "Frontend Engineer, SkinBattle.gg"
+        "role": "Engenheiro frontend, SkinBattle.gg"
       },
       "metricLabels": [
         "Usuários simultâneos",

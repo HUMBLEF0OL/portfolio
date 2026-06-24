@@ -433,7 +433,7 @@
       },
       "quote": {
         "text": "Quería que los hooks fueran el camino fácil, no una tarea pesada que te saltas. Una configuración, confirmada una vez, y todo el equipo está bajo las mismas barreras.",
-        "role": "Author & Maintainer, Hookpilot"
+        "role": "Autor y mantenedor, Hookpilot"
       },
       "metricLabels": [
         "Descargas semanales en npm",
@@ -477,12 +477,12 @@
         "after": [
           "Divergencia detectada automáticamente",
           "Validación determinista de 8 motores",
-          "Firmado con Sigstore cosign sin claves, verificable con Rekor"
+          "Firmado con cosign sin claves, verificable con Rekor"
         ]
       },
       "quote": {
         "text": "No dejaré que un modelo escriba en un repo solo por confianza. Cada parche tiene que sobrevivir a comprobaciones deterministas antes de aterrizar.",
-        "role": "Author & Maintainer, Coherence"
+        "role": "Autor y mantenedor, Coherence"
       },
       "metricLabels": [
         "Pipeline de LLM validado",
@@ -531,7 +531,7 @@
       },
       "quote": {
         "text": "Las herramientas de seguridad tienen que vivir donde ocurre el trabajo. mcp-sentry falla el build y publica la calificación, así nadie tiene que acordarse de ejecutarlo.",
-        "role": "Author & Maintainer, mcp-sentry"
+        "role": "Autor y mantenedor, mcp-sentry"
       },
       "metricLabels": [
         "Comprobaciones de OWASP MCP",
@@ -580,7 +580,7 @@
       },
       "quote": {
         "text": "La analítica no debería costarte tu privacidad. GitCompass nunca llama a casa, y puedes simplemente preguntarle lo que quieres saber.",
-        "role": "Author & Maintainer, GitCompass"
+        "role": "Autor y mantenedor, GitCompass"
       },
       "metricLabels": ["Señales de riesgo del repo", "Paquetes publicados", "Local, sin telemetría"]
     },
@@ -625,7 +625,7 @@
       },
       "quote": {
         "text": "Si no puedes medir cómo se comporta un agente, no puedes arreglarlo. Glassbox se mantiene de solo lectura y sin conexión, así que observar nunca cambia la ejecución.",
-        "role": "Author & Maintainer, Glassbox"
+        "role": "Autor y mantenedor, Glassbox"
       },
       "metricLabels": ["Métricas de comportamiento", "Informe autocontenido", "Llamadas de red"]
     },
@@ -670,7 +670,7 @@
       },
       "quote": {
         "text": "Un esqueleto debería venir del componente, no de una segunda copia que mantienes a mano. Genéralo, y deja que CI lo mantenga honesto.",
-        "role": "Author & Maintainer, Ghostframes"
+        "role": "Autor y mantenedor, Ghostframes"
       },
       "metricLabels": ["Paquete público", "Barreras de calidad en CI", "Configuración en runtime"]
     },
@@ -715,7 +715,7 @@
       },
       "quote": {
         "text": "La forma más rápida de aprender algo es ejecutarlo. Quería JavaScript y React reales, módulos reales, sin nada que instalar primero.",
-        "role": "Author, JavaScript-Verse"
+        "role": "Autor, JavaScript-Verse"
       },
       "metricLabels": [
         "En el navegador, sin servidor",
@@ -764,7 +764,7 @@
       },
       "quote": {
         "text": "Las interfaces de casino no perdonan: la animación y el resultado del servidor tienen que coincidir, cada ronda, para miles de jugadores a la vez. Esa sincronía es todo el trabajo.",
-        "role": "Frontend Engineer, SkinBattle.gg"
+        "role": "Ingeniero frontend, SkinBattle.gg"
       },
       "metricLabels": [
         "Usuarios concurrentes",
@@ -813,7 +813,7 @@
       },
       "quote": {
         "text": "Leo una enorme cantidad de artículos de investigación, y Felis cambió mi forma de trabajar. Le entrego mis artículos y le hago preguntas sobre todos ellos en lugar de revisar cada uno, y me señala el pasaje correcto.",
-        "role": "Research Scholar"
+        "role": "Investigadora"
       },
       "metricLabels": [
         "Recuperación sobre artículos",
