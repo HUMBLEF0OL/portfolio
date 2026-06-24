@@ -38,6 +38,13 @@ Foundation landed; locale translation + component migration in progress.
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-24` — Committed a pre-existing, uncommitted working-tree "easter-egg"
+> feature as its own commit (not part of the i18n effort, preserved so the i18n
+> `Header` migration lands on a clean base): `src/components/easter-egg.tsx`,
+> `src/lib/easter-eggs.ts` (enable gate), `src/styles/glitch.css` burst styles,
+> and the `Header` logo 5x-click combo trigger. Verified: `typecheck` clean,
+> `lint` 0 errors.
+
 > `2026-06-24` — Dead-code cleanup + i18n foundation. Removed 9 unused deps,
 > the `profile/project/skills/xp` data files, orphaned vaul CSS, and unused
 > `AngularFrame` exports; gutted 10 dead message namespaces (kept `Seo`/`404`).

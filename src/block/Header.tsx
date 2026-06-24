@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Menu } from 'lucide-react'
 import { useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
@@ -8,7 +8,13 @@ import site from '@/data/site.json'
 import languages from '@/data/languages.json'
 import { GlitchText } from '@/components/op/GlitchText'
 import { LiveClock } from '@/components/op/LiveClock'
+import { EASTER_EGGS_ENABLED, LOGO_COMBO_EVENT } from '@/lib/easter-eggs'
 import { cn } from '@/lib/utils'
+
+// 5 rapid clicks within this window fire the logo easter egg instead of
+// navigating home.
+const LOGO_COMBO_COUNT = 5
+const LOGO_COMBO_WINDOW_MS = 350
 
 /** Operator-design fixed navigation bar. */
 const Header = () => {
@@ -16,6 +22,8 @@ const Header = () => {
   const pathname = usePathname()
   const [condensed, setCondensed] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const logoClicksRef = useRef(0)
+  const logoNavTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const onScroll = () => setCondensed(window.scrollY > 20)
@@ -24,8 +32,37 @@ const Header = () => {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(
+    () => () => {
+      if (logoNavTimerRef.current) clearTimeout(logoNavTimerRef.current)
+    },
+    []
+  )
+
   const localize = (href: string) =>
     href.startsWith('#') ? `/${locale}${href}` : `/${locale}${href === '/' ? '' : href}`
+
+  // Debounce logo clicks: a single click navigates home after a short pause,
+  // but 5 rapid clicks fire the easter egg instead. When eggs are disabled the
+  // logo behaves like a normal link.
+  const onLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!EASTER_EGGS_ENABLED) return
+    e.preventDefault()
+    const home = localize('/')
+    logoClicksRef.current += 1
+    if (logoNavTimerRef.current) clearTimeout(logoNavTimerRef.current)
+
+    if (logoClicksRef.current >= LOGO_COMBO_COUNT) {
+      logoClicksRef.current = 0
+      window.dispatchEvent(new Event(LOGO_COMBO_EVENT))
+      return
+    }
+
+    logoNavTimerRef.current = setTimeout(() => {
+      logoClicksRef.current = 0
+      window.location.href = home
+    }, LOGO_COMBO_WINDOW_MS)
+  }
 
   const switchLocale = (next: string) => {
     const rest = pathname.replace(/^\/[a-z]{2}/, '')
@@ -43,7 +80,7 @@ const Header = () => {
     >
       <div className="mx-auto flex max-w-[1320px] items-center justify-between gap-6 px-7 py-[15px]">
         {/* Logo */}
-        <a href={localize('/')} className="flex items-center gap-[11px]">
+        <a href={localize('/')} onClick={onLogoClick} className="flex items-center gap-[11px]">
           <span className="clip-notch-7 bg-op-yellow font-display text-op-base inline-flex h-[26px] w-[26px] items-center justify-center text-[1rem] leading-none">
             {site.identity.monogram}
           </span>
