@@ -39,6 +39,13 @@ mirroring polish is a tracked follow-up (spec non-goal).
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-25` — Shortened the intro call from 20 → 15 minutes. Updated the
+> `cal.com` link in `config.json` (`/amitrana/intro` → `/humblefool/15min`)
+> and the matching "20-min"/"20-minute" copy in `messages/en.json` (also
+> reformatted by Prettier on stage; no key changes — locale parity holds at
+> 266 keys). Follow-up: `es`/`zh` still phrase it as 20 minutes and need the
+> same copy update. Verified: `lint` 0 errors, `build` SSG completes.
+
 > `2026-06-25` — Replaced the default Next.js favicon with a neural-grid
 > monogram "A" icon set. Added `src/app/icon.svg` (theme-matched: yellow
 > `#fcee0a` glyph on `#07080a`, angular-clipped tile, cyan bevel), regenerated

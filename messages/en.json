@@ -15,16 +15,31 @@
       "statusLine": "STATUS: AVAILABLE // OPEN FOR WORK",
       "hudLabel": "SYS ONLINE"
     },
-    "mobileCta": { "title": "Free 20-min intro call", "button": "Book" },
+    "mobileCta": {
+      "title": "Free 15-min intro call",
+      "button": "Book"
+    },
     "homeHudLabel": "SYS ONLINE"
   },
   "Nav": {
     "links": [
-      { "label": "Work", "href": "#work" },
-      { "label": "Services", "href": "#services" },
-      { "label": "About", "href": "/about" }
+      {
+        "label": "Work",
+        "href": "#work"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      }
     ],
-    "cta": { "label": "Book a call", "href": "#contact" }
+    "cta": {
+      "label": "Book a call",
+      "href": "#contact"
+    }
   },
   "Hero": {
     "eyebrow": "// LOADING_OPERATOR.exe",
@@ -37,8 +52,16 @@
       "right": "AVAILABLE FOR WORK"
     },
     "ctas": [
-      { "label": "Book a 20-min call", "href": "#contact", "variant": "primary" },
-      { "label": "See recent work", "href": "#work", "variant": "secondary" }
+      {
+        "label": "Book a 15-min call",
+        "href": "#contact",
+        "variant": "primary"
+      },
+      {
+        "label": "See recent work",
+        "href": "#work",
+        "variant": "secondary"
+      }
     ]
   },
   "Ticker": {
@@ -75,7 +98,12 @@
       "label": "Years building",
       "accent": "primary"
     },
-    { "value": null, "display": "1/1", "label": "Senior, end to end", "accent": "foreground" }
+    {
+      "value": null,
+      "display": "1/1",
+      "label": "Senior, end to end",
+      "accent": "foreground"
+    }
   ],
   "Problem": {
     "eyebrow": "// SYS.01",
@@ -151,7 +179,7 @@
       {
         "number": "01",
         "title": "Intro call",
-        "description": "20 minutes to scope your problem and see if it's a fit. Free, no obligation."
+        "description": "15 minutes to scope your problem and see if it's a fit. Free, no obligation."
       },
       {
         "number": "02",
@@ -206,7 +234,9 @@
       ]
     },
     "faq": {
-      "section": { "heading": "Questions you're probably asking." },
+      "section": {
+        "heading": "Questions you're probably asking."
+      },
       "items": [
         {
           "question": "How does working with a solo engineer actually work?",
@@ -235,7 +265,7 @@
     "eyebrow": "// SYS.08",
     "kicker": "ESTABLISH_UPLINK",
     "heading": "Tell me what you're trying to build.",
-    "subhead": "Book a free 20-minute intro call, or send a note. I reply within 1 business day.",
+    "subhead": "Book a free 15-minute intro call, or send a note. I reply within 1 business day.",
     "points": [
       "Free, no-obligation intro call",
       "Response within 1 business day",
@@ -247,7 +277,7 @@
       "timelines": ["ASAP", "1–3 months", "3–6 months", "Just exploring"],
       "submitLabel": "Transmit"
     },
-    "bookCall": "Book a 20-min call",
+    "bookCall": "Book a 15-min call",
     "orDivider": "OR SEND A NOTE",
     "fields": {
       "name": "Name",
@@ -265,7 +295,10 @@
   },
   "Footer": {
     "blurb": "Senior product engineer. Full-stack, AI, and the tooling around it. Shipped.",
-    "cta": { "label": "Book a call", "href": "#contact" },
+    "cta": {
+      "label": "Book a call",
+      "href": "#contact"
+    },
     "copyright": "© 2026 AMIT RANA",
     "endLabel": "END OF TRANSMISSION",
     "wordmark": "AMIT RANA"
@@ -278,13 +311,36 @@
       "class": "CLASS: SENIOR PRODUCT ENGINEER // 5+ YRS",
       "blurb": "I work end to end: the app, the AI, and the tooling that holds it together. I keep a tight client list so each project gets senior attention from scope to handoff. No juniors, no coordination tax.",
       "skillBars": [
-        { "label": "Full-stack", "fill": 9, "max": 10 },
-        { "label": "AI / LLM", "fill": 8, "max": 10 },
-        { "label": "Frontend", "fill": 9, "max": 10 },
-        { "label": "Tooling / Ops", "fill": 7, "max": 10 }
+        {
+          "label": "Full-stack",
+          "fill": 9,
+          "max": 10
+        },
+        {
+          "label": "AI / LLM",
+          "fill": 8,
+          "max": 10
+        },
+        {
+          "label": "Frontend",
+          "fill": 9,
+          "max": 10
+        },
+        {
+          "label": "Tooling / Ops",
+          "fill": 7,
+          "max": 10
+        }
       ],
-      "ossChip": { "label": "OSS", "name": "Hookpilot", "metric": "50k+ DL/wk" },
-      "bioLink": { "label": "Read full bio", "href": "/about" }
+      "ossChip": {
+        "label": "OSS",
+        "name": "Hookpilot",
+        "metric": "50k+ DL/wk"
+      },
+      "bioLink": {
+        "label": "Read full bio",
+        "href": "/about"
+      }
     },
     "page": {
       "eyebrow": "// SYS.00",
@@ -296,8 +352,20 @@
         "subhead": "I'm Amit Rana, a senior product engineer who turns stuck roadmaps into shipped product, end to end."
       },
       "stats": [
-        { "value": 5, "decimals": 0, "prefix": "", "suffix": "+", "label": "Years shipping" },
-        { "value": 12, "decimals": 0, "prefix": "", "suffix": "+", "label": "Products shipped" },
+        {
+          "value": 5,
+          "decimals": 0,
+          "prefix": "",
+          "suffix": "+",
+          "label": "Years shipping"
+        },
+        {
+          "value": 12,
+          "decimals": 0,
+          "prefix": "",
+          "suffix": "+",
+          "label": "Products shipped"
+        },
         {
           "value": 50,
           "decimals": 0,
@@ -357,19 +425,26 @@
       },
       "cta": {
         "heading": "Let's build the thing your roadmap is stuck on.",
-        "subhead": "Free 20-minute intro call. I reply within 1 business day.",
-        "button": { "label": "Book a 20-min call", "href": "/#contact" }
+        "subhead": "Free 15-minute intro call. I reply within 1 business day.",
+        "button": {
+          "label": "Book a 15-min call",
+          "href": "/#contact"
+        }
       }
     }
   },
   "CaseStudyPage": {
     "private": "Private",
     "ctaHeading": "Have a similar problem?",
-    "ctaButton": "Book a 20-min call",
+    "ctaButton": "Book a 15-min call",
     "nextLabel": "Next case file",
     "before": "Before",
     "after": "After",
-    "linkLabels": { "github": "GitHub", "npm": "npm", "live": "Live" }
+    "linkLabels": {
+      "github": "GitHub",
+      "npm": "npm",
+      "live": "Live"
+    }
   },
   "CaseStudies": {
     "hookpilot": {
