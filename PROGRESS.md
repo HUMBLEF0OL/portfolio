@@ -39,6 +39,15 @@ mirroring polish is a tracked follow-up (spec non-goal).
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-25` — Replaced the default Next.js favicon with a neural-grid
+> monogram "A" icon set. Added `src/app/icon.svg` (theme-matched: yellow
+> `#fcee0a` glyph on `#07080a`, angular-clipped tile, cyan bevel), regenerated
+> `src/app/favicon.ico` as a multi-size **BMP-encoded** ICO (a PNG-encoded ICO
+> compiled but crashed Next's image-size parser during page-data collection),
+> added `apple-icon.png` (180px) + `public/icon-{192,512}.png`, and pointed
+> `manifest.ts` icons at the PNGs (`any` + `maskable`). Verified: `lint` 0
+> errors, `build` SSG completes.
+
 > `2026-06-25` — Refactored the easter-egg feature into focused reveal
 > components. Split the inline logic in `easter-egg.tsx` into
 > `src/components/easter-eggs/{DecryptionLetter,SpotlightReveal,GitLogReveal}.tsx`,

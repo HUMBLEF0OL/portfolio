@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Amit Rana monogram">
+  <!-- Angular neural-grid tile (tl + br corners clipped, echoing AngularFrame) -->
+  <polygon points="10,0 64,0 64,54 54,64 0,64 0,10" fill="#07080a"/>
+  <polygon points="10,0 64,0 64,54 54,64 0,64 0,10" fill="none" stroke="#fcee0a" stroke-width="2.5" stroke-opacity="0.85"/>
+  <!-- Cyan bevel accent along the clipped corner -->
+  <line x1="64" y1="54" x2="54" y2="64" stroke="#00e5ff" stroke-width="3"/>
+  <!-- Monogram "A" -->
+  <g fill="none" stroke="#fcee0a" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10">
+    <path d="M16 52 L32 12 L48 52"/>
+    <path d="M21 39 H43"/>
+  </g>
+</svg>
