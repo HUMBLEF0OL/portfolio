@@ -20,7 +20,7 @@ export default function Work() {
   const activeCopy = copyBySlug[activeItem.slug]
 
   return (
-    <section id="work" className="border-op-line border-b">
+    <section id="work" className="cv-section border-op-line border-b">
       <div className="mx-auto max-w-[1320px]" style={{ padding: 'clamp(80px,10vw,140px) 28px' }}>
         <p className="text-op-dim font-mono text-[0.8125rem] tracking-[0.16em] uppercase">
           <span className="text-op-magenta">{chrome.eyebrow}</span> {'>'} {chrome.kicker}

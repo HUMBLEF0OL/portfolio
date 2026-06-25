@@ -8,7 +8,7 @@ export default async function Problem() {
   const { eyebrow, kicker, heading, body } = messages.Problem as ProblemContent
 
   return (
-    <section className="border-op-line border-b">
+    <section className="cv-section border-op-line border-b">
       <div
         className="mx-auto max-w-[1320px] px-7"
         style={{ padding: 'clamp(80px,10vw,140px) 28px' }}

@@ -704,6 +704,16 @@ textarea:focus-visible {
       0 calc(100% - 20px)
     );
   }
+
+  /* Defer layout & paint of below-the-fold sections until they approach the
+     viewport. Cuts main-thread Style & Layout cost on the long home page; the
+     `auto` keyword lets the browser remember each section's real height after
+     first render so scrolling stays shift-free. Only applied to sections that
+     are strictly below the initial fold. */
+  .cv-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
 }
 
 /* Reduced motion: disable all signature animations */

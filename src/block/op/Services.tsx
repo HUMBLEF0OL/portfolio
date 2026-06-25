@@ -8,7 +8,7 @@ export default async function Services() {
   const messages = await getMessages()
   const { section, items } = messages.Services as ServicesContent
   return (
-    <section id="services" className="border-op-line border-b">
+    <section id="services" className="cv-section border-op-line border-b">
       <div
         className="mx-auto max-w-[1320px] px-7"
         style={{ padding: 'clamp(80px,10vw,140px) 28px' }}

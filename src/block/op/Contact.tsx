@@ -43,7 +43,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-op-elev-alt">
+    <section id="contact" className="cv-section bg-op-elev-alt">
       <div
         className="mx-auto max-w-[1320px] px-7"
         style={{ padding: 'clamp(80px,10vw,140px) 28px' }}

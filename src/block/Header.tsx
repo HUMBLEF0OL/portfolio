@@ -75,7 +75,10 @@ const Header = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 right-0 left-0 z-[1000] border-b transition-[background-color,backdrop-filter] duration-300',
+        // Transition only the cheap colour properties; the backdrop blur snaps
+        // on/off with the binary scroll state. Animating backdrop-filter forces
+        // the GPU to re-sample the blur every frame of the transition (jank).
+        'fixed top-0 right-0 left-0 z-[1000] border-b transition-[background-color,border-color] duration-300',
         condensed
           ? 'border-op-line bg-[rgba(7,8,10,0.85)] backdrop-blur-[14px]'
           : 'border-transparent'

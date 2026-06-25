@@ -24,13 +24,25 @@ export function CursorHUD({ label = 'SYS ONLINE' }: { label?: string }) {
     root.style.cursor = 'none'
     const cur = cursorRef.current
 
+    // The reticle follows the pointer imperatively every event (cheap style
+    // writes, no React). The HUD coordinate readout is throttled to one React
+    // render per animation frame so rapid mousemove can't flood reconciliation.
+    let lastX = 0
+    let lastY = 0
+    let rafId: number | null = null
+    const flush = () => {
+      rafId = null
+      setCoord({ x: lastX, y: lastY })
+    }
     const onMove = (e: MouseEvent) => {
       if (cur) {
         cur.style.left = `${e.clientX}px`
         cur.style.top = `${e.clientY}px`
         cur.style.opacity = '1'
       }
-      setCoord({ x: e.clientX, y: e.clientY })
+      lastX = e.clientX
+      lastY = e.clientY
+      if (rafId === null) rafId = requestAnimationFrame(flush)
     }
     const onOver = (e: MouseEvent) => {
       if (!cur) return
@@ -44,6 +56,7 @@ export function CursorHUD({ label = 'SYS ONLINE' }: { label?: string }) {
     window.addEventListener('mouseover', onOver)
     return () => {
       root.style.cursor = ''
+      if (rafId !== null) cancelAnimationFrame(rafId)
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('mouseover', onOver)
     }

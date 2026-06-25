@@ -92,6 +92,8 @@ export default async function AboutPage({ params }: PageProps) {
                   alt={config.avatar.alt}
                   width={600}
                   height={360}
+                  priority
+                  sizes="(max-width: 768px) 100vw, 600px"
                   className="block h-[360px] w-full object-cover"
                   style={{ objectPosition: 'center 18%' }}
                 />

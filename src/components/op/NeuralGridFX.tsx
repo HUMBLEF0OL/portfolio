@@ -31,10 +31,13 @@ export function NeuralGridFX() {
             'radial-gradient(ellipse 90% 70% at 50% 30%, transparent 40%, rgba(7,8,10,0.7) 100%)',
         }}
       />
-      {/* grain */}
+      {/* grain — gated to desktop: mix-blend-mode forces a full-viewport
+          re-blend on every paint, which is the single costliest layer on
+          throttled mobile. The texture is subtle (opacity 0.06), so dropping it
+          on small screens is invisible in practice but frees the paint budget. */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0"
+        className="pointer-events-none fixed inset-0 hidden md:block"
         style={{ zIndex: 9999, opacity: 0.06, mixBlendMode: 'overlay', backgroundImage: GRAIN }}
       />
       {/* scanlines */}

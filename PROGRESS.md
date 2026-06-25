@@ -39,6 +39,22 @@ mirroring polish is a tracked follow-up (spec non-goal).
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-25` — Deep performance pass and production-readiness fixes (measured
+> with Lighthouse and Chrome traces; mobile 92→~93, desktop 99). Assets: re-encoded the avatar
+> `2.27 MB PNG → 146 KB WebP` (served ~50 KB AVIF), enabled AVIF/WebP in
+> `next/image`, removed the dead 3.9 MB `bg-audio.mp3` and unused Oxanium font,
+> rebuilt `favicon.ico` 15 KB→1.7 KB. LCP/CLS: `priority`+`sizes` on the
+> About-page avatar (LCP element), dropped Chakra Petch from font preload so
+> Anton/JetBrains don't contend. Main-thread: `content-visibility:auto` on
+> below-fold home sections (`cv-section`), gated the mix-blend grain layer to
+> desktop. Runtime: rAF-throttled `CursorHUD` setState, cached
+> `HeroCanvas` rect (no per-move reflow), stopped animating Header
+> `backdrop-filter`. Readiness: added a branded 1200×630 `og-image.png` (was
+> referenced but missing → broken social cards), corrected `mailto` contact
+> docs (CLAUDE/AGENTS/PACKAGES — `emailjs-com` was never installed), dropped the
+> trailing slash in `siteConfig.url`. Verified: `lint` 0 errors, `test:run` 4/4,
+> `build` SSG 43/43.
+
 > `2026-06-25` — Shortened the intro call from 20 → 15 minutes. Updated the
 > `cal.com` link in `config.json` (`/amitrana/intro` → `/humblefool/15min`)
 > and the matching "20-min"/"20-minute" copy in `messages/en.json` (also

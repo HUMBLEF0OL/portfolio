@@ -1,21 +1,19 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
-import { Anton, Chakra_Petch, JetBrains_Mono, Oxanium } from 'next/font/google'
+import { Anton, Chakra_Petch, JetBrains_Mono } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale } from 'next-intl/server'
 import { siteConfig } from '@/config/site'
 
+// Numeric/display font, used only by the stat counters (below the fold), so we
+// skip preloading it — that frees the preload budget for Anton (the LCP hero
+// headline) and JetBrains (body text) instead of all three competing.
 const chakra = Chakra_Petch({
   variable: '--font-chakra',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-})
-
-const oxanium = Oxanium({
-  variable: '--font-oxanium',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  preload: false,
 })
 
 // Neural-grid / operator design system fonts (revamped services site).
@@ -97,7 +95,7 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={`${chakra.variable} ${oxanium.variable} ${anton.variable} ${jetbrains.variable}`}
+      className={`${chakra.variable} ${anton.variable} ${jetbrains.variable}`}
     >
       <body
         className={`font-body bg-background text-foreground no-scrollbar mx-auto overflow-x-hidden overflow-y-auto antialiased`}

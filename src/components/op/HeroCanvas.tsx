@@ -25,6 +25,7 @@ export function HeroCanvas({ className }: { className?: string }) {
     const dpr = Math.min(2, window.devicePixelRatio || 1)
     let W = 0
     let H = 0
+    let rectLeft = 0
     let cols = 0
     let drops: number[] = []
     let speeds: number[] = []
@@ -37,6 +38,7 @@ export function HeroCanvas({ className }: { className?: string }) {
       const rect = parent.getBoundingClientRect()
       W = rect.width
       H = rect.height
+      rectLeft = rect.left
       canvas.width = W * dpr
       canvas.height = H * dpr
       canvas.style.width = `${W}px`
@@ -101,9 +103,11 @@ export function HeroCanvas({ className }: { className?: string }) {
       return () => window.removeEventListener('resize', resize)
     }
 
+    // Use the cached rect (refreshed on resize) instead of reading layout on
+    // every mousemove — avoids a forced reflow per pointer event. The hero is
+    // full-width, so left/width only change on resize, not on scroll.
     const onMove = (e: MouseEvent) => {
-      const rect = parent.getBoundingClientRect()
-      mx = (e.clientX - rect.left) / rect.width
+      mx = (e.clientX - rectLeft) / W
     }
     parent.addEventListener('mousemove', onMove)
 

@@ -12,7 +12,7 @@ export default async function AboutBlock({ locale }: { locale: string }) {
   const bioHref = '/' + locale + dossier.bioLink.href
 
   return (
-    <section className="bg-op-elev-alt">
+    <section className="cv-section bg-op-elev-alt">
       <div
         className="mx-auto max-w-[1320px] px-7"
         style={{ padding: 'clamp(80px,10vw,140px) 28px' }}
@@ -31,6 +31,7 @@ export default async function AboutBlock({ locale }: { locale: string }) {
                   alt={dossier.name}
                   width={600}
                   height={440}
+                  sizes="(max-width: 1024px) 100vw, 500px"
                   className="h-[440px] w-full object-cover"
                   style={{ objectPosition: 'center 18%' }}
                 />
