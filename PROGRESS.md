@@ -39,6 +39,26 @@ mirroring polish is a tracked follow-up (spec non-goal).
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-25` — Upgraded Next.js 15.3.4 → 16.2.9 (latest) to clear the critical
+> RCE advisory GHSA-9qr9-h5gf-34mp (CVSS 10, range `>=15.3.0 <15.3.6`) that was
+> blocking Vercel deploys, plus ~25 other Next advisories. Also bumped
+> `eslint-config-next` → 16.2.9 and `next-intl` 4.3.4 → 4.13.0 (4.3.4's peer
+> range stops at Next 15; 4.13.0 supports `^16`). React 19.1 already satisfies
+> Next 16 peers. Fixed the ESLint flat config: eslint-config-next 16 ships
+> native flat configs, so `eslint.config.mjs` now spreads
+> `eslint-config-next/core-web-vitals` + `/typescript` directly instead of the
+> FlatCompat bridge (which threw a circular-structure error). Downgraded two new
+> React-Compiler rules (`react-hooks/set-state-in-effect`, `react-hooks/refs`) to
+> warn — they flag intentional browser-state-sync patterns, not bugs. Next 16's
+> build auto-set `tsconfig.json` `jsx: react-jsx` + dev-types include (kept).
+> Remaining audit: 3 low/moderate advisories in Next's **bundled** postcss
+> (build-time CSS stringify; not in `next` itself, unfixable without a new Next
+> bundle, negligible for a static site) — did NOT run `audit fix --force` (it
+> would downgrade next to 9.3.3). Verified: `lint` 0 errors (5 warns),
+> `typecheck` clean, `test:run` 4/4, `build` SSG 42, and a Playwright runtime
+> smoke test (all 3 locales 200, dynamic work route, AVIF image opt, OG image,
+> 0 console errors).
+
 > `2026-06-25` — Deep performance pass and production-readiness fixes (measured
 > with Lighthouse and Chrome traces; mobile 92→~93, desktop 99). Assets: re-encoded the avatar
 > `2.27 MB PNG → 146 KB WebP` (served ~50 KB AVIF), enabled AVIF/WebP in

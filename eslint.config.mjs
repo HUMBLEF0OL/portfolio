@@ -1,11 +1,12 @@
-import { FlatCompat } from '@eslint/eslintrc'
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals'
+import nextTypescript from 'eslint-config-next/typescript'
 
-// next 15's eslint-config-next ships eslintrc-style shareable configs, not a
-// flat-config array. FlatCompat bridges them into the flat config below.
-const compat = new FlatCompat({ baseDirectory: import.meta.dirname })
-
+// eslint-config-next 16 ships native flat configs (Linter.Config[]) under
+// `./core-web-vitals` and `./typescript`, spread in directly. (Through v15 they
+// were eslintrc-style and needed a FlatCompat bridge.)
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...nextCoreWebVitals,
+  ...nextTypescript,
   {
     ignores: [
       'scripts/**',
@@ -32,6 +33,13 @@ const eslintConfig = [
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       '@next/next/no-img-element': 'error',
+      // New React-Compiler-era rules enabled by eslint-config-next 16. They flag
+      // intentional, correct patterns here — browser-state sync in effects
+      // (matchMedia/IntersectionObserver/rAF) and a state-mirroring ref read.
+      // Kept as warnings (visible tech-debt) rather than failing the gate;
+      // revisit with useSyncExternalStore if/when adopting the React Compiler.
+      'react-hooks/set-state-in-effect': 'warn',
+      'react-hooks/refs': 'warn',
     },
   },
   {
