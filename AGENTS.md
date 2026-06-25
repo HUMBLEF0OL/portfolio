@@ -17,7 +17,7 @@ per-skill files that carry the library-specific patterns and code templates.
 
 A personal portfolio — **Next.js 15 (App Router) · React 19 · TypeScript
 (strict) · Tailwind v4 (CSS-first, no config file) · next-intl (3 locales) ·
-shadcn/ui (New York) · emailjs contact form**. Cyberpunk "neural grid" theme
+shadcn/ui (New York) · mailto contact form**. Cyberpunk "neural grid" theme
 built on a custom angular-clip design system. Node pinned in `.nvmrc`.
 
 - **Full stack & versions:** `docs/PACKAGES.md`, `package.json`

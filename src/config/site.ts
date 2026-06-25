@@ -14,7 +14,7 @@ export const siteConfig = {
   name: 'HUMBLEF0OL',
   description:
     'Step into the Grid — the digital frontier of HUMBLEF0OL. Cybernetic UIs, modular code, and glitch-crafted experiences crafted at the edge of identity and interaction.',
-  url: 'https://humblefool.vercel.app/',
+  url: 'https://humblefool.vercel.app',
 
   // i18n — mirrors src/i18n/routing.ts (harness-enforced).
   defaultLocale: 'en',

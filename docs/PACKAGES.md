@@ -14,7 +14,7 @@ live in the matching file under `.claude/skills/`.
 | Styling    | Tailwind CSS v4 (CSS-first, no config file)                   |
 | UI kit     | shadcn/ui (New York), Radix primitives, lucide                |
 | i18n       | next-intl 4 (3 locales, locale-prefixed routing)              |
-| Email      | emailjs-com (contact form)                                    |
+| Email      | mailto: link (contact form — no backend/library)              |
 | Carousel   | embla-carousel-react · Drawer: vaul · Themes: next-themes     |
 | Testing    | Vitest 3 + Testing Library + jsdom · Playwright               |
 | Tooling    | ESLint 9 (flat) · Prettier · commitlint · lint-staged · Husky |
@@ -22,7 +22,7 @@ live in the matching file under `.claude/skills/`.
 ## Runtime dependencies
 
 `@radix-ui/react-{dialog,select,slot,tabs}`, `class-variance-authority`, `clsx`,
-`emailjs-com`, `embla-carousel-react`, `lucide-react`, `next`, `next-intl`,
+`embla-carousel-react`, `lucide-react`, `next`, `next-intl`,
 `next-themes`, `react`, `react-dom`, `react-barcode`, `tailwind-merge`, `vaul`.
 
 ## Dev dependencies (toolchain)

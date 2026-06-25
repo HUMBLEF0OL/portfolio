@@ -13,7 +13,7 @@ A personal portfolio built with **Next.js 15 (App Router) + React 19 + TypeScrip
 - **Styling**: Tailwind CSS v4 (CSS-first config in `src/app/globals.css`, no `tailwind.config`)
 - **UI**: shadcn/ui (`src/components/ui/`), Radix primitives, `lucide-react` icons
 - **i18n**: next-intl with locale-prefixed routing under `src/app/[locale]/`
-- **Email**: `emailjs-com` for the contact form
+- **Email**: contact form opens a `mailto:` link (no email library/backend)
 - **Carousel**: `embla-carousel-react`; **Drawer**: `vaul`; **Themes**: `next-themes`
 
 ## Commands
