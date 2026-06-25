@@ -1,0 +1,151 @@
+/* === Easter-egg shared + per-reveal styles ===
+   Triggers: type "vee" (decryption letter), type "love" (spotlight),
+   5 logo clicks (git log). */
+
+.egg-overlay {
+  animation: egg-overlay-in 0.32s ease-out both;
+}
+
+@keyframes egg-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.egg-panel {
+  animation: egg-panel-in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes egg-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Faint CRT scanlines layer (used by terminal-style reveals). */
+.egg-scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.22) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+/* Blinking terminal cursor. */
+.egg-cursor::after {
+  content: '▋';
+  margin-left: 2px;
+  animation: egg-blink 1s steps(1) infinite;
+}
+
+@keyframes egg-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Staggered row entrance (git log, boot lines). delay set inline. */
+.egg-row {
+  animation: egg-row-in 0.34s ease-out both;
+}
+
+@keyframes egg-row-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Decryption progress bar. width is driven inline by React state. */
+.egg-progress {
+  transition: width 0.18s linear;
+}
+
+/* Spotlight reveal: dark "fog" with a hole punched at the cursor. */
+.egg-fog {
+  background: #07080a;
+  -webkit-mask: radial-gradient(
+    circle var(--egg-r, 150px) at var(--egg-x, 50%) var(--egg-y, 50%),
+    transparent 0,
+    transparent 35%,
+    #000 78%
+  );
+  mask: radial-gradient(
+    circle var(--egg-r, 150px) at var(--egg-x, 50%) var(--egg-y, 50%),
+    transparent 0,
+    transparent 35%,
+    #000 78%
+  );
+}
+
+/* Soft glowing ring tracking the cursor in the spotlight. */
+.egg-spot-ring {
+  left: var(--egg-x, 50%);
+  top: var(--egg-y, 50%);
+  box-shadow:
+    0 0 40px 12px rgba(0, 229, 255, 0.25),
+    inset 0 0 30px rgba(255, 42, 109, 0.25);
+}
+
+/* Opacity is driven per-frame by beam proximity (JS), so no opacity animation
+   here — only a smooth glow transition when a note becomes "found". */
+.egg-note {
+  transition: filter 0.6s ease;
+}
+
+/* A note that has been swept by the spotlight stays brightly lit. */
+.egg-note--found {
+  filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 22px currentColor);
+}
+
+/* Closing message after every note is found. */
+.egg-final {
+  transform: translateY(-50%);
+  animation: egg-final-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes egg-final-in {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .egg-overlay,
+  .egg-panel,
+  .egg-row,
+  .egg-note,
+  .egg-final {
+    animation: none;
+  }
+  .egg-cursor::after {
+    animation: none;
+  }
+  .egg-progress {
+    transition: none;
+  }
+}

@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import '../styles/glitch.css';
+@import '../styles/easter-eggs.css';
 
 @custom-variant dark (&:is(.dark *));
 

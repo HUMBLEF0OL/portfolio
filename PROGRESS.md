@@ -39,6 +39,14 @@ mirroring polish is a tracked follow-up (spec non-goal).
 
 _Completed and verified work. Add a date and a one-line summary per entry._
 
+> `2026-06-25` — Refactored the easter-egg feature into focused reveal
+> components. Split the inline logic in `easter-egg.tsx` into
+> `src/components/easter-eggs/{DecryptionLetter,SpotlightReveal,GitLogReveal}.tsx`,
+> moved the burst/overlay styles out of `glitch.css` into a dedicated
+> `src/styles/easter-eggs.css` (imported from `globals.css`), and added a
+> `ConsoleGreeting` client component wired into the `[locale]` layout. Verified:
+> `typecheck` clean (pre-commit), `lint` 0 errors, `build` SSG completes.
+
 > `2026-06-24` — Reduced supported locales from 12 → 3 (`en` default, `es`, `zh`):
 > the three with the broadest reach and none RTL. Trimmed `routing.ts`,
 > `siteConfig` (`locales` + `ogLocaleMap`), and `languages.json`; deleted the 9
